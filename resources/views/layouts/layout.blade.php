@@ -62,7 +62,7 @@
 					<div class="container">
 						<ul class="contact">
 							<li><a href="tel:(+1)123-456-7890" title="(+1) 123 - 456 - 7890"><i class="fa fa-phone" aria-hidden="true"></i><span>Phone :</span> (+1) 123 - 456 - 7890</a></li>
-							<li><a href="mailto:Info@Ourdomain.Com" title="Info@Ourdomain.Com"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Email :</span> Info@Ourdomain.Com</a></li>
+							<li><a href="mailto:Info@Ourdomain.Com" title="Info@Ourdomain.Com"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Email :</span> info@kalt.com.my</a></li>
 						</ul>
 						<div class="dropdown-bar">
 							<div class="language-dropdown dropdown">
@@ -81,8 +81,8 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-5 col-sm-4 col-xs-4">
-								<div class="logo-block">
-									<a href="index.html"><img src="images/logo-1.png" alt="logo" height="38" width="56"/>Furn<span>Home</span></a>
+								<div>
+									<a href="index.html"><img src="/images/kalt.png" alt="logo" width="150"/></a>
 								</div>
 							</div>
 							<div class="header-info">

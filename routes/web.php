@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('info', function() {
 	phpinfo();

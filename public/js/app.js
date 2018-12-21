@@ -33272,7 +33272,7 @@ var render = function() {
                                   staticStyle: { width: "48px" },
                                   attrs: {
                                     slot: "activator",
-                                    src: "/images/Whatsapp.png"
+                                    src: "/images/whatsapp.png"
                                   },
                                   slot: "activator"
                                 }),
@@ -33304,7 +33304,7 @@ var render = function() {
                                   staticStyle: { width: "48px" },
                                   attrs: {
                                     slot: "activator",
-                                    src: "/images/Facebook.png"
+                                    src: "/images/facebook.png"
                                   },
                                   slot: "activator"
                                 }),

@@ -16,8 +16,8 @@
                 <v-card-text>
                     <ul style="text-align:center; list-style:none; padding-left:0px;">
                         <div class="row">
-                            <li class="col-sm-6 animate fadeIn" data-wow-delay="0.4s"><a href="whatsapp://send?text=The%text%to%share" data-action="share/whatsapp/share"><v-tooltip bottom><img slot="activator" style="width:48px;" src="/images/Whatsapp.png" /><span>Whatsapp</span></v-tooltip></a></li>
-                            <li class="col-sm-6 animate fadeIn" data-wow-delay="0.4s"><a :href="facebookSharerUrl(product)"><v-tooltip bottom><img slot="activator" style="width:48px;" src="/images/Facebook.png" /><span>Facebook</span></v-tooltip></a></li>
+                            <li class="col-sm-6 animate fadeIn" data-wow-delay="0.4s"><a href="whatsapp://send?text=The%text%to%share" data-action="share/whatsapp/share"><v-tooltip bottom><img slot="activator" style="width:48px;" src="/images/whatsapp.png" /><span>Whatsapp</span></v-tooltip></a></li>
+                            <li class="col-sm-6 animate fadeIn" data-wow-delay="0.4s"><a :href="facebookSharerUrl(product)"><v-tooltip bottom><img slot="activator" style="width:48px;" src="/images/facebook.png" /><span>Facebook</span></v-tooltip></a></li>
                         </div>
                         <v-divider></v-divider>
                         <div class="row">

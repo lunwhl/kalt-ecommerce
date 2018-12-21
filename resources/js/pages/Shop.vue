@@ -55,29 +55,7 @@
 	            </div>
 	            
 	            <!--======= Products =========-->
-	            <div class="popurlar_product">
-	              <ul class="row">
-	                
-	                <!-- New Products -->
-	                <li v-for="product in products" class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
-	                  <div class="items-in"> 
-	                    <!-- Image --> 
-	                    <img :src="$options.filters.set_image(product.image_path)" alt=""> 
-	                    <!-- Hover Details -->
-	                    <div class="over-item">
-	                      <ul class="animated fadeIn" style="padding-left:0px;">
-	                        <li> <a style="cursor:pointer;" @click="addToCart(product, true)" data-lighter><i class="fa fa-credit-card-alt"></i></a></li>
-	                        <li> <a style="cursor:pointer;" @click="share(product)"><i class="fa fa-share"></i></a></li>
-	                        <li> <a style="cursor:pointer;" :href="/product/+product.id"><i class="fa fa-eye"></i></a></li>
-	                        <li class="full-w"> <a @click="addToCart(product)" class="btn-shop">ADD TO CART</a></li>
-	                      </ul>
-	                    </div>
-	                    <!-- Item Name -->
-	                    <div class="details-sec"> <a :href="/product/+product.id">{{product.name}}</a> <span class="font-montserrat">RM {{product.price}}</span> </div>
-	                  </div>
-	                </li>
-	              </ul>
-	            </div>
+	            <ListProduct :products="products"></ListProduct>
 	            
 	            <!--======= PAGINATION =========-->
 	            <div class="pagination animate fadeInUp" style="width:100%" data-wow-delay="0.4s">
@@ -93,13 +71,6 @@
 	       </div>
 	     </section>
 	     <share></share>
-		<v-snackbar v-model="snackbar"
-			right="right"
-			:timeout="timeout"
-			top="top"
-		>
-			{{snackbarMsg}}
-		</v-snackbar>
 	</div>
 
 </template>
@@ -107,10 +78,12 @@
 
 <script>
 	import Share from '../components/Share.vue';
+	import ListProduct from '../components/ListProduct.vue';
 
     export default {
     	components: {
-			Share
+			Share,
+			ListProduct
 		},
 
     	props: ['is_auth'],
@@ -132,9 +105,6 @@
     			sortSelected: 'asc', 
     			productTotal: 0,
     			products: [],
-    			snackbar: false,
-    			snackbarMsg: '',
-    			timeout: 2000,
     		};
     	},
 
@@ -145,13 +115,16 @@
             	this.snackbarMsg = 'Link copied';
         		this.snackbar = true;
         	});
+        	window.event.$on("share-to-shop", (value) => {
+        		window.event.$emit("share-dialog", {'openDialog': value['openDialog'], 'product': value['product']});
+            });
         },
 
         methods: {
         	share(product) {
-        		window.event.$emit("share-dialog", {'openDialog': true, 'product': product});
-        	},
-
+                window.event.$emit("share-dialog", {'openDialog': true, 'product': product});
+            },
+        	
         	next() {
         		this.skip = (this.page - 1) * this.take;
         		this.getProductForShop();
@@ -195,18 +168,6 @@
         		this.categories = data.data;
         	},
 
-        	addToCart(product, isBuy = null) {
-        		let url = 'cart/add/' + product.id;
-        		axios.post(url)
-        		.then(response => this.addToCartSuccess(response.data, isBuy, product.name));
-        	},
-
-        	addToCartSuccess(data, isBuy, product) {
-        		window.event.$emit("cart-add");
-        		this.triggerSnackbar(product + ' added into cart');
-        		isBuy ? window.location.href = '/cart' : null;
-        	},
-
         	getCart() {
 				let url = 'cart/index';
         		axios.post(url)
@@ -216,12 +177,6 @@
         	getCartSuccess(data) {
         		this.Cart = data
         	},
-
-        	triggerSnackbar(message)
-        	{
-        		this.snackbarMsg = message;
-        		this.snackbar = true;
-        	}
         },
 
         computed: {

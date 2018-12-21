@@ -638,7 +638,7 @@
 .woocommerce.our-products .products-categories {
 	text-align: center;
 	padding-left: 0;
-	margin-bottom: 60px;
+	/* margin-bottom: 60px; */
 }
 .woocommerce.our-products .products-categories li {
 	display: inline-block;

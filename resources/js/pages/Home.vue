@@ -1,7 +1,7 @@
 
 	<!-- Photo Slider -->
 	<template>
-		<div>
+		<div data-app="true">
 			<div class="photo-slider container-fluid no-padding">
 				<!-- Main Carousel -->
 				<div id="main-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -46,7 +46,9 @@
 			</div><!-- Photo Slider /- -->
 			
 			<!-- Our Product -->
+			
 			<div class="latest-product our-products container-fluid no-padding woocommerce">
+				<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 				<div class="section-padding"></div>
 				<!-- Container -->
 				<div class="container">
@@ -56,34 +58,13 @@
 					</div><!-- Section Header /- -->
 					<ul id="filters" class="products-categories no-left-padding">
 						<li id="latest"><a class="product-link" href="javascript:void(0)">Latest Products</a></li>
-						<li id="featured"><a class="product-link" href="javascript:void(0)">Featured</a></li>
-						<li id="seller"><a class="product-link" href="javascript:void(0)">Best Seller</a></li>
 					</ul>
-					
-					<ul class="products latest-products">
-						
-						<li v-for="latestProduct in latestProducts" class="product filter-latest filter-all">							
-							<a href="product-detail.html" title="Prouct">
-								<span class="product-img">
-									<img :src="$options.filters.set_image(latestProduct.image_path)" width="270" height="360" alt="product"/>
-								</span>
-								<h3>{{latestProduct.name}}</h3>
-								<span class="price"><span class="amount">$55.00</span><del>$70.00</del></span>
-							</a>
-							<p class="hover-content">
-								<a title="Add To Cart" @click="addToCart(latestProduct)" class="button product_type_simple add_to_cart_button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add to cart</a>
-								<span>
-									<a href="#" class="icons"><i class="fa fa-heart" aria-hidden="true"></i></a>
-									<a href="#" class="icons"><i class="fa fa-eye" aria-hidden="true"></i></a>
-									<a href="#" class="icons"><i class="fa fa-retweet" aria-hidden="true"></i></a>
-								</span>
-							</p>
-						</li>
-						
-					</ul>
+
+					<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
 				</div><!-- Container /- -->
 				<div class="section-padding"></div>
 			</div><!-- Our Product /- -->
+		</div>
 			
 			<!-- Latest Product -->
 			<div id="latest-product" class="latest-product container-fluid no-padding woocommerce">
@@ -376,12 +357,21 @@
 					logged_out_greeting="GoodBye!... Hope to see you soon."
 					minimized="false">
 			</div>
+			<share></share>
 		</div>
 	</template>
 @stop
 
 <script>
+	import ListProduct from '../components/ListProduct.vue';
+	import Share from '../components/Share.vue';
+
     export default {
+    	components: {
+			Share,
+			ListProduct
+		},
+
     	props: ['is_auth'],
 
     	data() {
@@ -396,6 +386,9 @@
         mounted() {
         	this.getCart();
             this.getLatestProduct();
+            window.event.$on("share-to-shop", (value) => {
+        		window.event.$emit("share-dialog", {'openDialog': value['openDialog'], 'product': value['product']});
+            });
         },
 
         methods: {

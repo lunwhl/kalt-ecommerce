@@ -4,21 +4,21 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\Number;
 use Vyuldashev\NovaMoneyField\Money;
-use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Product extends Resource
+class Item extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Product';
+    public static $model = 'App\Item';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -35,6 +35,8 @@ class Product extends Resource
     public static $search = [
         'name',
     ];
+
+    public static $displayInNavigation = false;
 
     /**
      * Get the fields displayed by the resource.
@@ -55,13 +57,25 @@ class Product extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Money::make("Price", "MYR")
+            Trix::make('Description')
                 ->sortable()
                 ->rules('required'),
 
-            Trix::make('Description'),
+            Number::make('Qty')
+                ->sortable()
+                ->rules('required'),
 
-            BelongsToMany::make('Categories'),
+            Text::make('Installation Type')
+                ->sortable()
+                ->rules('required'),
+
+            Money::make("Installation Price", "MYR")
+                ->sortable()
+                ->rules('required'),
+
+            Money::make("Price", "MYR")
+                ->sortable()
+                ->rules('required'),
         ];
     }
 

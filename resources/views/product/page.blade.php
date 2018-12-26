@@ -6,6 +6,7 @@
     <link href="{{ URL::asset('/css/exzo/css/swiper.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('/css/exzo/css/sumoselect.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('/css/exzo/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/vendor/froala_styles.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 	<product-page :product="{{$product}}"></product-page>

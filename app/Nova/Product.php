@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
 use Vyuldashev\NovaMoneyField\Money;
 use Laravel\Nova\Fields\BelongsToMany;
+use Froala\NovaFroalaField\Froala;
 
 class Product extends Resource
 {
@@ -49,7 +50,10 @@ class Product extends Resource
 
             Avatar::make('Feature image', 'image_path')
                 ->disk('public')
-                ->path('images'),
+                ->path('images')
+                ->help(
+                    'Please select an image with at least 300px width for the best result'
+                ),
 
             Text::make('Name')
                 ->sortable()
@@ -59,7 +63,7 @@ class Product extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Trix::make('Description'),
+            Froala::make('Description')->withFiles('public'),
 
             BelongsToMany::make('Categories'),
         ];

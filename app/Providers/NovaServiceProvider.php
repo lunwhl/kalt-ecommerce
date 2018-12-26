@@ -17,6 +17,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::style('admin', public_path('css/admin.css'));
+        Nova::style('fontawesome', public_path('fonts/font-awesome-4.7.0/css/font-awesome.min.css'));
     }
 
     /**

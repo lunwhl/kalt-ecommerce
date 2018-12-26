@@ -2441,6 +2441,10 @@ a:hover {
 	transition: all 0.4s ease-in-out;
 }
 
+.padding-top-75{
+	padding-top: 75px;
+}
+
 .btn-shop:hover {
 	background: #af5875;
 	color: #fff;

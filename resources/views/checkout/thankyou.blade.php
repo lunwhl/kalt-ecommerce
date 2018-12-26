@@ -1,37 +1,31 @@
-@extends('layouts.layout')
-@section('css')
-	<link href="https://fonts.googleapis.com/css?family=Questrial|Raleway:700,900" rel="stylesheet">
-    <link href="css/exzo/css/bootstrap.extension.css" rel="stylesheet" type="text/css" />
-    <link href="css/exzo/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/exzo/css/swiper.css" rel="stylesheet" type="text/css" />
-    <link href="css/exzo/css/sumoselect.css" rel="stylesheet" type="text/css" />
-    <link href="css/exzo/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-@endsection
-@section('content')
-	<h1>Thank you</h1>
-@endsection
-@section('js')
-    <script src="css/exzo/js/swiper.jquery.min.js"></script>
-    <script src="css/exzo/js/global.js"></script>
+<div style="text-align:center;">
+<img src="/images/kalt.png" alt="logo" width="150"/>
+<h1>Payment Successful</h1>
+<img src="/images/loading.gif" width="150"/>
+<p>This page will redirect in <span id="time">5</span> seconds.</p>
+<p>Please click <a href="http://test.kalt.com.my">here</a>, if the page does not redirect automatically.</p>
+</div>
 
-    <!-- styled select -->
-    <script src="css/exzo/js/jquery.sumoselect.min.js"></script>
+<script>
+    function startTimer(duration, display) {
+        var timer = duration, seconds;
+        var end =setInterval(function () {
+            seconds = parseInt(timer % 60, 10);
 
-    <!-- counter -->
-    <script src="css/exzo/js/jquery.classycountdown.js"></script>
-    <script src="css/exzo/js/jquery.knob.js"></script>
-    <script src="css/exzo/js/jquery.throttle.js"></script>
+            seconds = seconds < 10 ? seconds : seconds;
 
-    <!-- masonry -->
-    <script src="css/exzo/js/isotope.pkgd.min.js"></script>
-    <script>
-        $(window).load(function(){
-            var $container = $('.grid').isotope({
-                itemSelector: '.grid-item',
-                masonry: {
-                    columnWidth: '.grid-sizer'
-                }
-            });
-        });
-    </script>
-@endsection
+            display.textContent = seconds;
+
+            if (--timer < 0) {
+                window.location = "http://test.kalt.com.my";
+                clearInterval(end);
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        var fiveMinutes = 5,
+            display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+    };
+</script>

@@ -25,35 +25,45 @@
 	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	<script src="css/sebian/js/main.js"></script> 
 	<script>
+
+		function ended(values, handle, unencoded, tap, positions) {
+			window.event.$emit('slider-changed');
+		}
+
 		jQuery(document).ready(function($) {
 		  
 		  //  Price Filter ( noUiSlider Plugin)
-		    $("#price-range").noUiSlider({
-		    range: {
-		      'min': [ 9000 ],
-		      'max': [ 60000 ]
-		    },
-		    step: 10,
-		    behaviour: 'tap',
-		    start: [9000, 60000],
-		        connect:true,
-		        serialization:{
-		            lower: [
-		        $.Link({
-		          target: $("#price-min")
-		        })
-		      ],
-		      upper: [
-		        $.Link({
-		          target: $("#price-max")
-		        })
-		      ],
-		      format: {
-		      // Set formatting
-		        decimals: 0,
-		      }
-		        }
-		  })
-		})
+		    var slider = $("#price-range").noUiSlider({
+			    range: {
+			      'min': [ 9000 ],
+			      'max': [ 60000 ]
+			    },
+			    step: 10,
+			    behaviour: 'tap',
+			    start: [9000, 60000],
+			        connect:true,
+			        serialization:{
+			            lower: [
+			        $.Link({
+			          target: $("#price-min")
+			        })
+			      ],
+			      upper: [
+			        $.Link({
+			          target: $("#price-max")
+			        })
+			      ],
+			      format: {
+			      // Set formatting
+			        decimals: 0,
+			      }
+			        }
+			  }).on('change', ended);
+		    // slider.noUiSlider;
+		});
+
+		
+
+
 	</script>
 @endsection

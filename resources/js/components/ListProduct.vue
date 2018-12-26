@@ -6,7 +6,8 @@
             <li v-for="product in products" :class="colSm" data-wow-delay="0.4s">
                 <div class="items-in"> 
                 <!-- Image --> 
-                    <img :src="$options.filters.set_image(product.image_path)" alt=""> 
+                    <div class="product-featured-image" :style="'background-image: url(' + $options.filters.set_image(product.image_path) + ')'"></div>
+                    <!-- <img :src="$options.filters.set_image(product.image_path)" alt="">  -->
                     <!-- Hover Details -->
                         <div class="over-item">
                             <ul class="animated fadeIn" style="padding-left:0px;">

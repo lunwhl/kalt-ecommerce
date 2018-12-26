@@ -1,14 +1,29 @@
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+.product-featured-image {
+	height: 300px;
+	width: 100%;
+	background-size: contain;
+	background-position: center center;
+}
 
-// Variables
-@import 'variables';
+.over-item {
+	padding-top: 21.5% !important;
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+.over-item ul{
+	width: 50%;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+@media screen and (max-width: 490px){
+	.over-item ul {
+		width: 100%;
+	}
+
+	.over-item {
+		padding-top: 24.5% !important;
+	}
+}
+
+.over-item ul li {
+	
 }

@@ -29,7 +29,7 @@
 	              
 	              <!-- HEADING -->
 	              <div class="heading">
-	                <h6>HORSE POWER</h6>
+	                <h6>HOSE POWER</h6>
 	              </div>
 	              <!-- PRICE -->
 	              <div class="cost-price-content">
@@ -54,18 +54,23 @@
 	              </div>
 	            </div>
 	            
+                <template v-if="products.length > 0">
 	            <!--======= Products =========-->
-	            <ListProduct :products="products"></ListProduct>
-	            
-	            <!--======= PAGINATION =========-->
-	            <div class="pagination animate fadeInUp" style="width:100%" data-wow-delay="0.4s">
-	              	<v-pagination
-						v-model="page"
-						:length="countPaginate"
-						color="#1daaa3"
-						@input="next"
-                	></v-pagination>
-	            </div>
+    	            <ListProduct :products="products"></ListProduct>
+    	            
+    	            <!--======= PAGINATION =========-->
+    	            <div class="pagination animate fadeInUp" style="width:100%" data-wow-delay="0.4s">
+    	              	<v-pagination
+    						v-model="page"
+    						:length="countPaginate"
+    						color="#1daaa3"
+    						@input="next"
+                    	></v-pagination>
+    	            </div>
+                </template>
+                <h2 v-else class="text-center">
+                    No product found
+                  </h2>
 	          </div>
 	        </div>
 	       </div>
@@ -118,6 +123,10 @@
         	window.event.$on("share-to-shop", (value) => {
         		window.event.$emit("share-dialog", {'openDialog': value['openDialog'], 'product': value['product']});
             });
+
+            window.event.$on("slider-changed", () => {
+                this.filterHorsePower();
+            });
         },
 
         methods: {
@@ -135,6 +144,7 @@
         	},
 
         	filterHorsePower() {
+                console.log("hehe");
         		this.hpMin = $('#price-min').text();
         		this.hpMax = $('#price-max').text();
         		Vue.nextTick(()=>{

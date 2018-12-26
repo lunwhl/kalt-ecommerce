@@ -83,7 +83,7 @@
 	                                    <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span>127-#5238</span></div>
 	                                </div>
 	                            </div>
-	                            <div class="simple-article size-3 col-xs-b30" v-html="selectedProduct.description"></div>
+	                            <div class="simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
 	                            <div class="row col-xs-b40">
 	                                <div class="col-sm-3">
 	                                    <div class="h6 detail-data-title size-1">quantity:</div>

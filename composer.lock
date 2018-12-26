@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c69c56996a639b026972ac2dbb1fee6d",
+    "content-hash": "809f80bdd277a1e56038fd09313cf935",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -653,6 +653,68 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "froala/nova-froala-field",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/froala/nova-froala-field.git",
+                "reference": "ddc02ee3c4f9a4ca61d8668df86573d9d0ab4eb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/nova-froala-field/zipball/ddc02ee3c4f9a4ca61d8668df86573d9d0ab4eb9",
+                "reference": "ddc02ee3c4f9a4ca61d8668df86573d9d0ab4eb9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.6.20",
+                "laravel/nova": "~1.0",
+                "league/flysystem": "^1.0.8",
+                "php": ">=7.1.0",
+                "spatie/image-optimizer": "^1.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Froala\\NovaFroalaField\\FroalaFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Froala\\NovaFroalaField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Slava Razum",
+                    "email": "modern.web.artisan@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova Froala WYSIWYG Editor Field.",
+            "homepage": "https://github.com/froala/nova-froala-field",
+            "keywords": [
+                "editor",
+                "field",
+                "froala",
+                "laravel",
+                "nova",
+                "wysiwyg"
+            ],
+            "time": "2018-12-04T21:24:11+00:00"
         },
         {
             "name": "gloudemans/shoppingcart",
@@ -1813,6 +1875,56 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "spatie/image-optimizer",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/image-optimizer.git",
+                "reference": "90d6eebf9a84cc88e4cd2af3928004ba59e693a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/90d6eebf9a84cc88e4cd2af3928004ba59e693a4",
+                "reference": "90d6eebf9a84cc88e4cd2af3928004ba59e693a4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": "^7.0",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.8|^3.0|^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2|^7.0",
+                "symfony/var-dumper": "^3.0|^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ImageOptimizer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily optimize images using PHP",
+            "homepage": "https://github.com/spatie/image-optimizer",
+            "keywords": [
+                "image-optimizer",
+                "spatie"
+            ],
+            "time": "2018-11-19T22:17:30+00:00"
         },
         {
             "name": "spatie/once",

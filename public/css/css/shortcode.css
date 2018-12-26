@@ -1362,7 +1362,8 @@
 /* - Subscribe Section */
 
 .subscribe-section {
-	background-image: url("../images/subscribe-bg.jpg");
+	/* background-image: url("../images/subscribe-bg.jpg"); */
+	background-color: #ddd;
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;

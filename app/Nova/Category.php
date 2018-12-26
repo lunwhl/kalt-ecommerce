@@ -50,7 +50,8 @@ class Category extends Resource
 
             Select::make('Type')->options([
                 'brand' => 'Brand',
-                'horsepower' => 'Horse Power',
+                'horsepower' => 'Hose Power',
+                'features' => 'Features',
                 'type' => 'Type',
             ])->displayUsingLabels(),
 

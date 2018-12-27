@@ -46,7 +46,28 @@ class OrderController extends Controller
 
     public function index()
     {
-        //
+        return view('order.page');
+    }
+
+    public function items()
+    {
+        $sorting = request()->descending == 'true' ? 'DESC' : 'ASC';
+        $skip = (request()->page - 1) * request()->row;
+        
+        $orders = Auth::user()->orders()->with('items')
+                                ->orderBy(request()->sort_by, $sorting)
+                                ->skip($skip)
+                                ->take(request()->row)
+                                ->get();
+
+        return response(['orders' => $orders]);
+    }
+
+    public function total()
+    {
+        $total = Auth::user()->orders()->count();
+
+        return response(['total' => $total]);
     }
 
     /**

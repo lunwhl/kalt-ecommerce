@@ -25,6 +25,7 @@ Vue.component('shop-page', require('./pages/Shop.vue'));
 Vue.component('cart-page', require('./pages/Cart.vue'));
 Vue.component('checkout-page', require('./pages/Checkout.vue'));
 Vue.component('product-page', require('./pages/Product.vue'));
+Vue.component('order-page', require('./pages/Order.vue'));
 Vue.component('cart', require('./components/Cart.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
@@ -40,11 +41,24 @@ Vue.component('cart', require('./components/Cart.vue'));
  */
 Vue.component('loader', require('./base/Loader.vue'));
 
+import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
-window.Vuetify = require('vuetify');
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#1daaa3',
+    secondary: '#b0bec5',
+    accent: '#8c9eff',
+    error: '#b71c1c'
+  }
+})
 
+// window.Vuetify = require('vuetify');
+// import colors from 'vuetify/es5/util/colors'
+
+Vue.component('text-input', require('./base/TextInput.vue'));
+Vue.use(Vuetify);
 const app = new Vue({
     el: '#app'
 });

@@ -2073,7 +2073,7 @@ a:hover {
 		right: 0;
 		left: auto;
 		top: 100%;
-		width: 350px;
+		width: 550px;
 		padding-bottom: 20px;
 		padding-top: 15px;
 	}
@@ -2129,6 +2129,7 @@ a:hover {
 	}
 	.header-main .cart .mini_cart_item {
 		margin-bottom: 12px;
+		width: 100%;
 	}
 	.header-main .cart .mini_cart_item .shop-thumbnail img {
 		margin-right: 15px;

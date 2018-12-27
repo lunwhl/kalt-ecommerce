@@ -107,6 +107,19 @@
 	padding: 24px 9px 25px;
 }
 
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav > li.active > a,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav > li.active:hover > a,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav > li.active:focus > a,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav > li:hover > a,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav > li:focus > a,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav > li > a:hover,
+.menu-block-1 .ow-navigation .nav.navbar-nav > li > a:focus,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav .dropdown li:hover > a,
+.menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav .dropdown li > a:hover {
+	color: #1daaa3;
+	background-color: transparent;
+}
+
 /*------------------------------
 
 	* Responsive

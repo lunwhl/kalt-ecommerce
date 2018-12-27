@@ -23,3 +23,7 @@
   }
 }
 
+.application--wrap {
+  min-height: 0px !important;
+}
+

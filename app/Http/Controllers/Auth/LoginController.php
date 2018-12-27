@@ -54,6 +54,8 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         Common::addCartDependAuth();
-        return redirect(session('link'));
+
+        return response(['result' => true]);
+        // return redirect(session('link'));
     }
 }

@@ -68,11 +68,17 @@
 						<div class="dropdown-bar">
 							<div class="language-dropdown dropdown">
 								@if(Auth::check())
-									<a href="/logout" class="btn"><span>Logout</span></a>
+									<button class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}<span class="caret"></span></button>
+									<ul class="dropdown-menu no-padding">
+										<!-- <li><a href="#" title="sarah1">My Profile</a></li> -->
+										<li><a href="/api/order">My order</a></li>
+										<li><a href="/logout">Logout</a></li>
+									</ul>
 								@else
-									<a href="/login" class="btn">Login</a>
+									<a onclick="openLogin()" class="btn">Login</a>
 								@endif
 							</div>
+							
 						</div>
 					</div><!-- Container /- -->
 				</div><!-- Top Header /- -->
@@ -121,39 +127,18 @@
 						</div>
 						<div class="navbar-collapse collapse navbar-right" id="navbar">
 							<ul class="nav navbar-nav menubar">
-								<li class="dropdown">
+								<li class="dropdow">
 									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/">Home</a>
 								</li>
 								<li class="dropdown">
 									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/shop">Shop</a>
 								</li>
 								<li class="dropdown">
-									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="shop-2.html">Bed Room</a>
-									<i class="ddl-switch fa fa-angle-down"></i>
-									<ul class="dropdown-menu">
-										<li><a title="Shop 2" href="shop-2.html">Shop 2</a></li>
-									</ul>
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/home/#about-us">About Us</a>
 								</li>
-								<li><a title="Sofas" href="#saleup-section">Sofas</a></li>
-								<li><a title="Latest Product" href="#latest-product">Latest Product</a></li>
-								<li class="dropdown">
-									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="best seller" href="shop.html">best seller</a>
-									<i class="ddl-switch fa fa-angle-down"></i>
-									<ul class="dropdown-menu">
-										<li><a title="product-detail" href="product-detail.html">product Detail</a></li>
-										<li><a title="Cart" href="cart.html">Cart</a></li>
-										<li><a title="Checkout" href="checkout.html">Checkout</a></li>
-									</ul>
-								</li>
-								<li class="dropdown">
-									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Latest News" href="#latest-blog">Latest News</a>
-									<i class="ddl-switch fa fa-angle-down"></i>
-									<ul class="dropdown-menu">
-										<li><a title="Blog" href="blog.html">Blog</a></li>
-										<li><a title="Blog Post" href="blog-post.html">Blog Post</a></li>
-									</ul>
-								</li>
-								<li><a title="Contact Us" href="contact-us.html">Contact Us</a></li>
+								<li><a href="/home/#our-product">Our Products</a></li>
+								<li><a href="/home/#faq">FAQ</a></li>
+								<!-- <li><a title="Contact Us" href="contact-us.html">Contact Us</a></li> -->
 							</ul>
 						</div>
 					</nav><!-- Navigation /- -->
@@ -214,5 +199,61 @@ $(function(){
         }
     })
 })
+
+function openLogin(){
+	window.event.$emit("login-dialog", {'openDialog': true})
+}
+
+jQuery(document).ready(function(jQuery) {    
+		if(location.pathname === '/' || location.pathname === '/home'){        
+            var topMenu = jQuery(".menubar"),
+                offset = 70,
+                topMenuHeight = topMenu.outerHeight()+offset,
+                // All list items
+                menuItems =  topMenu.find('a[href*="#"]'),
+                // Anchors corresponding to menu items
+                scrollItems = menuItems.map(function(){
+                  var href = jQuery(this).attr("href"),
+                  id = href.substring(href.indexOf('#')),
+
+                  item = jQuery(id);
+                  //console.log(item)
+                  if (item.length) { return item; }
+                });
+
+            // so we can get a fancy scroll animation
+            menuItems.click(function(e){
+              var href = jQuery(this).attr("href"),
+                id = href.substring(href.indexOf('#'));
+                  offsetTop = href === "#" ? 0 : jQuery(id).offset().top-topMenuHeight+1;
+              jQuery('html, body').stop().animate({ 
+                  scrollTop: offsetTop
+              }, 900);
+              e.preventDefault();
+            });
+
+            // Bind to scroll
+            jQuery(window).scroll(function(){
+               // Get container scroll position
+               var fromTop = jQuery(this).scrollTop()+topMenuHeight;
+
+               // Get id of current scroll item
+               var cur = scrollItems.map(function(){
+                 if (jQuery(this).offset().top < fromTop)
+                   return this;
+               });
+
+               // Get the id of the current element
+               cur = cur[cur.length-1];
+               var id = cur && cur.length ? cur[0].id : "";               
+
+               menuItems.parent().removeClass("active")
+               if(id){
+                    menuItems.parent().end().filter("[href*='#"+id+"']").parent('li').addClass("active");
+               }
+
+            })
+        }
+    })
 </script>
 </html>

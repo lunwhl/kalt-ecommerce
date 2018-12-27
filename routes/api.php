@@ -43,6 +43,9 @@ Route::group(['prefix' => 'home'], function() {
 
 Route::group(['prefix' => 'order'], function() {
 	Route::post('/', 'OrderController@store');
+	Route::get('/', 'OrderController@index');
+	Route::get('/items', 'OrderController@items');
+	Route::get('/total', 'OrderController@total');
 	Route::get('/completed', 'OrderController@thankyou');
 });
 

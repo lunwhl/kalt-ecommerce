@@ -79,7 +79,7 @@
 	                                </div>
 	                            </div>
 	                            <div class="simple-article size-3 col-xs-b30 fr-view">Hose Power: {{getHosePower}}</div>
-	                            <div class="simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
+	                            
 	                            <div class="row col-xs-b40">
 	                                <div class="col-sm-3">
 	                                    <div class="h6 detail-data-title size-1">quantity:</div>
@@ -116,6 +116,17 @@
 	                                </div>
 	                            </div>
 	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-md-12">
+	                    <div class="row">
+	                    	<div class="text-center">
+				                <div class="h3">Description</div>
+				                <div class="title-underline center"><span></span></div>
+				            </div>
+				            <div class="text-center">
+	                    		<div class="simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
+	                    	</div>
 	                    </div>
 	                </div>
 	            </div>

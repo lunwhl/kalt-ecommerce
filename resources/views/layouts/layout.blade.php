@@ -123,11 +123,11 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="text-logo desktop-hide" href="index.html"><span>Furn</span>Home</a>
+							<!-- <a class="text-logo desktop-hide" href="index.html"><span>Furn</span>Home</a> -->
 						</div>
 						<div class="navbar-collapse collapse navbar-right" id="navbar">
 							<ul class="nav navbar-nav menubar">
-								<li class="dropdow">
+								<li class="dropdown homeAnchor">
 									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/">Home</a>
 								</li>
 								<li class="dropdown">
@@ -249,7 +249,10 @@ jQuery(document).ready(function(jQuery) {
 
                menuItems.parent().removeClass("active")
                if(id){
+               		$('.homeAnchor').removeClass("active");
                     menuItems.parent().end().filter("[href*='#"+id+"']").parent('li').addClass("active");
+               } else {
+               		$('.homeAnchor').addClass("active");
                }
 
             })

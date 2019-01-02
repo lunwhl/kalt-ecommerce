@@ -106,8 +106,16 @@
 	.header-empty-space{height: 100px;}
 }
 
-.description-width .fr-fic.fr-dii{
-	width: 100%;
+.description-width .fr-fic{
+	width: 100% !important;
+}
+
+.description-width .fr-dii{
+	width: 100% !important;
+}
+
+.description-width .fr-dib{
+	width: 100% !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/

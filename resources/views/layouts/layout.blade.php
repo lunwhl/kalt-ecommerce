@@ -164,8 +164,8 @@
 	</div>
 	
 	<!-- JQuery v1.11.3 -->
-	<script src="{{ URL::asset('/js/jquery.min.js') }}"></script>
-	<script src="{{ URL::asset('/js/bootstrap.min.js') }}"></script>
+	<script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+	<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
 	<!-- Library - Js -->
 	<script src="{{ URL::asset('libraries/lib.js') }}"></script>
@@ -180,8 +180,8 @@
 	<!-- Library - Google Map API -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
-	<script src="{{ URL::asset('/js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('/js/app.js') }}"></script>
+	<script src="{{ URL::asset('js/form.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>

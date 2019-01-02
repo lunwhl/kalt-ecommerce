@@ -121,11 +121,11 @@
 	                <div class="col-md-12">
 	                    <div class="row">
 	                    	<div class="text-center">
-				                <div class="h3">Description</div>
+				                <div class="h4">Description</div>
 				                <div class="title-underline center"><span></span></div>
 				            </div>
 				            <div class="text-center">
-	                    		<div class="simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
+	                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
 	                    	</div>
 	                    </div>
 	                </div>

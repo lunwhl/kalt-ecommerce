@@ -36507,7 +36507,8 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "text-center" }, [
                 _c("div", {
-                  staticClass: "simple-article size-3 col-xs-b30 fr-view",
+                  staticClass:
+                    "description-width simple-article size-3 col-xs-b30 fr-view",
                   domProps: {
                     innerHTML: _vm._s(_vm.selectedProduct.description)
                   }
@@ -36594,7 +36595,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
-      _c("div", { staticClass: "h3" }, [_vm._v("Description")]),
+      _c("div", { staticClass: "h4" }, [_vm._v("Description")]),
       _vm._v(" "),
       _c("div", { staticClass: "title-underline center" }, [_c("span")])
     ])

@@ -1,5 +1,5 @@
 <template>
-	<div data-app="true">
+    <v-app>
 		<!--======= SUB BANNER =========-->
 	    <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
 	      <div class="container">
@@ -76,7 +76,8 @@
 	       </div>
 	     </section>
 	     <share></share>
-	</div>
+         <login></login>
+	</v-app>
 
 </template>
 @stop
@@ -84,10 +85,12 @@
 <script>
 	import Share from '../components/Share.vue';
 	import ListProduct from '../components/ListProduct.vue';
+    import Login from '../components/Login.vue';
 
     export default {
     	components: {
 			Share,
+            Login,
 			ListProduct
 		},
 

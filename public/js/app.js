@@ -33194,6 +33194,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Share_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Share_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Login_vue__);
 //
 //
 //
@@ -33277,6 +33279,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -33284,6 +33288,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         Share: __WEBPACK_IMPORTED_MODULE_0__components_Share_vue___default.a,
+        Login: __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default.a,
         ListProduct: __WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue___default.a
     },
 
@@ -33412,10 +33417,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { attrs: { "data-app": "true" } },
+    "v-app",
     [
-      _vm._m(0),
+      _c(
+        "section",
+        {
+          staticClass: "sub-banner animate fadeInUp",
+          attrs: { "data-wow-delay": "0.4s" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("h4", [_vm._v("ALL PRODUCTS")])
+          ])
+        ]
+      ),
       _vm._v(" "),
       _c("section", { staticClass: "section-p-30px pages-in" }, [
         _c("div", { staticClass: "container" }, [
@@ -33513,9 +33528,34 @@ var render = function() {
                         : _vm._e()
                     }),
                     _vm._v(" "),
-                    _vm._m(1),
+                    _c("div", { staticClass: "heading" }, [
+                      _c("h6", [_vm._v("HOSE POWER")])
+                    ]),
                     _vm._v(" "),
-                    _vm._m(2),
+                    _c("div", { staticClass: "cost-price-content" }, [
+                      _c("div", {
+                        staticClass: "price-range",
+                        attrs: { id: "price-range" }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "price-min",
+                          attrs: { id: "price-min" }
+                        },
+                        [_vm._v("20")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "price-max",
+                          attrs: { id: "price-max" }
+                        },
+                        [_vm._v("80")]
+                      )
+                    ]),
                     _vm._v(" "),
                     _c(
                       "a",
@@ -33649,54 +33689,14 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("share")
+      _c("share"),
+      _vm._v(" "),
+      _c("login")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      {
-        staticClass: "sub-banner animate fadeInUp",
-        attrs: { "data-wow-delay": "0.4s" }
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("h4", [_vm._v("ALL PRODUCTS")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "heading" }, [
-      _c("h6", [_vm._v("HOSE POWER")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "cost-price-content" }, [
-      _c("div", { staticClass: "price-range", attrs: { id: "price-range" } }),
-      _vm._v(" "),
-      _c("span", { staticClass: "price-min", attrs: { id: "price-min" } }, [
-        _vm._v("20")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "price-max", attrs: { id: "price-max" } }, [
-        _vm._v("80")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

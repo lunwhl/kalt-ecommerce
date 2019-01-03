@@ -47,41 +47,49 @@
 
 /* - Photo Slider */
 .fix-height {
-	height: 900px; 
+	height: 90vh; 
+	background-position: center; 
  }
 .photo-slider {
 	background-image: url('/images/banner-installation.jpg');
 	background-size: cover;
+	background-position: center; 
 }
 .photo-slider .slide-1 {
 	background-image: url('/images/banner-online-shop.jpg');
 	background-size: cover;
-	height: 900px;
+	background-position: center; 
+	height: 90vh;
 }
 .photo-slider .slide-2 {
 	background-image: url('/images/banner-pickup.jpg');
 	background-size: cover;
-	height: 900px;
+	background-position: center; 
+	height: 90vh;
 }
 
 @media screen and (max-width: 547px) {
   .photo-slider {
     height: 200px;
 	background-size: contain;
+	background-position: center; 
   }
 
   .photo-slider .slide-1 {
     height: 200px;
 	background-size: contain;
+	background-position: center; 
   }
   
   .photo-slider .slide-2 {
 	height: 200px;
 	background-size: contain;
+	background-position: center; 
   }
   
   .fix-height {
 	height: 200px;
+	background-position: center; 
   }
 }
 

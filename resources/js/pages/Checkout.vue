@@ -251,7 +251,6 @@
 		        			!_.every(this.carts, x => x.length > 0))
 		        			window.location.href = "/shop";
 				}); 
-        		
         	},
         },
 

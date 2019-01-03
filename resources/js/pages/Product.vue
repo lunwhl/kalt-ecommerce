@@ -1,5 +1,5 @@
 	<template>
-		<div>
+		<v-app>
 			<div class="container">
 	            <div class="text-center">
 	                <div class="h2">Product Details</div>
@@ -129,6 +129,17 @@
 	                    	</div>
 	                    </div>
 	                </div>
+	                <div class="col-md-12">
+	                    <div class="row">
+	                    	<div class="text-center">
+				                <div class="h4">Related Products</div>
+				                <div class="title-underline center"><span></span></div>
+				            </div>
+				            <div class="text-center">
+	                    		<ListProduct :products="relatedProducts['relatedProducts']" :fromHome="true"></ListProduct>	
+	                    	</div>
+	                    </div>
+	                </div>
 	            </div>
         	</div>
 			<v-snackbar v-model="snackbar"
@@ -138,14 +149,25 @@
 			>
 			{{snackbarMsg}}
 			</v-snackbar>
-		</div>
+			<share></share>
+			<login></login>
+		</v-app>
 	</template>
 @stop
 
 <script>
+	import ListProduct from '../components/ListProduct.vue';
+	import Share from '../components/Share.vue';
+	import Login from '../components/Login.vue';
 	import VueClipboard from 'vue-clipboard2';
     Vue.use(VueClipboard);
     export default {
+    	components: {
+    		Share,
+			Login,
+			ListProduct
+		},
+
     	props: ['product'],
     	data() {
     		return {
@@ -157,6 +179,7 @@
     			snackbar: false,
     			snackbarMsg: '',
     			timeout: 2000,
+    			relatedProducts: [],
     		};
     	},
 
@@ -164,10 +187,14 @@
         	this.selectedProduct = this.product;
         	this.selectBrand();
             this.getCart();
+         	window.event.$on("share-to-shop", (value) => {
+        		window.event.$emit("share-dialog", {'openDialog': value['openDialog'], 'product': value['product']});
+            });
             window.event.$on("copied", () => {
             	this.snackbarMsg = 'Link copied';
         		this.snackbar = true;
         	});
+        	this.getRelatedProduct(this.product.id);
         },
 
         methods: {
@@ -180,6 +207,24 @@
 
             facebookSharerUrl(product){
                 return "https://www.facebook.com/sharer.php?u=" + window.location.origin + '/product/' + product.id + "&t=" + product.name;
+            },
+
+            whatsappShareUrl(product){
+            	if(product.name){
+                	let productName = product.name.replace(" ", "%");
+                	return "whatsapp://send?text=" +window.location.origin + '/product/' + product.id + "&t=" + productName;
+            	}
+            },
+
+            getRelatedProduct(id){
+                let url = '/api/product/related?id=' + id;
+
+            	axios.get(url)
+        		.then(response => this.getRelatedProductSuccesss(response.data));
+            },
+
+            getRelatedProductSuccesss(data){
+            	this.relatedProducts = data;
             },
 
         	selectBrand() {

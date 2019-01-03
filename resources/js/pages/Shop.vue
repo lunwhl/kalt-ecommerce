@@ -161,7 +161,6 @@
         	},
 
         	filterHorsePower() {
-                console.log("hehe");
         		this.hpMin = $('#price-min').text();
         		this.hpMax = $('#price-max').text();
         		Vue.nextTick(()=>{

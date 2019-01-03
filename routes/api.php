@@ -34,6 +34,7 @@ Route::group(['prefix' => 'shop'], function() {
 
 Route::group(['prefix' => 'product'], function() {
 	Route::get('/', 'ProductController@show');
+	Route::get('/related', 'ProductController@getRelatedProduct');
 });
 
 Route::group(['prefix' => 'home'], function() {

@@ -9,7 +9,7 @@
                 <v-card-title
                 class="headline"
                 primary-title
-                style="color:#fff; background: rgb(29, 170, 163);"
+                style="color:#fff; background: #40c7f2;"
                 >
                 <span>Order {{order['id']}}</span>
                 </v-card-title>

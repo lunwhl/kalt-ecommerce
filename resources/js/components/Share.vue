@@ -79,8 +79,10 @@
             },
 
             whatsappShareUrl(product){
-                let productName = product.name.replace(" ", "%");
-                return "whatsapp://send?text=" +window.location.origin + '/product/' + product.id + "&t=" + productName;
+                if(product.name){
+                    let productName = product.name.replace(" ", "%");
+                    return "whatsapp://send?text=" +window.location.origin + '/product/' + product.id + "&t=" + productName;
+                }
             }
         },
     }

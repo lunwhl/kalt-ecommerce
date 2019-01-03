@@ -50,7 +50,7 @@
 
         methods: {
             addToCart(product, isBuy = null) {
-                let url = 'cart/add/' + product.id;
+                let url = '/cart/add/' + product.id;
                 axios.post(url)
                 .then(response => this.addToCartSuccess(response.data, isBuy, product.name));
             },

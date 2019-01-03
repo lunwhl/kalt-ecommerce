@@ -23,6 +23,38 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getRelatedProduct()
+    {
+        $product = Product::where('id', request()->id)->first();
+        $filteredCategory = $product->categories()->get()->filter(function ($value, $key) {
+                        return $value->type != 'brand';
+                    });
+        $pluckCategoryId = $filteredCategory->pluck('id')->toArray();
+
+        $productIds = collect();
+        foreach(Product::all() as $product)
+        {  
+            $filteredProductCategory = $product->categories->filter(function ($value, $key) {
+                        return $value->type != 'brand';
+                    });
+            $pluckProductCategoryId = $filteredProductCategory->pluck('id')->toArray();
+
+            $arrayDiffResult = array_diff($pluckCategoryId,$pluckProductCategoryId);
+        
+            if(count($arrayDiffResult) == 0)
+            {
+                $productIds->push($product->id);
+            }
+        }
+        $productIds = $productIds->filter(function ($value, $key) {
+                        return $value != request()->id;
+                    });
+        $relatedProducts = Product::whereIn('id', $productIds)->take(4)->get();
+
+        return response(['relatedProducts' => $relatedProducts]);
+    }
+
     public function create()
     {
         //

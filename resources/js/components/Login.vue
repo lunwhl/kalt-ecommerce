@@ -8,7 +8,7 @@
           width="400"
         >  
             <v-card v-if="!isRegister">
-                <v-card-title style="color:#fff; background: rgb(29, 170, 163);">
+                <v-card-title style="color:#fff; background: #40c7f2;">
                     <v-layout row>
                       <v-flex xs12 text-xs-center>
                           <h3>Login</h3>
@@ -36,7 +36,7 @@
                 </v-card-text>
             </v-card>
             <v-card v-else>
-                <v-container style="color:#fff; background: rgb(29, 170, 163);">
+                <v-container style="color:#fff; background: #40c7f2;">
                     <v-layout row>
                       <v-flex style="padding-left: 10px;" xs6 text-xs-left>
                           <h3 class="px-0">Register</h3>

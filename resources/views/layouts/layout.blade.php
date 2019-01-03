@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-	<title>Home - Furniture</title>
+	<title>Kalt</title>
 
 	<!-- Standard Favicon -->
 	<link rel="icon" type="image/x-icon" href="{{ URL::asset('/images/favicon.ico') }}" />
@@ -75,7 +75,7 @@
 										<li><a href="/logout">Logout</a></li>
 									</ul>
 								@else
-									<a onclick="openLogin()" class="btn">Login</a>
+									<a onclick="openLogin()" class="btn login-btn">Login</a>
 								@endif
 							</div>
 							

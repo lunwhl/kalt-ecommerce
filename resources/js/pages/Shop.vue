@@ -63,7 +63,7 @@
     	              	<v-pagination
     						v-model="page"
     						:length="countPaginate"
-    						color="#1daaa3"
+    						color="#40c7f2"
     						@input="next"
                     	></v-pagination>
     	            </div>
@@ -75,6 +75,13 @@
 	        </div>
 	       </div>
 	     </section>
+         <v-snackbar v-model="snackbar"
+        right="right"
+        :timeout="timeout"
+        top="top"
+        >
+        {{snackbarMsg}}
+        </v-snackbar>
 	     <share></share>
          <login></login>
 	</v-app>
@@ -113,6 +120,9 @@
     			sortSelected: 'asc', 
     			productTotal: 0,
     			products: [],
+                snackbar: false,
+                snackbarMsg: '',
+                timeout: 2000,
     		};
     	},
 
@@ -129,6 +139,10 @@
 
             window.event.$on("slider-changed", () => {
                 this.filterHorsePower();
+            });
+            window.event.$on("copied", () => {
+                this.snackbarMsg = 'Link copied';
+                this.snackbar = true;
             });
         },
 

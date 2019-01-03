@@ -60,7 +60,7 @@ a {
 	margin-top: 50px;
 }
 .side-bar .heading h6 {
-	color: #af5875;
+	color: #488dcb;
 	margin: 0px;
 	font-size: 12px;
 	font-weight: normal;
@@ -82,7 +82,7 @@ a {
 	color: #b8b8b8;
 }
 .side-bar .cate li a:hover {
-	color: #af5875;
+	color: #488dcb;
 	padding-left: 5px;
 }
 .side-bar .cate .drop-menu .drop-menu {
@@ -122,7 +122,7 @@ a {
 	content: "\f056";
 	font-family: 'FontAwesome';
 	padding: 0px;
-	color: #af5875;
+	color: #488dcb;
 	border-radius: 50%;
 	text-align: center;
 	font-size: 16px;
@@ -199,14 +199,14 @@ a {
 	float: left;
 }
 .items-short-type .grid-list a:hover {
-	background: #af5875;
+	background: #488dcb;
 	color: #fff;
-	border-color: #af5875;
+	border-color: #488dcb;
 }
 .items-short-type .grid-list a.active {
-	background: #af5875;
+	background: #488dcb;
 	color: #fff;
-	border-color: #af5875;
+	border-color: #488dcb;
 }
 .short-by {
 	width: 400px;
@@ -269,7 +269,7 @@ a {
 	font-size: 12px;
 }
 .view-num li a:hover {
-	color: #af5875;
+	color: #488dcb;
 }
 li {
 	list-style: none;
@@ -297,7 +297,7 @@ li {
 	width: 58px;
 	float: right;
 	position: absolute;
-	background: #af5875;
+	background: #488dcb;
 	line-height: 58px;
 	text-align: center;
 	color: #fff;

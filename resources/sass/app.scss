@@ -1,33 +1,41 @@
-
 .product-featured-image {
-	height: 300px;
-	width: 100%;
-	background-size: contain;
-	background-position: center center;
+  height: 300px;
+  width: 100%;
+  background-size: contain;
+  background-position: center center;
 }
 
 .over-item {
-	padding-top: 31.5% !important;
+  padding-top: 31.5% !important;
 }
 
-.over-item ul{
-	width: 100%;
+.over-item ul {
+  width: 100%;
 }
 
-@media screen and (max-width: 490px){
-	.over-item ul {
-		width: 75%;
-	}
+@media screen and (max-width: 490px) {
+  .over-item ul {
+    width: 75%;
+  }
 
-	.over-item {
-		padding-top: 24.5% !important;
-	}
+  .over-item {
+    padding-top: 24.5% !important;
+  }
 }
 
-.over-item ul li {
-	
+@media screen and (min-width: 1885px) {
+  .over-item ul {
+    width: 50%;
+  }
+
+  .over-item {
+    padding-top: 24.5% !important;
+  }
 }
 
 .application--wrap {
-	min-height: 0px !important;
+  min-height: 0px !important;
 }
+
+
+

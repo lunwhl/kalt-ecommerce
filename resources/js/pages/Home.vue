@@ -11,35 +11,35 @@
 							<li data-target="#main-carousel" data-slide-to="1"></li>
 							<li data-target="#main-carousel" data-slide-to="2"></li>
 						</ol>
-						<div role="listbox" class="carousel-inner">
+						<div role="listbox" class="carousel-inner fix-height">
 							<div class="item active">
 								<div class="carousel-caption">
-									<h3 data-animation="animated fadeInLeft">New Way to Design Your Home</h3>
+									<!-- <h3 data-animation="animated fadeInLeft">New Way to Design Your Home</h3>
 									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
 									<div class="col-md-12">
 										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
 									</div>
-									<img data-animation="animated fadeInDown" src="images/slider-1.png" alt="slider" width="900" height="342" />
+									<img data-animation="animated fadeInDown" src="images/slider-1.png" alt="slider" width="900" height="342" /> -->
 								</div>
 							</div>
 							<div class="item slide-1">
 								<div class="carousel-caption">
-									<h3 data-animation="animated fadeInLeft">Give Us Something To Assemble</h3>
+									<!-- <h3 data-animation="animated fadeInLeft">Give Us Something To Assemble</h3>
 									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
 									<div class="col-md-12">
 										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
 									</div>
-									<img data-animation="animated fadeInDown" src="images/slider-2.png" alt="slider" width="722" height="343" />
+									<img data-animation="animated fadeInDown" src="images/slider-2.png" alt="slider" width="722" height="343" /> -->
 								</div>
 							</div>
 							<div class="item slide-2">
 								<div class="carousel-caption">
-									<h3 data-animation="animated fadeInLeft">We like To Work A Lot With Wood</h3>
+									<!-- <h3 data-animation="animated fadeInLeft">We like To Work A Lot With Wood</h3>
 									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
 									<div class="col-md-12">
 										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
 									</div>
-									<img data-animation="animated fadeInDown" src="images/slider-3.png" alt="slider" width="1056" height="345" />
+									<img data-animation="animated fadeInDown" src="images/slider-3.png" alt="slider" width="1056" height="345" /> -->
 								</div>
 							</div>
 						</div>
@@ -115,6 +115,13 @@
 						logged_out_greeting="GoodBye!... Hope to see you soon."
 						minimized="false">
 				</div>
+				<v-snackbar v-model="snackbar"
+				right="right"
+				:timeout="timeout"
+				top="top"
+				>
+				{{snackbarMsg}}
+				</v-snackbar>
 				<share></share>
 				<login></login>
 			</div>
@@ -142,6 +149,9 @@
     			latestProducts: [],
     			testCart: [],
     			Cart: [],
+    			snackbar: false,
+    			snackbarMsg: '',
+    			timeout: 2000,
     		};
     	},
 
@@ -151,6 +161,10 @@
             window.event.$on("share-to-shop", (value) => {
         		window.event.$emit("share-dialog", {'openDialog': value['openDialog'], 'product': value['product']});
             });
+            window.event.$on("copied", () => {
+            	this.snackbarMsg = 'Link copied';
+        		this.snackbar = true;
+        	});
         },
 
         methods: {

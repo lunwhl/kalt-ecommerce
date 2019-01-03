@@ -47,7 +47,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#1daaa3',
+    primary: '#40c7f2',
     secondary: '#b0bec5',
     accent: '#8c9eff',
     error: '#b71c1c'

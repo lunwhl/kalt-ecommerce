@@ -1,6 +1,6 @@
 <template>
     <div class="popurlar_product">
-        <ul class="row">
+        <ul class="row" style="padding-left: 0px !important;">
 
         <!-- New Products -->
             <li v-for="product in products" :class="colSm" data-wow-delay="0.4s">
@@ -10,7 +10,7 @@
                     <!-- <img :src="$options.filters.set_image(product.image_path)" alt="">  -->
                     <!-- Hover Details -->
                         <div class="over-item">
-                            <ul class="animated fadeIn" style="padding-left:0px;">
+                            <ul class="animated fadeIn" style="padding-left: 0px !important;">
                                 <li> <a style="cursor:pointer;" @click="addToCart(product, true)" data-lighter><i class="fa fa-credit-card-alt"></i></a></li>
                                 <li> <a style="cursor:pointer;" @click="share(product)"><i class="fa fa-share"></i></a></li>
                                 <li> <a style="cursor:pointer;" :href="/product/+product.id"><i class="fa fa-eye"></i></a></li>

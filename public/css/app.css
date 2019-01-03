@@ -15,11 +15,11 @@
 
 @media screen and (max-width: 490px) {
   .over-item ul {
-    width: 75%;
+    width: 80%;
   }
 
   .over-item {
-    padding-top: 24.5% !important;
+    padding-top: 25.5% !important;
   }
 }
 

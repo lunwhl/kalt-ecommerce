@@ -31702,7 +31702,10 @@ var render = function() {
     [
       _c(
         "ul",
-        { staticClass: "row" },
+        {
+          staticClass: "row",
+          staticStyle: { "padding-left": "0px !important" }
+        },
         _vm._l(_vm.products, function(product) {
           return _c(
             "li",
@@ -31722,7 +31725,7 @@ var render = function() {
                     "ul",
                     {
                       staticClass: "animated fadeIn",
-                      staticStyle: { "padding-left": "0px" }
+                      staticStyle: { "padding-left": "0px !important" }
                     },
                     [
                       _c("li", [

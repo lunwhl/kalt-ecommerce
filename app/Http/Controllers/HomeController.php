@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\InquiryEmail;
+use Illuminate\Support\Facades\Mail;
 use App\User;
 use App\Product;
 use Auth;
@@ -56,5 +58,13 @@ class HomeController extends Controller
         $file_path = public_path('storage/' . $product->image_path);
         
         return response()->download($file_path);
+    }
+
+    public function sendInquiry(Request $request)
+    {
+        $this->validate($request, [ 'contact_name' => 'required',
+                                    'contact_email' => 'required|email' ]);
+        
+        Mail::to("info@kalt.com.my")->send(new InquiryEmail($request));
     }
 }

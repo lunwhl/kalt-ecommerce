@@ -1234,6 +1234,21 @@
 	font-size: 24px;
 	text-transform: capitalize;
 }
+
+.service-table {
+	border: 1px solid;
+}
+
+.service-table tr td{
+	border: 1px solid;
+	padding: 1px 10px;
+}
+
+.service-table th{
+	border: 1px solid;
+	padding: 1px 10px;
+}
+
 .comment-section {
 	display: inline-block;	
 	margin-top: 80px;	
@@ -1410,6 +1425,13 @@
 .subscribe-section.container-fluid {
 	padding: 140px 0;
 }
+
+@media (max-width: 530px) {
+	.subscribe-section.container-fluid{
+		padding: 65px 0px;
+	}
+}
+
 .subscribe-section.subscribe-section-1 {
 	background-image: url("../images/subscribe-bg-1.jpg");
 }
@@ -1450,6 +1472,66 @@
 }
 .subscribe-content .col-md-6.input-group {
 	margin: 0 auto;
+}
+
+.contact-btn {
+	background-color: #40c7f2;
+    border: 1px solid #40c7f2;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 25px 15px 0;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+}
+
+.contact-btn:hover {
+	background-color: transparent;
+    border: 1px solid #40c7f2;
+    color: #40c7f2;
+}
+
+.subscribe-section .about-us-content p {
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	letter-spacing: 1.26px;
+	margin-bottom: 30px;
+}
+
+.subscribe-section .about-us-content {
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	letter-spacing: 1.26px;
+	margin-bottom: 30px;
+	text-align: left;
+}
+
+.contact-us-content p {
+	color: #000;
+	font-family: 'Lato', sans-serif;
+	/* font-style: italic; */
+	font-size: 18px;
+	letter-spacing: 1.26px;
+	margin-bottom: 30px;
+}
+
+.contact-us-content {
+	color: #000;
+	font-family: 'Lato', sans-serif;
+	/* font-style: italic; */
+	font-size: 18px;
+	letter-spacing: 1.26px;
+	margin-bottom: 30px;
+	text-align: left;
 }
 
 .subscribe-content .input-group .form-control {

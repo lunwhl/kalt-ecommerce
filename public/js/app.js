@@ -179,7 +179,7 @@ module.exports = function normalizeComponent (
 "use strict";
 
 
-var bind = __webpack_require__(6);
+var bind = __webpack_require__(8);
 var isBuffer = __webpack_require__(24);
 
 /*global toString:true*/
@@ -513,6 +513,53 @@ module.exports = g;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(54)
+/* template */
+var __vue_template__ = __webpack_require__(55)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Login.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6bdc8b8e", Component.options)
+  } else {
+    hotAPI.reload("data-v-6bdc8b8e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -533,10 +580,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(8);
+    adapter = __webpack_require__(10);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(8);
+    adapter = __webpack_require__(10);
   }
   return adapter;
 }
@@ -611,18 +658,18 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(54)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -639,7 +686,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/Login.vue"
+Component.options.__file = "resources/js/components/ListProduct.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -648,9 +695,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6bdc8b8e", Component.options)
+    hotAPI.createRecord("data-v-22ffc0d6", Component.options)
   } else {
-    hotAPI.reload("data-v-6bdc8b8e", Component.options)
+    hotAPI.reload("data-v-22ffc0d6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -661,7 +708,54 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(51)
+/* template */
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Share.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-740ac104", Component.options)
+  } else {
+    hotAPI.reload("data-v-740ac104", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 /*
@@ -743,7 +837,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -761,7 +855,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -951,7 +1045,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -962,7 +1056,7 @@ var settle = __webpack_require__(27);
 var buildURL = __webpack_require__(29);
 var parseHeaders = __webpack_require__(30);
 var isURLSameOrigin = __webpack_require__(31);
-var createError = __webpack_require__(9);
+var createError = __webpack_require__(11);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(32);
 
 module.exports = function xhrAdapter(config) {
@@ -1138,7 +1232,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1163,7 +1257,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1175,7 +1269,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1201,7 +1295,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12167,100 +12261,6 @@ module.exports = Vue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(41).setImmediate))
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(49)
-/* template */
-var __vue_template__ = __webpack_require__(50)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ListProduct.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-22ffc0d6", Component.options)
-  } else {
-    hotAPI.reload("data-v-22ffc0d6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(51)
-/* template */
-var __vue_template__ = __webpack_require__(53)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/Share.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-740ac104", Component.options)
-  } else {
-    hotAPI.reload("data-v-740ac104", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12737,7 +12737,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 __webpack_require__(19);
 
-window.Vue = __webpack_require__(12);
+window.Vue = __webpack_require__(14);
 
 window.event = new Vue();
 
@@ -30012,9 +30012,9 @@ module.exports = __webpack_require__(23);
 
 
 var utils = __webpack_require__(1);
-var bind = __webpack_require__(6);
+var bind = __webpack_require__(8);
 var Axios = __webpack_require__(25);
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 
 /**
  * Create an instance of Axios
@@ -30047,9 +30047,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(11);
+axios.Cancel = __webpack_require__(13);
 axios.CancelToken = __webpack_require__(39);
-axios.isCancel = __webpack_require__(10);
+axios.isCancel = __webpack_require__(12);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -30097,7 +30097,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(34);
 var dispatchRequest = __webpack_require__(35);
@@ -30202,7 +30202,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(9);
+var createError = __webpack_require__(11);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -30635,8 +30635,8 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(36);
-var isCancel = __webpack_require__(10);
-var defaults = __webpack_require__(3);
+var isCancel = __webpack_require__(12);
+var defaults = __webpack_require__(4);
 var isAbsoluteURL = __webpack_require__(37);
 var combineURLs = __webpack_require__(38);
 
@@ -30795,7 +30795,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(11);
+var Cancel = __webpack_require__(13);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -31147,7 +31147,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(9)))
 
 /***/ }),
 /* 43 */
@@ -31357,12 +31357,276 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Share_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Share_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Share_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Share_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Login_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31516,7 +31780,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       Cart: [],
       snackbar: false,
       snackbarMsg: '',
-      timeout: 2000
+      timeout: 2000,
+      form: new Form({
+        contact_name: '',
+        contact_email: '',
+        contact_message: '',
+        contact_subject: ''
+      })
     };
   },
   mounted: function mounted() {
@@ -31573,21 +31843,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }]
       });
     },
-    addToCart: function addToCart(product) {
+    submitInquiry: function submitInquiry() {
       var _this3 = this;
+
+      this.form.post('/api/home/send/inquiry', this.form).then(function (response) {
+        return _this3.submitInquirySuccess(response.data);
+      }).catch(function (error) {
+        return _this3.submitInquiryError(response.error);
+      });
+    },
+    submitInquirySuccess: function submitInquirySuccess(data) {
+      console.log(data);
+    },
+    submitInquiryError: function submitInquiryError(data) {
+      console.log(data);
+    },
+    addToCart: function addToCart(product) {
+      var _this4 = this;
 
       this.testCart = product;
       var url = 'cart/add/' + product.id;
       axios.post(url).then(function (response) {
-        return _this3.addToCartSuccess(response.data);
+        return _this4.addToCartSuccess(response.data);
       });
     },
     getCart: function getCart() {
-      var _this4 = this;
+      var _this5 = this;
 
       var url = 'cart/index';
       axios.post(url).then(function (response) {
-        return _this4.getCartSuccess(response.data);
+        return _this5.getCartSuccess(response.data);
       });
     },
     getCartSuccess: function getCartSuccess(data) {
@@ -32772,12 +33057,229 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "subscribe-content" }, [
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed cursus metus. Curabitur sollicitudin volutpat orci, eget semper lorem sodales vel. Donec et augue at leo convallis consequat. In hac habitasse platea dictumst. Nullam rutrum, urna sed ullamcorper viverra, orci erat tempus risus, at pharetra quam nunc in diam. Donec venenatis ex et augue porta, in feugiat nunc interdum. Mauris viverra finibus consectetur. Vestibulum interdum nulla eros, ac feugiat urna pulvinar sed. Fusce ut odio nec metus malesuada ullamcorper consectetur non orci. Aenean dictum libero risus, non mollis lectus malesuada pretium."
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "h4",
+                      {
+                        staticStyle: { color: "#40c7f2", "text-align": "left" }
+                      },
+                      [_vm._v("WHO WE ARE")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "about-us-content",
+                        staticStyle: { "text-align": "left" }
+                      },
+                      [
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tWe are a modernized online business to the Ban Leng, who has 30 years experience in air conditioning. \n\t\t\t\t\t\t\t\t\tWe, an one stop air conditioner online shop, committed to provide you with convenient and unique shopping, as well as, better value each and every time you shop at Kalt store.\n\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ]
                     )
                   ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "h4",
+                      {
+                        staticStyle: { color: "#40c7f2", "text-align": "left" }
+                      },
+                      [_vm._v("WHAT WE DOES")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "about-us-content" }, [
+                      _c(
+                        "ul",
+                        { staticStyle: { "list-style-type": "upper-greek" } },
+                        [
+                          _c("li", [
+                            _vm._v(
+                              "Our air conditioner are always sold at wholesale price."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Our air conditioner are branded and from reputable suppliers with high standard of quality control."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "We provide professional in-store and after sale services."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "We are a reliable organization which partnership with 30 years experiences air conditioner’s company."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "We have superb quality of services and accessories."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "We provide variety service from installation, scheduled servicing, inspection, repair, to warranty care."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "You no longer need to carry your heavy product home by yourself, as we will send you your products to your doorstep with affordable price."
+                            )
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "h4",
+                      {
+                        staticStyle: { color: "#40c7f2", "text-align": "left" }
+                      },
+                      [_vm._v("WHERE WE ARE")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "about-us-content",
+                        staticStyle: { "text-align": "left" }
+                      },
+                      [
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tOur warehouse is located in Bukit Mertajam, Pulau Pinang. You can find us here.\n\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "about-us-content",
+                      staticStyle: { "text-align": "left" }
+                    },
+                    [
+                      _c("div", { staticClass: "col-sm-6" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "#40c7f2",
+                              "text-align": "left"
+                            }
+                          },
+                          [_vm._v("Kalt Air Conditioning Sdn. Bhd.")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("7 & 9, Lebuh Nangka 2, Taman Desa Damai,"),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\t\t14000 Bukit Mertajam,"),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\t\tPulau Pinang."),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\t\tTel: 012-4020969"),
+                          _c("br"),
+                          _vm._v(" \n\t\t\t\t\t\t\t\t\tFax: 04-5399577 "),
+                          _c("br"),
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tOpening hour: Monday to Saturday 9.00am to 6.00pm\n\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-6" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "about-us-content",
+                            staticStyle: { "text-align": "center" }
+                          },
+                          [
+                            _c("img", {
+                              attrs: { src: "/images/kalt-company.png" }
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "about-us-content",
+                      staticStyle: { "text-align": "left" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "col-sm-6",
+                          staticStyle: { "margin-bottom": "30px" }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\tA. Kalt Customer Service Counter"
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\tB. Shop - Air Cond, Spare Part and Accesories"
+                          ),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\tC. Service & Repair Area"),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\tD. Warehouse"),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\tE. Dispatch Area"),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\tF. Admin Office"),
+                          _c("br"),
+                          _vm._v("\n\t\t\t\t\t\t\t\tG. Staff Pantry"),
+                          _c("br")
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-6" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "about-us-content",
+                            staticStyle: { "text-align": "center" }
+                          },
+                          [
+                            _c("img", {
+                              attrs: { src: "/images/warehouse.png" }
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  )
                 ])
               ])
             ]
@@ -32875,32 +33377,773 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "section-header" }, [
-                _c("h3", { staticStyle: { color: "white" } }, [_vm._v("FAQ")])
-              ]),
+              _c(
+                "div",
+                {
+                  staticClass: "section-header",
+                  staticStyle: { "margin-bottom": "20px" }
+                },
+                [
+                  _c("h3", { staticStyle: { color: "white" } }, [
+                    _vm._v("Service")
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "subscribe-content" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed cursus metus. Curabitur sollicitudin volutpat orci, eget semper lorem sodales vel. Donec et augue at leo convallis consequat. In hac habitasse platea dictumst. Nullam rutrum, urna sed ullamcorper viverra, orci erat tempus risus, at pharetra quam nunc in diam. Donec venenatis ex et augue porta, in feugiat nunc interdum. Mauris viverra finibus consectetur. Vestibulum interdum nulla eros, ac feugiat urna pulvinar sed. Fusce ut odio nec metus malesuada ullamcorper consectetur non orci. Aenean dictum libero risus, non mollis lectus malesuada pretium."
-                      )
+                _c(
+                  "h3",
+                  { staticStyle: { color: "#488dcb", "font-size": "20px" } },
+                  [_vm._v("Installation")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c(
+                      "h4",
+                      {
+                        staticStyle: { color: "#40c7f2", "text-align": "left" }
+                      },
+                      [_vm._v("ECONOMY INSTALLATION")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "about-us-content" }, [
+                      _c("ul", [
+                        _c("li", [
+                          _vm._v("Up to 10ft 0.61mm thickness copper piping")
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v(
+                            "Up to 10ft 100% copper cable (without casing)"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("1.0hp & 1.5hp Air Cond - 3 core 1.5mm")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("1.75hp & above - 4 core 2.5mm")])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v(
+                            "Up to 10ft 1/2” thickness premium rubber density insulation"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Bracke")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("1/2” thickness drainage piping")]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v(
+                            "Testing and commissioning of each air cond unit"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v(
+                            "Electrical wiring interconnecting indoor & outdoor"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Vacuum to the system")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Refill in refrigerant gas")])
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed cursus metus. Curabitur sollicitudin volutpat orci, eget semper lorem sodales vel. Donec et augue at leo convallis consequat. In hac habitasse platea dictumst. Nullam rutrum, urna sed ullamcorper viverra, orci erat tempus risus, at pharetra quam nunc in diam. Donec venenatis ex et augue porta, in feugiat nunc interdum. Mauris viverra finibus consectetur. Vestibulum interdum nulla eros, ac feugiat urna pulvinar sed. Fusce ut odio nec metus malesuada ullamcorper consectetur non orci. Aenean dictum libero risus, non mollis lectus malesuada pretium."
-                      )
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c(
+                      "h4",
+                      {
+                        staticStyle: { color: "#40c7f2", "text-align": "left" }
+                      },
+                      [
+                        _vm._v(
+                          "BASIC INSTALLATION (WITHOUT REFRIGERANT PIPING)"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "about-us-content" }, [
+                      _c("ul", [
+                        _c("li", [_vm._v("No copper piping is included")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("No wiring cable is included")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Bracket")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("No drainage piping is included")]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v(
+                            "Testing and commissioning of each air cond unit"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v(
+                            "Electrical wiring interconnecting indoor & outdoor"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Vacuum to the system")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Refill in refrigerant gas")])
+                      ])
                     ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c(
+                      "h4",
+                      {
+                        staticStyle: { color: "#40c7f2", "text-align": "left" }
+                      },
+                      [
+                        _vm._v(
+                          "EXTRA CHARGEABLE FEES (WHICH PAYABLE TO INSTALLER)"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "about-us-content" }, [
+                      _c("ul", [
+                        _c("li", [
+                          _vm._v("Extra Piping for Wall Mounted Air Cond "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("table", { staticClass: "service-table" }, [
+                            _c("tr", [
+                              _c("th", [_vm._v("Hose Power")]),
+                              _vm._v(" "),
+                              _c("th", [_vm._v("Price")])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [_vm._v("1hp")]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v("RM 18/ft")])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [_vm._v("1.5hp")]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v("RM 20/ft")])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [_vm._v("2.0hp")]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v("RM 20/ft")])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [_vm._v("2.5hp")]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v("RM 25/ft")])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [_vm._v("3.0hp")]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v("RM 25/ft")])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("PVC Casing for cable – RM 30/ft")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("Drain Pump – RM 280")]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _vm._v("Dismantling of old air conditioner – RM 80")
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "h3",
+                      {
+                        staticStyle: { color: "#488dcb", "font-size": "20px" }
+                      },
+                      [_vm._v("Overhaul / Cleaning")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticStyle: {
+                          "font-weight": "bold",
+                          "font-size": "45px",
+                          color: "#86E2FF"
+                        }
+                      },
+                      [_vm._v("Water Leakage?")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticStyle: {
+                          "font-weight": "bold",
+                          "font-size": "45px",
+                          color: "#FE5C7F"
+                        }
+                      },
+                      [_vm._v("Not Cold?")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "about-us-content" }, [
+                      _c("div", { staticClass: "col-sm-6" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "#40c7f2",
+                              "text-align": "left"
+                            }
+                          },
+                          [_vm._v("Our service are as below:")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tTo supply labour and tool for checking and dismantle the air cond unit, overhaul the unit with chemical, vacuum to the system, install it back, check the refrigerant gas pressure,  refill refrigerant gas and test run in a good condition.\n\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-6" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "#40c7f2",
+                              "text-align": "left"
+                            }
+                          },
+                          [_vm._v("Overhaul Pricing:")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              color: "#40c7f2",
+                              "text-align": "left",
+                              "font-weight": "bold"
+                            }
+                          },
+                          [_vm._v("Wall Mounted")]
+                        ),
+                        _vm._v(" "),
+                        _c("table", { staticClass: "service-table" }, [
+                          _c("tr", [
+                            _c("th", [_vm._v("Hose Power")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("R22 gas Air Cond")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("R410 gas Air Cond")])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", [_vm._v("1hp")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM120")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM150")])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", [_vm._v("1.5hp")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM120")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM150")])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", [_vm._v("2.0hp")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM180")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM220")])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", [_vm._v("2.5hp")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM220")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("RM220")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              color: "#40c7f2",
+                              "text-align": "left",
+                              "font-weight": "bold"
+                            }
+                          },
+                          [_vm._v("Cassette and Other Type")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "You can contact us, and make appointment with us."
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "h3",
+                      {
+                        staticStyle: { color: "#488dcb", "font-size": "20px" }
+                      },
+                      [_vm._v("Inspection and Repairing")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "about-us-content",
+                        staticStyle: { "text-align": "left" }
+                      },
+                      [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "#40c7f2",
+                              "text-align": "left"
+                            }
+                          },
+                          [_vm._v("Having a malfunction air cond?")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tOur experienced technicians will attend you and perform the inspection, with as low as RM50 per unit only. "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tYou can contact us, and make appointment with us.\n\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "h3",
+                      {
+                        staticStyle: { color: "#488dcb", "font-size": "20px" }
+                      },
+                      [_vm._v("Warranty Care")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "about-us-content",
+                        staticStyle: { "text-align": "left" }
+                      },
+                      [
+                        _c("p", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\tYou can contact us, check your warranty status with the serial no or invoice no.\n\t\t\t\t\t\t\t\t"
+                          )
+                        ])
+                      ]
+                    )
                   ])
                 ])
               ])
             ])
           ]
         ),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "contact-us" } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "latest-product our-products container-fluid no-padding woocommerce"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "col-sm-12 animate fadeInUp",
+                  attrs: { "data-wow-delay": "0.2s" }
+                },
+                [
+                  _c("div", { staticClass: "padding-top-75" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "container" }, [
+                    _c("div", { staticClass: "section-header" }, [
+                      _c("h3", [_vm._v("Contact Us")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "contact-us-content",
+                        staticStyle: { "text-align": "left" }
+                      },
+                      [
+                        _c("p", [
+                          _vm._v(
+                            "You are always welcome to visit me or contact us while you have some comments or suggestions for us."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-sm-6" }, [
+                            _c("h3", [
+                              _vm._v("Kalt Air Conditioning Sdn. Bhd.")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "7 & 9, Lebuh Nangka 2, Taman Desa Damai,"
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "\n\t\t\t\t\t\t\t\t\t14000 Bukit Mertajam,"
+                              ),
+                              _c("br"),
+                              _vm._v("\n\t\t\t\t\t\t\t\t\tPulau Pinang."),
+                              _c("br"),
+                              _vm._v("\n\t\t\t\t\t\t\t\t\tTel: 012-4020969"),
+                              _c("br"),
+                              _vm._v(" \n\t\t\t\t\t\t\t\t\tFax: 04-5399577 "),
+                              _c("br"),
+                              _vm._v(
+                                "\n\t\t\t\t\t\t\t\t\tOpening hour: Monday to Saturday 9.00am to 6.00pm\n\t\t\t\t\t\t\t\t\t"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-md-6 col-sm-6 col-xs-6 contact-form"
+                            },
+                            [
+                              _c("h3", [
+                                _vm._v(
+                                  "Leave a Message in the feedback form below"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "form",
+                                {
+                                  staticClass: "row",
+                                  attrs: { id: "contact-form" }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "form-group col-md-6 col-sm-6 col-xs-6"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticStyle: {
+                                            "font-size": "11px",
+                                            "font-style": "italic",
+                                            "font-weight": "600",
+                                            "text-transform": "uppercase",
+                                            "letter-spacing": "1.65px"
+                                          }
+                                        },
+                                        [_vm._v("Your Name *")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact_name,
+                                            expression: "form.contact_name"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          type: "text",
+                                          id: "input_name",
+                                          required: ""
+                                        },
+                                        domProps: {
+                                          value: _vm.form.contact_name
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact_name",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm.form.errors.has("contact_name")
+                                        ? _c(
+                                            "span",
+                                            { staticClass: "text-danger" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.form.errors.get(
+                                                    "contact_name"
+                                                  )
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "form-group col-md-6 col-sm-6 col-xs-6"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticStyle: {
+                                            "font-size": "11px",
+                                            "font-style": "italic",
+                                            "font-weight": "600",
+                                            "text-transform": "uppercase",
+                                            "letter-spacing": "1.65px"
+                                          }
+                                        },
+                                        [_vm._v("Your Email *")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact_email,
+                                            expression: "form.contact_email"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          type: "email",
+                                          id: "input_email",
+                                          required: ""
+                                        },
+                                        domProps: {
+                                          value: _vm.form.contact_email
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact_email",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm.form.errors.has("contact_email")
+                                        ? _c(
+                                            "span",
+                                            { staticClass: "text-danger" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.form.errors.get(
+                                                    "contact_email"
+                                                  )
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "form-group col-md-12 col-sm-12 col-xs-12"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticStyle: {
+                                            "font-size": "11px",
+                                            "font-style": "italic",
+                                            "font-weight": "600",
+                                            "text-transform": "uppercase",
+                                            "letter-spacing": "1.65px"
+                                          }
+                                        },
+                                        [_vm._v("Subject")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact_subject,
+                                            expression: "form.contact_subject"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          type: "text",
+                                          id: "input_subject",
+                                          required: ""
+                                        },
+                                        domProps: {
+                                          value: _vm.form.contact_subject
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact_subject",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "form-group col-md-12 col-sm-12 col-xs-12"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticStyle: {
+                                            "font-size": "11px",
+                                            "font-style": "italic",
+                                            "font-weight": "600",
+                                            "text-transform": "uppercase",
+                                            "letter-spacing": "1.65px"
+                                          }
+                                        },
+                                        [_vm._v("Your Message")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("textarea", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact_message,
+                                            expression: "form.contact_message"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          rows: "8",
+                                          id: "textarea_message"
+                                        },
+                                        domProps: {
+                                          value: _vm.form.contact_message
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact_message",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "form-group" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "contact-btn",
+                                        on: { click: _vm.submitInquiry }
+                                      },
+                                      [_vm._v("Send a message")]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "alert-msg",
+                                    attrs: { id: "alert-msg" }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ]
+          )
+        ]),
         _vm._v(" "),
         _c("div", {
           staticClass: "fb-customerchat",
@@ -32999,11 +34242,11 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Share_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Share_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Share_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Share_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ListProduct_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Login_vue__);
 //
 //
@@ -34847,7 +36090,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.form.subtotal = this.subTotal;
             this.form.total = this.total;
             this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
-            console.log(this.form.different_shipping);
             var url = '/api/order';
             this.form.post(url, this.form).then(function (response) {
                 return _this.submitOrderSuccess(response.data);
@@ -35916,11 +37158,11 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_ListProduct_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Share_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Share_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Share_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Share_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Login_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_clipboard2__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_clipboard2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_clipboard2__);
@@ -36561,7 +37803,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Login_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Login_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Login_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Order_vue__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Order_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Order_vue__);
@@ -37532,7 +38774,7 @@ if(false) {
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
@@ -37880,7 +39122,7 @@ if (false) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(12));
+		module.exports = factory(__webpack_require__(14));
 	else if(typeof define === 'function' && define.amd)
 		define(["vue"], factory);
 	else if(typeof exports === 'object')
@@ -60766,7 +62008,7 @@ if(false) {
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
@@ -60907,7 +62149,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(94);
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 

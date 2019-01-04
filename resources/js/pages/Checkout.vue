@@ -222,7 +222,6 @@
         		this.form.subtotal = this.subTotal;
         		this.form.total = this.total;
         		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
-        		console.log(this.form.different_shipping);
         		let url = '/api/order';
         		this.form.post(url, this.form)
         				.then(response => this.submitOrderSuccess(response.data))

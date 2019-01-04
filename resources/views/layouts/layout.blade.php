@@ -137,7 +137,8 @@
 									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/home/#about-us">About Us</a>
 								</li>
 								<li><a href="/home/#our-product">Our Products</a></li>
-								<li><a href="/home/#faq">FAQ</a></li>
+								<li><a href="/home/#faq">Service</a></li>
+								<li><a href="/home/#contact-us">Contact Us</a></li>
 								<!-- <li><a title="Contact Us" href="contact-us.html">Contact Us</a></li> -->
 							</ul>
 						</div>

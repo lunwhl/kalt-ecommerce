@@ -62,9 +62,37 @@
 	            </table>
             	<div class="empty-space col-xs-b35"></div>
 	            <div class="row" v-if="isEmptyCart()">
-	                <div class="col-sm-6 col-md-5 col-xs-b10 col-sm-b0">
+	                <div class="col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3">
+	                	<h4 class="h4">Basic Installation</h4>
+	                	*Installation without refrigerant piping provided.
+	                	<ul>
+	                		<li>Up to 10ft 0.61mm thickness copper piping</li>
+	                		<li>Up to 10ft 100% copper cable (without casing)</li>
+	                		<ul>
+	                			<li>1.0hp & 1.5hp Air Cond - 3 core 1.5mm</li>
+	                			<li>1.75hp & above - 4 core 2.5mm</li>
+	                		</ul>
+	                		<li>Up to 10ft 1/2” thickness premium rubber density insulation</li>
+	                		<li>Bracket</li>
+	                		<li>1/2” thickness drainage piping</li>
+	                		<li>Testing and commissioning of each air cond unit</li>
+	                		<li>Electrical wiring interconnecting indoor & outdoor</li>
+	                		<li>Vacuum to the system</li>
+	                		<li>Refill in refrigerant gas</li>
+	                	</ul>
 	                </div>
-	                <div class="col-sm-6 col-md-7 col-sm-text-right">
+	                <div class="col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3">
+	                	<h4 class="h4">Economy Installation</h4>
+	                	*Installation with 10ft refrigerant piping provided.
+	                	<ul>
+	                		<li>No copper piping is included</li>
+	                		<li>No wiring cable is included</li>
+	                		<li>No insulation is included</li>
+	                		<li>Bracket</li>
+	                		<li>No drainage piping is included</li>
+	                	</ul>
+	                </div>
+	                <div class="col-sm-4 col-md-4 col-sm-text-right">
 	                    <div class="buttons-wrapper">
 	                        <a class="button size-2 style-2" @click="updateToCart">
 	                            <span class="button-wrapper">
@@ -86,8 +114,8 @@
 	                <div class="col-md-6 col-xs-b50 col-md-b0" >
 	                    <h4 class="h4 col-xs-b25">Pick up option</h4>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
-								<v-radio label="Store Pick Up" value="pickup"></v-radio>
-								<v-radio label="P.O Delivery" value="delivery"></v-radio>
+								<v-radio label="Store Pick Up (*Bring along the invoice for pickup)" value="pickup"></v-radio>
+								<v-radio label="P.O Delivery (*Multiple floor shipment will have additional charge)" value="delivery"></v-radio>
 							</v-radio-group>
 						<div v-if="deliveryNotice">*Multiple floor shipment will have additional charge.*</div>
 	                </div>

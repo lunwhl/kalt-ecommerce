@@ -34975,6 +34975,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -35552,13 +35580,13 @@ var render = function() {
         _vm._v(" "),
         _vm.isEmptyCart()
           ? _c("div", { staticClass: "row" }, [
-              _c("div", {
-                staticClass: "col-sm-6 col-md-5 col-xs-b10 col-sm-b0"
-              }),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-sm-6 col-md-7 col-sm-text-right" },
+                { staticClass: "col-sm-4 col-md-4 col-sm-text-right" },
                 [
                   _c("div", { staticClass: "buttons-wrapper" }, [
                     _c(
@@ -35567,7 +35595,7 @@ var render = function() {
                         staticClass: "button size-2 style-2",
                         on: { click: _vm.updateToCart }
                       },
-                      [_vm._m(3)]
+                      [_vm._m(5)]
                     ),
                     _vm._v(" "),
                     _c(
@@ -35577,7 +35605,7 @@ var render = function() {
                         attrs: { href: "#" },
                         on: { click: _vm.checkout }
                       },
-                      [_vm._m(4)]
+                      [_vm._m(6)]
                     )
                   ])
                 ]
@@ -35612,11 +35640,19 @@ var render = function() {
                     },
                     [
                       _c("v-radio", {
-                        attrs: { label: "Store Pick Up", value: "pickup" }
+                        attrs: {
+                          label:
+                            "Store Pick Up (*Bring along the invoice for pickup)",
+                          value: "pickup"
+                        }
                       }),
                       _vm._v(" "),
                       _c("v-radio", {
-                        attrs: { label: "P.O Delivery", value: "delivery" }
+                        attrs: {
+                          label:
+                            "P.O Delivery (*Multiple floor shipment will have additional charge)",
+                          value: "delivery"
+                        }
                       })
                     ],
                     1
@@ -35776,6 +35812,84 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3"
+      },
+      [
+        _c("h4", { staticClass: "h4" }, [_vm._v("Basic Installation")]),
+        _vm._v(
+          "\n\t                \t*Installation without refrigerant piping provided.\n\t                \t"
+        ),
+        _c("ul", [
+          _c("li", [_vm._v("Up to 10ft 0.61mm thickness copper piping")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Up to 10ft 100% copper cable (without casing)")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", [_vm._v("1.0hp & 1.5hp Air Cond - 3 core 1.5mm")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("1.75hp & above - 4 core 2.5mm")])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "Up to 10ft 1/2” thickness premium rubber density insulation"
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Bracket")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("1/2” thickness drainage piping")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Testing and commissioning of each air cond unit")]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("Electrical wiring interconnecting indoor & outdoor")
+          ]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Vacuum to the system")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Refill in refrigerant gas")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3"
+      },
+      [
+        _c("h4", { staticClass: "h4" }, [_vm._v("Economy Installation")]),
+        _vm._v(
+          "\n\t                \t*Installation with 10ft refrigerant piping provided.\n\t                \t"
+        ),
+        _c("ul", [
+          _c("li", [_vm._v("No copper piping is included")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("No wiring cable is included")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("No insulation is included")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Bracket")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("No drainage piping is included")])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this

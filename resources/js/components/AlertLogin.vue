@@ -1,8 +1,8 @@
 <template>
     <div class="text-xs-center" data-app="true">
-        <div v-if="dialog" style="z-index: 201;background-color: black;height: 100% !important;position: fixed;top: 0;width: 100% !important;opacity: .46;" />
+        <div v-if="aler_dialog" style="z-index: 201;background-color: black;height: 100% !important;position: fixed;top: 0;width: 100% !important;opacity: .46;" />
         <v-dialog
-          v-model="dialog"
+          v-model="aler_dialog"
           width="500"
         >
             <v-card>
@@ -15,16 +15,7 @@
 
                 <v-card-text>
                     <div>
-                        <span>You are required to login in order to proceed to checkout.
-                        Please click the login button below to login.</span>
-                    </div>
-                    <div style="margin-top: 15px;">
-                        <a class="button size-2 style-3" href="/login">
-                            <span class="button-wrapper">
-                                <span class="icon"><img src="css/exzo/img/icon-4.png" alt=""></span>
-                                <span class="text">Login</span>
-                            </span>
-                        </a>
+                        <span>You are required to login in order to proceed to checkout.</span>
                     </div>
                 </v-card-text>
                     
@@ -38,13 +29,13 @@
 
         data () {
             return {
-                dialog: false,
+                aler_dialog: false,
             }
         },
 
         mounted() {
-            window.event.$on("login-dialog", (value) => {
-                this.dialog = value['openDialog'];
+            window.event.$on("login-alert", (value) => {
+                this.aler_dialog = value['openDialog'];
             });
         },
     }

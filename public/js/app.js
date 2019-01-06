@@ -32522,11 +32522,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             this.loginForm.post('/login', this.loginForm).then(function (response) {
-                return _this2.submitLoginSuccess(response.data);
+                return _this2.submitLoginSuccess(response);
             });
         },
-        submitLoginSuccess: function submitLoginSuccess() {
-            window.location.href = window.location.href;
+        submitLoginSuccess: function submitLoginSuccess(data) {
+            console.log(data);
+            console.log("here");
+            this.dialog = false;
+            location.pathname == '/cart' ? window.location.href = '/cart' : window.location.href = window.location.href;
         },
         submitRegister: function submitRegister() {
             var _this3 = this;
@@ -34841,6 +34844,8 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AlertLogin_vue__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AlertLogin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AlertLogin_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Login_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Login_vue__);
 //
 //
 //
@@ -35003,12 +35008,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        AlertLogin: __WEBPACK_IMPORTED_MODULE_0__components_AlertLogin_vue___default.a
+        AlertLogin: __WEBPACK_IMPORTED_MODULE_0__components_AlertLogin_vue___default.a,
+        Login: __WEBPACK_IMPORTED_MODULE_1__components_Login_vue___default.a
     },
 
     props: ['is_auth'],
@@ -35053,7 +35061,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         checkoutSuccess: function checkoutSuccess(data) {
-            if (!data['auth']) window.event.$emit("login-dialog", { 'openDialog': true });else window.location.href = "/checkout?shipping=" + this.radios;
+            if (!data['auth']) window.event.$emit("login-alert", { 'openDialog': true });else window.location.href = "/checkout?shipping=" + this.radios;
         },
         changeRadio: function changeRadio() {
             if (this.radios == 'delivery') {
@@ -35261,27 +35269,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            dialog: false
+            aler_dialog: false
         };
     },
     mounted: function mounted() {
         var _this = this;
 
-        window.event.$on("login-dialog", function (value) {
-            _this.dialog = value['openDialog'];
+        window.event.$on("login-alert", function (value) {
+            _this.aler_dialog = value['openDialog'];
         });
     }
 });
@@ -35298,7 +35297,7 @@ var render = function() {
     "div",
     { staticClass: "text-xs-center", attrs: { "data-app": "true" } },
     [
-      _vm.dialog
+      _vm.aler_dialog
         ? _c("div", {
             staticStyle: {
               "z-index": "201",
@@ -35317,11 +35316,11 @@ var render = function() {
         {
           attrs: { width: "500" },
           model: {
-            value: _vm.dialog,
+            value: _vm.aler_dialog,
             callback: function($$v) {
-              _vm.dialog = $$v
+              _vm.aler_dialog = $$v
             },
-            expression: "dialog"
+            expression: "aler_dialog"
           }
         },
         [
@@ -35341,30 +35340,9 @@ var render = function() {
                 _c("div", [
                   _c("span", [
                     _vm._v(
-                      "You are required to login in order to proceed to checkout.\n                    Please click the login button below to login."
+                      "You are required to login in order to proceed to checkout."
                     )
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticStyle: { "margin-top": "15px" } }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "button size-2 style-3",
-                      attrs: { href: "/login" }
-                    },
-                    [
-                      _c("span", { staticClass: "button-wrapper" }, [
-                        _c("span", { staticClass: "icon" }, [
-                          _c("img", {
-                            attrs: { src: "css/exzo/img/icon-4.png", alt: "" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text" }, [_vm._v("Login")])
-                      ])
-                    ]
-                  )
                 ])
               ])
             ],
@@ -35396,14 +35374,45 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { attrs: { "data-app": "true" } },
+    "v-app",
     [
-      _vm._m(0),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "text-center" }, [
+          _c(
+            "div",
+            { staticClass: "simple-article size-3 uppercase col-xs-b5" },
+            [_vm._v("shopping cart")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "h2" }, [_vm._v("check your products")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "title-underline center" }, [_c("span")])
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
         _c("table", { staticClass: "cart-table" }, [
-          _vm._m(1),
+          _c("thead", [
+            _c("tr", [
+              _c("th", { staticStyle: { width: "95px" } }),
+              _vm._v(" "),
+              _c("th", [_vm._v("product name")]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "150px" } }, [_vm._v("price")]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "260px" } }, [
+                _vm._v("quantity")
+              ]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "150px" } }, [
+                _vm._v("installation fee")
+              ]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "150px" } }, [_vm._v("total")]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "70px" } })
+            ])
+          ]),
           _vm._v(" "),
           _vm.isEmptyCart()
             ? _c(
@@ -35573,16 +35582,112 @@ var render = function() {
                   ])
                 })
               )
-            : _c("tbody", [_vm._m(2)])
+            : _c("tbody", [
+                _c("tr", [
+                  _c("td", { attrs: { colspan: "6" } }, [
+                    _c(
+                      "span",
+                      {
+                        staticClass: "simple-article size-3 uppercase col-xs-b5"
+                      },
+                      [
+                        _vm._v("Your cart is currently empty. Please click "),
+                        _c("a", { attrs: { href: "/shop" } }, [_vm._v("here")]),
+                        _vm._v(" to shop.")
+                      ]
+                    )
+                  ])
+                ])
+              ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "empty-space col-xs-b35" }),
         _vm._v(" "),
         _vm.isEmptyCart()
           ? _c("div", { staticClass: "row" }, [
-              _vm._m(3),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3"
+                },
+                [
+                  _c("h4", { staticClass: "h4" }, [
+                    _vm._v("Basic Installation")
+                  ]),
+                  _vm._v(
+                    "\n\t                \t*Installation without refrigerant piping provided.\n\t                \t"
+                  ),
+                  _c("ul", [
+                    _c("li", [
+                      _vm._v("Up to 10ft 0.61mm thickness copper piping")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v("Up to 10ft 100% copper cable (without casing)")
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("1.0hp & 1.5hp Air Cond - 3 core 1.5mm")
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("1.75hp & above - 4 core 2.5mm")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Up to 10ft 1/2” thickness premium rubber density insulation"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Bracket")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("1/2” thickness drainage piping")]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v("Testing and commissioning of each air cond unit")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Electrical wiring interconnecting indoor & outdoor"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Vacuum to the system")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Refill in refrigerant gas")])
+                  ])
+                ]
+              ),
               _vm._v(" "),
-              _vm._m(4),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3"
+                },
+                [
+                  _c("h4", { staticClass: "h4" }, [
+                    _vm._v("Economy Installation")
+                  ]),
+                  _vm._v(
+                    "\n\t                \t*Installation with 10ft refrigerant piping provided.\n\t                \t"
+                  ),
+                  _c("ul", [
+                    _c("li", [_vm._v("No copper piping is included")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("No wiring cable is included")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("No insulation is included")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Bracket")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("No drainage piping is included")])
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -35595,7 +35700,19 @@ var render = function() {
                         staticClass: "button size-2 style-2",
                         on: { click: _vm.updateToCart }
                       },
-                      [_vm._m(5)]
+                      [
+                        _c("span", { staticClass: "button-wrapper" }, [
+                          _c("span", { staticClass: "icon" }, [
+                            _c("img", {
+                              attrs: { src: "css/exzo/img/icon-2.png", alt: "" }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text" }, [
+                            _vm._v("update cart")
+                          ])
+                        ])
+                      ]
                     ),
                     _vm._v(" "),
                     _c(
@@ -35605,7 +35722,19 @@ var render = function() {
                         attrs: { href: "#" },
                         on: { click: _vm.checkout }
                       },
-                      [_vm._m(6)]
+                      [
+                        _c("span", { staticClass: "button-wrapper" }, [
+                          _c("span", { staticClass: "icon" }, [
+                            _c("img", {
+                              attrs: { src: "css/exzo/img/icon-4.png", alt: "" }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text" }, [
+                            _vm._v("proceed to checkout")
+                          ])
+                        ])
+                      ]
                     )
                   ])
                 ]
@@ -35747,175 +35876,14 @@ var render = function() {
         _c("div", { staticClass: "empty-space col-xs-b35 col-md-b70" })
       ]),
       _vm._v(" "),
-      _c("alert-login")
+      _c("alert-login"),
+      _vm._v(" "),
+      _c("login")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "text-center" }, [
-        _c(
-          "div",
-          { staticClass: "simple-article size-3 uppercase col-xs-b5" },
-          [_vm._v("shopping cart")]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "h2" }, [_vm._v("check your products")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "title-underline center" }, [_c("span")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { staticStyle: { width: "95px" } }),
-        _vm._v(" "),
-        _c("th", [_vm._v("product name")]),
-        _vm._v(" "),
-        _c("th", { staticStyle: { width: "150px" } }, [_vm._v("price")]),
-        _vm._v(" "),
-        _c("th", { staticStyle: { width: "260px" } }, [_vm._v("quantity")]),
-        _vm._v(" "),
-        _c("th", { staticStyle: { width: "150px" } }, [
-          _vm._v("installation fee")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticStyle: { width: "150px" } }, [_vm._v("total")]),
-        _vm._v(" "),
-        _c("th", { staticStyle: { width: "70px" } })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { attrs: { colspan: "6" } }, [
-        _c(
-          "span",
-          { staticClass: "simple-article size-3 uppercase col-xs-b5" },
-          [
-            _vm._v("Your cart is currently empty. Please click "),
-            _c("a", { attrs: { href: "/shop" } }, [_vm._v("here")]),
-            _vm._v(" to shop.")
-          ]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3"
-      },
-      [
-        _c("h4", { staticClass: "h4" }, [_vm._v("Basic Installation")]),
-        _vm._v(
-          "\n\t                \t*Installation without refrigerant piping provided.\n\t                \t"
-        ),
-        _c("ul", [
-          _c("li", [_vm._v("Up to 10ft 0.61mm thickness copper piping")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Up to 10ft 100% copper cable (without casing)")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("1.0hp & 1.5hp Air Cond - 3 core 1.5mm")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("1.75hp & above - 4 core 2.5mm")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "Up to 10ft 1/2” thickness premium rubber density insulation"
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Bracket")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("1/2” thickness drainage piping")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Testing and commissioning of each air cond unit")]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v("Electrical wiring interconnecting indoor & outdoor")
-          ]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Vacuum to the system")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Refill in refrigerant gas")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "col-sm-4 col-md-4 col-xs-b10 col-sm-b0 simple-article size-3"
-      },
-      [
-        _c("h4", { staticClass: "h4" }, [_vm._v("Economy Installation")]),
-        _vm._v(
-          "\n\t                \t*Installation with 10ft refrigerant piping provided.\n\t                \t"
-        ),
-        _c("ul", [
-          _c("li", [_vm._v("No copper piping is included")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("No wiring cable is included")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("No insulation is included")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Bracket")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("No drainage piping is included")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "button-wrapper" }, [
-      _c("span", { staticClass: "icon" }, [
-        _c("img", { attrs: { src: "css/exzo/img/icon-2.png", alt: "" } })
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text" }, [_vm._v("update cart")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "button-wrapper" }, [
-      _c("span", { staticClass: "icon" }, [
-        _c("img", { attrs: { src: "css/exzo/img/icon-4.png", alt: "" } })
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "text" }, [_vm._v("proceed to checkout")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

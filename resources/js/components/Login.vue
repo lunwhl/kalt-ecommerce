@@ -168,11 +168,14 @@
 
             submitLogin(){
                 this.loginForm.post('/login', this.loginForm)
-                        .then(response => this.submitLoginSuccess(response.data))
+                        .then(response => this.submitLoginSuccess(response))
             },
 
-            submitLoginSuccess(){
-                window.location.href = window.location.href;
+            submitLoginSuccess(data){
+                console.log(data);
+                console.log("here");
+                this.dialog = false;
+                location.pathname == '/cart' ? window.location.href = '/cart' : window.location.href = window.location.href;
             },
 
             submitRegister(){

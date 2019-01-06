@@ -1,5 +1,5 @@
 	<template>
-		<div data-app="true">
+		<v-app>
 			<div class="container">
 	            <div class="text-center">
 	                <div class="simple-article size-3 uppercase col-xs-b5">shopping cart</div>
@@ -156,16 +156,19 @@
             	<div class="empty-space col-xs-b35 col-md-b70"></div>
     		</div>
     		<alert-login></alert-login>
-		</div>
+    		<login></login>
+		</v-app>
 	</template>
 @stop
 
 <script>
 	import AlertLogin from '../components/AlertLogin.vue';
+	import Login from '../components/Login.vue';
 
     export default {
     	components: {
-			AlertLogin
+			AlertLogin,
+			Login
 		},
 
     	props: ['is_auth'],
@@ -215,7 +218,7 @@
         	checkoutSuccess(data)
         	{
         		if(!data['auth'])
-        			window.event.$emit("login-dialog", {'openDialog': true});
+        			window.event.$emit("login-alert", {'openDialog': true});
         		else
 					window.location.href = "/checkout?shipping="+this.radios;
         	},

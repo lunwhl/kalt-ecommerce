@@ -71,6 +71,7 @@
 									<button class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}<span class="caret"></span></button>
 									<ul class="dropdown-menu no-padding">
 										<!-- <li><a href="#" title="sarah1">My Profile</a></li> -->
+										<li><a href="/api/home/profile">My profile</a></li>
 										<li><a href="/api/order">My order</a></li>
 										<li><a href="/logout">Logout</a></li>
 									</ul>

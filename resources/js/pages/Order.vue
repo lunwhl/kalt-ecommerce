@@ -9,7 +9,7 @@
 								:pagination.sync="pagination"
 								:total-items="total"
 								class="elevation-1"
-								v-if="items > 0">
+								v-if="items.length > 0">
 					<template slot="items" slot-scope="props">
 						<td class="text-xs-center">{{ props.item.id }}</td>
 						<td class="text-xs-center">{{ props.item.subtotal }}</td>
@@ -45,7 +45,13 @@
     			Cart: [],
     			items: [],
     			total: 0,
-		        pagination: {},
+		        pagination: {
+					descending: true,
+					page: 1,
+					rowsPerPage: 5,
+					sortBy: 'id',
+					totalItems: 0,
+				},
 		        headers: [
 		          { text: 'Order ID', align: 'center', value: 'id'},
 		          { text: 'Sub Total', align: 'center', value: 'subtotal' },
@@ -59,6 +65,7 @@
     	},
         mounted() {
         	this.getCart();
+        	this.getDataFromApi();
         },
      	methods: {
         	getCart() {
@@ -68,7 +75,7 @@
         	},
 
         	getCartSuccess(data) {
-        		this.Cart = data
+        		this.Cart = data;
         	},
 
 			getDataFromApi () {
@@ -81,9 +88,9 @@
 					axios.get('/api/order/total')
 						.then(response => this.setTotal(response.data));
 				
-					if (rowsPerPage > 0) {
-			            this.total = this.total.slice((page - 1) * rowsPerPage, page * rowsPerPage)
-		          	}
+					// if (rowsPerPage > 0) {
+			  //           this.total = this.total.slice((page - 1) * rowsPerPage, page * rowsPerPage)
+		   //        	}
 				})
 			},
 
@@ -96,7 +103,6 @@
 	      	},
 
 	      	viewOrder(order) {
-	      		console.log("order");
 	      		window.event.$emit("order-dialog", {'openDialog': true, 'order': order});
 	      	},
     	},

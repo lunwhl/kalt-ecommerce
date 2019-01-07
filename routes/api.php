@@ -40,7 +40,10 @@ Route::group(['prefix' => 'product'], function() {
 Route::group(['prefix' => 'home'], function() {
 	Route::post('/check/auth', 'HomeController@checkAuth');
 	Route::post('/send/inquiry', 'HomeController@sendInquiry');
+	Route::post('/profile/update', 'HomeController@update');
 	Route::get('/download/{product}', 'HomeController@downloadImage');
+	Route::get('/auth', 'HomeController@getAuth');
+	Route::get('/profile', 'HomeController@profile');
 });
 
 Route::group(['prefix' => 'order'], function() {
@@ -48,6 +51,7 @@ Route::group(['prefix' => 'order'], function() {
 	Route::get('/', 'OrderController@index');
 	Route::get('/items', 'OrderController@items');
 	Route::get('/total', 'OrderController@total');
-	Route::get('/completed', 'OrderController@thankyou');
+	Route::get('/completed', 'OrderController@loadDirect');
+	Route::get('/thankyou', 'OrderController@thankyou');
 });
 

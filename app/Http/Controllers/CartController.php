@@ -44,11 +44,12 @@ class CartController extends Controller
     {
         $carts = [];
 
-        unserialize($cartContent->content)->each(function($cart) use (&$carts)
-        {
-            $cart->image_path = Product::find($cart->id)->image_path;
-            $carts[] = $cart;
-        }); 
+        if($cartContent)
+            unserialize($cartContent->content)->each(function($cart) use (&$carts)
+            {
+                $cart->image_path = Product::find($cart->id)->image_path;
+                $carts[] = $cart;
+            }); 
 
         return $carts;
     }

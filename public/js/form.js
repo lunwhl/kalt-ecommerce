@@ -178,7 +178,7 @@ class Form {
                     .catch(error => {
                         console.log(error);
                         this.onFail(error.response);
-
+                        window.event.$emit("loading", {'openDialog': false});
                         reject(error.response.data);
                     });
             });

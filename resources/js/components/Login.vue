@@ -172,8 +172,6 @@
             },
 
             submitLoginSuccess(data){
-                console.log(data);
-                console.log("here");
                 this.dialog = false;
                 location.pathname == '/cart' ? window.location.href = '/cart' : window.location.href = window.location.href;
             },

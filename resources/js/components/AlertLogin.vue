@@ -10,12 +10,12 @@
                 class="headline grey lighten-2"
                 primary-title
                 >
-                <span>Please Login</span>
+                <span>{{title}}</span>
                 </v-card-title>
 
                 <v-card-text>
                     <div>
-                        <span>You are required to login in order to proceed to checkout.</span>
+                        <span>{{message}}</span>
                     </div>
                 </v-card-text>
                     
@@ -26,7 +26,7 @@
 
 <script>
     export default {
-
+        props:['title', 'message'],
         data () {
             return {
                 aler_dialog: false,

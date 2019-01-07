@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 use App\Mail\InquiryEmail;
 use Illuminate\Support\Facades\Mail;
 use App\User;
@@ -41,6 +42,18 @@ class HomeController extends Controller
         return view('shop.page', ['is_auth' => $is_auth]);
     }
 
+    public function getAuth()
+    {
+        $user = Auth::user();
+
+        return response(['user' => $user]);
+    }
+
+    public function profile()
+    {
+        return view('profile.page');
+    }
+
     public function getLatestProduct()
     {
         $products = Product::orderBy('created_at', 'desc')->take(4)->get();
@@ -66,5 +79,31 @@ class HomeController extends Controller
                                     'contact_email' => 'required|email' ]);
         
         Mail::to("info@kalt.com.my")->send(new InquiryEmail($request));
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate(['name' => 'required|string|max:255',
+                            'address' => 'required|string|max:255',
+                            'city' => 'required|string|max:255',
+                            'state' => 'required|string|max:255',
+                            'postcode' => 'required|string|max:255',
+                            'phone' => 'required|string|max:255']);
+
+        $user = User::find(auth()->user()->id);
+
+        $user->name = $request->name;
+        $user->address = $request->address;
+        $user->city = $request->city;
+        $user->state = $request->state;
+        $user->postcode = $request->postcode;
+        $user->phone = $request->phone;
+
+        if($request->password)
+            $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        return response(['data' => true]);
     }
 }

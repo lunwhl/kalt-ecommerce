@@ -155,7 +155,7 @@
 	            </div>
             	<div class="empty-space col-xs-b35 col-md-b70"></div>
     		</div>
-    		<alert-login></alert-login>
+    		<alert-login title="Please Login" message="You are required to login in order to proceed to checkout."></alert-login>
     		<login></login>
 		</v-app>
 	</template>

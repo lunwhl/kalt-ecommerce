@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class InquiryEmail extends Mailable
+class PurchaseToCustomerEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,15 +16,15 @@ class InquiryEmail extends Mailable
      *
      * @var Demo
      */
-    public $inquiry;
+    public $request;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($inquiry)
+    public function __construct($request)
     {
-        $this->inquiry = $inquiry;
+        $this->request = $request;
     }
 
     /**
@@ -34,8 +34,8 @@ class InquiryEmail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->inquiry->contact_email, $this->inquiry->contract_name)
-                    ->subject($this->inquiry->contact_subject)
-                    ->view('email.inquiry');
+        return $this->from("info@kalt.com.my")
+                    ->subject('Kalt')
+                    ->view('email.purchasetocustomer');
     }
 }

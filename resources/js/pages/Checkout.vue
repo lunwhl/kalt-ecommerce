@@ -1,5 +1,6 @@
 	<template>
-		<div data-app="true">
+		<v-app>
+			<loading></loading>
 			<div class="container">
 	            <div class="text-center">
 	                <div class="simple-article size-3 uppercase col-xs-b5">checkout</div>
@@ -14,14 +15,9 @@
 		                <div class="col-md-6 col-xs-b50 col-md-b0">
 		                    <h4 class="h4 col-xs-b25">billing details</h4>
 		                    <div class="row m10">
-		                        <div class="col-sm-6">
-		                            <input class="simple-input" v-model="form.billing_first_name" type="text" value="" placeholder="First name*" />
-		                            <span class="text-danger" v-if="form.errors.has('billing_first_name')">{{ form.errors.get('billing_first_name') }}</span>
-		                            <div class="empty-space col-xs-b20"></div>
-		                        </div>
-		                        <div class="col-sm-6">
-		                            <input class="simple-input" v-model="form.billing_last_name" type="text" value="" placeholder="Last name*" />
-		                            <span class="text-danger" v-if="form.errors.has('billing_last_name')">{{ form.errors.get('billing_last_name') }}</span>
+		                        <div class="col-sm-12">
+		                            <input class="simple-input" v-model="form.billing_name" type="text" value="" placeholder="Name*" />
+		                            <span class="text-danger" v-if="form.errors.has('billing_name')">{{ form.errors.get('billing_name') }}</span>
 		                            <div class="empty-space col-xs-b20"></div>
 		                        </div>
 		                    </div>
@@ -68,14 +64,9 @@
 		                    <div v-if="form.different_shipping">
 		                        <div class="empty-space col-xs-b25"></div>
 		                        <div class="row m10">
-		                            <div class="col-sm-6">
-		                                <input class="simple-input" v-model="form.shipping_first_name" type="text" value="" placeholder="First name*" />
-		                            <span class="text-danger" v-if="form.errors.has('shipping_first_name')">{{ form.errors.get('shipping_first_name') }}</span>
-		                                <div class="empty-space col-xs-b20"></div>
-		                            </div>
-		                            <div class="col-sm-6">
-		                                <input class="simple-input" v-model="form.shipping_last_name" type="text" value="" placeholder="Last name*" />
-		                            	<span class="text-danger" v-if="form.errors.has('shipping_last_name')">{{ form.errors.get('shipping_last_name') }}</span>
+		                            <div class="col-sm-12">
+		                                <input class="simple-input" v-model="form.shipping_name" type="text" value="" placeholder="Name*" />
+		                            	<span class="text-danger" v-if="form.errors.has('shipping_name')">{{ form.errors.get('shipping_name') }}</span>
 		                                <div class="empty-space col-xs-b20"></div>
 		                            </div>
 		                        </div>
@@ -97,6 +88,18 @@
 		                            <div class="col-sm-6">
 		                                <input class="simple-input" v-model="form.shipping_postcode" type="text" value="" placeholder="Postcode*" />
 	                        			<span class="text-danger" v-if="form.errors.has('shipping_postcode')">{{ form.errors.get('shipping_postcode') }}</span>
+		                                <div class="empty-space col-xs-b20"></div>
+		                            </div>
+		                        </div>
+		                        <div class="row m10">
+		                            <div class="col-sm-6">
+		                                <input class="simple-input" v-model="form.shipping_email" type="text" value="" placeholder="Email*" />
+	                        			<span class="text-danger" v-if="form.errors.has('shipping_email')">{{ form.errors.get('shipping_email') }}</span>
+		                                <div class="empty-space col-xs-b20"></div>
+		                            </div>
+		                            <div class="col-sm-6">
+		                                <input class="simple-input" v-model="form.shipping_phone" type="text" value="" placeholder="Phone*" />
+	                        			<span class="text-danger" v-if="form.errors.has('shipping_phone')">{{ form.errors.get('shipping_phone') }}</span>
 		                                <div class="empty-space col-xs-b20"></div>
 		                            </div>
 		                        </div>
@@ -163,7 +166,7 @@
 		                    <div class="empty-space col-xs-b30"></div>
 		                    <div @click="submitOrder" class="button block size-2 style-3">
 		                        <span class="button-wrapper">
-		                            <span class="icon"><img src="css/exzo/img/icon-4.png" alt=""></span>
+		                            <span class="icon"><img src="/css/exzo/img/icon-4.png" alt=""></span>
 		                            <span class="text">place order</span>
 		                        </span>
 		                    </div>
@@ -171,12 +174,21 @@
 		            </div>
 		        </form>
         	</div>
-		</div>
+        	<alert-login title="Alert" message="You must agree with the Privacy policy agreement in order to proceed"></alert-login>
+		</v-app>
 	</template>
 @stop
 
 <script>
+	import Loading from '../components/Loading.vue';
+	import AlertLogin from '../components/AlertLogin.vue';
+    
     export default {
+    	components: {
+    		AlertLogin,
+			Loading
+		},
+
     	props: ['shipping'],
 
     	data() {
@@ -184,8 +196,7 @@
     			carts: [],
     			deliveryCharge: '',
     			form : new Form ({
-				    billing_first_name: '',
-				    billing_last_name: '',
+				    billing_name: '',
 				    billing_company_name: '',
 				    billing_address: '',
 				    billing_city: '',
@@ -193,8 +204,7 @@
 				    billing_postcode: '',
 				    billing_email: '',
 				    billing_phone: '',
-				    shipping_first_name: '',
-				    shipping_last_name: '',
+				    shipping_name: '',
 				    shipping_company_name: '',
 				    shipping_address: '',
 				    shipping_city: '',
@@ -206,6 +216,7 @@
 				    shipping_price: '',
 				    total: '',
 				    note: '',
+				    pickup: '',
 				    different_shipping: false,
 				}), 
 				policyCheck: false,
@@ -214,13 +225,19 @@
 
         mounted() {
             this.getCart();
+            this.getUser();
             this.deliveryCharge = this.shipping;
         },
 
         methods: {
         	submitOrder() {
+        		if(!this.policyCheck)
+        			window.event.$emit("login-alert", {'openDialog': true});
+        		
+        		window.event.$emit("loading", {'openDialog': true});
         		this.form.subtotal = this.subTotal;
         		this.form.total = this.total;
+        		this.form.pickup = this.shipping;
         		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
         		let url = '/api/order';
         		this.form.post(url, this.form)
@@ -229,11 +246,28 @@
         	},
 
         	submitOrderSuccess(data) {
+
         		window.location.href = "/api/order/completed";
         	},
 
         	submitOrderError(data){
-        		console.log(data);
+        	},
+
+        	getUser() {
+        		let url = '/api/home/auth';
+        		axios.get(url)
+        		.then(response => this.getUserSuccess(response.data));
+        	},
+
+        	getUserSuccess(data) {
+        		this.form.billing_name = data.user['name'];
+			    this.form.billing_company_name = data.user['company_name'];
+			    this.form.billing_address = data.user['address'];
+			    this.form.billing_city = data.user['city'];
+			    this.form.billing_state = data.user['state'];
+			    this.form.billing_postcode = data.user['postcode'];
+			    this.form.billing_email = data.user['email'];
+			    this.form.billing_phone = data.user['phone'];
         	},
 
         	getCart() {

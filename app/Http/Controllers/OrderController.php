@@ -8,6 +8,9 @@ use App\Order;
 use App\Item;
 use App\Product;
 use App\Common;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PurchaseToAdminEmail;
+use App\Mail\PurchaseToCustomerEmail;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -19,29 +22,30 @@ class OrderController extends Controller
      */
 
     public $rules = array(
-        'billing_first_name' => 'required|string|max:255',
-        'billing_last_name' => 'required|string|max:255',
+        'billing_name' => 'required|string|max:255',
         'billing_address' => 'required|string|max:255',
         'billing_city' => 'required|string|max:255',
         'billing_state' => 'required|string|max:255',
         'billing_postcode' => 'required|string|max:255',
         'billing_email' => 'required|string|email|max:255',
         'billing_phone' => 'required|string|max:255',
-        'shipping_first_name' => 'required_if:different_shipping,true',
-        'shipping_last_name'=> 'required_if:different_shipping,true',
+        'shipping_name' => 'required_if:different_shipping,true',
         'shipping_address'=> 'required_if:different_shipping,true',
         'shipping_city'=> 'required_if:different_shipping,true',
         'shipping_state'=> 'required_if:different_shipping,true',
-        'shipping_postcode'=> 'required_if:different_shipping,true'
+        'shipping_postcode'=> 'required_if:different_shipping,true',
+        'shipping_email'=> 'required_if:different_shipping,true',
+        'shipping_phone'=> 'required_if:different_shipping,true'
     );
 
     public $messages = array(
-        'shipping_first_name.required_if'=> 'First name is required',
-        'shipping_last_name.required_if'=> 'Last name is required',
+        'shipping_name.required_if'=> 'Name is required',
         'shipping_address.required_if'=> 'Address is required',
         'shipping_city.required_if'=> 'City is required',
         'shipping_state.required_if'=> 'State is required',
-        'shipping_postcode.required_if'=> 'Postcode is required'
+        'shipping_postcode.required_if'=> 'Postcode is required',
+        'shipping_email.required_if'=> 'Email is required',
+        'shipping_phone.required_if'=> 'Phone is required'
     );
 
     public function index()
@@ -96,36 +100,65 @@ class OrderController extends Controller
         Common::deleteCart();
         Cart::destroy();
 
+        $email = $request->shipping_email? $request->shipping_email : $request->billing_email;
+        Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($request));
+        Mail::to($email)->send(new PurchaseToCustomerEmail($request));
+
         return response(200);
     }
 
     public function createOrder($request)
     {
-        return Order::create([
-                    'user_id' => auth()->user()->id,
-                    'billing_first_name'=> $request->billing_first_name,
-                    'billing_last_name'=> $request->billing_last_name,
-                    'billing_company_name'=> $request->billing_company_name,
-                    'billing_address'=> $request->billing_address,
-                    'billing_city'=> $request->billing_city,
-                    'billing_state'=> $request->billing_state,
-                    'billing_postcode'=> $request->billing_postcode,
-                    'billing_email'=> $request->billing_email,
-                    'billing_phone'=> $request->billing_phone,
-                    'shipping_first_name'=> $request->shipping_first_name,
-                    'shipping_last_name'=> $request->shipping_last_name,
-                    'shipping_company_name'=> $request->shipping_company_name,
-                    'shipping_address'=> $request->shipping_address,
-                    'shipping_city'=> $request->shipping_city,
-                    'shipping_state'=> $request->shipping_state,
-                    'shipping_postcode'=> $request->shipping_postcode,
-                    'shipping_email'=> $request->shipping_email,
-                    'shipping_phone'=> $request->shipping_phone,
-                    'subtotal'=> $request->subtotal,
-                    'shipping_price'=> $request->shipping_price,
-                    'total'=> $request->total,
-                    'note'=> $request->note,
-        ]);
+        if($request->different_shipping)
+            return Order::create([
+                        'user_id' => auth()->user()->id,
+                        'billing_name'=> $request->billing_name,
+                        'billing_company_name'=> $request->billing_company_name,
+                        'billing_address'=> $request->billing_address,
+                        'billing_city'=> $request->billing_city,
+                        'billing_state'=> $request->billing_state,
+                        'billing_postcode'=> $request->billing_postcode,
+                        'billing_email'=> $request->billing_email,
+                        'billing_phone'=> $request->billing_phone,
+                        'shipping_name'=> $request->shipping_name,
+                        'shipping_company_name'=> $request->shipping_company_name,
+                        'shipping_address'=> $request->shipping_address,
+                        'shipping_city'=> $request->shipping_city,
+                        'shipping_state'=> $request->shipping_state,
+                        'shipping_postcode'=> $request->shipping_postcode,
+                        'shipping_email'=> $request->shipping_email,
+                        'shipping_phone'=> $request->shipping_phone,
+                        'subtotal'=> $request->subtotal,
+                        'shipping_price'=> $request->shipping_price,
+                        'total'=> $request->total,
+                        'note'=> $request->note,
+                        'pickup'=> $request->pickup
+            ]);
+        else
+            return Order::create([
+                        'user_id' => auth()->user()->id,
+                        'billing_name'=> $request->billing_name,
+                        'billing_company_name'=> $request->billing_company_name,
+                        'billing_address'=> $request->billing_address,
+                        'billing_city'=> $request->billing_city,
+                        'billing_state'=> $request->billing_state,
+                        'billing_postcode'=> $request->billing_postcode,
+                        'billing_email'=> $request->billing_email,
+                        'billing_phone'=> $request->billing_phone,
+                        'shipping_name'=> $request->billing_name,
+                        'shipping_company_name'=> $request->billing_company_name,
+                        'shipping_address'=> $request->billing_address,
+                        'shipping_city'=> $request->billing_city,
+                        'shipping_state'=> $request->billing_state,
+                        'shipping_postcode'=> $request->billing_postcode,
+                        'shipping_email'=> $request->billing_email,
+                        'shipping_phone'=> $request->billing_phone,
+                        'subtotal'=> $request->subtotal,
+                        'shipping_price'=> $request->shipping_price,
+                        'total'=> $request->total,
+                        'note'=> $request->note,
+                        'pickup'=> $request->pickup
+            ]);
     }
 
     public function createItem($order)
@@ -190,8 +223,15 @@ class OrderController extends Controller
         //
     }
 
-    public function thankyou()
+    public function loadDirect()
     {
         return view('checkout.thankyou');
+    }
+
+    public function thankyou()
+    {
+        $order = Order::with('items')->where('user_id', auth()->user()->id)->orderBy('updated_at', 'DESC')->first();
+
+        return view('thankyou.page', ['order' => $order]);
     }
 }

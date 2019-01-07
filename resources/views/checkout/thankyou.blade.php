@@ -3,7 +3,7 @@
 <h1>Payment Successful</h1>
 <img src="/images/loading.gif" width="150"/>
 <p>This page will redirect in <span id="time">5</span> seconds.</p>
-<p>Please click <a href="http://test.kalt.com.my">here</a>, if the page does not redirect automatically.</p>
+<p>Please click <a href="/api/order/thankyou">here</a>, if the page does not redirect automatically.</p>
 </div>
 
 <script>
@@ -17,7 +17,7 @@
             display.textContent = seconds;
 
             if (--timer < 0) {
-                window.location = "http://test.kalt.com.my";
+                window.location = "/api/order/thankyou";
                 clearInterval(end);
             }
         }, 1000);

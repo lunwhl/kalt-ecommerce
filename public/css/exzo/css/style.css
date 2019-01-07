@@ -480,3 +480,12 @@ textarea.simple-input{padding-top: 10px; padding-bottom: 10px; line-height: 22px
 }
 
 .light .tag{background: #f7f7f7; color: #888;}
+
+.vuetify-round-border.v-input .v-input__slot {
+	border-radius: 100px;	
+}
+
+.vuetify-round-border.v-input .theme--light.v-label {
+	color: #c0c0c0;
+}
+

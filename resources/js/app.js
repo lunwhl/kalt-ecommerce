@@ -23,6 +23,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('home-page', require('./pages/Home.vue'));
 Vue.component('shop-page', require('./pages/Shop.vue'));
 Vue.component('cart-page', require('./pages/Cart.vue'));
+Vue.component('thankyou-page', require('./pages/Thankyou.vue'));
+Vue.component('profile-page', require('./pages/Profile.vue'));
 Vue.component('checkout-page', require('./pages/Checkout.vue'));
 Vue.component('product-page', require('./pages/Product.vue'));
 Vue.component('order-page', require('./pages/Order.vue'));
@@ -48,7 +50,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css';
 Vue.use(Vuetify, {
   theme: {
     primary: '#40c7f2',
-    secondary: '#b0bec5',
+    secondary: '#eee',
     accent: '#8c9eff',
     error: '#b71c1c'
   }

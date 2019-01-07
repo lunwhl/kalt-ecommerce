@@ -156,36 +156,10 @@
 
         	getCartSuccess(data) {
         		this.carts = data;
-        		Vue.nextTick(()=>{
-					if(_.has(this.carts, 'cart'))
-		        		if(_.values(this.carts).some(x => x == null) || 
-		        			!_.every(this.carts, x => x.length > 0))
-		        			window.location.href = "/shop";
-				}); 
         	},
         },
 
         computed: {
-        	subTotal() {
-        		let subTotal = 0;
-
-        		if(_.has(this.carts, 'cart'))
-	        		_.forEach(this.carts['cart'], function(cart, key) {
-	        			subTotal += cart['options']['productTotalPrice'] * cart['qty'];
-					});
-
-				return subTotal;
-        	},
-
-        	total() {
-        		let total = 0;
-        		return this.subTotal + (this.deliveryCharge == 'pickup' ? 0 : 30);
-        	},
-
-        	deliveryTotal() {
-        		return this.deliveryCharge == 'pickup' ? 'No Shipping' : 'RM 30';
-        	},
-
         	validatePassword() {
                 return (this.form.password === this.form.password_confirmation) ? '' : 'Mismatch confirm password.'
             },

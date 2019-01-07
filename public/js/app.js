@@ -36539,36 +36539,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         getCartSuccess: function getCartSuccess(data) {
-            var _this4 = this;
-
             this.carts = data;
-            Vue.nextTick(function () {
-                if (_.has(_this4.carts, 'cart')) if (_.values(_this4.carts).some(function (x) {
-                    return x == null;
-                }) || !_.every(_this4.carts, function (x) {
-                    return x.length > 0;
-                })) window.location.href = "/shop";
-            });
         }
     },
 
     computed: {
-        subTotal: function subTotal() {
-            var subTotal = 0;
-
-            if (_.has(this.carts, 'cart')) _.forEach(this.carts['cart'], function (cart, key) {
-                subTotal += cart['options']['productTotalPrice'] * cart['qty'];
-            });
-
-            return subTotal;
-        },
-        total: function total() {
-            var total = 0;
-            return this.subTotal + (this.deliveryCharge == 'pickup' ? 0 : 30);
-        },
-        deliveryTotal: function deliveryTotal() {
-            return this.deliveryCharge == 'pickup' ? 'No Shipping' : 'RM 30';
-        },
         validatePassword: function validatePassword() {
             return this.form.password === this.form.password_confirmation ? '' : 'Mismatch confirm password.';
         }

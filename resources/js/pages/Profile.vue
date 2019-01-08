@@ -2,8 +2,8 @@
 		<v-app>
 			<div class="container">
 	            <div class="text-center">
-	                <div class="simple-article size-3 uppercase col-xs-b5">checkout</div>
-	                <div class="h2">check your info</div>
+	                <!-- <div class="simple-article size-3 uppercase col-xs-b5">Update Your Profile</div> -->
+	                <div class="h2">My Profile</div>
 	                <div class="title-underline center"><span></span></div>
 	            </div>
         	</div>

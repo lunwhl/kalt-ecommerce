@@ -231,22 +231,22 @@
 
         methods: {
         	submitOrder() {
-        		if(!this.policyCheck)
+        		if(!this.policyCheck){
         			window.event.$emit("login-alert", {'openDialog': true});
-        		
-        		window.event.$emit("loading", {'openDialog': true});
-        		this.form.subtotal = this.subTotal;
-        		this.form.total = this.total;
-        		this.form.pickup = this.shipping;
-        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
-        		let url = '/api/order';
-        		this.form.post(url, this.form)
+        		} else {
+        			window.event.$emit("loading", {'openDialog': true});
+	        		this.form.subtotal = this.subTotal;
+	        		this.form.total = this.total;
+	        		this.form.pickup = this.shipping;
+	        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
+	        		let url = '/api/order';
+	        		this.form.post(url, this.form)
         				.then(response => this.submitOrderSuccess(response.data))
         				.catch(error => this.submitOrderError(response.error));
+    			}
         	},
 
         	submitOrderSuccess(data) {
-
         		window.location.href = "/api/order/completed";
         	},
 

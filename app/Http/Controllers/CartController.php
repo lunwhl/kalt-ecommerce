@@ -166,8 +166,6 @@ class CartController extends Controller
 
         $carts = $this->getCartByAuth();
 
-        dd($carts);
-
         return response(['cart' => $carts]);
     }
 

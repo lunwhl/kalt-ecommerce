@@ -26,6 +26,7 @@ Route::get('/shop', 'HomeController@index2');
 
 Route::group(['prefix' => 'home'], function() {
 	Route::post('/products/latest', 'HomeController@getLatestProduct');
+	Route::post('/products/hot/selling', 'HomeController@getHotSellingProduct');
 });
 
 Route::group(['prefix' => 'cart'], function() {

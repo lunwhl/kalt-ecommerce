@@ -175,6 +175,10 @@ class OrderController extends Controller
                    'installation_type' => $cart->options['installation'],
                    'installation_price' => $cart->options['installationPrice'],
             ]); 
+
+            $product = Product::find($cart->id);
+            $product->sold_qty = $product->sold_qty + $cart->qty;
+            $product->save();
         };       
     }
 

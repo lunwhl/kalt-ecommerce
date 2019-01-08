@@ -12,13 +12,13 @@
 	                <div class="col-md-12">
 	                    <h4 class="h4 col-xs-b25">your purchase</h4>
 	                    <div v-for="item in items" class="cart-entry clearfix">
-	                        <a class="cart-entry-thumbnail" :href="/product/+item.id"><img :src="$options.filters.set_image(item.image_path)" style="width:210px" alt=""></a>
+	                        <a class="cart-entry-thumbnail"><img :src="$options.filters.set_image(item.image_path)" style="width:210px" alt=""></a>
 	                        <div class="cart-entry-description">
 	                            <table>
 	                                <tbody>
 	                                    <tr>
 	                                        <td>
-	                                            <div class="h6"><a :href="/product/+item.id">{{item.name}}</a></div>
+	                                            <div class="h6"><a>{{item.name}}</a></div>
 	                                            <div class="simple-article size-3">Installation: {{item.installation_type}}</div>
 	                                            <div class="simple-article size-1">QUANTITY: {{item.qty}}</div>
 	                                        </td>

@@ -154,7 +154,7 @@
 									<li id="latest"><a class="product-link" href="javascript:void(0)">Hot Selling Products</a></li>
 								</ul>
 
-								<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>
+								<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
 							</div><!-- Container /- -->
 						</div><!-- Our Product /- -->
 					</div>
@@ -411,6 +411,7 @@
     		return {
     			isLoading: true,
     			latestProducts: [],
+    			hotSellingProducts: [],
     			testCart: [],
     			Cart: [],
     			snackbar: false,
@@ -428,6 +429,7 @@
         mounted() {
         	this.getCart();
             this.getLatestProduct();
+            this.getHotSellingProduct();
             window.event.$on("share-to-shop", (value) => {
         		window.event.$emit("share-dialog", {'openDialog': value['openDialog'], 'product': value['product']});
             });
@@ -445,6 +447,47 @@
 
         	setLastestProduct(data) {
         		this.latestProducts = data;
+
+        		$('.latest-products').slick({
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					centerPadding: '0px',
+					responsive: [
+					{
+						breakpoint: 1000,
+						settings: {
+							slidesToShow: 3
+						}
+					},
+					{
+						breakpoint: 991,
+						settings: {
+							slidesToShow: 3
+						}
+					},
+					{
+						breakpoint: 640,
+						settings: {
+							slidesToShow: 2
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							centerMode: true,
+							slidesToShow: 1
+						}
+					}]
+				}); 
+        	},
+
+        	getHotSellingProduct() {
+        		axios.post('/home/products/hot/selling')
+        		.then(response => this.setHotSellingProduct(response.data));
+        	},
+
+        	setHotSellingProduct(data) {
+        		this.hotSellingProducts = data;
 
         		$('.latest-products').slick({
 					slidesToShow: 4,

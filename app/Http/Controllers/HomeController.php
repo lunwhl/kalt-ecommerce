@@ -61,6 +61,13 @@ class HomeController extends Controller
         return response($products);
     }
 
+    public function getHotSellingProduct()
+    {
+        $products = Product::orderBy('sold_qty', 'desc')->take(4)->get();
+        // dd($products);
+        return response($products);
+    }
+
     public function checkAuth()
     {
         return response(['auth' => Auth::check()]);

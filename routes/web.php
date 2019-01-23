@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('email', function() {
+	return view('email.resetpassword');
+});
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
@@ -23,6 +26,8 @@ Route::get('info', function() {
 
 Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'HomeController@index2');
+Route::get('/activate/{id}', 'HomeController@activate');
+Route::post('/reset', 'HomeController@resetPassword');
 
 Route::group(['prefix' => 'home'], function() {
 	Route::post('/products/latest', 'HomeController@getLatestProduct');

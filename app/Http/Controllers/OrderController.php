@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\PurchaseToAdminEmail;
 use App\Mail\PurchaseToCustomerEmail;
 use Illuminate\Http\Request;
+use Billplz\Client;
+use Http\Client\Common\HttpMethodsClient;
+use Http\Adapter\Guzzle6\Client as GuzzleHttpClient;
+use Http\Message\MessageFactory\GuzzleMessageFactory;
 
 class OrderController extends Controller
 {
@@ -100,10 +104,21 @@ class OrderController extends Controller
         Common::deleteCart();
         Cart::destroy();
 
+        // $collectionClient = new Client(['auth' => ['5aa9c747-9532-442b-88c8-8c84b36be2cd']]);
+
+        // $response = $collectionClient->post('https://billplz-staging.herokuapp.com/api/v3/collections', [
+        //     'form_params' => [
+        //         'title' => 'test1',
+        //     ],
+        // ]);
+
+        // $response = json_decode($response->getBody(), true);
+
         $email = $request->shipping_email? $request->shipping_email : $request->billing_email;
         Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($request));
         Mail::to($email)->send(new PurchaseToCustomerEmail($request));
 
+        // return response($response);
         return response(200);
     }
 

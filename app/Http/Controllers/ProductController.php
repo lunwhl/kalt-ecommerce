@@ -32,17 +32,21 @@ class ProductController extends Controller
                     });
         $pluckCategoryId = $filteredCategory->pluck('id')->toArray();
 
+        if(count($pluckCategoryId) == 0)
+            return response(['relatedProducts' => []]);
+
         $productIds = collect();
+        // $product = Product::find(2);
         foreach(Product::all() as $product)
         {  
             $filteredProductCategory = $product->categories->filter(function ($value, $key) {
                         return $value->type != 'brand';
                     });
             $pluckProductCategoryId = $filteredProductCategory->pluck('id')->toArray();
-
             $arrayDiffResult = array_diff($pluckCategoryId,$pluckProductCategoryId);
         
-            if(count($arrayDiffResult) == 0)
+            // if(count($arrayDiffResult) == 0)
+            if($pluckProductCategoryId == $pluckCategoryId)
             {
                 $productIds->push($product->id);
             }

@@ -41,6 +41,7 @@ Route::group(['prefix' => 'home'], function() {
 	Route::post('/check/auth', 'HomeController@checkAuth');
 	Route::post('/send/inquiry', 'HomeController@sendInquiry');
 	Route::post('/profile/update', 'HomeController@update');
+	Route::post('/activate/check', 'HomeController@isActivate');
 	Route::get('/download/{product}', 'HomeController@downloadImage');
 	Route::get('/auth', 'HomeController@getAuth');
 	Route::get('/profile', 'HomeController@profile');

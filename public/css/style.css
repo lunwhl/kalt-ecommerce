@@ -2442,6 +2442,10 @@ a:hover {
 	}
 }
 
+.loginPassword .v-text-field__details{
+	display: none;
+}
+
 .btn-shop {
 	background: none;
 	color: #fff;

@@ -27,8 +27,11 @@
                                     :error-messages="loginForm.errors.get('password')"
                                     v-on:keyup.enter="submitLogin"
                                     type="password"
-                                    label="Password">                    
+                                    label="Password"
+                                    class="loginPassword">                    
                     </v-text-field>
+                    <span style="color: grey; cursor: pointer;" @click="forgotPassword">Forgot password</span>
+                    <span v-if="activateError" style="color: red;">Your account is not activate. Please activate your account through your email.</span>
                     <div class="text-xs-center d-flex align-center">
                         <v-btn class="align-center" @click="submitLogin" color="info">Login</v-btn>
                         <v-btn class="align-center" @click="toRegister" color="info">Register</v-btn>
@@ -43,7 +46,7 @@
                       </v-flex>
                       <v-flex xs6 text-xs-right>
                             <v-btn @click="toLogin" fab dark small color="indigo">
-                                <v-icon style="padding-top:11px;" dark>arrow_back</v-icon>
+                                <v-icon style="padding-top:10px;" dark>arrow_back</v-icon>
                             </v-btn>
                       </v-flex>
                     </v-layout>
@@ -100,12 +103,21 @@
                 </v-card-text>
             </v-card>
         </v-dialog>
+        <alert-login title="Activate Account" message="You are required to activate your account through your email."></alert-login>
+        <reset-password></reset-password>
     </div>
 
 </template>
 
 <script>
+    import AlertLogin from '../components/AlertLogin.vue';
+    import ResetPassword from '../components/ResetPassword.vue';
     export default {
+        components: {
+            AlertLogin,
+            ResetPassword
+        },
+
         data () {
             return {
                 dialog: false,
@@ -125,6 +137,7 @@
                     password: '',
                 }),
                 isRegister: false,
+                activateError: false,
                 rules: {
                   email: value => {
                     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -141,6 +154,10 @@
         },
 
         methods: {
+            forgotPassword() {
+                window.event.$emit("reset-dialog", {'openDialog': true});
+            },
+
             validatePassword() {
                 return (this.form.password === this.form.password_confirmation) ? '' : 'Mismatch confirm password.'
             },
@@ -155,25 +172,18 @@
                 this.$refs.focus.focus();
             },
 
-            doCopy: function (product) {
-                let url = 'www.' + window.location.hostname + '/product/' + product.id;
-                this.$copyText(url).then(function (e) {
-                        window.event.$emit("copied");
-                })
-            },
-
-            facebookSharerUrl(product){
-                return "https://www.facebook.com/sharer.php?u=" + window.location.hostname + '/product/' + product.id + "&t=" + product.name;
-            },
-
             submitLogin(){
                 this.loginForm.post('/login', this.loginForm)
                         .then(response => this.submitLoginSuccess(response))
             },
 
             submitLoginSuccess(data){
-                this.dialog = false;
-                location.pathname == '/cart' ? window.location.href = '/cart' : window.location.href = window.location.href;
+                if(!data.result){
+                    this.activateError = true;
+                } else {
+                    this.dialog = false;
+                    location.pathname == '/cart' ? window.location.href = '/cart' : window.location.href = window.location.href;
+                }
             },
 
             submitRegister(){
@@ -183,7 +193,8 @@
 
             submitRegisterSuccess(){
                 this.dialog = false;
-                window.location.href = window.location.href;
+                // window.location.href = window.location.href;
+                window.event.$emit("login-alert", {'openDialog': true});
             },
         },
 

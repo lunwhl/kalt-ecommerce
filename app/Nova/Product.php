@@ -53,7 +53,7 @@ class Product extends Resource
                 ->path('images')
                 ->help(
                     'Please select an image with at least 300px width for the best result'
-                ),
+                )->rules('required'),
 
             Text::make('Name')
                 ->sortable()
@@ -63,7 +63,9 @@ class Product extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Froala::make('Description')->withFiles('public'),
+            Froala::make('Description')->withFiles('public')->rules('required'),
+
+            Froala::make('Specification')->withFiles('public')->rules('required'),
 
             BelongsToMany::make('Categories'),
         ];

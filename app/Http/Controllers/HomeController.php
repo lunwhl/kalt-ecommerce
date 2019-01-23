@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use App\Mail\InquiryEmail;
+use App\Mail\ResetPassword;
 use Illuminate\Support\Facades\Mail;
 use App\User;
 use App\Product;
@@ -112,5 +113,30 @@ class HomeController extends Controller
         $user->save();
 
         return response(['data' => true]);
+    }
+
+    public function activate($id)
+    {
+        $user = User::find($id);
+        $user->is_active = true;
+        $user->save();
+
+        return redirect('/'); 
+    }
+
+    public function resetPassword()
+    {
+        $user = User::where('email', request()->email)->first();
+
+        if(!$user){
+            return response(['result' => false, 'email' => request()->email]);
+        }
+        $password = str_random(8);
+        $user->password = Hash::make($password);
+        $user->save();
+
+        Mail::to(request()->email)->send(new ResetPassword($password));
+
+        return response(['result' => true]);
     }
 }

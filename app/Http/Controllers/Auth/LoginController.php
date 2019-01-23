@@ -51,11 +51,21 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+    protected function attemptLogin(Request $request)
+    {
+        return (auth()->attempt(['email' => $request->email, 'password' => $request->password, 'is_active' => 1]));
+    }
+
     protected function authenticated(Request $request, $user)
     {
         Common::addCartDependAuth();
 
-        return response(['result' => true]);
+        if($user->is_active){
+          return response(['result' => true]);
+        } else {
+          // Auth::logout();
+          return response(['result' => false]);
+        }
         // return redirect(session('link'));
     }
 }

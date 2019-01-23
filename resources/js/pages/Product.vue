@@ -119,19 +119,57 @@
 	                    </div>
 	                </div>
 	                <div class="col-md-12">
-	                    <div class="row">
-	                    	<div class="text-center">
-				                <div class="h4">Description</div>
-				                <div class="title-underline center"><span></span></div>
-				            </div>
-				            <div class="text-center">
-	                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
-	                    	</div>
-	                    </div>
+						<v-tabs
+						color="#488dcb"
+						dark
+						slider-color="#40c7f2"
+						centered
+						>
+							<v-tab
+							v-for="tabTitle in tabTitles"
+							:key="tabTitle"
+							ripple
+							>
+							{{ tabTitle }}
+							</v-tab>
+							<v-tab-item
+							v-for="tabTitle in tabTitles"
+							:key="tabTitle"
+							>
+								<v-tabs-items v-model="tab">
+									<v-tab-item
+									:key="tabTitles[0]"
+									>
+										<div class="row" style="margin-top: 40px;">
+					                    	<div class="text-center">
+								                <div class="h4">Description</div>
+								                <div class="title-underline center"><span></span></div>
+								            </div>
+								            <div class="text-center">
+					                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
+					                    	</div>
+					                    </div>
+									</v-tab-item>
+									<v-tab-item
+									:key="tabTitles[1]"
+									>
+										<div class="row" style="margin-top: 40px;">
+					                    	<div class="text-center">
+								                <div class="h4">Specification</div>
+								                <div class="title-underline center"><span></span></div>
+								            </div>
+								            <div class="text-center">
+					                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.specification"></div>
+					                    	</div>
+					                    </div>
+									</v-tab-item>
+								</v-tabs-items>
+							</v-tab-item>
+						</v-tabs>
 	                </div>
-	                <div class="col-md-12">
+	                <div class="col-md-12" v-if="!relatedProducts['relatedProducts'].length == 0">
 	                    <div class="row">
-	                    	<div class="text-center">
+	                    	<div class="text-center" style="margin-top: 40px;">
 				                <div class="h4">Related Products</div>
 				                <div class="title-underline center"><span></span></div>
 				            </div>
@@ -179,7 +217,11 @@
     			snackbar: false,
     			snackbarMsg: '',
     			timeout: 2000,
-    			relatedProducts: [],
+    			relatedProducts: {
+    				'relatedProducts': [],
+    			},
+    			tab: null,
+    			tabTitles: ['Description', 'Specification'],
     		};
     	},
 

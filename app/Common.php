@@ -24,4 +24,8 @@ class Common
     {
         Shoppingcart::where('identifier', Auth::id())->delete();
     }
+
+    public static function emailLogo() {
+        return 'http://kalt.local/images/kalt.png';
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class CheckoutController extends Controller
 {
@@ -80,5 +81,20 @@ class CheckoutController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function payment()
+    {   
+        $order = Order::with('items')->where('user_id', auth()->user()->id)->orderBy('updated_at', 'DESC')->first();
+
+        $collectionClient = new GuzzleHttp\Client;
+
+        $response = $collectionClient->post('https://www.billplz.com/api/v3/collections', [
+            'form_params' => [
+                'title' => $order->id,
+            ],
+        ]);
+
+        $response = json_decode($response->getBody(), true);
     }
 }

@@ -3,7 +3,7 @@
     <div>
       <div style="padding-top: 15px;">You have registered an account in Kalt.</div>
       <div>Click the button below to activate your account.</div>
-      <a href="http://kalt.local/activate/{{$request->id}}" style=" background-color: #40C7F2;
+      <a href="http://test.kalt.com.my/activate/{{$request->id}}" style=" background-color: #40C7F2;
             border: none;
             color: white;
             padding: 15px 32px;

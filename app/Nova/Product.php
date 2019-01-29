@@ -10,7 +10,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
 use Vyuldashev\NovaMoneyField\Money;
 use Laravel\Nova\Fields\BelongsToMany;
-use Froala\NovaFroalaField\Froala;
+use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 
 class Product extends Resource
 {
@@ -63,9 +63,23 @@ class Product extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Froala::make('Description')->withFiles('public')->rules('required'),
+            NovaTinyMCE::make('Description')->options([
+                            'plugins' => [
+                                'advlist autolink lists image charmap hr anchor'
+                            ],
+                            'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
+                            'use_lfm' => true,
+                        ])
+                        ->rules('required'),
 
-            Froala::make('Specification')->withFiles('public')->rules('required'),
+            NovaTinyMCE::make('Specification')->options([
+                            'plugins' => [
+                                'advlist autolink lists image charmap hr anchor'
+                            ],
+                            'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
+                            'use_lfm' => true,
+                        ])
+                        ->rules('required'),
 
             BelongsToMany::make('Categories'),
         ];

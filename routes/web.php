@@ -24,6 +24,10 @@ Route::get('info', function() {
 	phpinfo();
 });
 
+Route::get('wording', function(){
+	return view('home.wording');
+});
+
 Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'HomeController@index2');
 Route::get('/activate/{id}', 'HomeController@activate');

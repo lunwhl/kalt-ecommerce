@@ -23,6 +23,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('home-page', require('./pages/Home.vue'));
 Vue.component('shop-page', require('./pages/Shop.vue'));
 Vue.component('cart-page', require('./pages/Cart.vue'));
+Vue.component('old-page', require('./pages/Old.vue'));
 Vue.component('thankyou-page', require('./pages/Thankyou.vue'));
 Vue.component('profile-page', require('./pages/Profile.vue'));
 Vue.component('checkout-page', require('./pages/Checkout.vue'));

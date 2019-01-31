@@ -3,24 +3,35 @@
         <ul class="row" style="padding-left: 0px !important;">
 
         <!-- New Products -->
+            <li v-if="fromHome" class="col-sm-2"></li>
             <li v-for="product in products" :class="colSm" data-wow-delay="0.4s">
-                <div class="items-in"> 
-                <!-- Image --> 
+                <div v-if="!fromHome" style="margin-top:15px;"></div>
+                <div style="border: 2px solid rgb(197, 197, 197); text-align: center;">
+                    <h3 style="font-weight: 1000;" class="gotham-bold">{{brandName(product)}}</h3>
                     <div class="product-featured-image" :style="'background-image: url(' + $options.filters.set_image(product.image_path) + ')'"></div>
+                    <div><a style="cursor:pointer;" :href="/product/+product.id"><b style="font-size: 17px; color: black;">{{product.name}}</b></a></div>
+                    <div style=" margin-top:10px;"><b style="font-size: 20px; color: #223169;">RM {{product.price}}</b></div>
+                    <a @click="addToCart(product)" style="color: #223169;" class="btn-shop gotham-book">ADD TO CART</a>
+                </div>
+                
+                <!-- <div class="items-in">  -->
+                <!-- Image --> 
+                    <!-- <div class="product-featured-image" :style="'background-image: url(' + $options.filters.set_image(product.image_path) + ')'"></div> -->
                     <!-- <img :src="$options.filters.set_image(product.image_path)" alt="">  -->
                     <!-- Hover Details -->
-                        <div class="over-item">
+                        <!-- <div class="over-item">
                             <ul class="animated fadeIn" style="padding-left: 0px !important;">
                                 <li> <a style="cursor:pointer;" @click="addToCart(product, true)" data-lighter><i class="fa fa-credit-card-alt"></i></a></li>
                                 <li> <a style="cursor:pointer;" @click="share(product)"><i class="fa fa-share"></i></a></li>
                                 <li> <a style="cursor:pointer;" :href="/product/+product.id"><i class="fa fa-eye"></i></a></li>
                                 <li class="full-w"> <a @click="addToCart(product)" class="btn-shop">ADD TO CART</a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     <!-- Item Name -->
-                    <div class="details-sec"> <a :href="/product/+product.id">{{product.name}}</a> <span class="font-montserrat">RM {{product.price}}</span> </div>
-                </div>
+                    <!-- <div class="details-sec"> <a :href="/product/+product.id">{{product.name}}</a> <span class="font-montserrat">RM {{product.price}}</span> </div>
+                </div> -->
             </li>
+            <li v-if="fromHome" class="col-sm-2"></li>
         </ul>
         <v-snackbar v-model="snackbar"
             right="right"
@@ -69,12 +80,16 @@
             {
                 this.snackbarMsg = message;
                 this.snackbar = true;
-            }
+            },
+
+            brandName(product) {
+                return product.categories[0].name;
+            },
         },
 
         computed: {
             colSm: function() {
-                return this.fromHome ? "col-sm-3 animate fadeIn" : "col-sm-4 animate fadeIn";
+                return this.fromHome ? "col-sm-2 animate fadeIn" : "col-sm-3 animate fadeIn";
             },
         },
     }

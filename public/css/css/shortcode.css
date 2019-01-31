@@ -41,7 +41,26 @@
 		- max-width: 639
 		- max-width: 479
 --------------------------------------------*/
+@font-face {
+    font-family: 'gothamhtfbold';
+    src: url('../../fonts/GothamHTF-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'gothamhtfbook';
+    src: url('../../fonts/GothamHTF-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfmedium';
+    src: url('../../fonts/GothamHTF-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* * Shortcodes */
 
@@ -1422,8 +1441,55 @@
 	position: relative;
 	z-index: 1;
 }
+
+.right-background {
+	background-image: url('/images/right.png');
+	background-position: 112% 30px;
+}
+
+.left-background {
+	background-image: url('/images/left.png');
+	background-position: -16% -10px;
+}
+
+.our-shop-pictures {
+	height: 190px;
+}
+
+.contact {
+	padding: 0px 350px;
+}
+
+.contact div {
+	color: #fff;
+}
+
+.contact span {
+	color: #fff;
+}
+
+.contact p {
+	color: #fff;
+}
+
+.contact input::placeholder {
+	color: #223169;
+	font-weight: bold;
+}
+
+.contact textarea::placeholder {
+	color: #223169;
+	font-weight: bold;
+}
+
 .subscribe-section.container-fluid {
-	padding: 140px 0;
+	padding: 10px 0;
+}
+
+@media (max-width: 970px) {
+	.contact{
+		padding: 0px 0px;
+	}
 }
 
 @media (max-width: 530px) {
@@ -1432,11 +1498,16 @@
 	}
 }
 
+.our-services-icon {
+	width: 200px;
+	float: left;
+}
+
 .subscribe-section.subscribe-section-1 {
 	background-image: url("../images/subscribe-bg-1.jpg");
 }
 .subscribe-section::before {
-	background-color: rgba(0, 0, 0, 0.851);
+	background-color: #fff;
 	content: "";
 	left: 0;
 	right: 0;
@@ -1475,14 +1546,14 @@
 }
 
 .contact-btn {
-	background-color: #40c7f2;
-    border: 1px solid #40c7f2;
+	background-image: linear-gradient(to right, #40c7f2, #1c5e99);
+    /* border: 1px solid #40c7f2; */
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'gothamhtfmedium', sans-serif;
     font-weight: 600;
     font-size: 12px;
     margin: 25px 15px 0;
-    padding: 12px 30px;
+    padding: 11px 60px;
     text-transform: uppercase;
     -webkit-transition: all 1s ease 0s;
     -moz-transition: all 1s ease 0s;
@@ -1516,8 +1587,8 @@
 }
 
 .contact-us-content p {
-	color: #000;
-	font-family: 'Lato', sans-serif;
+	color: #fff;
+	font-family: 'gothamhtfbook', sans-serif;
 	/* font-style: italic; */
 	font-size: 18px;
 	letter-spacing: 1.26px;
@@ -1525,8 +1596,8 @@
 }
 
 .contact-us-content {
-	color: #000;
-	font-family: 'Lato', sans-serif;
+	color: #fff;
+	font-family: 'gothamhtfbook', sans-serif;
 	/* font-style: italic; */
 	font-size: 18px;
 	letter-spacing: 1.26px;

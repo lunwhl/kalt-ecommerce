@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'gothamhtfbold';
+    src: url('../../../fonts/GothamHTF-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfbook';
+    src: url('../../../fonts/GothamHTF-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfmedium';
+    src: url('../../../fonts/GothamHTF-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -9,10 +30,10 @@ a {
 	-ms-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 	text-decoration: none !important;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'gothamhtfbold', sans-serif;
 }
 .checkbox label {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'gothamhtfbook', sans-serif;
 	font-size: 10px;
 	display: inline-block;
 	width: 100%;
@@ -22,7 +43,7 @@ a {
 .checkbox input {
 	border: 1px solid #ebebeb;
 	width: 60px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'gothamhtfbook', sans-serif;
 	height: 44px;
 	float: left;
 	width: 100%;

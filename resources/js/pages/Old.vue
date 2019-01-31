@@ -1,39 +1,11 @@
+
+	<!-- Photo Slider -->
 	<template>
 		<v-app>
 			<div data-app="true">
-				<div style="text-align: center;">
-					<div style="display: inline-block;">
-						<div style="display: block;">
-							<img src="/images/Header.png" style="width: 500px;" />
-						</div>
-						<div style="font-size: 18px;" class="gotham-book">
-							We are happy to bring out 30 years air conditioner </br> business online and be your No.1 one-stop online </br> air conditioner shop.
-						</div>
-						<div style="margin: 20px 0px;">
-							<span style="font-size: 18px; color: white; background-image: linear-gradient(to right, #40c7f2 , #1c5e99); font-weight: bold; padding: 8px 43px;">WITH THE CHEAPEST PRICE IN THE TOWN</span>
-						</div>
-						<div class="col-md-12" style="padding: 0px;">
-							<div class="col-md-6">
-								<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+603 1234 5678</span></div>
-							</div>
-							<div class="col-md-6">
-								<div style="font-weight: bold;"><img src="/images/mail.png" class="img-30" /><span style="margin-left: 10px;">info@kalt.com.my</span></div>
-							</div>
-						</div>
-						<div style="display: block; margin-left: -250px;">
-							<img src="/images/flow.png" style="width: 500px;" />
-						</div>
-					</div>
-					<div class="aircond-image" style="display: inline-block;">
-						<img src="/images/Header_Photo.png" class="mg-ngt-360" style="width: 810px;" />
-					</div>
-					<div>
-						<a href="#our-product"><img src="/images/arrow-down.png" class="arrow-down" /></a>
-					</div>
-				</div>
-				<!-- <div class="photo-slider container-fluid no-padding" id="home"> -->
+				<div class="photo-slider container-fluid no-padding" id="home">
 					<!-- Main Carousel -->
-					<!-- <div id="main-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+					<div id="main-carousel" class="carousel slide carousel-fade" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="#main-carousel" data-slide-to="1"></li>
@@ -41,43 +13,43 @@
 						</ol>
 						<div role="listbox" class="carousel-inner fix-height">
 							<div class="item active">
-								<div class="carousel-caption"> -->
+								<div class="carousel-caption">
 									<!-- <h3 data-animation="animated fadeInLeft">New Way to Design Your Home</h3>
 									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
 									<div class="col-md-12">
 										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
 									</div>
 									<img data-animation="animated fadeInDown" src="images/slider-1.png" alt="slider" width="900" height="342" /> -->
-								<!-- </div>
+								</div>
 							</div>
 							<div class="item slide-1">
-								<div class="carousel-caption"> -->
+								<div class="carousel-caption">
 									<!-- <h3 data-animation="animated fadeInLeft">Give Us Something To Assemble</h3>
 									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
 									<div class="col-md-12">
 										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
 									</div>
 									<img data-animation="animated fadeInDown" src="images/slider-2.png" alt="slider" width="722" height="343" /> -->
-								<!-- </div>
+								</div>
 							</div>
 							<div class="item slide-2">
-								<div class="carousel-caption"> -->
+								<div class="carousel-caption">
 									<!-- <h3 data-animation="animated fadeInLeft">We like To Work A Lot With Wood</h3>
 									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
 									<div class="col-md-12">
 										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
 									</div>
 									<img data-animation="animated fadeInDown" src="images/slider-3.png" alt="slider" width="1056" height="345" /> -->
-								<!-- </div>
+								</div>
 							</div>
-						</div> -->
-					<!-- </div> --><!-- Main Carousel /-  -->
-				<!-- </div> --><!-- Photo Slider /- -->
+						</div>
+					</div><!-- Main Carousel /-  -->
+				</div><!-- Photo Slider /- -->
 
 				<!-- Subscribe Section -->
-				<!-- <div id="about-us">
+				<div id="about-us">
 					<div class="subscribe-section container-fluid no-padding">
-						<div class="container">
+						<div class="container" style="background-color:#000;">
 							<div class="section-header">
 								<h3 style="color:white;">About Us</h3>
 							</div>
@@ -156,169 +128,44 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div> -->
+					</div><!-- Subscribe Section /- -->
+				</div>
 
 				<!-- Our Product -->
 				<div id="our-product">
 					<div class="latest-product our-products container-fluid no-padding woocommerce">
-						<div class="row animate fadeInUp" data-wow-delay="0.2s">
+						<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 							<div class="padding-top-75"></div>
 							<!-- Container -->
-							<div>
+							<div class="container">
 								<!-- Section Header -->
 								<div class="section-header">
-									<h3 class="dark-blue">Our Products</h3>
+									<h3>Our Products</h3>
 								</div><!-- Section Header /- -->
+								<ul id="filters" class="products-categories no-left-padding">
+									<li id="latest"><a class="product-link" href="javascript:void(0)">Latest Products</a></li>
+								</ul>
 
-								<div class="section-header" style="margin-bottom: 10px;">
-									<span>LATEST PRODUCTS</span>
-								</div>
+								<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
 
-								<div class="row">
-									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
-										<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
-										<div style="text-align:center;">
-											<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
-										</div>
-									</div>
-								</div>
-								<div style="text-align:center;" class="row right-background">
-									<div class="light-to-dark-blue">
-										<a href="/shop"><span>VIEW MORE >></span></a>
-									</div>
-									<hr class="hori">
-									
-									<div class="section-header" style="margin-bottom: 10px;">
-										<span>HOT SELLING PRODUCTS</span>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
-										<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
-										<div style="text-align:center;">
-											<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
-											<div class="light-to-dark-blue">
-												<a href="/shop"><span>VIEW MORE >></span></a>
-											</div>
-										</div>
-									</div>
-								</div>
+								<div class="padding-top-75"></div>
+
+								<ul id="filters" class="products-categories no-left-padding">
+									<li id="latest"><a class="product-link" href="javascript:void(0)">Hot Selling Products</a></li>
+								</ul>
+
+								<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
 							</div><!-- Container /- -->
 						</div><!-- Our Product /- -->
 					</div>
 				</div>
 
-				<div class="subscribe-section container-fluid no-padding" id="faq">
-					<div>
-						<div class="section-header left-background" style="margin-bottom: 20px;">
-							<h3 class="dark-blue" style="padding: 50px;">Our Services</h3>
+				<div class="subscribe-section container-fluid no-padding" id="faq" style="background-color:#000;">
+					<div class="container" style="background-color:#000;">
+						<div class="section-header" style="margin-bottom: 20px;">
+							<h3 style="color:white;">Service</h3>
 						</div>
-						<div class="service-container">
-							<div class="col-md-12 padding-300">
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-02.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">AIR CONDITIONER</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-03.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSTALLATION</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-04.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CHEMICAL CLEANING</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="service-container">
-							<div class="col-md-12 padding-300">
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-05.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSPECTION & REPAIR</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-06.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CONCEALLING</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/shop"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-07.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">WARRANTY CARE</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- <div class="subscribe-content">
+						<div class="subscribe-content">
 							<h3 style="color:#488dcb; font-size: 20px">Installation</h3>
 							<div class="row">
 								<div class="col-sm-4">
@@ -465,86 +312,56 @@
 									</div>
 								</div>
 							</div>
-						</div> -->
+						</div>
 					</div>
 				</div><!-- Subscribe Section /- -->
-
-				<div class="subscribe-section container-fluid no-padding" id="faq">
-					<div class="container">
-						<div class="section-header" style="margin-bottom: 20px;">
-							<h3 class="dark-blue">Our Shop</h3>
-						</div>
-						<div class="col-md-12" style="margin-bottom: 10px;">
-							<img src="/images/61_big.jpg" class="our-shop-pictures" />
-							<img src="/images/display.jpg" class="our-shop-pictures" />
-							<img src="/images/service.jpg" class="our-shop-pictures" />
-							<img src="/images/aircond-brand.jpg" class="our-shop-pictures" />
-						</div>
-						<div class="light-to-dark-blue">
-							<a href="/#"><span>VIEW MORE >></span></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="contact" id="contact-us" style="background-image: url('/images/bottom-background.png'); background-size: cover;">
+				<div id="contact-us" style="background-color:#000;">
 					<div class="latest-product our-products container-fluid no-padding woocommerce">
 						<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
+							<div class="padding-top-75"></div>
 							<!-- Container -->
 							<div class="container">
 								<!-- Section Header -->
 								<div class="section-header">
-									<h3 style="color: #fff; padding: 15px 0px;">Contact</h3>
+									<h3>Contact Us</h3>
 								</div><!-- Section Header /- -->
 								<div class="contact-us-content" style="text-align:left;">
+									<p>You are always welcome to visit me or contact us while you have some comments or suggestions for us.</p>
 									<div class="row">
 										<div class="col-sm-6">
-											<p style="font-weight: 310;">You are always welcome to visit me or contact us while you have some comments or suggestions for us.</p>
-											<h3 class="gotham-bold" style="font-size: 20px;">Kalt Air Conditioning Sdn. Bhd.</h3>
-											</br>
-											<p style="font-weight: 310;">7 & 9, Lebuh Nangka 2, Taman Desa Damai,</br>
-											14000 Bukit Mertajam,
+											<h3>Kalt Air Conditioning Sdn. Bhd.</h3>
+											<p>7 & 9, Lebuh Nangka 2, Taman Desa Damai,</br>
+											14000 Bukit Mertajam,</br>
 											Pulau Pinang.</br>
-											<div class="row">
-												<div class="col-md-6">
-													<b style="font-weight: bold;" class="gotham-bold">Tel:</b> <span style="font-weight: 310;">012-4020969</span></br> 
-												</div>
-												<div class="col-md-6">
-													<b style="font-weight: bold;" class="gotham-bold">Fax:</b> <span style="font-weight: 310;">04-5399577</span> </br>
-												</div>
-											</div>
-											</br>
-												<b style="font-weight: bold;" class="gotham-bold">Opening hour:</b> </br> <span style="font-weight: 310;">Monday to Saturday 9.00am to 6.00pm</span>
-											</p>											
+											Tel: 012-4020969</br> 
+											Fax: 04-5399577 </br>
+											Opening hour: Monday to Saturday 9.00am to 6.00pm
+											</p>
 										</div>
-										<div class="col-md-6 col-sm-12 col-xs-12 contact-form">
-											<h3 style="margin-top: 0px; font-size: 17px; font-weight: bold;">Leave a Message in the feedback form below.</h3>
+										<div class="col-md-6 col-sm-6 col-xs-6 contact-form">
+											<h3>Leave a Message in the feedback form below</h3>
 											<form id="contact-form" class="row">
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Name *</label> -->
-													<input type="text" class="form-control" placeholder="NAME*" id="input_name"  v-model="form.contact_name" required>
+												<div class="form-group col-md-6 col-sm-6 col-xs-6">
+													<label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Name *</label>
+													<input type="text" class="form-control" id="input_name"  v-model="form.contact_name" required>
 													<span class="text-danger" v-if="form.errors.has('contact_name')">{{ form.errors.get('contact_name') }}</span>
 												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Email *</label> -->
-													<input type="email" class="form-control" placeholder="EMAIL*" id="input_email" v-model="form.contact_email"  required>
+												<div class="form-group col-md-6 col-sm-6 col-xs-6">
+													<label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Email *</label>
+													<input type="email" class="form-control" id="input_email" v-model="form.contact_email"  required>
 													<span class="text-danger" v-if="form.errors.has('contact_email')">{{ form.errors.get('contact_email') }}</span>
 												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label> -->
-													<input type="text" class="form-control" placeholder="CONTACT NO." id="input_subject" v-model="form.contact_no"required>
-												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label> -->
-													<input type="text" class="form-control" placeholder="SUBJECT" id="input_subject" v-model="form.contact_subject"required>
+												<div class="form-group col-md-12 col-sm-12 col-xs-12">
+													<label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label>
+													<input type="text" class="form-control" id="input_subject" v-model="form.contact_subject"required>
 												</div>
 												<div class="form-group col-md-12 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Message</label> -->
-													<textarea class="form-control" rows="8" placeholder="MESSAGE*" id="textarea_message" v-model="form.contact_message"></textarea>
-													<div class="form-group" style="text-align: right; margin-top:-39px; margin-right:-8px;">
-														<a class="contact-btn" @click="submitInquiry">Send</a>
-													</div>
+													<label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Message</label>
+													<textarea class="form-control" rows="8" id="textarea_message" v-model="form.contact_message"></textarea>
 												</div>
-												
+												<div class="form-group">
+													<a class="contact-btn" @click="submitInquiry">Send a message</a>
+												</div>
 												<div id="alert-msg" class="alert-msg"></div>
 											</form>
 										</div>

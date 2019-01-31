@@ -6,11 +6,11 @@
 						<div style="display: block;">
 							<img src="/images/Header.png" style="width: 500px;" />
 						</div>
-						<div style="font-size: 18px;" class="gotham-book">
+						<div style="font-size: 18px;">
 							We are happy to bring out 30 years air conditioner </br> business online and be your No.1 one-stop online </br> air conditioner shop.
 						</div>
 						<div style="margin: 20px 0px;">
-							<span style="font-size: 18px; color: white; background-image: linear-gradient(to right, #40c7f2 , #1c5e99); font-weight: bold; padding: 8px 43px;">WITH THE CHEAPEST PRICE IN THE TOWN</span>
+							<span style="font-size: 18px; color: white; background-image: linear-gradient(to right, #40c7f2 , #1c5e99); font-weight: bold; padding: 8px 43px;">WITH THE CHEAPEST PRICE IN TOWN</span>
 						</div>
 						<div class="col-md-12" style="padding: 0px;">
 							<div class="col-md-6">
@@ -24,7 +24,7 @@
 							<img src="/images/flow.png" style="width: 500px;" />
 						</div>
 					</div>
-					<div class="aircond-image" style="display: inline-block;">
+					<div style="display: inline-block;">
 						<img src="/images/Header_Photo.png" class="mg-ngt-360" style="width: 810px;" />
 					</div>
 					<div>
@@ -162,10 +162,10 @@
 				<!-- Our Product -->
 				<div id="our-product">
 					<div class="latest-product our-products container-fluid no-padding woocommerce">
-						<div class="row animate fadeInUp" data-wow-delay="0.2s">
+						<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 							<div class="padding-top-75"></div>
 							<!-- Container -->
-							<div>
+							<div class="container">
 								<!-- Section Header -->
 								<div class="section-header">
 									<h3 class="dark-blue">Our Products</h3>
@@ -175,15 +175,12 @@
 									<span>LATEST PRODUCTS</span>
 								</div>
 
-								<div class="row">
-									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
-										<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
-										<div style="text-align:center;">
-											<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
-										</div>
-									</div>
+								<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
+								<div style="text-align:center;">
+									<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
+									
 								</div>
-								<div style="text-align:center;" class="row right-background">
+								<div style="text-align:center;" class="right-background">
 									<div class="light-to-dark-blue">
 										<a href="/shop"><span>VIEW MORE >></span></a>
 									</div>
@@ -193,15 +190,12 @@
 										<span>HOT SELLING PRODUCTS</span>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
-										<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
-										<div style="text-align:center;">
-											<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
-											<div class="light-to-dark-blue">
-												<a href="/shop"><span>VIEW MORE >></span></a>
-											</div>
-										</div>
+
+								<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
+								<div style="text-align:center;">
+									<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
+									<div class="light-to-dark-blue">
+										<a href="/shop"><span>VIEW MORE >></span></a>
 									</div>
 								</div>
 							</div><!-- Container /- -->
@@ -210,109 +204,87 @@
 				</div>
 
 				<div class="subscribe-section container-fluid no-padding" id="faq">
-					<div>
+					<div class="container">
 						<div class="section-header left-background" style="margin-bottom: 20px;">
 							<h3 class="dark-blue" style="padding: 50px;">Our Services</h3>
 						</div>
-						<div class="service-container">
-							<div class="col-md-12 padding-300">
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-02.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">AIR CONDITIONER</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
+						<div class="col-md-12">
+							<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<img src="/images/Kalt_website design_op1_FA-02.png" />
+									</div>
+									<div class="col-md-8" style="text-align: left;">
+										<div>
+											<h3 class="dark-blue">AIR CONDITIONER</h3>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</span>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-03.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSTALLATION</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<img src="/images/Kalt_website design_op1_FA-03.png" />
+									</div>
+									<div class="col-md-8" style="text-align: left;">
+										<div>
+											<h3 class="dark-blue">INSTALLATION</h3>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</span>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-04.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CHEMICAL CLEANING</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<img src="/images/Kalt_website design_op1_FA-04.png" />
+									</div>
+									<div class="col-md-8" style="text-align: left;">
+										<div>
+											<h3 class="dark-blue">CHEMICAL CLEANING</h3>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</span>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="service-container">
-							<div class="col-md-12 padding-300">
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-05.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSPECTION & REPAIR</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
+						<div class="col-md-12">
+							<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<img src="/images/Kalt_website design_op1_FA-05.png" />
+									</div>
+									<div class="col-md-8" style="text-align: left;">
+										<div>
+											<h3 class="dark-blue">INSPECTION & REPAIR</h3>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</span>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-06.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CONCEALLING</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/shop"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<img src="/images/Kalt_website design_op1_FA-06.png" />
+									</div>
+									<div class="col-md-8" style="text-align: left;">
+										<div>
+											<h3 class="dark-blue">CONCEALLING</h3>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</span>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="col-md-12" style="padding: 0px;">
-										<div class="col-md-5" style="padding: 0px;">
-											<img src="/images/Kalt_website design_op1_FA-07.png" />
-										</div>
-										<div class="col-md-7" style="text-align: left; padding: 0px;">
-											<div style="line-height:16px;">
-												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">WARRANTY CARE</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
-												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
-												</div>
-											</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-4">
+										<img src="/images/Kalt_website design_op1_FA-07.png" />
+									</div>
+									<div class="col-md-8" style="text-align: left;">
+										<div>
+											<h3 class="dark-blue">WARRANTY CARE</h3>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</span>
 										</div>
 									</div>
 								</div>
@@ -474,14 +446,11 @@
 						<div class="section-header" style="margin-bottom: 20px;">
 							<h3 class="dark-blue">Our Shop</h3>
 						</div>
-						<div class="col-md-12" style="margin-bottom: 10px;">
+						<div class="col-md-12">
 							<img src="/images/61_big.jpg" class="our-shop-pictures" />
 							<img src="/images/display.jpg" class="our-shop-pictures" />
 							<img src="/images/service.jpg" class="our-shop-pictures" />
 							<img src="/images/aircond-brand.jpg" class="our-shop-pictures" />
-						</div>
-						<div class="light-to-dark-blue">
-							<a href="/#"><span>VIEW MORE >></span></a>
 						</div>
 					</div>
 				</div>
@@ -499,25 +468,24 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<p style="font-weight: 310;">You are always welcome to visit me or contact us while you have some comments or suggestions for us.</p>
-											<h3 class="gotham-bold" style="font-size: 20px;">Kalt Air Conditioning Sdn. Bhd.</h3>
-											</br>
+											<h3>Kalt Air Conditioning Sdn. Bhd.</h3>
 											<p style="font-weight: 310;">7 & 9, Lebuh Nangka 2, Taman Desa Damai,</br>
 											14000 Bukit Mertajam,
 											Pulau Pinang.</br>
 											<div class="row">
 												<div class="col-md-6">
-													<b style="font-weight: bold;" class="gotham-bold">Tel:</b> <span style="font-weight: 310;">012-4020969</span></br> 
+													<b style="font-weight: bold;">Tel:</b> <span style="font-weight: 310;">012-4020969</span></br> 
 												</div>
 												<div class="col-md-6">
-													<b style="font-weight: bold;" class="gotham-bold">Fax:</b> <span style="font-weight: 310;">04-5399577</span> </br>
+													<b style="font-weight: bold;">Fax:</b> <span style="font-weight: 310;">04-5399577</span> </br>
 												</div>
 											</div>
 											</br>
-												<b style="font-weight: bold;" class="gotham-bold">Opening hour:</b> </br> <span style="font-weight: 310;">Monday to Saturday 9.00am to 6.00pm</span>
+												<b style="font-weight: bold;">Opening hour:</b> </br> <span style="font-weight: 310;">Monday to Saturday 9.00am to 6.00pm</span>
 											</p>											
 										</div>
 										<div class="col-md-6 col-sm-12 col-xs-12 contact-form">
-											<h3 style="margin-top: 0px; font-size: 17px; font-weight: bold;">Leave a Message in the feedback form below.</h3>
+											<h3 style="margin-top: 0px; font-size: 17px; font-weight: bold;">Leave a Message in the feedback form below</h3>
 											<form id="contact-form" class="row">
 												<div class="form-group col-md-6 col-sm-12 col-xs-12">
 													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Name *</label> -->
@@ -529,22 +497,17 @@
 													<input type="email" class="form-control" placeholder="EMAIL*" id="input_email" v-model="form.contact_email"  required>
 													<span class="text-danger" v-if="form.errors.has('contact_email')">{{ form.errors.get('contact_email') }}</span>
 												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
+												<div class="form-group col-md-12 col-sm-12 col-xs-12">
 													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label> -->
-													<input type="text" class="form-control" placeholder="CONTACT NO." id="input_subject" v-model="form.contact_no"required>
-												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label> -->
-													<input type="text" class="form-control" placeholder="SUBJECT" id="input_subject" v-model="form.contact_subject"required>
+													<input type="text" class="form-control" placeholder="SUBJECT*" id="input_subject" v-model="form.contact_subject"required>
 												</div>
 												<div class="form-group col-md-12 col-sm-12 col-xs-12">
 													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Message</label> -->
 													<textarea class="form-control" rows="8" placeholder="MESSAGE*" id="textarea_message" v-model="form.contact_message"></textarea>
-													<div class="form-group" style="text-align: right; margin-top:-39px; margin-right:-8px;">
-														<a class="contact-btn" @click="submitInquiry">Send</a>
-													</div>
 												</div>
-												
+												<div class="form-group">
+													<a class="contact-btn" @click="submitInquiry">Send a message</a>
+												</div>
 												<div id="alert-msg" class="alert-msg"></div>
 											</form>
 										</div>

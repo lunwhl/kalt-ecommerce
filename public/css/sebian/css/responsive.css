@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'gothamhtfbold';
+    src: url('../../../fonts/GothamHTF-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfbook';
+    src: url('../../../fonts/GothamHTF-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfmedium';
+    src: url('../../../fonts/GothamHTF-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @media(min-width:1400px) and (max-width:1920px) {
 .team-over li .over-team {
 	padding: 50px;
@@ -240,7 +261,7 @@ header .container .container {
 }
 @media(max-width:767px) {
 header {
-    background: rgba(0,0,0,0.7);
+    /* background: rgba(0,0,0,0.7); */
 }
 .ownmenu > li.showhide span.icon {
 	color: #272727;
@@ -394,7 +415,7 @@ header .logo {
 header nav {
 	float: left;
 	width: 100%;
-	background: rgba(0,0,0,0.8);
+	/* background: rgba(0,0,0,0.8); */
 	min-height: inherit;
 }
 header nav .ownmenu .indicator {

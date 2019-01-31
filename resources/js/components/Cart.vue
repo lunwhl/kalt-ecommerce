@@ -1,12 +1,16 @@
 <template>
-	<div>
+	<div class="cart-div">
 		<ul class="cart">
 			<li>
-				<a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn dropdown-toggle" title="Add To Cart" href="#">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					<h3>Shopping Cart</h3>
-					<h5>({{numberOfItemInCart}}) Items - <span>RM{{totalPriceInCart}}</span></h5>
+                <img src="/images/cart.png" class="cart-label" aria-hidden="true" style="width: 47px;" />
+				<a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn btn-cart desktop-menu dropdown-toggle" title="Add To Cart" href="/cart">
+					
+					<h3 class="dark-blue-bold cart-label">Shop Cart</h3>
+					<h5 class="dark-blue-normal">{{numberOfItemInCart}} Item - <span>RM{{totalPriceInCart}}</span></h5>
 				</a>
+                <a id="cart" class="btn btn-cart mobile-menu" href="/cart">
+                    <h5 class="dark-blue-normal">{{numberOfItemInCart}} Item - <span>RM{{totalPriceInCart}}</span></h5>
+                </a>
 				<ul class="dropdown-menu no-padding">
 					<li v-if="carts" v-for="cart in carts['cart']" class="mini_cart_item">
 						<a title="Remove this item" class="remove" style="cursor: pointer;" @click="deleteCart(cart)">&#215;</a>

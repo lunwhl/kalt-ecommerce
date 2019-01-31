@@ -53,7 +53,7 @@ class Product extends Resource
                 ->path('images')
                 ->help(
                     'Please select an image with at least 300px width for the best result'
-                )->rules('required'),
+                ),
 
             Text::make('Name')
                 ->sortable()

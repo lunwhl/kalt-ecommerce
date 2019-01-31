@@ -16,6 +16,7 @@ use Billplz\Client;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Adapter\Guzzle6\Client as GuzzleHttpClient;
 use Http\Message\MessageFactory\GuzzleMessageFactory;
+use Illuminate\Support\Facades\Input;
 
 class OrderController extends Controller
 {
@@ -98,13 +99,31 @@ class OrderController extends Controller
     {
         $request->validate($this->rules, $this->messages);
 
-        $order = $this->createOrder($request);
-        $this->createItem($order);
+        try {
+                $billplz = Client::make('aa1451d2-6df3-4f7c-9d0b-14a098e0bf56');
+                $collectionResponse = $this->createCollection($request, $billplz);
+                $collectionBill = $this->createBill($request, $billplz, $collectionResponse['id']);
 
-        Common::deleteCart();
-        Cart::destroy();
+                $order = $this->createOrder($request, $collectionResponse['id'], $collectionBill['id']);
+                $this->createItem($order);
 
-        // $collectionClient = new Client(['auth' => ['5aa9c747-9532-442b-88c8-8c84b36be2cd']]);
+                Common::deleteCart();
+                Cart::destroy();
+
+                // return redirect($collectionBill['url']);
+
+                $email = $request->shipping_email? $request->shipping_email : $request->billing_email;
+                Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($request));
+                Mail::to($email)->send(new PurchaseToCustomerEmail($request));
+
+                return response(['url' => $collectionBill['url']]);
+        }
+        catch (\Exception $e) {
+            return response(500);
+        }
+        
+
+        // $collectionClient = new Client(['auth' => ['aa1451d2-6df3-4f7c-9d0b-14a098e0bf56', '']]);
 
         // $response = $collectionClient->post('https://billplz-staging.herokuapp.com/api/v3/collections', [
         //     'form_params' => [
@@ -114,15 +133,37 @@ class OrderController extends Controller
 
         // $response = json_decode($response->getBody(), true);
 
-        $email = $request->shipping_email? $request->shipping_email : $request->billing_email;
-        Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($request));
-        Mail::to($email)->send(new PurchaseToCustomerEmail($request));
-
-        // return response($response);
-        return response(200);
+    
     }
 
-    public function createOrder($request)
+    public function createBill($request, $billplz, $collectionId)
+    {
+        $bill = $billplz->bill();
+
+        $response = $bill->create(
+            $collectionId,
+            $request->billing_email,
+            null,
+            $request->billing_name,
+            $request->total * 100,
+            'http://kalt.local/api/order/completed',
+            $request->billing_name . ' bill',
+            ['redirect_url' => 'http://kalt.local/api/order/completed']
+        );
+
+        return $response->toArray();
+    }
+
+    public function createCollection($request, $billplz)
+    {
+        $billplz->useSandbox();
+        $collection = $billplz->collection();
+        $response = $collection->create($request->billing_name . ' collection');
+
+        return $response->toArray();
+    }
+
+    public function createOrder($request, $billplzCollectionId, $billplzBillId)
     {
         if($request->different_shipping)
             return Order::create([
@@ -147,7 +188,9 @@ class OrderController extends Controller
                         'shipping_price'=> $request->shipping_price,
                         'total'=> $request->total,
                         'note'=> $request->note,
-                        'pickup'=> $request->pickup
+                        'pickup'=> $request->pickup,
+                        'billplz_collection_id'=> $billplzCollectionId,
+                        'billplz_bill_id'=> $billplzBillId
             ]);
         else
             return Order::create([
@@ -172,7 +215,9 @@ class OrderController extends Controller
                         'shipping_price'=> $request->shipping_price,
                         'total'=> $request->total,
                         'note'=> $request->note,
-                        'pickup'=> $request->pickup
+                        'pickup'=> $request->pickup,
+                        'billplz_collection_id'=> $billplzCollectionId,
+                        'billplz_bill_id'=> $billplzBillId
             ]);
     }
 
@@ -244,7 +289,17 @@ class OrderController extends Controller
 
     public function loadDirect()
     {
-        return view('checkout.thankyou');
+        $status = Input::get('billplz')['paid'];
+        if($status == 'true'){
+            $order = Order::where('user_id', auth()->user()->id)->orderBy('updated_at', 'DESC')->first();
+            $order->status = 'paid';
+            $order->save();
+        }
+            
+        // dd(Input::get('billplz')['paid']);
+
+
+        return view('checkout.thankyou', ['status' => $status]);
     }
 
     public function thankyou()

@@ -160,7 +160,7 @@ class ProductController extends Controller
         }
         $totalProducts = Product::whereIn('id', $products)->count();
         $data['totalProduct'] = $totalProducts;
-        $data['products'] = Product::whereIn('id', $products)
+        $data['products'] = Product::with('categories')->whereIn('id', $products)
                                 ->orderBy('price', request()->sort)
                                 ->skip(request()->skip)
                                 ->take(request()->take)

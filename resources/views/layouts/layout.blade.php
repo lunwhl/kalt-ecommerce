@@ -33,6 +33,7 @@
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css') }}">
 	@yield('css')
@@ -55,66 +56,29 @@
 
 		<!-- Header -->
 		<header class="header-main container-fluid no-padding">
-			<!-- SidePanel -->
-			<div id="slidepanel">
-				<!-- Top Header -->
-				<div class="top-header container-fluid no-padding">
-					<!-- Container -->
-					<div class="container">
-						<ul class="contact">
-							<li><a href="tel:(+1)123-456-7890" title="(+1) 123 - 456 - 7890"><i class="fa fa-phone" aria-hidden="true"></i><span>Phone :</span> (+1) 123 - 456 - 7890</a></li>
-							<li><a href="mailto:Info@Ourdomain.Com" title="Info@Ourdomain.Com"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Email :</span> info@kalt.com.my</a></li>
-						</ul>
-						<div class="dropdown-bar">
-							<div class="language-dropdown dropdown">
-								@if(Auth::check())
-									<button class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}<span class="caret"></span></button>
-									<ul class="dropdown-menu no-padding">
-										<!-- <li><a href="#" title="sarah1">My Profile</a></li> -->
-										<li><a href="/api/home/profile">My profile</a></li>
-										<li><a href="/api/order">My order</a></li>
-										<li><a href="/logout">Logout</a></li>
-									</ul>
-								@else
-									<a onclick="openLogin()" class="btn login-btn">Login</a>
-								@endif
-							</div>
-							
-						</div>
-					</div><!-- Container /- -->
-				</div><!-- Top Header /- -->
-				
-				<!-- Middel Header -->
-				<div class="middle-header container-fluid no-padding">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-5 col-sm-4 col-xs-4">
-								<div>
-									<a href="index.html"><img src="/images/kalt.png" alt="logo" width="150"/></a>
-								</div>
-							</div>
-							<div class="header-info">
-								<div class="col-md-5 col-sm-6 col-xs-6">
-									
-								</div>
-							</div>
-							<div class="col-md-2 col-sm-2 col-xs-2 add-to-cart">
-								<cart></cart>
-							</div>
-						</div><!-- Row /- -->
-					</div><!-- Container /- -->
-				</div><!-- Middel Header /- -->	
-			</div>		
-			
-			<!-- Menu Block -->
 			<div class="menu-block menu-block-section container-fluid no-padding">
-				<!-- Container -->
-				<div class="container">				
+			<!-- Container -->
+				<div class="container mobile-menu">				
 					<nav class="navbar ow-navigation">
 						<div id="loginpanel" class="desktop-hide">
-							<div class="right" id="toggle">
-								<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
-								<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+							<div class="right add-to-cart" id="toggle">
+								<div class="dropdown-bar">
+									<div class="language-dropdown dropdown">
+										@if(Auth::check())
+											<button class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}<span class="caret"></span></button>
+											<!-- <ul class="dropdown-menu no-padding"> -->
+												<!-- <li><a href="#" title="sarah1">My Profile</a></li> -->
+												<!-- <li><a href="/api/home/profile">My profile</a></li>
+												<li><a href="/api/order">My order</a></li>
+												<li><a href="/logout">Logout</a></li>
+											</ul> -->
+										@else
+											<a onclick="openLogin()" class="login-btn" style="padding: 4px 18px;">LOG IN</a>
+										@endif
+									</div>
+								</div>
+								<cart></cart>
+								<!-- <a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a> -->
 							</div>
 						</div>
 						<div class="navbar-header">
@@ -124,7 +88,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<!-- <a class="text-logo desktop-hide" href="index.html"><span>Furn</span>Home</a> -->
+							<a href="index.html"><img src="/images/kalt.png" alt="logo" width="150"/></a>
 						</div>
 						<div class="navbar-collapse collapse navbar-right" id="navbar">
 							<ul class="nav navbar-nav menubar">
@@ -140,12 +104,100 @@
 								<li><a href="/home/#our-product">Our Products</a></li>
 								<li><a href="/home/#faq">Service</a></li>
 								<li><a href="/home/#contact-us">Contact Us</a></li>
-								<!-- <li><a title="Contact Us" href="contact-us.html">Contact Us</a></li> -->
+								@if(Auth::check())
+									<li><a href="/api/home/profile">My profile</a></li>
+									<li><a href="/api/order">My order</a></li>
+									<li><a href="/logout">Logout</a></li>
+								@endif
 							</ul>
 						</div>
 					</nav><!-- Navigation /- -->
 				</div><!-- Container /- -->
 			</div><!-- Menu Block /- -->
+			<!-- SidePanel -->
+			<div id="slidepanel">
+				<!-- Middel Header -->
+				<div class="desktop-menu middle-header top-header container-fluid no-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2 col-sm-12 col-xs-12">
+								<div style="display: inline-block;">
+									<a href="index.html"><img src="/images/kalt.png" alt="logo" width="150"/></a>
+								</div>
+								<div class="container-fluid no-padding" style="display: inline-block; float: right;">
+								<!-- Container -->			
+									<nav class="navbar ow-navigation">
+										<!-- <div id="loginpanel" class="desktop-hide">
+											<div class="right" id="toggle">
+												<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+												<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+											</div>
+										</div> -->
+										<div class="navbar-header" style="margin-top: 10px;">
+											<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+											<!-- <a class="text-logo desktop-hide" href="index.html"><span>Furn</span>Home</a> -->
+										</div>
+									</nav><!-- Navigation /- -->
+							</div><!-- Menu Block /- -->
+							</div>
+							<div class="header-info">
+								<div class="col-md-8 col-sm-12 col-xs-12">
+									<!-- Menu Block -->
+									<div class="menu-block menu-block-section container-fluid no-padding">
+										<!-- Container -->
+										<div class="container">				
+											<nav class="navbar ow-navigation">
+												<div class="navbar-collapse collapse navbar-right" id="navbar">
+													<ul class="nav navbar-nav menubar">
+														<li class="dropdown homeAnchor">
+															<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/">Home</a>
+														</li>
+														<li class="dropdown">
+															<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/shop">Shop</a>
+														</li>
+														<li class="dropdown">
+															<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/home/#about-us">About Us</a>
+														</li>
+														<li><a href="/home/#our-product">Our Products</a></li>
+														<li><a href="/home/#faq">Service</a></li>
+														<li><a href="/home/#contact-us">Contact Us</a></li>
+														<!-- <li><a title="Contact Us" href="contact-us.html">Contact Us</a></li> -->
+													</ul>
+												</div>
+											</nav><!-- Navigation /- -->
+										</div><!-- Container /- -->
+									</div><!-- Menu Block /- -->
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-12 col-xs-12 add-to-cart">
+								<div class="dropdown-bar">
+									<div class="language-dropdown dropdown">
+										@if(Auth::check())
+											<button class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}<span class="caret"></span></button>
+											<ul class="dropdown-menu no-padding">
+												<!-- <li><a href="#" title="sarah1">My Profile</a></li> -->
+												<li><a href="/api/home/profile">My profile</a></li>
+												<li><a href="/api/order">My order</a></li>
+												<li><a href="/logout">Logout</a></li>
+											</ul>
+										@else
+											<a onclick="openLogin()" class="login-btn">LOG IN</a>
+										@endif
+									</div>
+								</div>
+								<cart></cart>
+							</div>
+						</div><!-- Row /- -->
+					</div><!-- Container /- -->
+				</div><!-- Middel Header /- -->	
+			</div>		
+			
+			
 		</header><!-- Header /- -->
 	
 	

@@ -24,6 +24,27 @@
 -------------------------------------------------*/
 
 /* * Navigation Menu */
+@font-face {
+    font-family: 'gothamhtfbold';
+    src: url('../../fonts/GothamHTF-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfbook';
+    src: url('../../fonts/GothamHTF-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfmedium';
+    src: url('../../fonts/GothamHTF-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .ow-navigation {
 	display: inline-block;
 	border: none;
@@ -42,9 +63,9 @@
 	margin-left: 0;
 }
 .ow-navigation .nav.navbar-nav li > a {	
-	color: #fff;
+	color: #000;
 	font-size: 13px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'gothamhtfbold', sans-serif;
 	letter-spacing: 0.52px;
 	text-transform: uppercase;
 	padding: 24px 13px 25px;
@@ -56,6 +77,17 @@
 	-o-transition: all 1s ease 0s;
 	position: relative;
 }
+
+.ow-navigation .nav.navbar-nav > li.active > a:before {
+  content : "";
+  position: absolute;
+  left    : 36%;
+  bottom  : 18px;
+  height  : 1px;
+  width   : 25%;  /* or 100px */
+  border-bottom:5px solid #40c7f2;
+}
+
 .ow-navigation .dropdown-menu > .active > a,
 .ow-navigation .dropdown-menu > .active > a:focus,
 .ow-navigation .dropdown-menu > .active > a:hover {
@@ -315,7 +347,11 @@
 /* - Navigation Menu Switch < 991 RES */
 @media (max-width: 991px) {
 	.menu-block.navbar-fixed-top {
-		background-color: #252525;
+		background-color: #fff;
+	}
+	.menu-block.menu-block-section.container-fluid.no-padding.navbar-fixed-top.animated.fadeInDown .mobile-menu li a{
+		background-color: #fff;
+		color: #000;
 	}
 	.menu-block.navbar-fixed-top .ow-navigation .navbar-brand {
 		display: block;
@@ -403,7 +439,7 @@
 		width: 100%;
     }
 	.ow-navigation .nav.navbar-nav li > a  {
-		color: #fff;
+		color: #000;
 	}
 	
 	.menu-block.navbar-fixed-top .ow-navigation .dropdown-menu > li > a:hover,

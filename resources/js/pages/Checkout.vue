@@ -241,16 +241,19 @@
 	        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
 	        		let url = '/api/order';
 	        		this.form.post(url, this.form)
-        				.then(response => this.submitOrderSuccess(response.data))
-        				.catch(error => this.submitOrderError(response.error));
+        				.then(response => this.submitOrderSuccess(response));
     			}
         	},
 
         	submitOrderSuccess(data) {
-        		window.location.href = "/api/order/completed";
+        		// console.log(data.url);
+        		console.log("hehe");
+        		console.log(data.url);
+        		window.location.href = data.url;
         	},
 
         	submitOrderError(data){
+        		console.log("error");
         	},
 
         	getUser() {

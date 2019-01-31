@@ -53,6 +53,7 @@ Route::group(['prefix' => 'order'], function() {
 	Route::get('/items', 'OrderController@items');
 	Route::get('/total', 'OrderController@total');
 	Route::get('/completed', 'OrderController@loadDirect');
+	// Route::post('/completed', 'OrderController@loadDirect');
 	Route::get('/thankyou', 'OrderController@thankyou');
 });
 

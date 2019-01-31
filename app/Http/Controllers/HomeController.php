@@ -57,14 +57,14 @@ class HomeController extends Controller
 
     public function getLatestProduct()
     {
-        $products = Product::orderBy('created_at', 'desc')->take(4)->get();
+        $products = Product::with('categories')->orderBy('created_at', 'desc')->take(4)->get();
         // dd($products);
         return response($products);
     }
 
     public function getHotSellingProduct()
     {
-        $products = Product::orderBy('sold_qty', 'desc')->take(4)->get();
+        $products = Product::with('categories')->orderBy('sold_qty', 'desc')->take(4)->get();
         // dd($products);
         return response($products);
     }

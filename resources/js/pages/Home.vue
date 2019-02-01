@@ -6,11 +6,11 @@
 						<div style="display: block;">
 							<img src="/images/Header.png" style="width: 500px;" />
 						</div>
-						<div style="font-size: 18px;" class="gotham-book">
+						<div style="font-size: 18px; padding: 0px 30px;" class="gotham-book">
 							We are happy to bring out 30 years air conditioner </br> business online and be your No.1 one-stop online </br> air conditioner shop.
 						</div>
 						<div style="margin: 20px 0px;">
-							<span style="font-size: 18px; color: white; background-image: linear-gradient(to right, #40c7f2 , #1c5e99); font-weight: bold; padding: 8px 43px;">WITH THE CHEAPEST PRICE IN THE TOWN</span>
+							<span class="cheapest-in-town">WITH THE CHEAPEST PRICE IN THE TOWN</span>
 						</div>
 						<div class="col-md-12" style="padding: 0px;">
 							<div class="col-md-6">
@@ -178,7 +178,7 @@
 								<div class="row">
 									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 										<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
-										<div style="text-align:center;">
+										<div style="text-align:center;padding: 0px 30px;">
 											<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
 										</div>
 									</div>
@@ -196,7 +196,7 @@
 								<div class="row">
 									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 										<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
-										<div style="text-align:center;">
+										<div style="text-align:center;padding: 0px 30px;">
 											<span style="font-size: 20px;">We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.</span>
 											<div class="light-to-dark-blue">
 												<a href="/shop"><span>VIEW MORE >></span></a>
@@ -488,7 +488,7 @@
 
 				<div class="contact" id="contact-us" style="background-image: url('/images/bottom-background.png'); background-size: cover;">
 					<div class="latest-product our-products container-fluid no-padding woocommerce">
-						<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
+						<div class="col-lg-12 col-md-12 col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 							<!-- Container -->
 							<div class="container">
 								<!-- Section Header -->
@@ -497,7 +497,7 @@
 								</div><!-- Section Header /- -->
 								<div class="contact-us-content" style="text-align:left;">
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-lg-6 col-md-12 col-sm-12">
 											<p style="font-weight: 310;">You are always welcome to visit me or contact us while you have some comments or suggestions for us.</p>
 											<h3 class="gotham-bold" style="font-size: 20px;">Kalt Air Conditioning Sdn. Bhd.</h3>
 											</br>
@@ -505,10 +505,10 @@
 											14000 Bukit Mertajam,
 											Pulau Pinang.</br>
 											<div class="row">
-												<div class="col-md-6">
+												<div class="col-lg-6 col-md-6">
 													<b style="font-weight: bold;" class="gotham-bold">Tel:</b> <span style="font-weight: 310;">012-4020969</span></br> 
 												</div>
-												<div class="col-md-6">
+												<div class="col-lg-6 col-md-6">
 													<b style="font-weight: bold;" class="gotham-bold">Fax:</b> <span style="font-weight: 310;">04-5399577</span> </br>
 												</div>
 											</div>
@@ -516,7 +516,7 @@
 												<b style="font-weight: bold;" class="gotham-bold">Opening hour:</b> </br> <span style="font-weight: 310;">Monday to Saturday 9.00am to 6.00pm</span>
 											</p>											
 										</div>
-										<div class="col-md-6 col-sm-12 col-xs-12 contact-form">
+										<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 contact-form">
 											<h3 style="margin-top: 0px; font-size: 17px; font-weight: bold;">Leave a Message in the feedback form below.</h3>
 											<form id="contact-form" class="row">
 												<div class="form-group col-md-6 col-sm-12 col-xs-12">
@@ -605,6 +605,7 @@
 				    contact_email: '',
 				    contact_message: '',
 				    contact_subject: '',
+				    contact_no: '',
 				}), 
     		};
     	},

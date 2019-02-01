@@ -3,7 +3,7 @@
         <ul class="row" style="padding-left: 0px !important;">
 
         <!-- New Products -->
-            <li v-if="fromHome" class="col-sm-2"></li>
+            <!-- <li v-if="fromHome" class="col-lg-2 col-md-0 col-sm-0"></li> -->
             <li v-for="product in products" :class="colSm" data-wow-delay="0.4s">
                 <div v-if="!fromHome" style="margin-top:15px;"></div>
                 <div style="border: 2px solid rgb(197, 197, 197); text-align: center;">
@@ -31,7 +31,7 @@
                     <!-- <div class="details-sec"> <a :href="/product/+product.id">{{product.name}}</a> <span class="font-montserrat">RM {{product.price}}</span> </div>
                 </div> -->
             </li>
-            <li v-if="fromHome" class="col-sm-2"></li>
+            <!-- <li v-if="fromHome" class="col-lg-2 col-md-0 col-sm-0"></li> -->
         </ul>
         <v-snackbar v-model="snackbar"
             right="right"
@@ -83,13 +83,14 @@
             },
 
             brandName(product) {
-                return product.categories[0].name;
+                let brand = _.filter(product.categories, ['type','brand']);
+                return brand[0].name;
             },
         },
 
         computed: {
             colSm: function() {
-                return this.fromHome ? "col-sm-2 animate fadeIn" : "col-sm-3 animate fadeIn";
+                return this.fromHome ? "col-lg-3 col-md-3 col-sm-6 animate fadeIn" : "col-lg-4 col-md-4 col-sm-4 animate fadeIn";
             },
         },
     }

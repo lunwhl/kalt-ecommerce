@@ -32066,7 +32066,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         contact_name: '',
         contact_email: '',
         contact_message: '',
-        contact_subject: ''
+        contact_subject: '',
+        contact_no: ''
       })
     };
   },
@@ -32296,13 +32297,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.snackbar = true;
         },
         brandName: function brandName(product) {
-            return product.categories[0].name;
+            var brand = _.filter(product.categories, ['type', 'brand']);
+            return brand[0].name;
         }
     },
 
     computed: {
         colSm: function colSm() {
-            return this.fromHome ? "col-sm-2 animate fadeIn" : "col-sm-3 animate fadeIn";
+            return this.fromHome ? "col-lg-3 col-md-3 col-sm-6 animate fadeIn" : "col-lg-4 col-md-4 col-sm-4 animate fadeIn";
         }
     }
 });
@@ -32325,98 +32327,88 @@ var render = function() {
           staticClass: "row",
           staticStyle: { "padding-left": "0px !important" }
         },
-        [
-          _vm.fromHome ? _c("li", { staticClass: "col-sm-2" }) : _vm._e(),
-          _vm._v(" "),
-          _vm._l(_vm.products, function(product) {
-            return _c(
-              "li",
-              { class: _vm.colSm, attrs: { "data-wow-delay": "0.4s" } },
-              [
-                !_vm.fromHome
-                  ? _c("div", { staticStyle: { "margin-top": "15px" } })
-                  : _vm._e(),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticStyle: {
-                      border: "2px solid rgb(197, 197, 197)",
-                      "text-align": "center"
-                    }
-                  },
-                  [
-                    _c(
-                      "h3",
-                      {
-                        staticClass: "gotham-bold",
-                        staticStyle: { "font-weight": "1000" }
-                      },
-                      [_vm._v(_vm._s(_vm.brandName(product)))]
-                    ),
-                    _vm._v(" "),
-                    _c("div", {
-                      staticClass: "product-featured-image",
-                      style:
-                        "background-image: url(" +
-                        _vm.$options.filters.set_image(product.image_path) +
-                        ")"
-                    }),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "a",
-                        {
-                          staticStyle: { cursor: "pointer" },
-                          attrs: { href: /product/ + product.id }
-                        },
-                        [
-                          _c(
-                            "b",
-                            {
-                              staticStyle: {
-                                "font-size": "17px",
-                                color: "black"
-                              }
-                            },
-                            [_vm._v(_vm._s(product.name))]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticStyle: { "margin-top": "10px" } }, [
-                      _c(
-                        "b",
-                        {
-                          staticStyle: { "font-size": "20px", color: "#223169" }
-                        },
-                        [_vm._v("RM " + _vm._s(product.price))]
-                      )
-                    ]),
-                    _vm._v(" "),
+        _vm._l(_vm.products, function(product) {
+          return _c(
+            "li",
+            { class: _vm.colSm, attrs: { "data-wow-delay": "0.4s" } },
+            [
+              !_vm.fromHome
+                ? _c("div", { staticStyle: { "margin-top": "15px" } })
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticStyle: {
+                    border: "2px solid rgb(197, 197, 197)",
+                    "text-align": "center"
+                  }
+                },
+                [
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "gotham-bold",
+                      staticStyle: { "font-weight": "1000" }
+                    },
+                    [_vm._v(_vm._s(_vm.brandName(product)))]
+                  ),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "product-featured-image",
+                    style:
+                      "background-image: url(" +
+                      _vm.$options.filters.set_image(product.image_path) +
+                      ")"
+                  }),
+                  _vm._v(" "),
+                  _c("div", [
                     _c(
                       "a",
                       {
-                        staticClass: "btn-shop gotham-book",
-                        staticStyle: { color: "#223169" },
-                        on: {
-                          click: function($event) {
-                            _vm.addToCart(product)
-                          }
-                        }
+                        staticStyle: { cursor: "pointer" },
+                        attrs: { href: /product/ + product.id }
                       },
-                      [_vm._v("ADD TO CART")]
+                      [
+                        _c(
+                          "b",
+                          {
+                            staticStyle: { "font-size": "17px", color: "black" }
+                          },
+                          [_vm._v(_vm._s(product.name))]
+                        )
+                      ]
                     )
-                  ]
-                )
-              ]
-            )
-          }),
-          _vm._v(" "),
-          _vm.fromHome ? _c("li", { staticClass: "col-sm-2" }) : _vm._e()
-        ],
-        2
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticStyle: { "margin-top": "10px" } }, [
+                    _c(
+                      "b",
+                      {
+                        staticStyle: { "font-size": "20px", color: "#223169" }
+                      },
+                      [_vm._v("RM " + _vm._s(product.price))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn-shop gotham-book",
+                      staticStyle: { color: "#223169" },
+                      on: {
+                        click: function($event) {
+                          _vm.addToCart(product)
+                        }
+                      }
+                    },
+                    [_vm._v("ADD TO CART")]
+                  )
+                ]
+              )
+            ]
+          )
+        })
       ),
       _vm._v(" "),
       _c(
@@ -33874,7 +33866,7 @@ var render = function() {
               "div",
               {
                 staticClass: "gotham-book",
-                staticStyle: { "font-size": "18px" }
+                staticStyle: { "font-size": "18px", padding: "0px 30px" }
               },
               [
                 _vm._v(
@@ -33888,20 +33880,9 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("div", { staticStyle: { margin: "20px 0px" } }, [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "18px",
-                    color: "white",
-                    "background-image":
-                      "linear-gradient(to right, #40c7f2 , #1c5e99)",
-                    "font-weight": "bold",
-                    padding: "8px 43px"
-                  }
-                },
-                [_vm._v("WITH THE CHEAPEST PRICE IN THE TOWN")]
-              )
+              _c("span", { staticClass: "cheapest-in-town" }, [
+                _vm._v("WITH THE CHEAPEST PRICE IN THE TOWN")
+              ])
             ]),
             _vm._v(" "),
             _c(
@@ -34021,7 +34002,12 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticStyle: { "text-align": "center" } },
+                            {
+                              staticStyle: {
+                                "text-align": "center",
+                                padding: "0px 30px"
+                              }
+                            },
                             [
                               _c(
                                 "span",
@@ -34082,7 +34068,12 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticStyle: { "text-align": "center" } },
+                            {
+                              staticStyle: {
+                                "text-align": "center",
+                                padding: "0px 30px"
+                              }
+                            },
                             [
                               _c(
                                 "span",
@@ -34663,7 +34654,8 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-sm-12 animate fadeInUp",
+                    staticClass:
+                      "col-lg-12 col-md-12 col-sm-12 animate fadeInUp",
                     attrs: { "data-wow-delay": "0.2s" }
                   },
                   [
@@ -34686,108 +34678,128 @@ var render = function() {
                         },
                         [
                           _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-sm-6" }, [
-                              _c(
-                                "p",
-                                { staticStyle: { "font-weight": "310" } },
-                                [
-                                  _vm._v(
-                                    "You are always welcome to visit me or contact us while you have some comments or suggestions for us."
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "gotham-bold",
-                                  staticStyle: { "font-size": "20px" }
-                                },
-                                [_vm._v("Kalt Air Conditioning Sdn. Bhd.")]
-                              ),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "p",
-                                { staticStyle: { "font-weight": "310" } },
-                                [
-                                  _vm._v(
-                                    "7 & 9, Lebuh Nangka 2, Taman Desa Damai,"
-                                  ),
-                                  _c("br"),
-                                  _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\t14000 Bukit Mertajam,\n\t\t\t\t\t\t\t\t\tPulau Pinang."
-                                  ),
-                                  _c("br")
-                                ]
-                              ),
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col-lg-6 col-md-12 col-sm-12" },
+                              [
+                                _c(
+                                  "p",
+                                  { staticStyle: { "font-weight": "310" } },
+                                  [
+                                    _vm._v(
+                                      "You are always welcome to visit me or contact us while you have some comments or suggestions for us."
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "h3",
+                                  {
+                                    staticClass: "gotham-bold",
+                                    staticStyle: { "font-size": "20px" }
+                                  },
+                                  [_vm._v("Kalt Air Conditioning Sdn. Bhd.")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  { staticStyle: { "font-weight": "310" } },
+                                  [
+                                    _vm._v(
+                                      "7 & 9, Lebuh Nangka 2, Taman Desa Damai,"
+                                    ),
+                                    _c("br"),
+                                    _vm._v(
+                                      "\n\t\t\t\t\t\t\t\t\t14000 Bukit Mertajam,\n\t\t\t\t\t\t\t\t\tPulau Pinang."
+                                    ),
+                                    _c("br")
+                                  ]
+                                ),
+                                _c("div", { staticClass: "row" }, [
                                   _c(
-                                    "b",
-                                    {
-                                      staticClass: "gotham-bold",
-                                      staticStyle: { "font-weight": "bold" }
-                                    },
-                                    [_vm._v("Tel:")]
+                                    "div",
+                                    { staticClass: "col-lg-6 col-md-6" },
+                                    [
+                                      _c(
+                                        "b",
+                                        {
+                                          staticClass: "gotham-bold",
+                                          staticStyle: { "font-weight": "bold" }
+                                        },
+                                        [_vm._v("Tel:")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticStyle: { "font-weight": "310" }
+                                        },
+                                        [_vm._v("012-4020969")]
+                                      ),
+                                      _c("br")
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _c(
-                                    "span",
-                                    { staticStyle: { "font-weight": "310" } },
-                                    [_vm._v("012-4020969")]
-                                  ),
-                                  _c("br")
+                                    "div",
+                                    { staticClass: "col-lg-6 col-md-6" },
+                                    [
+                                      _c(
+                                        "b",
+                                        {
+                                          staticClass: "gotham-bold",
+                                          staticStyle: { "font-weight": "bold" }
+                                        },
+                                        [_vm._v("Fax:")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticStyle: { "font-weight": "310" }
+                                        },
+                                        [_vm._v("04-5399577")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("br")
+                                    ]
+                                  )
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "b",
-                                    {
-                                      staticClass: "gotham-bold",
-                                      staticStyle: { "font-weight": "bold" }
-                                    },
-                                    [_vm._v("Fax:")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticStyle: { "font-weight": "310" } },
-                                    [_vm._v("04-5399577")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("br")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "b",
-                                {
-                                  staticClass: "gotham-bold",
-                                  staticStyle: { "font-weight": "bold" }
-                                },
-                                [_vm._v("Opening hour:")]
-                              ),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticStyle: { "font-weight": "310" } },
-                                [_vm._v("Monday to Saturday 9.00am to 6.00pm")]
-                              ),
-                              _vm._v(" "),
-                              _c("p")
-                            ]),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "b",
+                                  {
+                                    staticClass: "gotham-bold",
+                                    staticStyle: { "font-weight": "bold" }
+                                  },
+                                  [_vm._v("Opening hour:")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  { staticStyle: { "font-weight": "310" } },
+                                  [
+                                    _vm._v(
+                                      "Monday to Saturday 9.00am to 6.00pm"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("p")
+                              ]
+                            ),
                             _vm._v(" "),
                             _c(
                               "div",
                               {
                                 staticClass:
-                                  "col-md-6 col-sm-12 col-xs-12 contact-form"
+                                  "col-lg-6 col-md-12 col-sm-12 col-xs-12 contact-form"
                               },
                               [
                                 _c(
@@ -42530,7 +42542,7 @@ var render = function() {
       _c("li", [
         _c("img", {
           staticClass: "cart-label",
-          staticStyle: { width: "47px" },
+          staticStyle: { width: "24px" },
           attrs: { src: "/images/cart.png", "aria-hidden": "true" }
         }),
         _vm._v(" "),

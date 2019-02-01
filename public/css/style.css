@@ -1477,6 +1477,10 @@ main,footer {
   .over-item {
     padding-top: 24.5% !important;
   }
+  
+  .popurlar_product {
+	  margin: 0px 280px;
+  }
 }
 
 .application--wrap {
@@ -1717,7 +1721,10 @@ hr.hori {
 	color: #40c7e2;
 }
 .middle-header .add-to-cart {
-	margin-top: 12px;
+	margin-top: 0px;
+}
+.desktop-menu.top-header {
+	line-height: 17px;
 }
 .middle-header .cart {
 	margin-bottom: 0;
@@ -1757,7 +1764,7 @@ hr.hori {
 .middle-header .cart li a h5 {
 	margin: 0;
 	color: #777;
-	font-size: 13px;
+	font-size: 11px;
 	font-family: 'gothamhtfmedium', sans-serif;
 	font-weight: 500;
 }
@@ -2170,6 +2177,22 @@ hr.hori {
 	position: relative;
 	padding-bottom: 25px;
 }
+
+.cheapest-in-town {
+	font-size: 18px;
+	color: white; background-image:
+	linear-gradient(to right, #40c7f2 , #1c5e99);
+	font-weight: bold;
+	padding: 8px 43px;
+}
+
+.desktop-menu .btn {
+	padding: 0px;
+}
+
+.mobile-menu .btn {
+	padding: 1px 12px;
+}
 /* .section-header h3::after { */
 	/* background-color: #40c7f2; */
 	/* content: ""; */
@@ -2193,7 +2216,14 @@ hr.hori {
 /* - min-width: 1200 */
 @media (min-width: 1200px) {
 	.container {
-		width: 1200px;
+		width: 1200px !important;
+		padding: 0px !important;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1263px) {
+	.login-btn {
+		padding: 5px 30px;
 	}
 }
 
@@ -2314,17 +2344,29 @@ hr.hori {
 
 /* - min-width: 992 to max-width: 1199 */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.mg-top-16{
+		margin-top: 16px;
+	}
 	.middle-header .col-md-2.add-to-cart {
 		padding-left: 0;
 	}
 	.middle-header .cart li a {
-		padding: 7px 0 7px 45px;
+		/* padding: 7px 0 7px 45px; */
+	}
+	.cart-label {
+		display: none;
 	}
 }
 
 @media (min-width: 992px) {
 	.mobile-menu{
 		display: none;
+	}
+}
+
+@media (max-width: 1024px) {
+	.login-btn {
+		padding: 5px 35px;
 	}
 }
 
@@ -2339,7 +2381,7 @@ hr.hori {
 		position: absolute;
 		right:40px;
 		text-align: center;
-		top: 7px;
+		top: 23px;
 	}
 	
 	#slideit,
@@ -2348,6 +2390,10 @@ hr.hori {
 		color: #fff;
 		font-size: 24px;
 		right: -35px;
+	}
+	
+	.cheapest-in-town {
+		font-size: 13px;
 	}
 	
 	/* - Header Main */
@@ -2376,6 +2422,12 @@ hr.hori {
 		display: none !important;
 	}
 	.desktop-menu{
+		display: none;
+	}
+	.none-for-desktop{
+		display: none;
+	}
+	.none-for-mobile{
 		display: none;
 	}
 	.cart-div{
@@ -2680,6 +2732,7 @@ hr.hori {
 }
 
 .popurlar_product {
+	padding: 0px 30px;
 }
 
 .popurlar_product ul{

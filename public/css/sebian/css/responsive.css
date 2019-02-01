@@ -48,6 +48,7 @@ header .logo {
 }
 @media(max-width:1024px) {
 }
+
 @media(min-width:992px) and (max-width:1199px) {
 .in-the-look li {
 	width: 33.3333%;
@@ -87,7 +88,7 @@ header .logo {
 	width: 33.3333%;
 }
 header {
-	background: rgba(0,0,0,0.7);
+	/* background: rgba(0,0,0,0.7); */
 }
 header .search-nav ul.dropdown {
 	width: 100% !important;
@@ -146,7 +147,7 @@ header .logo{
 	width: 33.3333%;
 }
 header {
-	background: rgba(0,0,0,0.7);
+	/* background: rgba(0,0,0,0.7); */
 }
 header .is-sticky .sticky {
 	padding: 0px;

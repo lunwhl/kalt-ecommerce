@@ -61,7 +61,7 @@
 				<div class="container mobile-menu">				
 					<nav class="navbar ow-navigation">
 						<div id="loginpanel" class="desktop-hide">
-							<div class="right add-to-cart" id="toggle">
+							<div class="right" id="toggle">
 								<div class="dropdown-bar">
 									<div class="language-dropdown dropdown">
 										@if(Auth::check())
@@ -88,7 +88,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a href="index.html"><img src="/images/kalt.png" alt="logo" width="150"/></a>
+							<a href="/"><img src="/images/kalt.png" alt="logo" width="150"/></a>
 						</div>
 						<div class="navbar-collapse collapse navbar-right" id="navbar">
 							<ul class="nav navbar-nav menubar">
@@ -122,7 +122,7 @@
 						<div class="row">
 							<div class="col-md-2 col-sm-12 col-xs-12">
 								<div style="display: inline-block;">
-									<a href="index.html"><img src="/images/kalt.png" alt="logo" width="150"/></a>
+									<a href="/"><img src="/images/kalt.png" alt="logo" class="mg-top-16" width="150"/></a>
 								</div>
 								<div class="container-fluid no-padding" style="display: inline-block; float: right;">
 								<!-- Container -->			
@@ -165,7 +165,7 @@
 														</li>
 														<li><a href="/home/#our-product">Our Products</a></li>
 														<li><a href="/home/#faq">Service</a></li>
-														<li><a href="/home/#contact-us">Contact Us</a></li>
+														<li><a href="/home/#contact-us">Contact</a></li>
 														<!-- <li><a title="Contact Us" href="contact-us.html">Contact Us</a></li> -->
 													</ul>
 												</div>

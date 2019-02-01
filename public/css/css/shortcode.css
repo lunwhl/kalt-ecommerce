@@ -1453,7 +1453,7 @@
 }
 
 .our-shop-pictures {
-	height: 190px;
+	height: 180px;
 }
 
 .contact {
@@ -2410,7 +2410,11 @@ table.shop_table td {
 		right: 15px;
 	}
 }
-
+@media(min-width:769px) and (max-width:1800px) {
+	.contact {
+		padding: 0px;
+	}
+}
 /* - min-width: 1200 to max-width: 1366 */
 @media only screen and (min-width: 1200px) and (max-width: 1366px) {
 	/* - Saleup Section */

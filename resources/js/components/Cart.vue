@@ -2,7 +2,7 @@
 	<div class="cart-div">
 		<ul class="cart">
 			<li>
-                <img src="/images/cart.png" class="cart-label" aria-hidden="true" style="width: 47px;" />
+                <img src="/images/cart.png" class="cart-label" aria-hidden="true" style="width: 24px;" />
 				<a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn btn-cart desktop-menu dropdown-toggle" title="Add To Cart" href="/cart">
 					
 					<h3 class="dark-blue-bold cart-label">Shop Cart</h3>

@@ -32038,6 +32038,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -33854,93 +33856,87 @@ var render = function() {
       { attrs: { "data-app": "true" } },
       [
         _c("div", { staticStyle: { "text-align": "center" } }, [
-          _c("div", { staticStyle: { display: "inline-block" } }, [
-            _c("div", { staticStyle: { display: "block" } }, [
-              _c("img", {
-                staticStyle: { width: "500px" },
-                attrs: { src: "/images/Header.png" }
-              })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "gotham-book",
-                staticStyle: { "font-size": "18px", padding: "0px 30px" }
-              },
-              [
-                _vm._v(
-                  "\n\t\t\t\t\tWe are happy to bring out 30 years air conditioner "
-                ),
-                _c("br"),
-                _vm._v(" business online and be your No.1 one-stop online "),
-                _c("br"),
-                _vm._v(" air conditioner shop.\n\t\t\t\t")
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticStyle: { margin: "20px 0px" } }, [
-              _c("span", { staticClass: "cheapest-in-town" }, [
-                _vm._v("WITH THE CHEAPEST PRICE IN THE TOWN")
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-md-12", staticStyle: { padding: "0px" } },
-              [
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("div", { staticStyle: { "font-weight": "bold" } }, [
-                    _c("img", {
-                      staticClass: "img-30",
-                      attrs: { src: "/images/phone.png" }
-                    }),
-                    _c("span", { staticStyle: { "margin-left": "15px" } }, [
-                      _vm._v("+603 1234 5678")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("div", { staticStyle: { "font-weight": "bold" } }, [
-                    _c("img", {
-                      staticClass: "img-30",
-                      attrs: { src: "/images/mail.png" }
-                    }),
-                    _c("span", { staticStyle: { "margin-left": "10px" } }, [
-                      _vm._v("info@kalt.com.my")
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticStyle: { display: "block", "margin-left": "-250px" } },
-              [
+          _c("div", { staticClass: "row banner-mg" }, [
+            _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+              _c("div", { staticStyle: { display: "block" } }, [
                 _c("img", {
                   staticStyle: { width: "500px" },
-                  attrs: { src: "/images/flow.png" }
+                  attrs: { src: "/images/Header.png" }
                 })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "aircond-image",
-              staticStyle: { display: "inline-block" }
-            },
-            [
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "gotham-book",
+                  staticStyle: { "font-size": "18px", padding: "0px 30px" }
+                },
+                [
+                  _vm._v(
+                    "\n\t\t\t\t\t\tWe are happy to bring out 30 years air conditioner "
+                  ),
+                  _c("br"),
+                  _vm._v(" business online and be your No.1 one-stop online "),
+                  _c("br"),
+                  _vm._v(" air conditioner shop.\n\t\t\t\t\t")
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticStyle: { margin: "20px 0px" } }, [
+                _c("span", { staticClass: "cheapest-in-town" }, [
+                  _vm._v("WITH THE CHEAPEST PRICE IN THE TOWN")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-md-12", staticStyle: { padding: "0px" } },
+                [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticStyle: { "font-weight": "bold" } }, [
+                      _c("img", {
+                        staticClass: "img-30",
+                        attrs: { src: "/images/phone.png" }
+                      }),
+                      _c("span", { staticStyle: { "margin-left": "15px" } }, [
+                        _vm._v("+603 1234 5678")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticStyle: { "font-weight": "bold" } }, [
+                      _c("img", {
+                        staticClass: "img-30",
+                        attrs: { src: "/images/mail.png" }
+                      }),
+                      _c("span", { staticStyle: { "margin-left": "10px" } }, [
+                        _vm._v("info@kalt.com.my")
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { display: "block", "margin-left": "-250px" } },
+                [
+                  _c("img", {
+                    staticStyle: { width: "500px" },
+                    attrs: { src: "/images/flow.png" }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "aircond-image col-md-6" }, [
               _c("img", {
-                staticClass: "mg-ngt-360",
                 staticStyle: { width: "810px" },
                 attrs: { src: "/images/Header_Photo.png" }
               })
-            ]
-          ),
+            ])
+          ]),
           _vm._v(" "),
           _c("div", [
             _c("a", { attrs: { href: "#our-product" } }, [

@@ -26,16 +26,16 @@
 	
 	<!-- For iPad: -->
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ URL::asset('/images/apple-touch-icon-72x72-precomposed.png') }}">
-	
+
 	<!-- For iPhone: -->
 	<link rel="apple-touch-icon-precomposed" href="{{ URL::asset('/images/apple-touch-icon-57x57-precomposed.png') }}">	
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.0') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.0') }}">
 	@yield('css')
 
 	<!--[if lt IE 9]>

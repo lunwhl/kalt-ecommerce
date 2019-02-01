@@ -1481,6 +1481,19 @@ main,footer {
   .popurlar_product {
 	  margin: 0px 280px;
   }
+  
+  .banner-mg {
+	  margin: 0px 300px;
+  }
+}
+
+@media screen and (min-width: 1751px) {
+  .banner-mg {
+	  margin: 0px 300px;
+  }
+  .our-shop-pictures {
+	  height: 180px;
+  }
 }
 
 .application--wrap {
@@ -2225,6 +2238,9 @@ hr.hori {
 	.login-btn {
 		padding: 5px 30px;
 	}
+	.our-shop-pictures {
+	  height: 140px;
+  }
 }
 
 /* - min-width: 992 */

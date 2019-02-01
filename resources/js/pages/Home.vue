@@ -2,30 +2,32 @@
 		<v-app>
 			<div data-app="true">
 				<div style="text-align: center;">
-					<div style="display: inline-block;">
-						<div style="display: block;">
-							<img src="/images/Header.png" style="width: 500px;" />
-						</div>
-						<div style="font-size: 18px; padding: 0px 30px;" class="gotham-book">
-							We are happy to bring out 30 years air conditioner </br> business online and be your No.1 one-stop online </br> air conditioner shop.
-						</div>
-						<div style="margin: 20px 0px;">
-							<span class="cheapest-in-town">WITH THE CHEAPEST PRICE IN THE TOWN</span>
-						</div>
-						<div class="col-md-12" style="padding: 0px;">
-							<div class="col-md-6">
-								<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+603 1234 5678</span></div>
+					<div class="row banner-mg">
+						<div class="col-md-6 col-sm-12">
+							<div style="display: block;">
+								<img src="/images/Header.png" style="width: 500px;" />
 							</div>
-							<div class="col-md-6">
-								<div style="font-weight: bold;"><img src="/images/mail.png" class="img-30" /><span style="margin-left: 10px;">info@kalt.com.my</span></div>
+							<div style="font-size: 18px; padding: 0px 30px;" class="gotham-book">
+								We are happy to bring out 30 years air conditioner </br> business online and be your No.1 one-stop online </br> air conditioner shop.
+							</div>
+							<div style="margin: 20px 0px;">
+								<span class="cheapest-in-town">WITH THE CHEAPEST PRICE IN THE TOWN</span>
+							</div>
+							<div class="col-md-12" style="padding: 0px;">
+								<div class="col-md-6">
+									<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+603 1234 5678</span></div>
+								</div>
+								<div class="col-md-6">
+									<div style="font-weight: bold;"><img src="/images/mail.png" class="img-30" /><span style="margin-left: 10px;">info@kalt.com.my</span></div>
+								</div>
+							</div>
+							<div style="display: block; margin-left: -250px;">
+								<img src="/images/flow.png" style="width: 500px;" />
 							</div>
 						</div>
-						<div style="display: block; margin-left: -250px;">
-							<img src="/images/flow.png" style="width: 500px;" />
+						<div class="aircond-image col-md-6">
+							<img src="/images/Header_Photo.png" style="width: 810px;" />
 						</div>
-					</div>
-					<div class="aircond-image" style="display: inline-block;">
-						<img src="/images/Header_Photo.png" class="mg-ngt-360" style="width: 810px;" />
 					</div>
 					<div>
 						<a href="#our-product"><img src="/images/arrow-down.png" class="arrow-down" /></a>

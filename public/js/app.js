@@ -32377,7 +32377,7 @@ var render = function() {
                         _c(
                           "b",
                           {
-                            staticStyle: { "font-size": "17px", color: "black" }
+                            staticStyle: { "font-size": "13px", color: "black" }
                           },
                           [_vm._v(_vm._s(product.name))]
                         )

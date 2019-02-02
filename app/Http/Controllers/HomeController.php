@@ -10,6 +10,7 @@ use App\Mail\ResetPassword;
 use Illuminate\Support\Facades\Mail;
 use App\User;
 use App\Product;
+use App\Category;
 use Auth;
 
 class HomeController extends Controller
@@ -57,15 +58,19 @@ class HomeController extends Controller
 
     public function getLatestProduct()
     {
-        $products = Product::with('categories')->orderBy('created_at', 'desc')->take(4)->get();
-        // dd($products);
+        $productWithBrand = Product::getProductWithBrand();
+
+        $products = Product::with('categories')->whereIn('id', $productWithBrand->flatten()->pluck('id'))->orderBy('created_at', 'desc')->take(4)->get();
+
         return response($products);
     }
 
     public function getHotSellingProduct()
     {
-        $products = Product::with('categories')->orderBy('sold_qty', 'desc')->take(4)->get();
-        // dd($products);
+        $productWithBrand = Product::getProductWithBrand();
+        
+        $products = Product::with('categories')->whereIn('id', $productWithBrand->flatten()->pluck('id'))->orderBy('sold_qty', 'desc')->take(4)->get();
+
         return response($products);
     }
 

@@ -36,7 +36,6 @@ class ProductController extends Controller
             return response(['relatedProducts' => []]);
 
         $productIds = collect();
-        // $product = Product::find(2);
         foreach(Product::all() as $product)
         {  
             $filteredProductCategory = $product->categories->filter(function ($value, $key) {
@@ -45,7 +44,6 @@ class ProductController extends Controller
             $pluckProductCategoryId = $filteredProductCategory->pluck('id')->toArray();
             $arrayDiffResult = array_diff($pluckCategoryId,$pluckProductCategoryId);
         
-            // if(count($arrayDiffResult) == 0)
             if($pluckProductCategoryId == $pluckCategoryId)
             {
                 $productIds->push($product->id);
@@ -54,7 +52,18 @@ class ProductController extends Controller
         $productIds = $productIds->filter(function ($value, $key) {
                         return $value != request()->id;
                     });
-        $relatedProducts = Product::whereIn('id', $productIds)->take(4)->get();
+
+        // dd($productIds);
+
+        $productWithBrand = Product::getProductWithBrand();
+
+        // dd($productWithBrand->flatten()->pluck('id'));
+
+        $intersectIds = $productIds->intersect($productWithBrand->flatten()->pluck('id'));
+
+        // dd($intersect);
+
+        $relatedProducts = Product::with('categories')->whereIn('id', $intersectIds)->take(4)->get();
 
         return response(['relatedProducts' => $relatedProducts]);
     }

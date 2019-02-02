@@ -167,7 +167,10 @@
 							</v-tab-item>
 						</v-tabs>
 	                </div>
-	                <div class="col-md-12" v-if="!relatedProducts['relatedProducts'].length == 0">
+	            </div>
+        	</div>
+        	<div class="row">
+        		<div class="col-md-12" v-if="!relatedProducts['relatedProducts'].length == 0">
 	                    <div class="row">
 	                    	<div class="text-center" style="margin-top: 40px;">
 				                <div class="h4">Related Products</div>
@@ -178,7 +181,6 @@
 	                    	</div>
 	                    </div>
 	                </div>
-	            </div>
         	</div>
 			<v-snackbar v-model="snackbar"
 				right="right"

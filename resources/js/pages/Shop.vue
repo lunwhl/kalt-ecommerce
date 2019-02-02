@@ -56,7 +56,7 @@
 	            
                 <template v-if="products.length > 0">
 	            <!--======= Products =========-->
-    	            <ListProduct :products="products"></ListProduct>
+    	            <ListProduct :products="products" :fromHome="false"></ListProduct>
     	            
     	            <!--======= PAGINATION =========-->
     	            <div class="pagination animate fadeInUp" style="width:100%" data-wow-delay="0.4s">

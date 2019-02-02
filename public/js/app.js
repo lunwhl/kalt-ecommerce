@@ -32307,6 +32307,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         colSm: function colSm() {
             return this.fromHome ? "col-lg-3 col-md-3 col-sm-6 animate fadeIn" : "col-lg-4 col-md-4 col-sm-4 animate fadeIn";
+        },
+        product_class: function product_class() {
+            return this.fromHome ? "popurlar_product" : "shop_popurlar_product";
         }
     }
 });
@@ -32321,7 +32324,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "popurlar_product" },
+    { class: _vm.product_class },
     [
       _c(
         "ul",
@@ -35672,7 +35675,9 @@ var render = function() {
                 _vm._v(" "),
                 _vm.products.length > 0
                   ? [
-                      _c("ListProduct", { attrs: { products: _vm.products } }),
+                      _c("ListProduct", {
+                        attrs: { products: _vm.products, fromHome: false }
+                      }),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -41151,6 +41156,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -41623,45 +41630,47 @@ var render = function() {
               )
             ],
             1
-          ),
-          _vm._v(" "),
-          !_vm.relatedProducts["relatedProducts"].length == 0
-            ? _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "text-center",
-                      staticStyle: { "margin-top": "40px" }
-                    },
-                    [
-                      _c("div", { staticClass: "h4" }, [
-                        _vm._v("Related Products")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "title-underline center" }, [
-                        _c("span")
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "text-center" },
-                    [
-                      _c("ListProduct", {
-                        attrs: {
-                          products: _vm.relatedProducts["relatedProducts"],
-                          fromHome: true
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
-              ])
-            : _vm._e()
+          )
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        !_vm.relatedProducts["relatedProducts"].length == 0
+          ? _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "text-center",
+                    staticStyle: { "margin-top": "40px" }
+                  },
+                  [
+                    _c("div", { staticClass: "h4" }, [
+                      _vm._v("Related Products")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "title-underline center" }, [
+                      _c("span")
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "text-center" },
+                  [
+                    _c("ListProduct", {
+                      attrs: {
+                        products: _vm.relatedProducts["relatedProducts"],
+                        fromHome: true
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c(

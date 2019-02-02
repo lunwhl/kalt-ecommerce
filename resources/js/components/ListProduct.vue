@@ -1,5 +1,5 @@
 <template>
-    <div class="popurlar_product">
+    <div :class="product_class">
         <ul class="row" style="padding-left: 0px !important;">
 
         <!-- New Products -->
@@ -91,6 +91,9 @@
         computed: {
             colSm: function() {
                 return this.fromHome ? "col-lg-3 col-md-3 col-sm-6 animate fadeIn" : "col-lg-4 col-md-4 col-sm-4 animate fadeIn";
+            },
+            product_class: function() {
+                return this.fromHome ? "popurlar_product" : "shop_popurlar_product";
             },
         },
     }

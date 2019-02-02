@@ -1401,7 +1401,7 @@ a {
 /* * Header */
 
 main,footer {
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 
 #slidepanel { 
@@ -2745,6 +2745,10 @@ hr.hori {
 
 .share ul {
 	list-style: none;
+}
+
+.shop_popurlar_product {
+	padding: 0px 30px;
 }
 
 .popurlar_product {

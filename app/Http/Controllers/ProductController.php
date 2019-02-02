@@ -53,15 +53,9 @@ class ProductController extends Controller
                         return $value != request()->id;
                     });
 
-        // dd($productIds);
-
         $productWithBrand = Product::getProductWithBrand();
 
-        // dd($productWithBrand->flatten()->pluck('id'));
-
         $intersectIds = $productIds->intersect($productWithBrand->flatten()->pluck('id'));
-
-        // dd($intersect);
 
         $relatedProducts = Product::with('categories')->whereIn('id', $intersectIds)->take(4)->get();
 
@@ -137,6 +131,7 @@ class ProductController extends Controller
         $data['brand'] = Category::where('type', 'brand')->get();
         $data['type'] = Category::where('type', 'type')->get();
         $data['features'] = Category::where('type', 'features')->get();
+        $data['horsepower'] = Category::where('type', 'horsepower')->get();
 
         return response(['data' => $data]);
     }
@@ -144,15 +139,15 @@ class ProductController extends Controller
     public function getProducts()
     {
         $data = array();
-        $arrayHp = explode(',', request()->hp);
+        $arrayBTU = explode(',', request()->btu);
 
-        $HpCategories = Category::with('products')
-                                ->where('type', 'horsepower')
+        $BTUCategories = Category::with('products')
+                                ->where('type', 'btu')
                                 ->whereRaw('CONVERT(SUBSTRING_INDEX(name,"-",-1),UNSIGNED INTEGER) BETWEEN ? AND ?', 
-                                            [$arrayHp[0], $arrayHp[1]])
+                                            [$arrayBTU[0], $arrayBTU[1]])
                                 ->get();
 
-        $products = $HpCategories->pluck('products')
+        $products = $BTUCategories->pluck('products')
                                 ->flatten()
                                 ->pluck('id');
 
@@ -164,12 +159,15 @@ class ProductController extends Controller
             foreach($categories->pluck('products') as $product) {
                 $products = $products->intersect($product->pluck('id'));
             }
-
-            
         }
-        $totalProducts = Product::whereIn('id', $products)->count();
+
+        $productWithBrand = Product::getProductWithBrand();
+
+        $intersectIds = $products->intersect($productWithBrand->flatten()->pluck('id'));
+
+        $totalProducts = Product::whereIn('id', $intersectIds)->count();
         $data['totalProduct'] = $totalProducts;
-        $data['products'] = Product::with('categories')->whereIn('id', $products)
+        $data['products'] = Product::with('categories')->whereIn('id', $intersectIds)
                                 ->orderBy('price', request()->sort)
                                 ->skip(request()->skip)
                                 ->take(request()->take)

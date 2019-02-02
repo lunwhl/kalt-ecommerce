@@ -1430,6 +1430,10 @@ main,footer {
 	color: #223169 !important;
 }
 
+.home-product ul {
+	list-style-type: none;
+}
+
 .login-btn {
 	font-family: 'gothamhtfmedium';
 	border: 2px solid #223169;
@@ -1479,7 +1483,7 @@ main,footer {
   }
   
   .popurlar_product {
-	  margin: 0px 280px;
+	  /* margin: 0px 280px; */
   }
   
   .banner-mg {
@@ -2232,6 +2236,9 @@ hr.hori {
 		width: 1200px !important;
 		padding: 0px !important;
 	}
+	.cheapest-in-town {
+		font-size: 16px;
+	}
 }
 
 @media (min-width: 1200px) and (max-width: 1263px) {
@@ -2371,6 +2378,9 @@ hr.hori {
 	}
 	.cart-label {
 		display: none;
+	}
+	.cheapest-in-town {
+		font-size: 14px;
 	}
 }
 
@@ -2713,7 +2723,7 @@ hr.hori {
 	color: #fff;
 	border: 3px solid #40c7f2;  
 	border-image-source: linear-gradient(to right, #40c7f2, #1c5e99);
-	border-image-slice: 20;
+	border-image-slice: 1;
 	border-radius: 0px;
 	display: inline-block;
 	padding: 7px 20px;

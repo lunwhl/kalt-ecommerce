@@ -31268,7 +31268,7 @@ Vue.filter('set_category_label', function (value) {
 			label = 'TYPE';
 			break;
 		case 'horsepower':
-			label = 'HORSE POWER';
+			label = 'HOSE POWER';
 			break;
 		case 'features':
 			label = 'FEATURES';
@@ -32324,7 +32324,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { class: _vm.product_class },
     [
       _c(
         "ul",
@@ -33858,98 +33857,100 @@ var render = function() {
       "div",
       { attrs: { "data-app": "true" } },
       [
-        _c("div", { staticStyle: { "text-align": "center" } }, [
-          _c("div", { staticClass: "row banner-mg" }, [
-            _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-              _c("div", { staticStyle: { display: "block" } }, [
-                _c("img", {
-                  staticStyle: { width: "500px" },
-                  attrs: { src: "/images/Header.png" }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "gotham-book",
-                  staticStyle: { "font-size": "18px", padding: "0px 30px" }
-                },
-                [
-                  _vm._v(
-                    "\n\t\t\t\t\t\tWe are happy to bring out 30 years air conditioner "
-                  ),
-                  _c("br"),
-                  _vm._v(" business online and be your No.1 one-stop online "),
-                  _c("br"),
-                  _vm._v(" air conditioner shop.\n\t\t\t\t\t")
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticStyle: { margin: "20px 0px" } }, [
-                _c("span", { staticClass: "cheapest-in-town" }, [
-                  _vm._v("WITH THE CHEAPEST PRICE IN THE TOWN")
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-md-12", staticStyle: { padding: "0px" } },
-                [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticStyle: { "font-weight": "bold" } }, [
-                      _c("img", {
-                        staticClass: "img-30",
-                        attrs: { src: "/images/phone.png" }
-                      }),
-                      _c("span", { staticStyle: { "margin-left": "15px" } }, [
-                        _vm._v("+603 1234 5678")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticStyle: { "font-weight": "bold" } }, [
-                      _c("img", {
-                        staticClass: "img-30",
-                        attrs: { src: "/images/mail.png" }
-                      }),
-                      _c("span", { staticStyle: { "margin-left": "10px" } }, [
-                        _vm._v("info@kalt.com.my")
-                      ])
-                    ])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticStyle: { display: "block", "margin-left": "-250px" } },
-                [
+        _c(
+          "div",
+          { staticClass: "container", staticStyle: { "text-align": "center" } },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                _c("div", { staticStyle: { display: "block" } }, [
                   _c("img", {
                     staticStyle: { width: "500px" },
-                    attrs: { src: "/images/flow.png" }
+                    attrs: { src: "/images/Header.png" }
                   })
-                ]
-              )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "gotham-book",
+                    staticStyle: { "font-size": "18px", padding: "0px 30px" }
+                  },
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\t\tWe are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.\n\t\t\t\t\t"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticStyle: { margin: "20px 0px" } }, [
+                  _c("span", { staticClass: "cheapest-in-town" }, [
+                    _vm._v("WITH THE CHEAPEST PRICE IN THE TOWN")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-md-12", staticStyle: { padding: "0px" } },
+                  [
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("div", { staticStyle: { "font-weight": "bold" } }, [
+                        _c("img", {
+                          staticClass: "img-30",
+                          attrs: { src: "/images/phone.png" }
+                        }),
+                        _c("span", { staticStyle: { "margin-left": "15px" } }, [
+                          _vm._v("+603 1234 5678")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("div", { staticStyle: { "font-weight": "bold" } }, [
+                        _c("img", {
+                          staticClass: "img-30",
+                          attrs: { src: "/images/mail.png" }
+                        }),
+                        _c("span", { staticStyle: { "margin-left": "10px" } }, [
+                          _vm._v("info@kalt.com.my")
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticStyle: { display: "block", "margin-left": "-250px" }
+                  },
+                  [
+                    _c("img", {
+                      staticStyle: { width: "500px" },
+                      attrs: { src: "/images/flow.png" }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "aircond-image col-md-6" }, [
+                _c("img", {
+                  staticStyle: { width: "810px" },
+                  attrs: { src: "/images/Header_Photo.png" }
+                })
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "aircond-image col-md-6" }, [
-              _c("img", {
-                staticStyle: { width: "810px" },
-                attrs: { src: "/images/Header_Photo.png" }
-              })
+            _c("div", [
+              _c("a", { attrs: { href: "#our-product" } }, [
+                _c("img", {
+                  staticClass: "arrow-down",
+                  attrs: { src: "/images/arrow-down.png" }
+                })
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("a", { attrs: { href: "#our-product" } }, [
-              _c("img", {
-                staticClass: "arrow-down",
-                attrs: { src: "/images/arrow-down.png" }
-              })
-            ])
-          ])
-        ]),
+          ]
+        ),
         _vm._v(" "),
         _c("div", { attrs: { id: "our-product" } }, [
           _c(
@@ -33984,7 +33985,7 @@ var render = function() {
                       [_c("span", [_vm._v("LATEST PRODUCTS")])]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "row container home-product" }, [
                       _c(
                         "div",
                         {
@@ -34050,7 +34051,7 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "row container home-product" }, [
                       _c(
                         "div",
                         {
@@ -35350,7 +35351,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
 
         window.event.$on("slider-changed", function () {
-            _this.filterHorsePower();
+            _this.filterBTU();
         });
         window.event.$on("copied", function () {
             _this.snackbarMsg = 'Link copied';
@@ -35370,7 +35371,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         changeSort: function changeSort() {
             this.getProductForShop();
         },
-        filterHorsePower: function filterHorsePower() {
+        filterBTU: function filterBTU() {
             var _this2 = this;
 
             this.hpMin = $('#price-min').text();
@@ -35389,7 +35390,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getProductForShop: function getProductForShop() {
             var _this4 = this;
 
-            var url = 'api/shop/products?category=' + this.item['category'].toString() + '&hp=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take;
+            var url = 'api/shop/products?category=' + this.item['category'].toString() + '&btu=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take;
             axios.get(url).then(function (response) {
                 return _this4.setProductForShop(response.data);
             });
@@ -35555,7 +35556,7 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "heading" }, [
-                      _c("h6", [_vm._v("HOSE POWER")])
+                      _c("h6", [_vm._v("BTU")])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "cost-price-content" }, [
@@ -35587,7 +35588,7 @@ var render = function() {
                       "a",
                       {
                         staticClass: "btn-shop btn-small btn-dark",
-                        on: { click: _vm.filterHorsePower }
+                        on: { click: _vm.filterBTU }
                       },
                       [_vm._v("FILTER")]
                     )
@@ -41283,7 +41284,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_3_vue_clipboard2___default.a);
             if (this.selectedHosePowerType.length > 0) {
                 var brand = _.filter(this.selectedProduct['type'], ['type', 'horsepower']);
 
-                return brand[0]['name'];
+                if (brand.length > 0) return brand[0]['name'];else return "-";
             }
         }
     }
@@ -41657,7 +41658,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "text-center" },
+                  { staticClass: "container home-product text-center" },
                   [
                     _c("ListProduct", {
                       attrs: {

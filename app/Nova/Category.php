@@ -53,6 +53,7 @@ class Category extends Resource
                 'horsepower' => 'Hose Power',
                 'features' => 'Features',
                 'type' => 'Type',
+                'btu' => 'BTU',
             ])->displayUsingLabels(),
 
             BelongsToMany::make('Products')

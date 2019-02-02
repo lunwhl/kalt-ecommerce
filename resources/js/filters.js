@@ -16,7 +16,7 @@ Vue.filter('set_category_label', function(value){
 			label = 'TYPE';
 			break;
 		case 'horsepower':
-			label = 'HORSE POWER';
+			label = 'HOSE POWER';
 			break;
 		case 'features':
 			label = 'FEATURES';

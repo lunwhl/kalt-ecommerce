@@ -1,5 +1,5 @@
 <template>
-    <div :class="product_class">
+    <div>
         <ul class="row" style="padding-left: 0px !important;">
 
         <!-- New Products -->

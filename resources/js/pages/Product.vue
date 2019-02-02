@@ -176,7 +176,7 @@
 				                <div class="h4">Related Products</div>
 				                <div class="title-underline center"><span></span></div>
 				            </div>
-				            <div class="text-center">
+				            <div class="container home-product text-center">
 	                    		<ListProduct :products="relatedProducts['relatedProducts']" :fromHome="true"></ListProduct>	
 	                    	</div>
 	                    </div>
@@ -332,8 +332,11 @@
     		getHosePower: function() {
         		if(this.selectedHosePowerType.length > 0){
         			let brand = _.filter(this.selectedProduct['type'], ['type', 'horsepower']);
-        		
-        			return brand[0]['name'];
+        			
+        			if(brand.length > 0)
+        				return brand[0]['name'];
+        			else
+        				return "-";
         		}
     		},
         },

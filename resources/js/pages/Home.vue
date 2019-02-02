@@ -1,14 +1,14 @@
 	<template>
 		<v-app>
 			<div data-app="true">
-				<div style="text-align: center;">
-					<div class="row banner-mg">
+				<div class="container" style="text-align: center;">
+					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div style="display: block;">
 								<img src="/images/Header.png" style="width: 500px;" />
 							</div>
 							<div style="font-size: 18px; padding: 0px 30px;" class="gotham-book">
-								We are happy to bring out 30 years air conditioner </br> business online and be your No.1 one-stop online </br> air conditioner shop.
+								We are happy to bring out 30 years air conditioner business online and be your No.1 one-stop online air conditioner shop.
 							</div>
 							<div style="margin: 20px 0px;">
 								<span class="cheapest-in-town">WITH THE CHEAPEST PRICE IN THE TOWN</span>
@@ -177,7 +177,7 @@
 									<span>LATEST PRODUCTS</span>
 								</div>
 
-								<div class="row">
+								<div class="row container home-product">
 									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 										<ListProduct :products="latestProducts" :fromHome="true"></ListProduct>	
 										<div style="text-align:center;padding: 0px 30px;">
@@ -195,7 +195,7 @@
 										<span>HOT SELLING PRODUCTS</span>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row container home-product">
 									<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
 										<ListProduct :products="hotSellingProducts" :fromHome="true"></ListProduct>
 										<div style="text-align:center;padding: 0px 30px;">

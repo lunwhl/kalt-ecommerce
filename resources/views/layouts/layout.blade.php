@@ -32,10 +32,10 @@
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.1') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.2') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.1') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.2') }}">
 	@yield('css')
 
 	<!--[if lt IE 9]>
@@ -210,7 +210,7 @@
 			<div class="container">
 				<div class="footer-content">
 					<div class="footer-copyright">
-						<p>&copy; 2018 All Rights Reserved - Website by <a href="https://welory.com.my">welory</a>.</p>
+						<p>&copy; 2019 All Rights Reserved - Website by <a href="https://welory.com.my">welory</a>.</p>
 					</div>
 				</div>
 			</div>

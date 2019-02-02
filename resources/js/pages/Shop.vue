@@ -29,13 +29,13 @@
 	              
 	              <!-- HEADING -->
 	              <div class="heading">
-	                <h6>HOSE POWER</h6>
+	                <h6>BTU</h6>
 	              </div>
 	              <!-- PRICE -->
 	              <div class="cost-price-content">
 	                <div id="price-range" class="price-range"></div>
 	                <span id="price-min" class="price-min">20</span> <span id="price-max" class="price-max">80</span> </div>
-	              <a @click="filterHorsePower" class="btn-shop btn-small btn-dark" >FILTER</a> 
+	              <a @click="filterBTU" class="btn-shop btn-small btn-dark" >FILTER</a> 
 	          
 	            </div>
 	          </div>
@@ -138,7 +138,7 @@
             });
 
             window.event.$on("slider-changed", () => {
-                this.filterHorsePower();
+                this.filterBTU();
             });
             window.event.$on("copied", () => {
                 this.snackbarMsg = 'Link copied';
@@ -160,7 +160,7 @@
         		this.getProductForShop();
         	},
 
-        	filterHorsePower() {
+        	filterBTU() {
         		this.hpMin = $('#price-min').text();
         		this.hpMax = $('#price-max').text();
         		Vue.nextTick(()=>{
@@ -175,7 +175,7 @@
         	},
 
         	getProductForShop() {
-        		let url = 'api/shop/products?category=' + this.item['category'].toString() + '&hp=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take;
+        		let url = 'api/shop/products?category=' + this.item['category'].toString() + '&btu=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take;
         		axios.get(url)
         		.then(response => this.setProductForShop(response.data));
         	},

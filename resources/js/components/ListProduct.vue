@@ -7,7 +7,7 @@
             <li v-for="product in products" style="cursor: pointer;" :class="colSm" data-wow-delay="0.4s" @click="toProductDetail(product.id)">
                 <div v-if="!fromHome" style="margin-top:15px;"></div>
                 <div style="border: 2px solid rgb(197, 197, 197); text-align: center;">
-                    <h3 style="font-weight: 1000; display:flex; align-items: center; justify-content: center; height:52.8px;" class="gotham-bold">{{brandName(product)}}</h3>
+                    <h3 style="font-weight: 1000; display:flex; align-items: center; justify-content: center; height:65px;" class="gotham-bold">{{brandName(product)}}</h3>
                     <h4 style="color: #40c7f2; font-size:16px;">{{product.model}}</h4>
                     <div class="product-featured-image" :style="'background-image: url(' + $options.filters.set_image(product.image_path) + ')'"></div>
                     <div><a><b style="font-size: 13px; color: black;">{{product.name}}</b></a></div>

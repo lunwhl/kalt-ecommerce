@@ -32537,7 +32537,7 @@ var render = function() {
                         display: "flex",
                         "align-items": "center",
                         "justify-content": "center",
-                        height: "52.8px"
+                        height: "65px"
                       }
                     },
                     [_vm._v(_vm._s(_vm.brandName(product)))]

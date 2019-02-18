@@ -30,6 +30,7 @@ Route::group(['prefix' => 'cart'], function() {
 Route::group(['prefix' => 'shop'], function() {
 	Route::get('/categories', 'ProductController@getCategories');
 	Route::get('/products', 'ProductController@getProducts');
+	Route::get('/search', 'ProductController@getSearchProducts');
 });
 
 Route::group(['prefix' => 'product'], function() {

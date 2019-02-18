@@ -132,6 +132,7 @@ class ProductController extends Controller
         $data['type'] = Category::where('type', 'type')->get();
         $data['features'] = Category::where('type', 'features')->get();
         $data['horsepower'] = Category::where('type', 'horsepower')->get();
+        $data['refrigerant-gas'] = Category::where('type', 'refrigerant-gas')->get();
 
         return response(['data' => $data]);
     }
@@ -172,6 +173,28 @@ class ProductController extends Controller
                                 ->skip(request()->skip)
                                 ->take(request()->take)
                                 ->get();
+
+        return response(['data' => $data]);
+    }
+
+    public function getSearchProducts()
+    {
+        $data = array();
+        $keyword = '%' . request()->keyword . '%';
+        $products = collect();
+
+        $data['products'] = Product::with('categories')
+                            ->where('name', 'like', $keyword)
+                            ->orWhere('model', 'like', $keyword)
+                            ->orWhere('specification', 'like', $keyword)
+                            ->skip(request()->skip)
+                            ->take(request()->take)
+                            ->get();
+
+        $data['totalProduct'] = Product::where('name', 'like', $keyword)
+                            ->orWhere('model', 'like', $keyword)
+                            ->orWhere('specification', 'like', $keyword)
+                            ->count();
 
         return response(['data' => $data]);
     }

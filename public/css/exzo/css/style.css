@@ -150,8 +150,8 @@
 }
 /**/
 .main-product-slider-wrapper{max-width: 570px; margin: 0 auto;}
-/* .product-big-preview-entry{padding-bottom: 100%; background-size: contain; background-position: center center; background-repeat: no-repeat;} */
-.product-big-preview-entry{padding-bottom: 80%; background-size: contain; background-repeat: no-repeat;}
+.product-big-preview-entry{padding-bottom: 65%; background-size: contain; background-position: center center; background-repeat: no-repeat;}
+/* .product-big-preview-entry{padding-bottom: 80%; background-size: contain; background-repeat: no-repeat;} */
 .product-small-preview-entry{max-width: 70px; margin: 0 auto; opacity: .2; transition: all .15s; -webkit-transition: all .15s;}
 .product-small-preview-entry img{display: block;}
 .swiper-slide-active .product-small-preview-entry{opacity: 1;}

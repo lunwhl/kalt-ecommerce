@@ -4,14 +4,15 @@
 
         <!-- New Products -->
             <!-- <li v-if="fromHome" class="col-lg-2 col-md-0 col-sm-0"></li> -->
-            <li v-for="product in products" :class="colSm" data-wow-delay="0.4s">
+            <li v-for="product in products" style="cursor: pointer;" :class="colSm" data-wow-delay="0.4s" @click="toProductDetail(product.id)">
                 <div v-if="!fromHome" style="margin-top:15px;"></div>
                 <div style="border: 2px solid rgb(197, 197, 197); text-align: center;">
-                    <h3 style="font-weight: 1000;" class="gotham-bold">{{brandName(product)}}</h3>
+                    <h3 style="font-weight: 1000; display:flex; align-items: center; justify-content: center; height:52.8px;" class="gotham-bold">{{brandName(product)}}</h3>
+                    <h4 style="color: #40c7f2; font-size:16px;">{{product.model}}</h4>
                     <div class="product-featured-image" :style="'background-image: url(' + $options.filters.set_image(product.image_path) + ')'"></div>
-                    <div><a style="cursor:pointer;" :href="/product/+product.id"><b style="font-size: 13px; color: black;">{{product.name}}</b></a></div>
+                    <div><a><b style="font-size: 13px; color: black;">{{product.name}}</b></a></div>
                     <div style=" margin-top:10px;"><b style="font-size: 20px; color: #223169;">RM {{product.price}}</b></div>
-                    <a @click="addToCart(product)" style="color: #223169;" class="btn-shop gotham-book">ADD TO CART</a>
+                    <a v-on:click.stop @click="addToCart(product)" style="color: #223169; z-index: 999999;" class="btn-shop gotham-book">ADD TO CART</a>
                 </div>
                 
                 <!-- <div class="items-in">  -->
@@ -53,6 +54,7 @@
                 snackbar: false,
                 snackbarMsg: '',
                 timeout: 2000,
+                test: '',
             }
         },
 
@@ -76,6 +78,10 @@
                 window.event.$emit("share-to-shop", {'openDialog': true, 'product': product});
             },
 
+            toProductDetail(id) {
+                window.location.href = '/product/' + id;
+            },
+
             triggerSnackbar(message)
             {
                 this.snackbarMsg = message;
@@ -84,7 +90,12 @@
 
             brandName(product) {
                 let brand = _.filter(product.categories, ['type','brand']);
-                return brand[0].name;
+                if(brand.length > 0){
+                    return brand[0].name;
+                } else {
+                    return '';
+                }
+                
             },
         },
 

@@ -73,13 +73,26 @@
 	                        <div v-if="selectedBrandType" class="col-sm-6">
 	                            <div class="simple-article size-3 col-xs-b5">{{getBrand}}</div>
 	                            <div class="h3 col-xs-b25">{{selectedProduct.name}}</div>
-	                            <div class="row col-xs-b25">
-	                                <div class="col-sm-6">
-	                                    <div class="simple-article size-5">PRICE: <span class="color">RM {{selectedProduct.price}}</span></div>        
+	                            <div class="row col-xs-b40">
+	                                <div class="col-sm-3">
+	                                    <div class="h6 detail-data-title size-1">PRICE:</div>
+	                                </div>
+	                                <div class="col-sm-9">
+	                                    <div style="margin-top: 10px;">
+	                                        <span class="color">RM {{selectedProduct.price}}</span>
+	                                    </div>
 	                                </div>
 	                            </div>
-	                            <div class="simple-article size-3 col-xs-b30 fr-view">Hose Power: {{getHosePower}}</div>
-	                            
+	                            <div class="row col-xs-b40">
+	                                <div class="col-sm-3">
+	                                    <div class="h6 detail-data-title size-1">Hose Power:</div>
+	                                </div>
+	                                <div class="col-sm-9">
+	                                    <div style="margin-top: 10px;">
+	                                        <span class="color">RM {{getHosePower}}</span>
+	                                    </div>
+	                                </div>
+	                            </div>
 	                            <div class="row col-xs-b40">
 	                                <div class="col-sm-3">
 	                                    <div class="h6 detail-data-title size-1">quantity:</div>
@@ -110,7 +123,7 @@
 	                                    <div class="follow light">
 	                                        <a class="entry" :href="facebookSharerUrl(selectedProduct)"><i class="fa fa-facebook"></i></a>
 	                                        <a class="entry" href="#"><i class="fa fa-whatsapp"></i></a>
-	                                        <a class="entry" :href="'/api/home/download/'+product.id"><i class="fa fa-download"></i></a>
+	                                        <!-- <a class="entry" :href="'/api/home/download/'+product.id"><i class="fa fa-download"></i></a> -->
 	                                        <a class="entry" @click="doCopy(selectedProduct)"><i class="fa fa-clone"></i></a>
 	                                    </div>
 	                                </div>
@@ -118,7 +131,7 @@
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-md-12">
+	                <div class="col-md-12" style="margin-top: 40px;">
 						<v-tabs
 						color="#488dcb"
 						dark

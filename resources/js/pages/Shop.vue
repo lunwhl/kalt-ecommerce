@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <v-app style="background: #fff;">
 		<!--======= SUB BANNER =========-->
 	    <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
 	      <div class="container">
@@ -14,7 +14,6 @@
 	          <div class="col-sm-3 animate fadeInLeft" data-wow-delay="0.2s">
 	            <div class="side-bar">
 	              <h4>Filter by</h4>
-	              
 	              <!-- HEADING -->
 	              <div v-if="categories" v-for="(category, index) in categories" class="heading">
 	                <h6>{{$options.filters.set_category_label(index)}}</h6>
@@ -42,9 +41,12 @@
 	          
 	          <!--======= ITEMS =========-->
 	          <div class="col-sm-9 animate fadeInUp" data-wow-delay="0.2s">
-	            <div class="items-short-type animate fadeInUp" data-wow-delay="0.4s"> 
-	              
+	            <div class="items-short-type animate fadeInUp" data-wow-delay="0.4s">
 	              <!--======= SHORT BY =========-->
+                  <div style="margin-bottom: 4px;">
+                      <input style="border:1px solid #e6e6e6; padding: 6px 10px;" v-model="search" placeholder="Search" />
+                      <button @click="submitSearch" class="btn-shop btn-small btn-dark">Search</button>
+                  </div>
 	              <div class="short-by">
 	                <select  v-model="sortSelected" @change="changeSort" class="selectpicker" style="border:1px solid #ebebeb; padding:4px 10px;">
 	                  <option value="asc">Lowest to highest</option>
@@ -123,6 +125,7 @@
                 snackbar: false,
                 snackbarMsg: '',
                 timeout: 2000,
+                search: '',
     		};
     	},
 
@@ -152,13 +155,33 @@
             },
         	
         	next() {
-        		this.skip = (this.page - 1) * this.take;
-        		this.getProductForShop();
+                this.skip = (this.page - 1) * this.take;
+                
+                if(this.search != ''){
+                    this.submitSearch(false);
+                } else {
+                    this.getProductForShop();
+                }
         	},
 
         	changeSort() {
         		this.getProductForShop();
         	},
+
+            submitSearch(firstSearch = true) {
+                if(firstSearch){
+                    this.skip = 0;
+                    this.page = 1;
+                }
+
+                if(this.search != ''){
+                    let url = 'api/shop/search?keyword=' + this.search + '&skip=' + this.skip + '&take=' + this.take;
+                    axios.get(url)
+                    .then(response => this.setProductForShop(response.data));
+                } else {
+                    this.getProductForShop();
+                }
+            },
 
         	filterBTU() {
         		this.hpMin = $('#price-min').text();

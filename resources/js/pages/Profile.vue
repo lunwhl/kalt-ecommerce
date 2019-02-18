@@ -1,5 +1,5 @@
 	<template>
-		<v-app>
+		<v-app style="background: #fff;">
 			<div class="container">
 	            <div class="text-center">
 	                <!-- <div class="simple-article size-3 uppercase col-xs-b5">Update Your Profile</div> -->

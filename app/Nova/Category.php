@@ -54,6 +54,7 @@ class Category extends Resource
                 'features' => 'Features',
                 'type' => 'Type',
                 'btu' => 'BTU',
+                'refrigerant-gas' => 'Refrigerant Gas',
             ])->displayUsingLabels(),
 
             BelongsToMany::make('Products')

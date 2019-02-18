@@ -1,5 +1,5 @@
 	<template>
-		<v-app>
+		<v-app style="background: #fff;">
 			<v-content>
 				<div class="text-xs-center" style="margin:35px 0px 35px 0px;">
 					<h3>My Orders</h3>

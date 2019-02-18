@@ -21,6 +21,9 @@ Vue.filter('set_category_label', function(value){
 		case 'features':
 			label = 'FEATURES';
 			break;
+		case 'refrigerant-gas':
+			label = 'REFRIGERANT GAS';
+			break;
 	}
 
 	return label;

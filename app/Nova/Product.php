@@ -63,6 +63,10 @@ class Product extends Resource
                 ->sortable()
                 ->rules('required'),
 
+            Text::make("Model")
+                ->sortable()
+                ->rules('required'),
+
             NovaTinyMCE::make('Description')->options([
                             'plugins' => [
                                 'advlist autolink lists image charmap hr anchor'

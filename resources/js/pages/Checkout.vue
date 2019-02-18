@@ -1,5 +1,5 @@
 	<template>
-		<v-app>
+		<v-app style="background: #fff;">
 			<loading></loading>
 			<div class="container">
 	            <div class="text-center">
@@ -54,9 +54,6 @@
 		                            <div class="empty-space col-xs-b20"></div>
 		                        </div>
 		                    </div>
-		                    <label class="checkbox-entry">
-		                        <input type="checkbox" v-model="policyCheck"><span>Privacy policy agreement</span>
-		                    </label>
 		                    <div class="empty-space col-xs-b50"></div>
 		                    <label class="checkbox-entry">
 		                        <input type="checkbox" v-model="form.different_shipping"><span>ship to different address?</span>
@@ -219,7 +216,6 @@
 				    pickup: '',
 				    different_shipping: false,
 				}), 
-				policyCheck: false,
     		};
     	},
 
@@ -231,18 +227,14 @@
 
         methods: {
         	submitOrder() {
-        		if(!this.policyCheck){
-        			window.event.$emit("login-alert", {'openDialog': true});
-        		} else {
-        			window.event.$emit("loading", {'openDialog': true});
-	        		this.form.subtotal = this.subTotal;
-	        		this.form.total = this.total;
-	        		this.form.pickup = this.shipping;
-	        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
-	        		let url = '/api/order';
-	        		this.form.post(url, this.form)
-        				.then(response => this.submitOrderSuccess(response));
-    			}
+    			window.event.$emit("loading", {'openDialog': true});
+        		this.form.subtotal = this.subTotal;
+        		this.form.total = this.total;
+        		this.form.pickup = this.shipping;
+        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
+        		let url = '/api/order';
+        		this.form.post(url, this.form)
+    				.then(response => this.submitOrderSuccess(response));
         	},
 
         	submitOrderSuccess(data) {

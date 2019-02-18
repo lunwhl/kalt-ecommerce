@@ -1,5 +1,5 @@
 	<template>
-		<v-app>
+		<v-app style="background: #fff;">
 			<div data-app="true">
 				<div class="container" style="text-align: center;">
 					<div class="row">

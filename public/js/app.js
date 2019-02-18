@@ -32557,7 +32557,7 @@ var render = function() {
                       ")"
                   }),
                   _vm._v(" "),
-                  _c("div", [
+                  _c("div", { staticStyle: { height: "70px" } }, [
                     _c("a", [
                       _c(
                         "b",

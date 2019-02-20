@@ -149,7 +149,7 @@ class HomeController extends Controller
 
     public function invoice()
     {
-        $order = Order::find(130);
+        $order = Order::find(226);
         $items = Item::where('order_id', $order->id)->get();
         $user = User::find(1);
 

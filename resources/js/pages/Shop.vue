@@ -20,7 +20,7 @@
 	                <ul class="cate">
 	                	<li v-for="(cate, index) in category">
 	                		<div class="checkbox">
-	                			<input type="checkbox" v-model="item.category" @click="checkboxCategory" :id="'category_' + cate.id" :value="cate.id"/><label>{{cate.name}}</label>
+	                			<input type="checkbox" v-model="item.category" @click="checkboxCategory" :id="'category_' + cate.id" :value="cate.id"/><label style="font-weight: bold;">{{cate.name}}</label>
 	                		</div>
 	                	</li>
 	                </ul>

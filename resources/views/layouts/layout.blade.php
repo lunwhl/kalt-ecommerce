@@ -88,7 +88,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a href="/"><img src="./images/kalt.png" alt="logo" width="150"/></a>
+							<a href="/"><img src="/images/kalt.png" alt="logo" width="150"/></a>
 						</div>
 						<div class="navbar-collapse collapse navbar-right" id="navbar">
 							<ul class="nav navbar-nav menubar">

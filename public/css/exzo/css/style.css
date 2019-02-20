@@ -423,7 +423,8 @@ textarea.simple-input{padding-top: 10px; padding-bottom: 10px; line-height: 22px
 .cart-entry-thumbnail{float: left; transition: all .15s; -webkit-transition: all .15s;}
 .cart-entry-thumbnail img{display: block;}
 .cart-entry-thumbnail:hover{opacity: .8;}
-.cart-entry-description{margin-left: 220px; padding-top: 60px;}
+.cart-entry-description{margin-left: 220px; }
+/* .cart-entry-description{margin-left: 220px; padding-top: 60px;} */
 .cart-entry table{width: 100%;}
 .cart-entry table td{vertical-align: middle; padding: 0 30px; border-left: 1px #fff solid;}
 .cart-entry table td:first-child{text-align: left; padding-left: 0; border: none;}

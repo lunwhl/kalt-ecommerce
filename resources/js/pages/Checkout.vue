@@ -231,17 +231,14 @@
         		this.form.subtotal = this.subTotal;
         		this.form.total = this.total;
         		this.form.pickup = this.shipping;
-        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 30;
+        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 20;
         		let url = '/api/order';
         		this.form.post(url, this.form)
     				.then(response => this.submitOrderSuccess(response));
         	},
 
         	submitOrderSuccess(data) {
-        		// console.log(data.url);
-        		console.log("hehe");
-        		console.log(data.url);
-        		// window.location.href = data.url;
+        		window.location.href = data.url;
         	},
 
         	submitOrderError(data){
@@ -296,11 +293,11 @@
 
         	total() {
         		let total = 0;
-        		return this.subTotal + (this.deliveryCharge == 'pickup' ? 0 : 30);
+        		return this.subTotal + (this.deliveryCharge != 'delivery' ? 0 : 20);
         	},
 
         	deliveryTotal() {
-        		return this.deliveryCharge == 'pickup' ? 'No Shipping' : 'RM 30';
+        		return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM 20' ;
         	},
         },
     }

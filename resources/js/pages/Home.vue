@@ -32,15 +32,17 @@
 					<div>
 						<a href="#our-product"><img src="/images/arrow-down.png" class="arrow-down" /></a>
 					</div>
-					<div class="container">
-						<div class="row btu-calculator" style="width: 98%;margin: 0px auto;">
+				</div>
+				<div>
+					<div class="row btu-calculator" style="margin: 0px auto;">
+						<div class="container">
 							<div class="col-md-2" style="display: flex;justify-content: center;align-items: center;height: 40px;">
 								<span>BTU Calculator</span>
 							</div>
 							<div class="col-md-8" style="display: flex;justify-content: center;align-items: center;height: 40px;">
-								<input placeholder="Enter Square Feet" style="color:black; background: white; width:100%; padding: 0px 10px;" v-model="sqft" />
+								<input class="form-control" placeholder="Enter Square Feet" style="color:black; background: white; width:100%; padding: 0px 10px;" v-model="sqft" />
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-2" style="display: flex;justify-content: center;align-items: center;height: 40px;">
 								<button @click="btuCalculator" class="btn-calculate gotham-book">Calculate</button>
 							</div>
 						</div>
@@ -563,6 +565,11 @@
 												
 												<div id="alert-msg" class="alert-msg"></div>
 											</form>
+										</div>
+									</div>
+									<div class="col-md-12 col-xs-12">
+										<div class="row map-responsive">
+											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.347527822591!2d100.44167631533769!3d5.363841996109295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac89ee787de17%3A0xf5655b54f32d2a26!2s9%2C+Lebuh+Nangka+2%2C+Taman+Desa+Damai%2C+14000+Bukit+Mertajam%2C+Pulau+Pinang!5e0!3m2!1sen!2smy!4v1550659025867" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 										</div>
 									</div>
 								</div>

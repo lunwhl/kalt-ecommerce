@@ -169,6 +169,7 @@ class ProductController extends Controller
         $totalProducts = Product::whereIn('id', $intersectIds)->count();
         $data['totalProduct'] = $totalProducts;
         $data['products'] = Product::with('categories')->whereIn('id', $intersectIds)
+                                ->orderBy('sequence', "ASC")
                                 ->orderBy('price', request()->sort)
                                 ->skip(request()->skip)
                                 ->take(request()->take)

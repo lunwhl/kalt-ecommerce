@@ -126,7 +126,8 @@
 	                    <h4 class="h4 col-xs-b25">Pick up option</h4>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
 								<v-radio label="Store Pick Up (*Bring along the invoice for pickup)" value="pickup"></v-radio>
-								<v-radio label="P.O Delivery (*Multiple floor shipment will have additional charge)" value="delivery"></v-radio>
+								<v-radio label="Within Penang Mainland (*Free)" value="mainland"></v-radio>
+								<v-radio label="Others (*Multiple floor shipment will have additional charge)" value="delivery"></v-radio>
 							</v-radio-group>
 						<div v-if="deliveryNotice">*Multiple floor shipment will have additional charge.*</div>
 	                </div>
@@ -189,6 +190,13 @@
 		        </v-dialog>
 		    </div>
     		<login></login>
+    		<v-snackbar v-model="snackbar"
+            right="right"
+            :timeout="timeout"
+            top="top"
+        >
+            {{snackbarMsg}}
+        </v-snackbar>
 		</v-app>
 	</template>
 @stop
@@ -207,20 +215,12 @@
 
     	data() {
     		return {
-    			latestProducts: [],
     			categories: [],
     			carts: [],
     			item: {
     				category: []
     			},
-    			page: 1,
-    			skip: 0,
-    			take: 12,
     			url: '',
-    			hpMin: 9000,
-    			hpMax: 60000,
-    			sortSelected: 'asc', 
-    			productTotal: 0,
     			products: [],
     			radios: 'pickup',
     			deliveryNotice: false,
@@ -229,6 +229,8 @@
     			title: '',
     			message: '',
     			alert_dialog: false,
+    			snackbar: false,
+                snackbarMsg: '',
     		};
     	},
 
@@ -272,7 +274,7 @@
         	changeRadio() {
         		if(this.radios == 'delivery'){
         			this.deliveryNotice = true;
-        			this.deliveryCharge = 30;
+        			this.deliveryCharge = 20;
         		} else {
         			this.deliveryNotice = false;
         			this.deliveryCharge = 0;
@@ -311,6 +313,7 @@
         			if(data['cart'].length > 0)
 				    	Vue.set(this.carts, 0, data);
 				}); 
+				this.triggerSnackbar('Cart updated');
 				this.addToCartSuccess(data);
         	},
 
@@ -372,7 +375,13 @@
 
         	scrollToTop() {
                 window.scrollTo(0,0);
-           }
+           },
+
+           triggerSnackbar(message)
+            {
+                this.snackbarMsg = message;
+                this.snackbar = true;
+            },
         },
 
         computed: {

@@ -124,11 +124,11 @@
 
         	total() {
         		let total = 0;
-        		return this.subTotal + (this.order['pickup'] == 'pickup' ? 0 : 30);
+        		return this.subTotal + (this.order['pickup'] != 'delivery' ? 0 : 20);
         	},
 
         	deliveryTotal() {
-        		return this.order['pickup'] == 'pickup' ? 'No Shipping' : 'RM 30';
+        		return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM 20';
         	},
 
         	

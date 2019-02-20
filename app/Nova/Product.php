@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Avatar;
 use Vyuldashev\NovaMoneyField\Money;
 use Laravel\Nova\Fields\BelongsToMany;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
+use Laravel\Nova\Fields\Number;
 
 class Product extends Resource
 {
@@ -66,6 +67,11 @@ class Product extends Resource
             Text::make("Model")
                 ->sortable()
                 ->rules('required'),
+
+            Number::make('sequence')
+                ->help(
+                    'Sequence help to show which product to show first in shop page'
+                ),
 
             NovaTinyMCE::make('Description')->options([
                             'plugins' => [

@@ -2195,6 +2195,20 @@ hr.hori {
 	padding-bottom: 25px;
 }
 
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
 .cheapest-in-town {
 	font-size: 18px;
 	color: white; background-image:
@@ -2217,6 +2231,10 @@ hr.hori {
 
 .mobile-menu .btn {
 	padding: 1px 12px;
+}
+
+.price-min, .price-max {
+	font-weight: bold;
 }
 /* .section-header h3::after { */
 	/* background-color: #40c7f2; */
@@ -2303,7 +2321,7 @@ hr.hori {
 		right: 0;
 		left: auto;
 		top: 100%;
-		width: 550px;
+		width: 610px;
 		padding-bottom: 20px;
 		padding-top: 15px;
 	}

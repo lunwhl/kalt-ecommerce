@@ -38,6 +38,18 @@
 					<td class="text-center" style="padding-top:10px;">{{ number_format(($item->price + $item->installation_price) * $item->qty, 2, ".", ",") }}</td>
 				</tr>
 			@endforeach
+			@if ($order->shipping_price)
+				<tr>
+					<td>Delivery</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="text-center" style="padding-top:10px;">
+						<b>{{ number_format($order->shipping_price, 2, ".", ",") }}</b>
+					</td>
+				</tr>
+			@endif
 		</tbody>
 		<tfoot>
 			<tr>

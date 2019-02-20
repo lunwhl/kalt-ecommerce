@@ -16,15 +16,14 @@ class PurchaseToCustomerEmail extends Mailable
      *
      * @var Demo
      */
-    public $request, $order;
+    public $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request, $order)
+    public function __construct($order)
     {
-        $this->request = $request;
         $this->order = $order;
     }
 

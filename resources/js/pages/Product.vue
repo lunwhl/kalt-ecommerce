@@ -6,8 +6,9 @@
 	                <div class="title-underline center"><span></span></div>
 	            </div>
         	</div>
-			<div class="container">
-	            <div class="row">
+			
+            <div class="row">
+            	<div class="container">
 	                <div class="col-md-12">
 	                    <div class="row">
 	                        <div class="col-sm-6 col-xs-b30 col-sm-b0">
@@ -79,7 +80,7 @@
 	                                </div>
 	                                <div class="col-sm-9">
 	                                    <div style="margin-top: 10px;">
-	                                        <span class="color">RM {{selectedProduct.price}}</span>
+	                                        <span style="color: black; font-size: 16px;">RM {{selectedProduct.price}}</span>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -89,7 +90,7 @@
 	                                </div>
 	                                <div class="col-sm-9">
 	                                    <div style="margin-top: 10px;">
-	                                        <span class="color">RM {{getHosePower}}</span>
+	                                        <span style="color: black; font-size: 16px;">{{getHosePower}}</span>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -131,57 +132,59 @@
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-md-12" style="margin-top: 40px;">
-						<v-tabs
-						color="#488dcb"
-						dark
-						slider-color="#40c7f2"
-						centered
-						>
-							<v-tab
-							v-for="tabTitle in tabTitles"
-							:key="tabTitle"
-							ripple
-							>
-							{{ tabTitle }}
-							</v-tab>
-							<v-tab-item
-							v-for="tabTitle in tabTitles"
-							:key="tabTitle"
-							>
-								<v-tabs-items v-model="tab">
-									<v-tab-item
-									:key="tabTitles[0]"
-									>
-										<div class="row" style="margin-top: 40px;">
-					                    	<div class="text-center">
-								                <div class="h4">Description</div>
-								                <div class="title-underline center"><span></span></div>
-								            </div>
-								            <div class="text-center">
-					                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
-					                    	</div>
-					                    </div>
-									</v-tab-item>
-									<v-tab-item
-									:key="tabTitles[1]"
-									>
-										<div class="row" style="margin-top: 40px;">
-					                    	<div class="text-center">
-								                <div class="h4">Specification</div>
-								                <div class="title-underline center"><span></span></div>
-								            </div>
-								            <div class="text-center">
-					                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.specification"></div>
-					                    	</div>
-					                    </div>
-									</v-tab-item>
-								</v-tabs-items>
-							</v-tab-item>
-						</v-tabs>
-	                </div>
 	            </div>
-        	</div>
+                <div class="col-md-12 left-background" style="margin-top: 40px;">
+					<v-tabs
+					color="#488dcb"
+					dark
+					slider-color="#40c7f2"
+					centered
+					class="container"
+					>
+						<v-tab
+						v-for="tabTitle in tabTitles"
+						:key="tabTitle"
+						ripple
+						>
+						{{ tabTitle }}
+						</v-tab>
+						<v-tab-item
+						v-for="tabTitle in tabTitles"
+						:key="tabTitle"
+						>
+							<v-tabs-items v-model="tab">
+								<v-tab-item
+								:key="tabTitles[0]"
+								>
+									<div class="row" style="margin-top: 40px;">
+				                    	<div class="text-center">
+							                <div class="h4">Description</div>
+							                <div class="title-underline center"><span></span></div>
+							            </div>
+							            <div class="text-center">
+				                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.description"></div>
+				                    	</div>
+				                    </div>
+								</v-tab-item>
+								<v-tab-item
+								:key="tabTitles[1]"
+								>
+									<div class="row" style="margin-top: 40px;">
+				                    	<div class="text-center">
+							                <div class="h4">Specification</div>
+							                <div class="title-underline center"><span></span></div>
+							            </div>
+							            <div class="text-center">
+				                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.specification"></div>
+				                    	</div>
+				                    </div>
+								</v-tab-item>
+							</v-tabs-items>
+						</v-tab-item>
+					</v-tabs>
+                </div>
+            </div>
+
         	<div class="row">
         		<div class="col-md-12" v-if="!relatedProducts['relatedProducts'].length == 0">
 	                    <div class="row">

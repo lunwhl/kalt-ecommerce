@@ -14,7 +14,7 @@
 						</div>
 						<div class="col-md-12" style="padding: 0px;">
 							<div class="col-md-6">
-								<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+603 1234 5678</span></div>
+								<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+6012 4920 969</span></div>
 							</div>
 							<div class="col-md-6">
 								<div style="font-weight: bold;"><img src="/images/mail.png" class="img-30" /><span style="margin-left: 10px;">info@kalt.com.my</span></div>

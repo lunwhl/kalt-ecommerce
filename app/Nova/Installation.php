@@ -2,11 +2,13 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\ID;
+use App\Category;
 use Illuminate\Http\Request;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Installation extends Resource
 {
@@ -44,15 +46,60 @@ class Installation extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Installation Type')
+            Select::make('Installation Type')
+                ->options([
+                    'Basic' => 'Basic', 
+                    'Economy' => 'Economy', 
+                    'Any' => 'Any'
+                ])
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Horsepower')
+            Select::make('Horsepower')
+                ->options(
+                    Category::where('type', 'horsepower')
+                        ->get()
+                        ->mapWithKeys(function ($category){ 
+                            return [$category->name => $category->name];
+                        })
+                        ->put("Any", "Any")
+                    )
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Aircond Type')
+            Select::make('Aircond Type')
+                ->options(
+                    Category::where('type', 'type')
+                            ->get()
+                            ->mapWithKeys(function ($category){ 
+                                return [$category->name => $category->name];
+                            })
+                            ->put("Any", "Any")
+                    )
+                ->sortable()
+                ->rules('required'),
+
+            Select::make('Refrigerant Gas')
+                ->options(
+                    Category::where('type', 'refrigerant-gas')
+                            ->get()
+                            ->mapWithKeys(function ($category){ 
+                                return [$category->name => $category->name];
+                            })
+                            ->put("Any", "Any")
+                    )
+                ->sortable()
+                ->rules('required'),
+
+            Select::make('Feature')
+                ->options(
+                    Category::where('type', 'features')
+                            ->get()
+                            ->mapWithKeys(function ($category){ 
+                                return [$category->name => $category->name];
+                            })
+                            ->put("Any", "Any")
+                    )
                 ->sortable()
                 ->rules('required'),
 

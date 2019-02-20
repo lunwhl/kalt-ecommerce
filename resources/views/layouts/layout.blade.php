@@ -32,10 +32,10 @@
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.3') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.4') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.3') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.4') }}">
 	@yield('css')
 
 	<!--[if lt IE 9]>
@@ -235,7 +235,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
 	<script src="{{ URL::asset('js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.4') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>

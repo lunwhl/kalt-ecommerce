@@ -16,6 +16,7 @@ Route::get('email', function() {
 	return view('email.resetpassword');
 });
 
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes(['verify' => true]);
@@ -27,6 +28,8 @@ Route::get('info', function() {
 Route::get('wording', function(){
 	return view('home.wording');
 });
+
+Route::get('/invoice', 'HomeController@invoice');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'HomeController@index2');

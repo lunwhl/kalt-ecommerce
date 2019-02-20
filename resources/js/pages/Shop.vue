@@ -126,10 +126,13 @@
                 snackbarMsg: '',
                 timeout: 2000,
                 search: '',
+                btuParam: '',
     		};
     	},
 
         mounted() {
+            this.btuParam = new URL(location.href).searchParams.get("btu");
+            this.hpMin = this.btuParam != null && this.btuParam >= 9000  && this.btuParam <= 60000? parseInt(new URL(location.href).searchParams.get("btu")) : 9000;
             this.getCategories();
             this.getProductForShop();
             window.event.$on("copied", () => {

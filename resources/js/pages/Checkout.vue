@@ -241,7 +241,7 @@
         		// console.log(data.url);
         		console.log("hehe");
         		console.log(data.url);
-        		window.location.href = data.url;
+        		// window.location.href = data.url;
         	},
 
         	submitOrderError(data){

@@ -16,15 +16,16 @@ class PurchaseToCustomerEmail extends Mailable
      *
      * @var Demo
      */
-    public $request;
+    public $request, $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request)
+    public function __construct($request, $order)
     {
         $this->request = $request;
+        $this->order = $order;
     }
 
     /**
@@ -36,6 +37,14 @@ class PurchaseToCustomerEmail extends Mailable
     {
         return $this->from("info@kalt.com.my")
                     ->subject('Kalt')
-                    ->view('email.purchasetocustomer');
+                    ->view('email.purchasetocustomer')
+                    ->attach('storage/invoices/' . $this->order->id . '.pdf', [
+                        'as'=> 'invoice.pdf',
+                        'mime' => 'application/pdf',
+                    ])
+                    ->attach('storage/receipts/' . $this->order->id . '.pdf', [
+                        'as'=> 'receipt.pdf',
+                        'mime' => 'application/pdf',
+                    ]);
     }
 }

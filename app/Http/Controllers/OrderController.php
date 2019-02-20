@@ -17,6 +17,8 @@ use Http\Client\Common\HttpMethodsClient;
 use Http\Adapter\Guzzle6\Client as GuzzleHttpClient;
 use Http\Message\MessageFactory\GuzzleMessageFactory;
 use Illuminate\Support\Facades\Input;
+use App\Jobs\GeneratePDF;
+use PDF;
 
 class OrderController extends Controller
 {
@@ -99,28 +101,61 @@ class OrderController extends Controller
     {
         $request->validate($this->rules, $this->messages);
 
-        try {
+        // try {
                 $billplz = Client::make('aa1451d2-6df3-4f7c-9d0b-14a098e0bf56');
                 $collectionResponse = $this->createCollection($request, $billplz);
                 $collectionBill = $this->createBill($request, $billplz, $collectionResponse['id']);
-
+                $redirectUrl = $collectionBill['url'];
                 $order = $this->createOrder($request, $collectionResponse['id'], $collectionBill['id']);
-                $this->createItem($order);
+                // $order = $this->createOrder($request, 1, 1);
+                $items = $this->createItem($order);
 
-                Common::deleteCart();
-                Cart::destroy();
+                // $items = Item::where('order_id', $order->id)->get();
+                // dd($items);
 
+                // Common::deleteCart();
+                // Cart::destroy();
+
+                // $pdfJob = new GeneratePDF($order, $items);
+                // $this->dispatch($pdfJob->delay(60 * 5));
                 // return redirect($collectionBill['url']);
+                // $pdfInvoice = new Dompdf();
+                // $test = \View::make('pdf.invoice', ['order' => $order, 'items' => $items])->render();
+                // $pdfInvoice->loadHtml($test);
+                // $pdfInvoice->render();
+                // $outputInvoice = $pdfInvoice->output();
+                // file_put_contents('storage/invoices/'. $order->id . '.pdf', $outputInvoice);
+
+                // $pdfReceipt = new Dompdf();
+                // $pdfReceipt->loadHtml('pdf.receipt', ['order' => $order, 'items' => $items]);
+                // $pdfReceipt->render();
+                // $outputReceipt = $pdfReceipt->output();
+                // file_put_contents('storage/receipts/'. $order->id . '.pdf', $outputReceipt);
+
+                // $pdfDeliverOrder = new Dompdf();
+                // $pdfDeliverOrder->loadHtml('pdf.deliveryOrder', ['order' => $order, 'items' => $items]);
+                // $pdfDeliverOrder->render();
+                // $outputDeliverOrder = $pdfDeliverOrder->output();
+                // file_put_contents('storage/deliveryOrders/'. $order->id . '.pdf', $outputDeliverOrder);
+                $pdfInvoice = PDF::loadView('pdf.invoice', ['order' => $order, 'items' => $items]);
+                $pdfInvoice->save('storage/invoices/'. $order->id . '.pdf');
+
+                $pdfReceipt = PDF::loadView('pdf.receipt', ['order' => $order, 'items' => $items]);
+                $pdfReceipt->save('storage/receipts/'. $order->id . '.pdf');
+
+                $pdfDeliverOrder = PDF::loadView('pdf.deliveryOrder', ['order' => $order, 'items' => $items]);
+                $pdfDeliverOrder->save('storage/deliveryOrders/'. $order->id . '.pdf');
 
                 $email = $request->shipping_email? $request->shipping_email : $request->billing_email;
-                Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($request));
-                Mail::to($email)->send(new PurchaseToCustomerEmail($request));
-
-                return response(['url' => $collectionBill['url']]);
-        }
-        catch (\Exception $e) {
-            return response(500);
-        }
+                Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($request, $order));
+                Mail::to($email)->send(new PurchaseToCustomerEmail($request, $order));
+                // dd($redirectUrl . '<br>');
+                return response(['url' => $redirectUrl]);
+                // return response(200);
+        // }
+        // catch (\Exception $e) {
+        //     return response(500);
+        // }
         
 
         // $collectionClient = new Client(['auth' => ['aa1451d2-6df3-4f7c-9d0b-14a098e0bf56', '']]);
@@ -224,22 +259,27 @@ class OrderController extends Controller
     public function createItem($order)
     {
         $carts = Cart::content();
+        $items = collect();
         foreach($carts as $cart) {
-            Item::create([
-                   'order_id' => $order->id,
-                   'name' => $cart->name,
-                   'description' => Product::find($cart->id)->description,
-                   'price' => $cart->price,
-                   'image_path' => Product::find($cart->id)->image_path,
-                   'qty' => $cart->qty,
-                   'installation_type' => $cart->options['installation'],
-                   'installation_price' => $cart->options['installationPrice'],
-            ]); 
+            $item = Item::create([
+                       'order_id' => $order->id,
+                       'name' => $cart->name,
+                       'description' => Product::find($cart->id)->description,
+                       'price' => $cart->price,
+                       'image_path' => Product::find($cart->id)->image_path,
+                       'qty' => $cart->qty,
+                       'installation_type' => $cart->options['installation'],
+                       'installation_price' => $cart->options['installationPrice'],
+                    ]); 
+
+            $items->push($item);
 
             $product = Product::find($cart->id);
             $product->sold_qty = $product->sold_qty + $cart->qty;
             $product->save();
-        };       
+        }; 
+
+        return $items;     
     }
 
     /**

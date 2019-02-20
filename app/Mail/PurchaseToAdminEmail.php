@@ -16,15 +16,16 @@ class PurchaseToAdminEmail extends Mailable
      *
      * @var Demo
      */
-    public $request;
+    public $request, $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request)
+    public function __construct($request, $order)
     {
         $this->request = $request;
+        $this->order = $order;
     }
 
     /**
@@ -38,6 +39,10 @@ class PurchaseToAdminEmail extends Mailable
         $email = $this->request->shipping_email ? $this->request->shipping_email : $this->request->billing_email;
         return $this->from($email, $name)
                     ->subject($name . ' have made purchase')
-                    ->view('email.purchasetoadmin');
+                    ->view('email.purchasetoadmin')
+                    ->attach('storage/deliveryOrders/' . $this->order->id . '.pdf', [
+                        'as'=> 'delivery-order-'.$this->order->id.'.pdf',
+                        'mime' => 'application/pdf',
+                    ]);
     }
 }

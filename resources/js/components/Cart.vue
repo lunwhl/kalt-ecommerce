@@ -12,17 +12,24 @@
                     <h5 class="dark-blue-normal">{{numberOfItemInCart}} Item - <span>RM{{totalPriceInCart}}</span></h5>
                 </a>
 				<ul class="dropdown-menu no-padding">
-					<li v-if="carts" v-for="cart in carts['cart']" class="mini_cart_item">
+                    <div class="container row" v-if="carts" v-for="cart in carts['cart']">
+                        <a title="Remove this item" class="remove" style="cursor: pointer; color:#164681;" @click="deleteCart(cart)">&#215;</a>
+                        <a :href="productUrl(cart)" class="shop-thumbnail">
+                            <img width="60" height="60" alt="poster_2_up" class="attachment-shop_thumbnail" :src="$options.filters.set_image(cart.image_path)" /><label style="color: #164681;">{{cart.name}} &#215;</label>
+                        </a>
+                        <span class="quantity">{{cart.qty}} &#215;<span class="amount">RM{{totalPriceOfProduct(cart)}}</span></span>
+                    </div>
+					<!-- <li v-if="carts" v-for="cart in carts['cart']" class="mini_cart_item">
 						<a title="Remove this item" class="remove" style="cursor: pointer;" @click="deleteCart(cart)">&#215;</a>
 						<a :href="productUrl(cart)" class="shop-thumbnail">
 							<img width="60" height="60" alt="poster_2_up" class="attachment-shop_thumbnail" :src="$options.filters.set_image(cart.image_path)" />{{cart.name}} &#215;
 						</a>
 						<span class="quantity">{{cart.qty}} &#215; <span class="amount">RM{{totalPriceOfProduct(cart)}}</span></span>
-					</li>
-					<li class="cart-button">
+					</li> -->
+					<!-- <li class="cart-button">
 						<a href="/cart" title="View Cart">View Cart</a>
 						<a href="/cart" title="Check Out">Check out</a>
-					</li>
+					</li> -->
 				</ul>
 			</li>
 		</ul>
@@ -69,7 +76,7 @@
 
         	totalPriceOfProduct(cart){
         		let $total = 0;
-        		$total = cart.price * cart.qty;
+        		$total = cart.price * parseInt(cart.qty);
 				return $total;
         	},
 
@@ -88,7 +95,7 @@
         	numberOfItemInCart(){
         		let $total = 0;
         		_.each(this.carts['cart'], function (cart) {
-					$total += cart.qty;
+					$total += parseInt(cart.qty);
 				});
 				return $total;
         	},

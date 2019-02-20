@@ -32,7 +32,21 @@
 					<div>
 						<a href="#our-product"><img src="/images/arrow-down.png" class="arrow-down" /></a>
 					</div>
+					<div class="container">
+						<div class="row btu-calculator" style="width: 98%;margin: 0px auto;">
+							<div class="col-md-2" style="display: flex;justify-content: center;align-items: center;height: 40px;">
+								<span>BTU Calculator</span>
+							</div>
+							<div class="col-md-8" style="display: flex;justify-content: center;align-items: center;height: 40px;">
+								<input placeholder="Enter Square Feet" style="color:black; background: white; width:100%; padding: 0px 10px;" v-model="sqft" />
+							</div>
+							<div class="col-md-2">
+								<button @click="btuCalculator" class="btn-calculate gotham-book">Calculate</button>
+							</div>
+						</div>
+					</div>
 				</div>
+
 				<!-- <div class="photo-slider container-fluid no-padding" id="home"> -->
 					<!-- Main Carousel -->
 					<!-- <div id="main-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -609,6 +623,7 @@
 				    contact_subject: '',
 				    contact_no: '',
 				}), 
+				sqft: '',
     		};
     	},
 
@@ -626,6 +641,11 @@
         },
 
         methods: {
+        	btuCalculator() {
+        		let space = this.sqft == '' ? 0 : this.sqft;
+        		window.location.href = '/shop?btu=' + space*70;
+        	},
+
         	getLatestProduct() {
         		axios.post('/home/products/latest')
         		.then(response => this.setLastestProduct(response.data));

@@ -31,7 +31,7 @@
 		}
 
 		jQuery(document).ready(function($) {
-		  
+		  let btuParam = new URL(location.href).searchParams.get("btu") ? new URL(location.href).searchParams.get("btu") : 9000;
 		  //  Price Filter ( noUiSlider Plugin)
 		    var slider = $("#price-range").noUiSlider({
 			    range: {
@@ -40,7 +40,7 @@
 			    },
 			    step: 10,
 			    behaviour: 'tap',
-			    start: [9000, 60000],
+			    start: [btuParam, 60000],
 			        connect:true,
 			        serialization:{
 			            lower: [

@@ -1,5 +1,5 @@
 	<template>
-		<v-app>
+		<v-app style="background: #fff;">
 			<div class="container">
 	            <div class="text-center">
 	                <div class="h2">Thank you</div>

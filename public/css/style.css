@@ -2203,6 +2203,14 @@ hr.hori {
 	padding: 8px 43px;
 }
 
+.btu-calculator {
+	font-size: 18px;
+	color: white; background-image:
+	linear-gradient(to right, #40c7f2 , #1c5e99);
+	font-weight: bold;
+	padding: 8px 43px;
+}
+
 .desktop-menu .btn {
 	padding: 0px;
 }
@@ -2231,6 +2239,10 @@ hr.hori {
 /* ========================================================================== */
 
 /* - min-width: 1200 */
+.padding-top-75{
+	padding-top: 0px;
+}
+
 @media (min-width: 1200px) {
 	.container {
 		width: 1200px !important;
@@ -2238,6 +2250,9 @@ hr.hori {
 	}
 	.cheapest-in-town {
 		font-size: 16px;
+	}
+	.padding-top-75 {
+		padding-top: 30px;
 	}
 }
 
@@ -2740,11 +2755,31 @@ hr.hori {
 	transition: all 0.4s ease-in-out;
 }
 
-.padding-top-75{
-	padding-top: 75px;
+.btn-calculate {
+	color: #1c5e99;
+	border: 3px solid #40c7f2; 
+	background: #fff;
+	border-radius: 0px;
+	display: inline-block;
+	padding: 7px 20px;
+	/* letter-spacing: 3px; */
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
 .btn-shop:hover {
+	color: #fff !important;
+	background: #1c5e99;
+}
+
+.btn-calculate:hover {
 	color: #fff !important;
 	background: #1c5e99;
 }

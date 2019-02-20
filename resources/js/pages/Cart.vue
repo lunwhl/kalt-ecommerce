@@ -363,11 +363,11 @@
 
         	minusQty(cart) {
         		if(cart.qty > 1)
-        			cart.qty = cart.qty - 1;
+        			cart.qty = parseInt(cart.qty) - 1;
         	},
 
         	addQty(cart) {
-    			cart.qty = cart.qty + 1;
+    			cart.qty = parseInt(cart.qty) + 1;
         	},
 
         	scrollToTop() {

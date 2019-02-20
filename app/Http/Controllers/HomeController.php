@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Mail\InquiryEmail;
 use App\Mail\ResetPassword;
 use Illuminate\Support\Facades\Mail;
+use App\Order;
+use App\Item;
 use App\User;
 use App\Product;
 use App\Category;
@@ -143,5 +145,14 @@ class HomeController extends Controller
         Mail::to(request()->email)->send(new ResetPassword($password));
 
         return response(['result' => true]);
+    }
+
+    public function invoice()
+    {
+        $order = Order::find(130);
+        $items = Item::where('order_id', $order->id)->get();
+        $user = User::find(1);
+
+        return view('pdf.invoice', ['order' => $order, 'items' => $items, 'user' => $user]);
     }
 }

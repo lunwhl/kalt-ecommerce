@@ -170,9 +170,9 @@ class OrderController extends Controller
             null,
             $request->billing_name,
             $request->total * 100,
-            'http://test.kalt/api/order/completed',
+            'https://test.kalt.com.my/api/order/completed',
             $request->billing_name . ' bill',
-            ['redirect_url' => 'http://test.kalt/api/order/completed']
+            ['redirect_url' => 'https://test.kalt.com.my/api/order/completed']
         );
 
         return $response->toArray();

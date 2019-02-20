@@ -174,17 +174,40 @@ class CartController extends Controller
         $request = json_decode(request()->getContent(), true);
 
         if(request()->has('type')){
-            $product = Product::find($request['id']);
+            $product = Product::with('categories')->find($request['id']);
 
             if(request()->type == 'none')
                 return response(['installationPrice' => $product->price]);
 
             $type = $product->categories->where('type', 'type')->first();
             $hp = $product->categories->where('type', 'horsepower')->first();
+            $gas = $product->categories->where('type', 'refrigerant-gas')->first();
+            $feature = $product->categories->where('type', 'features')->first();
 
-            if($type && $hp)
-                $installation = Installation::where('horsepower', $hp->name)->where('aircond_type', $type->name)
-                                        ->where('installation_type', request()->type)->first();
+            if($type && $hp && $gas && $feature)
+                $installation = Installation::where(function ($query) use ($hp){
+                                                $query->where('horsepower', $hp->name)
+                                                    ->orWhere('horsepower', 'Any');
+                                                })
+                                            ->where(function ($query) use ($type){
+                                                $query->where('aircond_type', $type->name)
+                                                    ->orWhere('aircond_type', 'Any');
+                                                })
+                                            ->where(function ($query) use ($feature){
+                                                $query->where('feature', $feature->name)
+                                                    ->orWhere('feature', 'Any');
+                                                })
+                                            ->where(function ($query) use ($gas){
+                                                $query->where('refrigerant_gas', $gas->name)
+                                                    ->orWhere('refrigerant_gas', 'Any');
+                                                })
+                                            ->where(function ($query){
+                                                $query->where('installation_type', request()->type)
+                                                    ->orWhere('installation_type', 'Any');
+                                                })
+                                            ->get()
+                                            ->sortBy('any_count')
+                                            ->first();
             else
                 return response(['installationPrice' => $product->price]);
             

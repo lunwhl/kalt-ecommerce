@@ -86,6 +86,7 @@
         </v-snackbar>
 	     <share></share>
          <login></login>
+         <messenger></messenger>
 	</v-app>
 
 </template>
@@ -95,11 +96,13 @@
 	import Share from '../components/Share.vue';
 	import ListProduct from '../components/ListProduct.vue';
     import Login from '../components/Login.vue';
+    import Messenger from '../components/Messenger.vue';
 
     export default {
     	components: {
 			Share,
             Login,
+            Messenger,
 			ListProduct
 		},
 

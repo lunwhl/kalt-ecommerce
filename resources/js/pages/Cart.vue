@@ -190,6 +190,7 @@
 		        </v-dialog>
 		    </div>
     		<login></login>
+    		<messenger></messenger>
     		<v-snackbar v-model="snackbar"
             right="right"
             :timeout="timeout"
@@ -204,10 +205,12 @@
 <script>
 	import AlertLogin from '../components/AlertLogin.vue';
 	import Login from '../components/Login.vue';
+	import Messenger from '../components/Messenger.vue';
 
     export default {
     	components: {
 			AlertLogin,
+			Messenger,
 			Login
 		},
 

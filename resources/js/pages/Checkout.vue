@@ -171,6 +171,7 @@
 		            </div>
 		        </form>
         	</div>
+        	<messenger></messenger>
         	<alert-login title="Alert" message="You must agree with the Privacy policy agreement in order to proceed"></alert-login>
 		</v-app>
 	</template>
@@ -179,10 +180,12 @@
 <script>
 	import Loading from '../components/Loading.vue';
 	import AlertLogin from '../components/AlertLogin.vue';
+	import Messenger from '../components/Messenger.vue';
     
     export default {
     	components: {
     		AlertLogin,
+    		Messenger,
 			Loading
 		},
 

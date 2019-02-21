@@ -207,6 +207,7 @@
 			</v-snackbar>
 			<share></share>
 			<login></login>
+			<messenger></messenger>
 		</v-app>
 	</template>
 @stop
@@ -216,11 +217,13 @@
 	import Share from '../components/Share.vue';
 	import Login from '../components/Login.vue';
 	import VueClipboard from 'vue-clipboard2';
+	import Messenger from '../components/Messenger.vue';
     Vue.use(VueClipboard);
     export default {
     	components: {
     		Share,
 			Login,
+			Messenger,
 			ListProduct
 		},
 

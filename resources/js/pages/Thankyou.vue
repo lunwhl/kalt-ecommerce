@@ -71,12 +71,18 @@
 	                </div>
 	            </div>
         	</div>
+        	<messenger></messenger>
 		</v-app>
 	</template>
 @stop
 
 <script>
+	import Messenger from '../components/Messenger.vue';
     export default {
+    	components: {
+            Messenger
+		},
+
     	props: ['order'],
     	data() {
     		return {

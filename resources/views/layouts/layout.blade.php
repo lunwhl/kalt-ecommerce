@@ -32,10 +32,10 @@
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.4') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.5') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.4') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.5') }}">
 	@yield('css')
 
 	<!--[if lt IE 9]>
@@ -65,7 +65,7 @@
 								<div class="dropdown-bar">
 									<div class="language-dropdown dropdown">
 										@if(Auth::check())
-											<button class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}<span class="caret"></span></button>
+											<button onclick="toProfile()" class="btn dropdown-toggle" type="button" id="Username" title="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{Auth::user()->name}}</button>
 											<!-- <ul class="dropdown-menu no-padding"> -->
 												<!-- <li><a href="#" title="sarah1">My Profile</a></li> -->
 												<!-- <li><a href="/api/home/profile">My profile</a></li>
@@ -235,7 +235,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
 	<script src="{{ URL::asset('js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.4') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.5') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>
@@ -256,6 +256,10 @@ $(function(){
 
 function openLogin(){
 	window.event.$emit("login-dialog", {'openDialog': true})
+}
+
+function toProfile(){
+	window.location.href = '/api/home/profile';
 }
 
 jQuery(document).ready(function(jQuery) {    

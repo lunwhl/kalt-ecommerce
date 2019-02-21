@@ -2197,9 +2197,10 @@ hr.hori {
 
 .map-responsive{
     overflow:hidden;
-    padding-bottom:56.25%;
+    padding-bottom:30.25%;
     position:relative;
     height:0;
+	margin-bottom: 20px;
 }
 .map-responsive iframe{
     left:0;

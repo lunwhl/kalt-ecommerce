@@ -32,10 +32,10 @@
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.7') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.8') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.7') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.8') }}">
 	@yield('css')
 
 	<!--[if lt IE 9]>
@@ -235,7 +235,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
 	<script src="{{ URL::asset('js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.7') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.8') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>
@@ -243,18 +243,7 @@
 	@yield('js')
 </body>
 <script>
-$(function(){
-    var current = location.pathname;
-    $('#navbar li a').each(function(){
-        var $this = $(this);
-        // // if the current path is like this link, make it active
-        if($this.attr('href') === current){
-            $this.parent('li').addClass('active');
-        }
-    })
-})
-
-window.fbAsyncInit = function() {
+	window.fbAsyncInit = function() {
 	FB.init({
 	      appId            : '912333495590130',
 	      autoLogAppEvents : true,
@@ -269,7 +258,18 @@ window.fbAsyncInit = function() {
 	  js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
 	  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
+</script>
+<script>
+$(function(){
+    var current = location.pathname;
+    $('#navbar li a').each(function(){
+        var $this = $(this);
+        // // if the current path is like this link, make it active
+        if($this.attr('href') === current){
+            $this.parent('li').addClass('active');
+        }
+    })
+})
 
 function openLogin(){
 	window.event.$emit("login-dialog", {'openDialog': true})

@@ -25,7 +25,6 @@
 				</div>
 				<login></login>
 				<order></order>
-				<messenger></messenger>
 			</v-content>
 		</v-app>
 	</template>
@@ -34,12 +33,10 @@
 <script>
 	import Login from '../components/Login.vue';
 	import Order from '../components/Order.vue';
-	import Messenger from '../components/Messenger.vue';
 
     export default {
     	components: {
 			Login,
-			Messenger,
 			Order
 		},
     	data() {

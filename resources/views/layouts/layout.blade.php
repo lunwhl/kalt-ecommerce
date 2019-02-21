@@ -32,10 +32,10 @@
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.8') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=1.9') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.8') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.9') }}">
 	@yield('css')
 
 	<!--[if lt IE 9]>
@@ -196,12 +196,12 @@
 					</div><!-- Container /- -->
 				</div><!-- Middel Header /- -->	
 				<div class="fb-customerchat"
-            page_id="2188187484836926"
-            theme_color="#4267b2"
-            logged_in_greeting="Hi! How can we help you?"
-            logged_out_greeting="GoodBye!... Hope to see you soon."
-            minimized="false">
-    </div>
+		            page_id="2188187484836926"
+		            theme_color="#4267b2"
+		            logged_in_greeting="Hi! How can we help you?"
+		            logged_out_greeting="GoodBye!... Hope to see you soon."
+		            minimized="false">
+		    	</div>
 			</div>		
 			
 			
@@ -242,7 +242,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
 	<script src="{{ URL::asset('js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.8') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=1.9') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>

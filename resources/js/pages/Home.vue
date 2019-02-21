@@ -577,7 +577,6 @@
 						</div><!-- Our Product /- -->
 					</div>
 				</div>
-				<messenger></messenger>
 				<v-snackbar v-model="snackbar"
 				right="right"
 				:timeout="timeout"
@@ -596,14 +595,12 @@
 	import ListProduct from '../components/ListProduct.vue';
 	import Share from '../components/Share.vue';
 	import Login from '../components/Login.vue';
-	import Messenger from '../components/Messenger.vue';
 
     export default {
     	components: {
 			Share,
 			Login,
 			ListProduct,
-			Messenger,
 		},
 
     	props: ['is_auth'],

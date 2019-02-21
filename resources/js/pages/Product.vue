@@ -198,7 +198,6 @@
 	                    </div>
 	                </div>
         	</div>
-        	<messenger></messenger>
 			<v-snackbar v-model="snackbar"
 				right="right"
 				:timeout="timeout"
@@ -217,13 +216,11 @@
 	import Share from '../components/Share.vue';
 	import Login from '../components/Login.vue';
 	import VueClipboard from 'vue-clipboard2';
-	import Messenger from '../components/Messenger.vue';
     Vue.use(VueClipboard);
     export default {
     	components: {
     		Share,
 			Login,
-			Messenger,
 			ListProduct
 		},
 

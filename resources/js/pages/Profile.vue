@@ -78,19 +78,16 @@
 			>
 			{{snackbarMsg}}
 			</v-snackbar>
-			<messenger></messenger>
 		</v-app>
 	</template>
 @stop
 
 <script>
 	import AlertLogin from '../components/AlertLogin.vue';
-	import Messenger from '../components/Messenger.vue';
 
     export default {
     	components: {
 			AlertLogin,
-			Messenger
 		},
 
     	data() {

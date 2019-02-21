@@ -77,7 +77,6 @@
 	        </div>
 	       </div>
 	     </section>
-         
          <v-snackbar v-model="snackbar"
         right="right"
         :timeout="timeout"
@@ -97,13 +96,11 @@
 	import Share from '../components/Share.vue';
 	import ListProduct from '../components/ListProduct.vue';
     import Login from '../components/Login.vue';
-    import Messenger from '../components/Messenger.vue';
 
     export default {
     	components: {
 			Share,
             Login,
-            Messenger,
 			ListProduct
 		},
 

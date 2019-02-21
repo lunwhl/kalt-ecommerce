@@ -198,6 +198,7 @@
 	                    </div>
 	                </div>
         	</div>
+        	<messenger></messenger>
 			<v-snackbar v-model="snackbar"
 				right="right"
 				:timeout="timeout"
@@ -207,7 +208,6 @@
 			</v-snackbar>
 			<share></share>
 			<login></login>
-			<messenger></messenger>
 		</v-app>
 	</template>
 @stop

@@ -499,7 +499,7 @@
 							<img src="/images/aircond-brand.jpg" class="our-shop-pictures" />
 						</div>
 						<div class="light-to-dark-blue">
-							<a href="/#"><span>VIEW MORE >></span></a>
+							<a href="/about"><span>VIEW MORE >></span></a>
 						</div>
 					</div>
 				</div>

@@ -99,7 +99,7 @@
 									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/shop">Shop</a>
 								</li>
 								<li class="dropdown">
-									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/home/#about-us">About Us</a>
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/about">About Us</a>
 								</li>
 								<li><a href="/home/#our-product">Our Products</a></li>
 								<li><a href="/home/#faq">Service</a></li>
@@ -161,7 +161,7 @@
 															<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/shop">Shop</a>
 														</li>
 														<li class="dropdown">
-															<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/home/#about-us">About Us</a>
+															<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/about">About Us</a>
 														</li>
 														<li><a href="/home/#our-product">Our Products</a></li>
 														<li><a href="/home/#faq">Service</a></li>

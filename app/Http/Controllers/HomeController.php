@@ -155,4 +155,9 @@ class HomeController extends Controller
 
         return view('pdf.invoice', ['order' => $order, 'items' => $items, 'user' => $user]);
     }
+
+    public function aboutus()
+    {
+        return view('aboutus.page');
+    }
 }

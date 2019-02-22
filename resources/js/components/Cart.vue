@@ -22,7 +22,7 @@
                                     <img width="60" height="60" alt="poster_2_up" class="attachment-shop_thumbnail" :src="$options.filters.set_image(cart.image_path)" />
                                 </a>
                             </td>
-                            <td style="text-align: center;">
+                            <td style="text-align: center; width:470px;">
                                 <a :href="productUrl(cart)" class="shop-thumbnail">
                                     <label style="color: #164681;">{{cart.name}}</label>
                                 </a>

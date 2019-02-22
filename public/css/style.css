@@ -65,9 +65,28 @@
 @import "css/shortcode.css";
 
 /* * Body */
+@font-face {
+    font-family: 'gothamhtfbold';
+    src: url('../fonts/GothamHTF-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'gothamhtfbook';
+    src: url('../fonts/GothamHTF-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamhtfmedium';
+    src: url('../fonts/GothamHTF-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-	font-family: 'gothamhtfmedium', sans-serif !important;
+	font-family: 'gothamhtfmedium'!important;
 	font-size: 14px;
 	color: #000;
 	overflow-x: hidden;
@@ -129,26 +148,7 @@ a {
 
 /* * Fonts Settings */
 
-@font-face {
-    font-family: 'gothamhtfbold';
-    src: url('../fonts/GothamHTF-Bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'gothamhtfbook';
-    src: url('../fonts/GothamHTF-Book.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'gothamhtfmedium';
-    src: url('../fonts/GothamHTF-Medium.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* - Latomedium : font-family: 'latomedium'; */
 @font-face {
@@ -1934,6 +1934,16 @@ hr.hori {
 	-o-transition: all 1s ease 0s;
 	transition: all 1s ease 0s;
 }
+.shop-image {
+	opacity: 1.0;
+}
+.shop-image:hover {
+	opacity: 0.4;
+	-webkit-transition: all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	-o-transition: all 1s ease 0s;
+	transition: all 1s ease 0s;
+}
 .footer-main .footer-social ul li a:hover {
 	background-color: #40c7f2;
 	border-color: #40c7f2;
@@ -2184,6 +2194,16 @@ hr.hori {
 	position: relative;
 }
 
+.intermediate-blue-h3 {
+	color: #3e6594;
+	font-family: 'gothamhtfmedium', sans-serif;
+	font-weight: 600;
+	font-size: 36px;
+	margin-top: 0;
+	text-transform: uppercase;
+	position: relative;
+}
+
 .section-header span {
 	color: #223169;
 	font-family: 'gothamhtfbook', sans-serif;
@@ -2260,6 +2280,10 @@ hr.hori {
 /* - min-width: 1200 */
 .padding-top-75{
 	padding-top: 0px;
+}
+
+.desktop-padding-top-65{
+	padding-top: 65px;
 }
 
 @media (min-width: 1200px) {
@@ -2396,6 +2420,10 @@ hr.hori {
 	.detail-section ul li {
 		padding-left: 30px;
 		padding-right: 30px;
+	}
+	
+	.desktop-padding-top-65{
+		padding-top: 0px;
 	}
 }
 

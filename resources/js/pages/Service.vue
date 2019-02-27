@@ -2,23 +2,20 @@
 		<v-app style="background: #fff;">
 			<div data-app="true">
 				<div class="container-fluid">
-					<div class="row">
+					<div class="d-flex align-end">
+						<div>
+							<img class="service-left-flow" src="/images/about-us-left-flow.png" style="width: 600px; margin-bottom: 150px" />
+						</div>
+						<img src="/images/header-01.png" style="width: 450px;" />
+						
 						<!-- <div style="display: block; margin-left: -150px;">
 							<img src="/images/about-us-left-flow.png" style="width: 500px;" />
 						</div> -->
-						<div class="container">
-							<div class="row col-md-6">
-								<img class="service-left-flow" src="/images/about-us-left-flow.png" style="width: 600px; margin:65px -300px;" />
-								<div>
-									<div class="intermediate-blue-h3 container-fluid" style="font-size: 45px;">SERVICES</div>	
-								</div>
-							</div>
-							<div class="col-md-6"><img src="/images/header-01.png" style="width: 500px;" /></div>
-						</div>
 					</div>
 				</div>
 				<div class="row" id="installation">
 					<div class="container">
+						<div class="intermediate-blue-h3 container-fluid service-title" style="font-size: 45px;">SERVICES</div>	
 						<h3 class="description-header container-fluid gotham-bold">INSTALLATION</h3>
 						<div class="container-fluid" style="font-size: 18px;">
 							<b>WE PROVIDE 2 TYPES OF INSTALLATION</b>

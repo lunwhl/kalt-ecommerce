@@ -41971,9 +41971,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -42034,39 +42031,34 @@ var render = function() {
       { attrs: { "data-app": "true" } },
       [
         _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row col-md-6" }, [
-                _c("img", {
-                  staticClass: "service-left-flow",
-                  staticStyle: { width: "600px", margin: "65px -300px" },
-                  attrs: { src: "/images/about-us-left-flow.png" }
-                }),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "intermediate-blue-h3 container-fluid",
-                      staticStyle: { "font-size": "45px" }
-                    },
-                    [_vm._v("SERVICES")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("img", {
-                  staticStyle: { width: "500px" },
-                  attrs: { src: "/images/header-01.png" }
-                })
-              ])
-            ])
+          _c("div", { staticClass: "d-flex align-end" }, [
+            _c("div", [
+              _c("img", {
+                staticClass: "service-left-flow",
+                staticStyle: { width: "600px", "margin-bottom": "150px" },
+                attrs: { src: "/images/about-us-left-flow.png" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticStyle: { width: "450px" },
+              attrs: { src: "/images/header-01.png" }
+            })
           ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "row", attrs: { id: "installation" } }, [
           _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "intermediate-blue-h3 container-fluid service-title",
+                staticStyle: { "font-size": "45px" }
+              },
+              [_vm._v("SERVICES")]
+            ),
+            _vm._v(" "),
             _c(
               "h3",
               { staticClass: "description-header container-fluid gotham-bold" },

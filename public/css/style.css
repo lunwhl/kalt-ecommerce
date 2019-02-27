@@ -1422,6 +1422,11 @@ main,footer {
 	display: block;
 }
 
+.service-title {
+  margin-top: -75px !important;
+  margin-bottom: 75px;
+}
+
 .gotham-bold {
 	font-family: 'gothamhtfbold';
 }
@@ -2691,6 +2696,11 @@ hr.hori {
 	.service-left-flow {
 		display: none;
 	}
+
+  .service-title {
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 }
 
 .mg-ngt-360 {

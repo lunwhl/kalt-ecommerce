@@ -15,7 +15,7 @@
 							</div>
 							<div class="col-md-12" style="padding: 0px;">
 								<div class="col-md-6">
-									<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+603 1234 5678</span></div>
+									<div style="font-weight: bold;"><img src="/images/phone.png" class="img-30" /><span style="margin-left: 15px;">+601 2402 0969</span></div>
 								</div>
 								<div class="col-md-6">
 									<div style="font-weight: bold;"><img src="/images/mail.png" class="img-30" /><span style="margin-left: 10px;">info@kalt.com.my</span></div>
@@ -36,14 +36,21 @@
 				<div>
 					<div class="row btu-calculator" style="margin: 0px auto;">
 						<div class="container">
-							<div class="col-md-2" style="display: flex;justify-content: center;align-items: center;height: 40px;">
-								<span>BTU Calculator</span>
+							<div class="row">
+								<div class="col-md-2" style="display: flex;align-items: center;height: 40px;">
+									<span>BTU Calculator</span>
+								</div>
+								<div class="col-md-8" style="display: flex;justify-content: center;align-items: center;height: 40px;">
+									<input class="form-control" placeholder="Enter Square Feet" style="color:black; background: white; width:100%; padding: 0px 10px;" v-model="sqft" />
+								</div>
+								<div class="col-md-2" style="display: flex;justify-content: center;align-items: center;height: 40px;">
+									<button @click="btuCalculator" class="btn-calculate gotham-book">Calculate</button>
+								</div>
 							</div>
-							<div class="col-md-8" style="display: flex;justify-content: center;align-items: center;height: 40px;">
-								<input class="form-control" placeholder="Enter Square Feet" style="color:black; background: white; width:100%; padding: 0px 10px;" v-model="sqft" />
-							</div>
-							<div class="col-md-2" style="display: flex;justify-content: center;align-items: center;height: 40px;">
-								<button @click="btuCalculator" class="btn-calculate gotham-book">Calculate</button>
+							<div class="row">
+								<div class="col-md-12">
+									<small><i><b>Disclaimer:</b> This calculator is provided for an approximate check of heat loads. We accept no responsibility or liability resulting or howsover arising from its use.</i></small>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -242,7 +249,7 @@
 										<div class="col-md-7" style="text-align: left; padding: 0px;">
 											<div style="line-height:16px;">
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">AIR CONDITIONER</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
+												<p style="font-size: 12px;">OUR BRANDED AIR CONDITIONERS ARE ALWAYS SOLD AT WHOLESALE PRICE. THEY ARE FROM REPUTABLE SUPPLIERS WITH HIGH STANDARD OF QUALITY CONTROL. </p>
 												<div class="light-to-dark-blue">
 													<a href="/#"><span>VIEW MORE >></span></a>
 												</div>
@@ -258,7 +265,7 @@
 										<div class="col-md-7" style="text-align: left; padding: 0px;">
 											<div style="line-height:16px;">
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSTALLATION</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
+												<p style="font-size: 12px;">OUR INSTALLATION ONLY USES ACCESSORIES WITH THE HIGHEST QUALITY AND CONDUCTED BY VERY EXPERIENCED TECHNICIAN.</p>
 												<div class="light-to-dark-blue">
 													<a href="/#"><span>VIEW MORE >></span></a>
 												</div>
@@ -274,7 +281,7 @@
 										<div class="col-md-7" style="text-align: left; padding: 0px;">
 											<div style="line-height:16px;">
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CHEMICAL CLEANING</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
+												<p style="font-size: 12px;">OVERHAUL IMPROVES AN AIR CONDITIONING UNIT’S PERFORMACE. OUR TECHNICIANS ARE TRAINED WELL IN OVERHAUL ALL AIR COND UNIT.</p>
 												<div class="light-to-dark-blue">
 													<a href="/#"><span>VIEW MORE >></span></a>
 												</div>
@@ -294,7 +301,7 @@
 										<div class="col-md-7" style="text-align: left; padding: 0px;">
 											<div style="line-height:16px;">
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSPECTION & REPAIR</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
+												<p style="font-size: 12px;">FACING PROBLEM, LIKE WATER LEAKAGE, NOT COLD, SENSOR BLINKING, AND NOT FUNCTIONING. OUR TECHNICIAN ARE HERE TO ATTEND AND PERFORM THE INSPECTION.</p>
 												<div class="light-to-dark-blue">
 													<a href="/#"><span>VIEW MORE >></span></a>
 												</div>
@@ -310,7 +317,7 @@
 										<div class="col-md-7" style="text-align: left; padding: 0px;">
 											<div style="line-height:16px;">
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CONCEALLING</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
+												<p style="font-size: 12px;">PLANNING FOR CONCEALLING THE COPPER PIPING WITH INSULATION, PVC PIPING AND WIRING IN YOUR NEW PREMISE? FEEL FREE TO CONTACT US ANYTIME FOR THE BEST QUOTATION.</p>
 												<div class="light-to-dark-blue">
 													<a href="/shop"><span>VIEW MORE >></span></a>
 												</div>
@@ -326,7 +333,7 @@
 										<div class="col-md-7" style="text-align: left; padding: 0px;">
 											<div style="line-height:16px;">
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">WARRANTY CARE</h3>
-												<p style="font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum ex pulvinar pulvinar condimentum. Fusce vitae gravida erat. Mauris varius nisl lacus, eu laoreet nibh lobortis sit amet.</p>
+												<p style="font-size: 12px;">OUR SUPPORT ENSURES YOU ENPERIENCE AN EASY AND HASSLE FREE PROCESS DURING WARRANTY CLAIM. REGISTER YOUR CLAIM TO US AND LET US TAKE CARE OF THE REST.</p>
 												<div class="light-to-dark-blue">
 													<a href="/#"><span>VIEW MORE >></span></a>
 												</div>
@@ -499,7 +506,7 @@
 							<img src="/images/aircond-brand.jpg" class="our-shop-pictures" />
 						</div>
 						<div class="light-to-dark-blue">
-							<a href="/about"><span>VIEW MORE >></span></a>
+							<a href="/about#shop"><span>VIEW MORE >></span></a>
 						</div>
 					</div>
 				</div>

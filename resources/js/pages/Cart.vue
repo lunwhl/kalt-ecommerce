@@ -27,47 +27,54 @@
 	                        </td>
 	                        <td data-title=" ">
 	                        	<h6 class="h6"><a href="#">{{cart.name}}</a></h6>
-	                        	<div>
-	                        		<label>Installation: </label>
-		                        	<select v-model="cart.options['installation']" @change="changeInstallation(cart)" style="border:1px solid #ebebeb; padding:2px 10px;">
+	                        	<div class="d-flex">
+	                        		<label style="flex: 0 !important; margin-top: 3px; margin-right: 8px;">Installation: </label>
+		                        	<select v-model="cart.options['installation']" @change="changeInstallation(cart)" style="border:1px solid #ebebeb; padding:2px 10px;margin-right:8px;">
 		                        		<option value="none">No</option>
 		                        		<option value="Basic">Basic</option>
 		                        		<option value="Economy">Economy</option>
 		                        	</select>
-		                        	<v-tooltip bottom v-if="cart.options['installation'] == 'Basic'">
+		                        	<v-tooltip bottom v-if="cart.options['installation'] == 'Economy'" tag="div">
 										<template slot="activator">
-											<span style="cursor: pointer;">?</span>
+											<div class="tooltip-extend" style="cursor: pointer;">?</div>
 										</template>
-										<h4 class="h4" style="color: white; text-shadow: 1px 1px #000;">Basic Installation</h4>
-					                	<div style="color: white; text-shadow: 1px 1px #000;">*Installation without refrigerant piping provided.</div>
+										<h4 class="h4" style="color: white; text-shadow: 1px 1px #000;">Economy Installation</h4>
+					                	<div style="color: white; text-shadow: 1px 1px #000;">*Designed for whichever have no copper piping installed.</div>
 					                	<ul  style="color: white; text-shadow: 1px 1px #000;">
 					                		<li>Up to 10ft 0.61mm thickness copper piping</li>
-					                		<li>Up to 10ft 100% copper cable (without casing)</li>
+					                		<li>Up to 10ft 1/2” thickness premium rubber density insulation</li>
+					                		<li>Up to 10ft 1/2” thickness PVC drainage piping towards the nearest drainage point</li>
+					                		<li>Up to 10ft 100% copper wiring cable</li>
 					                		<ul>
 					                			<li>1.0hp & 1.5hp Air Cond - 3 core 1.5mm</li>
 					                			<li>1.75hp & above - 4 core 2.5mm</li>
 					                		</ul>
-					                		<li>Up to 10ft 1/2” thickness premium rubber density insulation</li>
-					                		<li>Bracket</li>
-					                		<li>1/2” thickness drainage piping</li>
-					                		<li>Testing and commissioning of each air cond unit</li>
 					                		<li>Electrical wiring interconnecting indoor & outdoor</li>
+					                		<li>Sturdy Air Cond Bracket</li>
+					                		<li>Labour charge and tool</li>
 					                		<li>Vacuum to the system</li>
+					                		<li>Check refrigerant gas pressure</li>
 					                		<li>Refill in refrigerant gas</li>
+					                		<li>Testing and commissioning of the unit</li>
 					                	</ul>
 									</v-tooltip>
-									<v-tooltip bottom v-if="cart.options['installation'] == 'Economy'">
+									<v-tooltip bottom v-if="cart.options['installation'] == 'Basic'" tag="div">
 										<template slot="activator">
-											<span style="cursor: pointer;">?</span>
+											<div class="tooltip-extend" style="cursor: pointer;">?</div>
 										</template>
-										<h4 class="h4" style="color: white; text-shadow: 1px 1px #000;">Economy Installation</h4>
-						                	<div style="color: white; text-shadow: 1px 1px #000;">*Installation with 10ft refrigerant piping provided.</div>
+										<h4 class="h4" style="color: white; text-shadow: 1px 1px #000;">Basic Installation</h4>
+						                	<div style="color: white; text-shadow: 1px 1px #000;">*Designed for whichever have copper piping installed.</div>
 						                	<ul style="color: white; text-shadow: 1px 1px #000;">
-						                		<li>No copper piping is included</li>
-						                		<li>No wiring cable is included</li>
-						                		<li>No insulation is included</li>
-						                		<li>Bracket</li>
-						                		<li>No drainage piping is included</li>
+						                		<li>No copper piping</li>
+						                		<li>No premium rubber density insulation</li>
+						                		<li>No PVC drainage piping</li>
+						                		<li>No wiring cable</li>
+						                		<li>Sturdy Air Cond Bracket</li>
+						                		<li>Labour charge and tool</li>
+						                		<li>Vacuum to the system</li>
+						                		<li>Check refrigerant gas pressure</li>
+						                		<li>Refill in refrigerant gas</li>
+						                		<li>Testing and commissioning of the unit</li>
 						                	</ul>
 									</v-tooltip>
 	                        	</div>
@@ -192,7 +199,7 @@
     		<login></login>
     		<v-snackbar v-model="snackbar"
             right="right"
-            :timeout="timeout"
+            :timeout="5000"
             top="top"
         >
             {{snackbarMsg}}

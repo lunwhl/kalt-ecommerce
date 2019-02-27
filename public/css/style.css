@@ -100,6 +100,10 @@ a {
     outline: 0 !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* - Padding/Margin */
 .no-padding {
 	padding: 0;
@@ -2243,7 +2247,11 @@ hr.hori {
 	color: white; background-image:
 	linear-gradient(to right, #40c7f2 , #1c5e99);
 	font-weight: bold;
-	padding: 8px 43px;
+	padding: 15px 43px;
+}
+
+.service-container p {
+  text-align: justify;
 }
 
 .desktop-menu .btn {
@@ -2985,4 +2993,28 @@ hr.hori {
 }
 .popurlar_product li img {
 	width: 100%;
+}
+
+.simple-article ol li {
+  list-style-type: none;
+}
+
+.tooltip-extend {
+  background: #ccc;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+}
+
+.tooltip-extend:hover {
+  background: #40c7f2;
+  color: white;
 }

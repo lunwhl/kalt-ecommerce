@@ -74,6 +74,16 @@
 	                        <div v-if="selectedBrandType" class="col-sm-6">
 	                            <div class="simple-article size-3 col-xs-b5">{{getBrand}}</div>
 	                            <div class="h3 col-xs-b25">{{selectedProduct.name}}</div>
+	                             <div class="row col-xs-b40">
+	                                <div class="col-sm-3">
+	                                    <div class="h6 detail-data-title size-1">MODEL:</div>
+	                                </div>
+	                                <div class="col-sm-9">
+	                                    <div style="margin-top: 10px;">
+	                                        <span style="color: black; font-size: 16px;">RM {{selectedProduct.model}}</span>
+	                                    </div>
+	                                </div>
+	                            </div>
 	                            <div class="row col-xs-b40">
 	                                <div class="col-sm-3">
 	                                    <div class="h6 detail-data-title size-1">PRICE:</div>
@@ -175,7 +185,37 @@
 							                <div class="title-underline center"><span></span></div>
 							            </div>
 							            <div class="text-center">
-				                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view" v-html="selectedProduct.specification"></div>
+				                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view d-flex justify-center" v-html="selectedProduct.specification"></div>
+				                    	</div>
+				                    </div>
+								</v-tab-item>
+								<v-tab-item
+								:key="tabTitles[2]"
+								>
+									<div class="row" style="margin-top: 40px;">
+				                    	<div class="text-center">
+							                <div class="h4">Return policy</div>
+							                <div class="title-underline center"><span></span></div>
+							            </div>
+							            <div class="text-left d-flex">
+				                    		<div class="description-width simple-article size-3 col-xs-b30 fr-view">
+				                    			<p>If you are not entirely satisfied with your purchase, we’re here to help</p>
+
+												<b>Returns</b>
+												<ol>
+													<li>You have 5 calendar days to return an item from the date you received it. You are required to contact us before returns.</li>
+													<li>To be eligible for a return, your item must be unused, and in the same condition that you received it. Your item must be in the original packaging.</li>
+
+													<li>Your item needs to have the receipt or proof of purchase.</li> 
+
+													<li>You need to attend to our warehouse together with the item.</li> 
+
+													<li>Once we received your item, we will inspect it and notify you on the status of your refund after inspecting the item.</li>
+
+													<li>If your return is approved, we will initiate a refund to your account number. You will receive the credit within a certain amount of days.</li>
+												</ol> 
+
+				                    		</div>
 				                    	</div>
 				                    </div>
 								</v-tab-item>
@@ -239,7 +279,7 @@
     				'relatedProducts': [],
     			},
     			tab: null,
-    			tabTitles: ['Description', 'Specification'],
+    			tabTitles: ['Description', 'Specification', 'Return Policy'],
     		};
     	},
 

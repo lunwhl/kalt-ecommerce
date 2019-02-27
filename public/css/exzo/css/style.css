@@ -37,6 +37,12 @@
 .simple-article h6, .h6{color: black; font-size: 13px; line-height: 18px;}
 .simple-article a:not(.button):hover{text-decoration: underline;}
 .simple-article br{line-height: 1em;}
+
+.tos { font-size: 17px; cursor: pointer;}
+
+.tos:hover {
+	color: #40c7f2;
+}
 /* Tablets (>=768px)*/
 @media (max-width: 991px) {
 	.simple-article h1, .h1{font-size: 46px; line-height: 46px;}

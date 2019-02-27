@@ -1417,6 +1417,11 @@ main,footer {
 	display: none;
 }
 
+
+.service-left-flow {
+	display: block;
+}
+
 .gotham-bold {
 	font-family: 'gothamhtfbold';
 }
@@ -1589,6 +1594,37 @@ main,footer {
     right: 0;
     top: 0;
     width: 1px;
+}
+
+.installation {
+	background-image: url("/images/type-background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+.installation h3 {
+	font-family: 'gothamhtfmedium', sans-serif;
+	font-weight: 489;
+	font-size: 30px;
+	color: #fff;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.installation-description {
+	padding: 30px 0px 20px 0px;
+}
+
+.installation-description p {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.description-header {
+	color: #223169;
+	font-size: 20px;
 }
 .top-header .language-dropdown.dropdown:last-of-type::after {
 	display: none;
@@ -2650,6 +2686,10 @@ hr.hori {
 	/* * Page Banner */
 	.page-banner-content h3 {
 		padding: 15% 0;
+	}
+	
+	.service-left-flow {
+		display: none;
 	}
 }
 

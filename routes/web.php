@@ -33,6 +33,7 @@ Route::get('/invoice', 'HomeController@invoice');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/about', 'HomeController@aboutus');
+Route::get('/service', 'HomeController@service');
 Route::get('/shop', 'HomeController@index2');
 Route::get('/activate/{id}', 'HomeController@activate');
 Route::post('/reset', 'HomeController@resetPassword');

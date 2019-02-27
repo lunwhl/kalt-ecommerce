@@ -251,7 +251,7 @@
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">AIR CONDITIONER</h3>
 												<p style="font-size: 12px;">OUR BRANDED AIR CONDITIONERS ARE ALWAYS SOLD AT WHOLESALE PRICE. THEY ARE FROM REPUTABLE SUPPLIERS WITH HIGH STANDARD OF QUALITY CONTROL. </p>
 												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
+													<a href="/shop"><span>VIEW MORE >></span></a>
 												</div>
 											</div>
 										</div>
@@ -267,7 +267,7 @@
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSTALLATION</h3>
 												<p style="font-size: 12px;">OUR INSTALLATION ONLY USES ACCESSORIES WITH THE HIGHEST QUALITY AND CONDUCTED BY VERY EXPERIENCED TECHNICIAN.</p>
 												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
+													<a href="/service/#installation"><span>VIEW MORE >></span></a>
 												</div>
 											</div>
 										</div>
@@ -283,7 +283,7 @@
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CHEMICAL CLEANING</h3>
 												<p style="font-size: 12px;">OVERHAUL IMPROVES AN AIR CONDITIONING UNIT’S PERFORMACE. OUR TECHNICIANS ARE TRAINED WELL IN OVERHAUL ALL AIR COND UNIT.</p>
 												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
+													<a href="/service/#cleaning"><span>VIEW MORE >></span></a>
 												</div>
 											</div>
 										</div>
@@ -303,7 +303,7 @@
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">INSPECTION & REPAIR</h3>
 												<p style="font-size: 12px;">FACING PROBLEM, LIKE WATER LEAKAGE, NOT COLD, SENSOR BLINKING, AND NOT FUNCTIONING. OUR TECHNICIAN ARE HERE TO ATTEND AND PERFORM THE INSPECTION.</p>
 												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
+													<a href="/service/#other"><span>VIEW MORE >></span></a>
 												</div>
 											</div>
 										</div>
@@ -319,7 +319,7 @@
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">CONCEALLING</h3>
 												<p style="font-size: 12px;">PLANNING FOR CONCEALLING THE COPPER PIPING WITH INSULATION, PVC PIPING AND WIRING IN YOUR NEW PREMISE? FEEL FREE TO CONTACT US ANYTIME FOR THE BEST QUOTATION.</p>
 												<div class="light-to-dark-blue">
-													<a href="/shop"><span>VIEW MORE >></span></a>
+													<a href="/service/#other"><span>VIEW MORE >></span></a>
 												</div>
 											</div>
 										</div>
@@ -335,7 +335,7 @@
 												<h3 class="dark-blue gotham-bold" style="font-size: 20px;">WARRANTY CARE</h3>
 												<p style="font-size: 12px;">OUR SUPPORT ENSURES YOU ENPERIENCE AN EASY AND HASSLE FREE PROCESS DURING WARRANTY CLAIM. REGISTER YOUR CLAIM TO US AND LET US TAKE CARE OF THE REST.</p>
 												<div class="light-to-dark-blue">
-													<a href="/#"><span>VIEW MORE >></span></a>
+													<a href="/service/#other"><span>VIEW MORE >></span></a>
 												</div>
 											</div>
 										</div>
@@ -510,80 +510,7 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="contact" id="contact-us" style="background-image: url('/images/bottom-background.png'); background-size: cover;">
-					<div class="latest-product our-products container-fluid no-padding woocommerce">
-						<div class="col-lg-12 col-md-12 col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
-							<!-- Container -->
-							<div class="container">
-								<!-- Section Header -->
-								<div class="section-header">
-									<h3 style="color: #fff; padding: 15px 0px;">Contact</h3>
-								</div><!-- Section Header /- -->
-								<div class="contact-us-content" style="text-align:left;">
-									<div class="row">
-										<div class="col-lg-6 col-md-12 col-sm-12">
-											<p style="font-weight: 310;">You are always welcome to visit me or contact us while you have some comments or suggestions for us.</p>
-											<h3 class="gotham-bold" style="font-size: 20px;">Kalt Air Conditioning Sdn. Bhd.</h3>
-											</br>
-											<p style="font-weight: 310;">7 & 9, Lebuh Nangka 2, Taman Desa Damai,</br>
-											14000 Bukit Mertajam,
-											Pulau Pinang.</br>
-											<div class="row">
-												<div class="col-lg-6 col-md-6">
-													<b style="font-weight: bold;" class="gotham-bold">Tel:</b> <span style="font-weight: 310;">012-4020969</span></br> 
-												</div>
-												<div class="col-lg-6 col-md-6">
-													<b style="font-weight: bold;" class="gotham-bold">Fax:</b> <span style="font-weight: 310;">04-5399577</span> </br>
-												</div>
-											</div>
-											</br>
-												<b style="font-weight: bold;" class="gotham-bold">Opening hour:</b> </br> <span style="font-weight: 310;">Monday to Saturday 9.00am to 6.00pm</span>
-											</p>											
-										</div>
-										<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 contact-form">
-											<h3 style="margin-top: 0px; font-size: 17px; font-weight: bold;">Leave a Message in the feedback form below.</h3>
-											<form id="contact-form" class="row">
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Name *</label> -->
-													<input type="text" class="form-control" placeholder="NAME*" id="input_name"  v-model="form.contact_name" required>
-													<span class="text-danger" v-if="form.errors.has('contact_name')">{{ form.errors.get('contact_name') }}</span>
-												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Email *</label> -->
-													<input type="email" class="form-control" placeholder="EMAIL*" id="input_email" v-model="form.contact_email"  required>
-													<span class="text-danger" v-if="form.errors.has('contact_email')">{{ form.errors.get('contact_email') }}</span>
-												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label> -->
-													<input type="text" class="form-control" placeholder="CONTACT NO." id="input_subject" v-model="form.contact_no"required>
-												</div>
-												<div class="form-group col-md-6 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Subject</label> -->
-													<input type="text" class="form-control" placeholder="SUBJECT" id="input_subject" v-model="form.contact_subject"required>
-												</div>
-												<div class="form-group col-md-12 col-sm-12 col-xs-12">
-													<!-- <label style="font-size: 11px; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: 1.65px;">Your Message</label> -->
-													<textarea class="form-control" rows="8" placeholder="MESSAGE*" id="textarea_message" v-model="form.contact_message"></textarea>
-													<div class="form-group" style="text-align: right; margin-top:-39px; margin-right:-8px;">
-														<a class="contact-btn" @click="submitInquiry">Send</a>
-													</div>
-												</div>
-												
-												<div id="alert-msg" class="alert-msg"></div>
-											</form>
-										</div>
-									</div>
-									<div class="col-md-12 col-xs-12">
-										<div class="row map-responsive">
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.347527822591!2d100.44167631533769!3d5.363841996109295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac89ee787de17%3A0xf5655b54f32d2a26!2s9%2C+Lebuh+Nangka+2%2C+Taman+Desa+Damai%2C+14000+Bukit+Mertajam%2C+Pulau+Pinang!5e0!3m2!1sen!2smy!4v1550659025867" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-										</div>
-									</div>
-								</div>
-							</div><!-- Container /- -->
-						</div><!-- Our Product /- -->
-					</div>
-				</div>
+				<contact :needMap="true"></contact>				
 				<v-snackbar v-model="snackbar"
 				right="right"
 				:timeout="timeout"
@@ -602,12 +529,14 @@
 	import ListProduct from '../components/ListProduct.vue';
 	import Share from '../components/Share.vue';
 	import Login from '../components/Login.vue';
+	import Contact from '../components/Contact.vue';
 
     export default {
     	components: {
 			Share,
 			Login,
 			ListProduct,
+			Contact,
 		},
 
     	props: ['is_auth'],
@@ -622,13 +551,6 @@
     			snackbar: false,
     			snackbarMsg: '',
     			timeout: 2000,
-    			form : new Form ({
-				    contact_name: '',
-				    contact_email: '',
-				    contact_message: '',
-				    contact_subject: '',
-				    contact_no: '',
-				}), 
 				sqft: '',
     		};
     	},
@@ -732,20 +654,6 @@
 						}
 					}]
 				}); 
-        	},
-
-        	submitInquiry(){
-        		this.form.post('/api/home/send/inquiry', this.form)
-        				.then(response => this.submitInquirySuccess(response.data))
-        				.catch(error => this.submitInquiryError(response.error));
-        	},
-
-        	submitInquirySuccess(data) {
-        		console.log(data);
-        	},
-
-        	submitInquiryError(data){
-        		console.log(data);
         	},
 
         	addToCart(product) {

@@ -25,6 +25,7 @@ Vue.component('shop-page', require('./pages/Shop.vue'));
 Vue.component('cart-page', require('./pages/Cart.vue'));
 Vue.component('old-page', require('./pages/Old.vue'));
 Vue.component('about-page', require('./pages/Aboutus.vue'));
+Vue.component('service-page', require('./pages/Service.vue'));
 Vue.component('thankyou-page', require('./pages/Thankyou.vue'));
 Vue.component('profile-page', require('./pages/Profile.vue'));
 Vue.component('checkout-page', require('./pages/Checkout.vue'));
@@ -45,9 +46,12 @@ Vue.component('cart', require('./components/Cart.vue'));
  */
 Vue.component('loader', require('./base/Loader.vue'));
 
+import vueScrollto from 'vue-scrollto';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
+
+Vue.use(vueScrollto)
 
 Vue.use(Vuetify, {
   theme: {

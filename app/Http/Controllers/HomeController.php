@@ -62,7 +62,7 @@ class HomeController extends Controller
     {
         $productWithBrand = Product::getProductWithBrand();
 
-        $products = Product::with('categories')->whereIn('id', $productWithBrand->flatten()->pluck('id'))->orderBy('created_at', 'desc')->take(4)->get();
+        $products = Product::with('categories')->whereIn('id', $productWithBrand->flatten()->pluck('id'))->where('is_active', true)->orderBy('created_at', 'desc')->take(4)->get();
 
         return response($products);
     }
@@ -71,7 +71,7 @@ class HomeController extends Controller
     {
         $productWithBrand = Product::getProductWithBrand();
         
-        $products = Product::with('categories')->whereIn('id', $productWithBrand->flatten()->pluck('id'))->orderBy('sold_qty', 'desc')->take(4)->get();
+        $products = Product::with('categories')->whereIn('id', $productWithBrand->flatten()->pluck('id'))->where('is_active', true)->orderBy('sold_qty', 'desc')->take(4)->get();
 
         return response($products);
     }
@@ -159,5 +159,10 @@ class HomeController extends Controller
     public function aboutus()
     {
         return view('aboutus.page');
+    }
+
+    public function service()
+    {
+        return view('service.page');
     }
 }

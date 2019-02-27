@@ -12,6 +12,7 @@ use Vyuldashev\NovaMoneyField\Money;
 use Laravel\Nova\Fields\BelongsToMany;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Boolean;
 
 class Product extends Resource
 {
@@ -67,6 +68,8 @@ class Product extends Resource
             Text::make("Model")
                 ->sortable()
                 ->rules('required'),
+
+            Boolean::make('Show', 'is_active'),
 
             Number::make('sequence')
                 ->help(

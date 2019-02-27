@@ -106,6 +106,7 @@
             	<div class="empty-space col-xs-b35"></div>
 	            <div class="row" v-if="isEmptyCart()">
 	                <div class="col-sm-8 col-md-8 col-xs-b10 col-sm-b0 simple-article size-3">
+	                	<div @click="tosModal"><span class="tos">Terms of service</span></div>
 	                	<label class="checkbox-entry">
 	                        <input type="checkbox" v-model="policyCheck"><span>I hereby agree to the terms and condition</span>
 	                    </label>
@@ -133,7 +134,8 @@
             	<div class="empty-space col-xs-b35 col-md-b70"></div>
             	<div class="row" v-if="isEmptyCart()">
 	                <div class="col-md-6 col-xs-b50 col-md-b0" >
-	                    <h4 class="h4 col-xs-b25">Pick up option</h4>
+	                    <h4 class="h4 ">Pick up option</h4>
+	                    <div @click="deliveryModal" style="color: #888;"><span class="tos">Delivery Policy</span></div>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
 								<v-radio value="pickup">
 									<div class="d-flex" slot="label">
@@ -169,6 +171,7 @@
 									</div>
 								</v-radio>
 							</v-radio-group>
+							
 	                </div>
 	                <div class="col-md-6">
 	                    <h4 class="h4">cart totals</h4>
@@ -228,6 +231,8 @@
 		            </v-card>
 		        </v-dialog>
 		    </div>
+		    <tos-modal></tos-modal>
+		    <dp-modal></dp-modal>
     		<login></login>
     		<v-snackbar v-model="snackbar"
             right="right"
@@ -243,10 +248,14 @@
 <script>
 	import AlertLogin from '../components/AlertLogin.vue';
 	import Login from '../components/Login.vue';
+	import TosModal from '../components/TosModal.vue';
+	import DpModal from '../components/DeliveryPolicyModal.vue';
 
     export default {
     	components: {
 			AlertLogin,
+			TosModal,
+			DpModal,
 			Login
 		},
 
@@ -279,6 +288,14 @@
         },
 
         methods: {
+        	deliveryModal() {
+        		window.event.$emit("dpTrigger", {'openDialog': true});
+        	},
+
+        	tosModal() {
+        		window.event.$emit("tosTrigger", {'openDialog': true});
+        	},
+
         	isEmptyCart(){
         		if(this.carts.length > 0)
         			if(this.carts[0]['cart'] == null || !this.carts[0]['cart'].length > 0)

@@ -1256,14 +1256,55 @@
 
 .service-table {
 	border: 1px solid;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .service-table tr td{
 	border: 1px solid;
 	padding: 1px 10px;
+	width: 130px;
 }
 
-.service-table th{
+.service-table tr th{
+	border: 1px solid;
+	padding: 1px 10px;
+}
+
+.pricing-table {
+	width: 100%;
+	border: 1px solid #e3e3e3;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.pricing-table tr td, .pricing-table tr th{
+	border: 1px solid #e3e3e3;
+	padding: 1px 10px;
+	width: 130px;
+}
+
+.pricing-table tr th{
+	border: 1px solid #e3e3e3;
+	padding: 1px 10px;
+	width: 130px;
+}
+
+.pricing-table tr td:nth-child(2),tr th:nth-child(2){
+	text-align: center;
+}
+
+.pricing-table tr td:nth-child(3),tr th:nth-child(3){
+	text-align: center;
+}
+
+.pricing-table tr th{
+	border: 1px solid #e3e3e3;
+	padding: 1px 10px;
+	width: 130px;
+}
+
+.pricing-table th{
 	border: 1px solid;
 	padding: 1px 10px;
 }

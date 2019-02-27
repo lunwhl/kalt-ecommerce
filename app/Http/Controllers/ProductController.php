@@ -57,7 +57,7 @@ class ProductController extends Controller
 
         $intersectIds = $productIds->intersect($productWithBrand->flatten()->pluck('id'));
 
-        $relatedProducts = Product::with('categories')->whereIn('id', $intersectIds)->take(4)->get();
+        $relatedProducts = Product::with('categories')->whereIn('id', $intersectIds)->where('is_active', true)->take(4)->get();
 
         return response(['relatedProducts' => $relatedProducts]);
     }
@@ -169,6 +169,7 @@ class ProductController extends Controller
         $totalProducts = Product::whereIn('id', $intersectIds)->count();
         $data['totalProduct'] = $totalProducts;
         $data['products'] = Product::with('categories')->whereIn('id', $intersectIds)
+                                ->where('is_active', true)
                                 ->orderBy('sequence', "ASC")
                                 ->orderBy('price', request()->sort)
                                 ->skip(request()->skip)
@@ -185,9 +186,11 @@ class ProductController extends Controller
         $products = collect();
 
         $data['products'] = Product::with('categories')
+                            ->where('is_active', true)
                             ->where('name', 'like', $keyword)
                             ->orWhere('model', 'like', $keyword)
                             ->orWhere('specification', 'like', $keyword)
+                            
                             ->skip(request()->skip)
                             ->take(request()->take)
                             ->get();

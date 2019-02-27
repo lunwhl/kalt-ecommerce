@@ -42055,7 +42055,7 @@ var render = function() {
               _c("div", { staticClass: "col-md-6" }, [
                 _c("img", {
                   staticStyle: { width: "500px" },
-                  attrs: { src: "/images/service-header.png" }
+                  attrs: { src: "/images/header-01.png" }
                 })
               ])
             ])
@@ -42398,34 +42398,50 @@ var render = function() {
                 "div",
                 {
                   staticClass: "col-md-12",
-                  staticStyle: { border: "2px solid #e3e3e3" }
+                  staticStyle: {
+                    border: "2px solid #e3e3e3",
+                    "margin-top": "15px"
+                  }
                 },
                 [
-                  _c("h5", { staticStyle: { "font-size": "24px" } }, [
-                    _vm._v(
-                      "Extra Copper Piping with rubber insulation (for Wall Mounted Air Cond) and drainage piping"
-                    )
-                  ]),
+                  _c(
+                    "h5",
+                    {
+                      staticStyle: { "font-size": "24px", "margin-top": "15px" }
+                    },
+                    [
+                      _vm._v(
+                        "Extra Copper Piping with rubber insulation (for Wall Mounted Air Cond) and drainage piping"
+                      )
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "row col-md-7" }, [
-                    _c("div", [
-                      _c("img", {
-                        staticStyle: { height: "200px" },
-                        attrs: { src: "/images/copper-piping-1-01.jpg" }
-                      }),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticStyle: { height: "200px" },
-                        attrs: { src: "/images/copper-piping-2-01.jpg" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", [
-                        _vm._v(
-                          '0.61mm thickness copper piping with 1/2"thickness premium rubber density insulation'
-                        )
+                  _c(
+                    "div",
+                    {
+                      staticClass: "row col-md-7",
+                      staticStyle: { "margin-bottom": "15px" }
+                    },
+                    [
+                      _c("div", [
+                        _c("img", {
+                          staticStyle: { height: "200px" },
+                          attrs: { src: "/images/copper-piping-1-01.jpg" }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticStyle: { height: "200px" },
+                          attrs: { src: "/images/copper-piping-2-01.jpg" }
+                        }),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            '0.61mm thickness copper piping with 1/2"thickness premium rubber density insulation'
+                          )
+                        ])
                       ])
-                    ])
-                  ]),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "row col-md-5" }, [
                     _c(
@@ -42493,7 +42509,10 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
-                      _c("img", { attrs: { src: "/images/pvc-casing-01.jpg" } })
+                      _c("img", {
+                        staticStyle: { padding: "0px 0px 10px 0px" },
+                        attrs: { src: "/images/pvc-casing-01.jpg" }
+                      })
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
@@ -42528,6 +42547,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
+                        staticStyle: { padding: "0px 0px 10px 0px" },
                         attrs: { src: "/images/drainage-pump-01.jpg" }
                       })
                     ]),
@@ -42570,7 +42590,10 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
-                      _c("img", { attrs: { src: "/images/dismantle-01.jpg" } })
+                      _c("img", {
+                        staticStyle: { padding: "0px 0px 10px 0px" },
+                        attrs: { src: "/images/dismantle-01.jpg" }
+                      })
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
@@ -42604,7 +42627,10 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
-                      _c("img", { attrs: { src: "/images/bracket-01.jpg" } })
+                      _c("img", {
+                        staticStyle: { padding: "0px 0px 10px 0px" },
+                        attrs: { src: "/images/bracket-01.jpg" }
+                      })
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [

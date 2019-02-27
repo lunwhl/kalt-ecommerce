@@ -13,7 +13,7 @@
 									<div class="intermediate-blue-h3 container-fluid">SERVICES</div>	
 								</div>
 							</div>
-							<div class="col-md-6"><img src="/images/service-header.png" style="width: 500px;" /></div>
+							<div class="col-md-6"><img src="/images/header-01.png" style="width: 500px;" /></div>
 						</div>
 					</div>
 				</div>
@@ -114,9 +114,9 @@
 							<b style="letter-spacing: 3px; font-size: 18px;">OTHER FEES APPLICABLE (Fee payable to installer)</b>
 						</div>
 						<div class="container-fluid">
-							<div class="col-md-12" style="border: 2px solid #e3e3e3;">
-								<h5 style="font-size: 24px;">Extra Copper Piping with rubber insulation (for Wall Mounted Air Cond) and drainage piping</h5>
-								<div class="row col-md-7">
+							<div class="col-md-12" style="border: 2px solid #e3e3e3; margin-top: 15px;">
+								<h5 style="font-size: 24px; margin-top: 15px;">Extra Copper Piping with rubber insulation (for Wall Mounted Air Cond) and drainage piping</h5>
+								<div class="row col-md-7" style="margin-bottom: 15px;">
 									<div>
 										<img src="/images/copper-piping-1-01.jpg" style="height: 200px;" />
 										<img src="/images/copper-piping-2-01.jpg" style="height: 200px;" />
@@ -159,7 +159,7 @@
 								<div class="col-md-12" style="border: 2px solid #e3e3e3;">
 									<h5 style="font-size: 24px;">PVC Casing for Wiring Cable</h5>
 									<div class="col-md-6">
-										<img src="/images/pvc-casing-01.jpg" />
+										<img src="/images/pvc-casing-01.jpg" style="padding:0px 0px 10px 0px;" />
 									</div>
 									<div class="col-md-6">
 										<h5 style="font-size: 40px;letter-spacing: 2px;margin-top: 40px;font-weight: bold;">RM30/ft</h5>
@@ -170,7 +170,7 @@
 								<div class="col-md-12" style="border: 2px solid #e3e3e3;">
 									<h5 style="font-size: 24px;">Drainage Pump</h5>
 									<div class="col-md-6">
-										<img src="/images/drainage-pump-01.jpg" />
+										<img src="/images/drainage-pump-01.jpg" style="padding:0px 0px 10px 0px;" />
 									</div>
 									<div class="col-md-6">
 										<h5 style="font-size: 40px;letter-spacing: 2px;margin-top: 40px;font-weight: bold;">RM280</h5>
@@ -184,7 +184,7 @@
 								<div class="col-md-12" style="border: 2px solid #e3e3e3;">
 									<h5 style="font-size: 24px;">Dismantling of old air conditioner</h5>
 									<div class="col-md-6">
-										<img src="/images/dismantle-01.jpg" />
+										<img src="/images/dismantle-01.jpg" style="padding:0px 0px 10px 0px;" />
 									</div>
 									<div class="col-md-6">
 										<h5 style="font-size: 40px;letter-spacing: 2px;margin-top: 40px;font-weight: bold;">RM80</h5>
@@ -195,7 +195,7 @@
 								<div class="col-md-12" style="border: 2px solid #e3e3e3;">
 									<h5 style="font-size: 24px;">Stainless steel Air Cond Bracket</h5>
 									<div class="col-md-6">
-										<img src="/images/bracket-01.jpg" />
+										<img src="/images/bracket-01.jpg" style="padding:0px 0px 10px 0px;" />
 									</div>
 									<div class="col-md-6">
 										<table class="service-table" style="margin: 35px 0px 0px 0px; font-size: 14px;">

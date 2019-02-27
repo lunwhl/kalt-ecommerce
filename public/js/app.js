@@ -36268,6 +36268,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -36297,7 +36329,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             message: '',
             alert_dialog: false,
             snackbar: false,
-            snackbarMsg: ''
+            snackbarMsg: '',
+            accessibleCheck: false
         };
     },
     mounted: function mounted() {
@@ -36314,7 +36347,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             if (!this.policyCheck) {
                 this.title = 'Alert';
-                this.message = 'You must agree with the Privacy policy agreement in order to proceed';
+                this.message = 'You must agree with our terms and conditions in order to proceed';
+                this.alert_dialog = true;
+            } else if (!this.accessibleCheck) {
+                this.title = 'Alert';
+                this.message = 'You must declare the location accessibility in order to proceed';
                 this.alert_dialog = true;
             } else {
                 var url = '/api/home/check/auth';
@@ -36335,7 +36372,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         changeRadio: function changeRadio() {
             if (this.radios == 'delivery') {
                 this.deliveryNotice = true;
-                this.deliveryCharge = 20;
+                var units = _.sumBy(this.carts[0]['cart'], function (item) {
+                    return parseInt(item.qty);
+                });
+                this.deliveryCharge = 20 * units;
             } else {
                 this.deliveryNotice = false;
                 this.deliveryCharge = 0;
@@ -36459,7 +36499,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.subTotal + this.deliveryCharge;
         },
         deliveryTotal: function deliveryTotal() {
-            return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'No Shipping';
+            return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'Free';
         }
     }
 });
@@ -36993,8 +37033,52 @@ var render = function() {
                       }
                     }),
                     _c("span", [
+                      _vm._v("I hereby agree to the terms and condition")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "checkbox-entry" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.accessibleCheck,
+                          expression: "accessibleCheck"
+                        }
+                      ],
+                      attrs: { type: "checkbox" },
+                      domProps: {
+                        checked: Array.isArray(_vm.accessibleCheck)
+                          ? _vm._i(_vm.accessibleCheck, null) > -1
+                          : _vm.accessibleCheck
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.accessibleCheck,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                (_vm.accessibleCheck = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.accessibleCheck = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.accessibleCheck = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _c("span", [
                       _vm._v(
-                        "I hereby agree to the terms and condition, and also declare that my premise is accessible for technician to install the product."
+                        "I declare that the location of outdoor unit is easily accessible for installation"
                       )
                     ])
                   ])
@@ -37080,39 +37164,128 @@ var render = function() {
                       }
                     },
                     [
-                      _c("v-radio", {
-                        attrs: {
-                          label:
-                            "Store Pick Up (*Bring along the invoice for pickup)",
-                          value: "pickup"
-                        }
-                      }),
+                      _c("v-radio", { attrs: { value: "pickup" } }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "d-flex",
+                            attrs: { slot: "label" },
+                            slot: "label"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticStyle: { "margin-right": "10px" } },
+                              [_vm._v("Store Pick Up (Free)")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-tooltip",
+                              { attrs: { right: "", tag: "div" } },
+                              [
+                                _c("template", { slot: "activator" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "tooltip-extend",
+                                      staticStyle: { cursor: "pointer" }
+                                    },
+                                    [_vm._v("?")]
+                                  )
+                                ]),
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\t\t\t\t\tPlease bring along the invoice for pick up\n\t\t\t\t\t\t\t\t\t\t"
+                                )
+                              ],
+                              2
+                            )
+                          ],
+                          1
+                        )
+                      ]),
                       _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          label: "Within Penang Mainland (*Free)",
-                          value: "mainland"
-                        }
-                      }),
+                      _c("v-radio", { attrs: { value: "mainland" } }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "d-flex",
+                            attrs: { slot: "label" },
+                            slot: "label"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticStyle: { "margin-right": "10px" } },
+                              [_vm._v("Delivery within Penang Mainland")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-tooltip",
+                              { attrs: { right: "", tag: "div" } },
+                              [
+                                _c("template", { slot: "activator" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "tooltip-extend",
+                                      staticStyle: { cursor: "pointer" }
+                                    },
+                                    [_vm._v("?")]
+                                  )
+                                ]),
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\t\t\t\t\tMultiple floor shipment will have additional charge\n\t\t\t\t\t\t\t\t\t\t"
+                                )
+                              ],
+                              2
+                            )
+                          ],
+                          1
+                        )
+                      ]),
                       _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          label:
-                            "Others (*Multiple floor shipment will have additional charge)",
-                          value: "delivery"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm.deliveryNotice
-                    ? _c("div", [
-                        _vm._v(
-                          "*Multiple floor shipment will have additional charge.*"
+                      _c("v-radio", { attrs: { value: "delivery" } }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "d-flex",
+                            attrs: { slot: "label" },
+                            slot: "label"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticStyle: { "margin-right": "10px" } },
+                              [_vm._v("Delivery within Penang Island")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-tooltip",
+                              { attrs: { right: "", tag: "div" } },
+                              [
+                                _c("template", { slot: "activator" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "tooltip-extend",
+                                      staticStyle: { cursor: "pointer" }
+                                    },
+                                    [_vm._v("?")]
+                                  )
+                                ]),
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\t\t\t\t\tMultiple floor shipment will have additional charge\n\t\t\t\t\t\t\t\t\t\t"
+                                )
+                              ],
+                              2
+                            )
+                          ],
+                          1
                         )
                       ])
-                    : _vm._e()
+                    ],
+                    1
+                  )
                 ],
                 1
               ),

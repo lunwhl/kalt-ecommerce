@@ -107,7 +107,10 @@
 	            <div class="row" v-if="isEmptyCart()">
 	                <div class="col-sm-8 col-md-8 col-xs-b10 col-sm-b0 simple-article size-3">
 	                	<label class="checkbox-entry">
-	                        <input type="checkbox" v-model="policyCheck"><span>I hereby agree to the terms and condition, and also declare that my premise is accessible for technician to install the product.</span>
+	                        <input type="checkbox" v-model="policyCheck"><span>I hereby agree to the terms and condition</span>
+	                    </label>
+	                    <label class="checkbox-entry">
+	                        <input type="checkbox" v-model="accessibleCheck"><span>I declare that the location of outdoor unit is easily accessible for installation</span>
 	                    </label>
 	                </div>
 	                <div class="col-sm-4 col-md-4 col-sm-text-right">
@@ -132,11 +135,40 @@
 	                <div class="col-md-6 col-xs-b50 col-md-b0" >
 	                    <h4 class="h4 col-xs-b25">Pick up option</h4>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
-								<v-radio label="Store Pick Up (*Bring along the invoice for pickup)" value="pickup"></v-radio>
-								<v-radio label="Within Penang Mainland (*Free)" value="mainland"></v-radio>
-								<v-radio label="Others (*Multiple floor shipment will have additional charge)" value="delivery"></v-radio>
+								<v-radio value="pickup">
+									<div class="d-flex" slot="label">
+										<div style="margin-right: 10px;">Store Pick Up (Free)</div>
+										<v-tooltip right tag="div">
+											<template slot="activator">
+												<div class="tooltip-extend" style="cursor: pointer;">?</div>
+											</template>
+											Please bring along the invoice for pick up
+										</v-tooltip>
+									</div>
+								</v-radio>
+								<v-radio value="mainland">
+									<div class="d-flex" slot="label">
+										<div style="margin-right: 10px;">Delivery within Penang Mainland</div>
+										<v-tooltip right tag="div">
+											<template slot="activator">
+												<div class="tooltip-extend" style="cursor: pointer;">?</div>
+											</template>
+											Multiple floor shipment will have additional charge
+										</v-tooltip>
+									</div>
+								</v-radio>
+								<v-radio value="delivery">
+									<div class="d-flex" slot="label">
+										<div style="margin-right: 10px;">Delivery within Penang Island</div>
+										<v-tooltip right tag="div">
+											<template slot="activator">
+												<div class="tooltip-extend" style="cursor: pointer;">?</div>
+											</template>
+											Multiple floor shipment will have additional charge
+										</v-tooltip>
+									</div>
+								</v-radio>
 							</v-radio-group>
-						<div v-if="deliveryNotice">*Multiple floor shipment will have additional charge.*</div>
 	                </div>
 	                <div class="col-md-6">
 	                    <h4 class="h4">cart totals</h4>
@@ -238,6 +270,7 @@
     			alert_dialog: false,
     			snackbar: false,
                 snackbarMsg: '',
+                accessibleCheck: false,
     		};
     	},
 
@@ -257,7 +290,11 @@
         	checkout() {
         		if(!this.policyCheck){
         			this.title = 'Alert';
-        			this.message = 'You must agree with the Privacy policy agreement in order to proceed';
+        			this.message = 'You must agree with our terms and conditions in order to proceed';
+        			this.alert_dialog = true;
+        		} else if(!this.accessibleCheck) {
+        			this.title = 'Alert';
+        			this.message = 'You must declare the location accessibility in order to proceed';
         			this.alert_dialog = true;
         		} else {
 					let url = '/api/home/check/auth';
@@ -281,7 +318,8 @@
         	changeRadio() {
         		if(this.radios == 'delivery'){
         			this.deliveryNotice = true;
-        			this.deliveryCharge = 20;
+        			let units = _.sumBy(this.carts[0]['cart'], function(item){ return parseInt(item.qty); });
+        			this.deliveryCharge = 20 * units;
         		} else {
         			this.deliveryNotice = false;
         			this.deliveryCharge = 0;
@@ -409,7 +447,7 @@
         	},
 
         	deliveryTotal() {
-        		return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'No Shipping';
+        		return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'Free';
         	},
         },
     }

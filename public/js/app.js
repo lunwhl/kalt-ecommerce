@@ -42046,7 +42046,10 @@ var render = function() {
                 _c("div", [
                   _c(
                     "div",
-                    { staticClass: "intermediate-blue-h3 container-fluid" },
+                    {
+                      staticClass: "intermediate-blue-h3 container-fluid",
+                      staticStyle: { "font-size": "45px" }
+                    },
                     [_vm._v("SERVICES")]
                   )
                 ])

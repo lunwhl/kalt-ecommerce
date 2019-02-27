@@ -10,7 +10,7 @@
 							<div class="row col-md-6">
 								<img class="service-left-flow" src="/images/about-us-left-flow.png" style="width: 600px; margin:65px -300px;" />
 								<div>
-									<div class="intermediate-blue-h3 container-fluid">SERVICES</div>	
+									<div class="intermediate-blue-h3 container-fluid" style="font-size: 45px;">SERVICES</div>	
 								</div>
 							</div>
 							<div class="col-md-6"><img src="/images/header-01.png" style="width: 500px;" /></div>

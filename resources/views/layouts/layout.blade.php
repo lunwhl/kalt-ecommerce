@@ -101,7 +101,7 @@
 								<li class="dropdown">
 									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" href="/about">About Us</a>
 								</li>
-								<li><a href="/home/#our-product">Our Products</a></li>
+								<li><a href="/home/#our-product">Latest Products</a></li>
 								<li><a href="/service">Service</a></li>
 								<li><a href="/home/#contact-us">Contact Us</a></li>
 								@if(Auth::check())

@@ -21,7 +21,7 @@
 										Pulau Pinang.</br>
 										<div class="row">
 											<div class="col-lg-6 col-md-6">
-												<b style="font-weight: bold;" class="gotham-bold">Tel:</b> <span style="font-weight: 310;">012-4020969</span></br> 
+												<b style="font-weight: bold;" class="gotham-bold">Tel:</b> <span style="font-weight: 310;">012-4920969</span></br> 
 											</div>
 											<div class="col-lg-6 col-md-6">
 												<b style="font-weight: bold;" class="gotham-bold">Fax:</b> <span style="font-weight: 310;">04-5399577</span> </br>

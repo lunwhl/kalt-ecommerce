@@ -34166,7 +34166,7 @@ var render = function() {
                                     _c(
                                       "span",
                                       { staticStyle: { "font-weight": "310" } },
-                                      [_vm._v("012-4020969")]
+                                      [_vm._v("012-4920969")]
                                     ),
                                     _c("br")
                                   ]
@@ -34617,7 +34617,7 @@ var render = function() {
                           attrs: { src: "/images/phone.png" }
                         }),
                         _c("span", { staticStyle: { "margin-left": "15px" } }, [
-                          _vm._v("+601 2402 0969")
+                          _vm._v("+601 2492 0969")
                         ])
                       ])
                     ]),

@@ -80,7 +80,7 @@
 	                                </div>
 	                                <div class="col-sm-9">
 	                                    <div style="margin-top: 10px;">
-	                                        <span style="color: black; font-size: 16px;">RM {{selectedProduct.model}}</span>
+	                                        <span style="color: black; font-size: 16px;">{{selectedProduct.model}}</span>
 	                                    </div>
 	                                </div>
 	                            </div>

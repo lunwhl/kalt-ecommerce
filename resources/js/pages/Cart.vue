@@ -56,6 +56,7 @@
 					                		<li>Check refrigerant gas pressure</li>
 					                		<li>Refill in refrigerant gas</li>
 					                		<li>Testing and commissioning of the unit</li>
+						                	<li>** If the location of outdoor unit is not easily accessible for installation (eg. apartments / higher grounds), there will be extra charges imposed</li>
 					                	</ul>
 									</v-tooltip>
 									<v-tooltip bottom v-if="cart.options['installation'] == 'Basic'" tag="div">
@@ -75,6 +76,7 @@
 						                		<li>Check refrigerant gas pressure</li>
 						                		<li>Refill in refrigerant gas</li>
 						                		<li>Testing and commissioning of the unit</li>
+						                		<li>** If the location of outdoor unit is not easily accessible for installation (eg. apartments / higher grounds), there will be extra charges imposed</li>
 						                	</ul>
 									</v-tooltip>
 	                        	</div>
@@ -110,9 +112,9 @@
 	                	<label class="checkbox-entry">
 	                        <input type="checkbox" v-model="policyCheck"><span>I hereby agree to the terms and condition</span>
 	                    </label>
-	                    <label class="checkbox-entry">
+	                    <!-- <label class="checkbox-entry">
 	                        <input type="checkbox" v-model="accessibleCheck"><span>I declare that the location of outdoor unit is easily accessible for installation</span>
-	                    </label>
+	                    </label> -->
 	                </div>
 	                <div class="col-sm-4 col-md-4 col-sm-text-right">
 	                    <div class="buttons-wrapper">
@@ -279,7 +281,7 @@
     			alert_dialog: false,
     			snackbar: false,
                 snackbarMsg: '',
-                accessibleCheck: false,
+                accessibleCheck: true,
     		};
     	},
 

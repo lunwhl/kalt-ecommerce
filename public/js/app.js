@@ -36486,6 +36486,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -36520,7 +36522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             alert_dialog: false,
             snackbar: false,
             snackbarMsg: '',
-            accessibleCheck: false
+            accessibleCheck: true
         };
     },
     mounted: function mounted() {
@@ -37957,6 +37959,12 @@ var render = function() {
                                         _vm._v(
                                           "Testing and commissioning of the unit"
                                         )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _vm._v(
+                                          "** If the location of outdoor unit is not easily accessible for installation (eg. apartments / higher grounds), there will be extra charges imposed"
+                                        )
                                       ])
                                     ]
                                   )
@@ -38054,6 +38062,12 @@ var render = function() {
                                       _c("li", [
                                         _vm._v(
                                           "Testing and commissioning of the unit"
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _vm._v(
+                                          "** If the location of outdoor unit is not easily accessible for installation (eg. apartments / higher grounds), there will be extra charges imposed"
                                         )
                                       ])
                                     ]
@@ -38218,52 +38232,6 @@ var render = function() {
                     }),
                     _c("span", [
                       _vm._v("I hereby agree to the terms and condition")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("label", { staticClass: "checkbox-entry" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.accessibleCheck,
-                          expression: "accessibleCheck"
-                        }
-                      ],
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        checked: Array.isArray(_vm.accessibleCheck)
-                          ? _vm._i(_vm.accessibleCheck, null) > -1
-                          : _vm.accessibleCheck
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.accessibleCheck,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = null,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 &&
-                                (_vm.accessibleCheck = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.accessibleCheck = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.accessibleCheck = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _c("span", [
-                      _vm._v(
-                        "I declare that the location of outdoor unit is easily accessible for installation"
-                      )
                     ])
                   ])
                 ]
@@ -45898,7 +45866,7 @@ var render = function() {
                                 "font-size": "16px"
                               }
                             },
-                            [_vm._v("RM " + _vm._s(_vm.selectedProduct.model))]
+                            [_vm._v(_vm._s(_vm.selectedProduct.model))]
                           )
                         ])
                       ])

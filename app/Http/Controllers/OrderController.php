@@ -58,7 +58,9 @@ class OrderController extends Controller
         'shipping_state.required_if'=> 'State is required',
         'shipping_postcode.required_if'=> 'Postcode is required',
         'shipping_email.required_if'=> 'Email is required',
-        'shipping_phone.required_if'=> 'Phone is required'
+        'shipping_phone.required_if'=> 'Phone is required',
+        'billing_phone.regex' => "Incorrect format. Please follow this format: +60x-xxxxxxxx",
+        'shipping_phone.regex' => "Incorrect format. Please follow this format: +60x-xxxxxxxx"
     );
 
     public function index()

@@ -64,151 +64,15 @@
 									</br>
 									<div class="container-fluid"><b>Tel:</b> 012-4020969     |     <b>Fax:</b> 04-5399577</div>
 									<div class="container-fluid"><b>Opening Hour:</b> Monday to Saturday 9.00am to 6.00pm</div>
-									<div class="desktop-padding-top-65"></div>
-									<div class="container-fluid">A. Kalt Customer Service Counter</div>
-									<div class="container-fluid">B. Shop - Air Cond, Spare Part and Accesories</div>
-									<div class="container-fluid">C. Service & Repair Area</div>
-									<div class="container-fluid">D. Warehouse</div>
-									<div class="container-fluid">E. Dispatch Area</div>
-									<div class="container-fluid">F. Admin Office</div>
-									<div class="container-fluid">G. Staff Pantry</div>
 								</div>
 								<div class="col-md-6">
-									<img style="margin-bottom:10px;" src="/images/kalt-shop-01.jpg" />
-									<img src="/images/IMG_6590.jpg" />
+									<img src="/images/kalt-shop-01.jpg" />
+									
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- <div class="photo-slider container-fluid no-padding" id="home"> -->
-					<!-- Main Carousel -->
-					<!-- <div id="main-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="#main-carousel" data-slide-to="1"></li>
-							<li data-target="#main-carousel" data-slide-to="2"></li>
-						</ol>
-						<div role="listbox" class="carousel-inner fix-height">
-							<div class="item active">
-								<div class="carousel-caption"> -->
-									<!-- <h3 data-animation="animated fadeInLeft">New Way to Design Your Home</h3>
-									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
-									<div class="col-md-12">
-										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
-									</div>
-									<img data-animation="animated fadeInDown" src="images/slider-1.png" alt="slider" width="900" height="342" /> -->
-								<!-- </div>
-							</div>
-							<div class="item slide-1">
-								<div class="carousel-caption"> -->
-									<!-- <h3 data-animation="animated fadeInLeft">Give Us Something To Assemble</h3>
-									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
-									<div class="col-md-12">
-										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
-									</div>
-									<img data-animation="animated fadeInDown" src="images/slider-2.png" alt="slider" width="722" height="343" /> -->
-								<!-- </div>
-							</div>
-							<div class="item slide-2">
-								<div class="carousel-caption"> -->
-									<!-- <h3 data-animation="animated fadeInLeft">We like To Work A Lot With Wood</h3>
-									<p data-animation="animated fadeInRight">I never thought I could feel so free! Well we're movin' on up to the east side to a deluxe apartment in the sky just two good ol' boys Never meanin.</p>
-									<div class="col-md-12">
-										<a href="#" data-animation="animated fadeInUp" title="Shop Now" class="shop-now">Shop Now</a>
-									</div>
-									<img data-animation="animated fadeInDown" src="images/slider-3.png" alt="slider" width="1056" height="345" /> -->
-								<!-- </div>
-							</div>
-						</div> -->
-					<!-- </div> --><!-- Main Carousel /-  -->
-				<!-- </div> --><!-- Photo Slider /- -->
-
-				<!-- Subscribe Section -->
-				<!-- <div id="about-us">
-					<div class="subscribe-section container-fluid no-padding">
-						<div class="container">
-							<div class="section-header">
-								<h3 style="color:white;">About Us</h3>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<h4 style="color:#40c7f2; text-align:left;">WHO WE ARE</h4>
-									<div class="about-us-content" style="text-align:left;">
-										<p>
-											We are a modernized online business to the Ban Leng, who has 30 years experience in air conditioning. 
-											We, an one stop air conditioner online shop, committed to provide you with convenient and unique shopping, as well as, better value each and every time you shop at Kalt store.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<h4 style="color:#40c7f2; text-align:left;">WHAT WE DOES</h4>
-									<div class="about-us-content">
-										<ul style="list-style-type: upper-greek;">
-											<li>Our air conditioner are always sold at wholesale price.</li>
-											<li>Our air conditioner are /branded and from reputable suppliers with high standard of quality control.</li>
-											<li>We provide professional in-store and after sale services.</li>
-											<li>We are a reliable organization which partnership with 30 years experiences air conditioner’s company.</li>
-											<li>We have superb quality of services and accessories.</li>
-											<li>We provide variety service from installation, scheduled servicing, inspection, repair, to warranty care.</li>
-											<li>You no longer need to carry your heavy product home by yourself, as we will send you your products to your doorstep with affordable price.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<h4 style="color:#40c7f2; text-align:left;">WHERE WE ARE</h4>
-									<div class="about-us-content" style="text-align:left;">
-										<p>
-											Our warehouse is located in Bukit Mertajam, Pulau Pinang. You can find us here.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="about-us-content" style="text-align:left;">
-									<div class="col-sm-6">
-										<h4 style="color:#40c7f2; text-align:left;">Kalt Air Conditioning Sdn. Bhd.</h4>
-										<p>7 & 9, Lebuh Nangka 2, Taman Desa Damai,</br>
-											14000 Bukit Mertajam,</br>
-											Pulau Pinang.</br>
-											Tel: 012-4020969</br> 
-											Fax: 04-5399577 </br>
-											Opening hour: Monday to Saturday 9.00am to 6.00pm
-										</p>
-									</div>
-									<div class="col-sm-6">
-										<div class="about-us-content" style="text-align:center;">
-											<img src="/images/kalt-company.png" />
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="about-us-content" style="text-align:left;">
-									<div class="col-sm-6" style="margin-bottom: 30px;">
-										A. Kalt Customer Service Counter</br>
-										B. Shop - Air Cond, Spare Part and Accesories</br>
-										C. Service & Repair Area</br>
-										D. Warehouse</br>
-										E. Dispatch Area</br>
-										F. Admin Office</br>
-										G. Staff Pantry</br>
-									</div>
-									<div class="col-sm-6">
-										<div class="about-us-content" style="text-align:center;">
-											<img src="/images/warehouse.png" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
 
 
 				<div class="subscribe-section container-fluid no-padding" id="shop" style="margin-top: 25px">
@@ -219,16 +83,16 @@
 						    <v-flex>
 						        <v-container>
 						          <v-layout row wrap>
-						            <v-flex
+						          	<v-flex
 						              xs3
 						              d-flex
 						            >
 						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
-						                	@click="imageInModal('IMG_6580.jpg')"
-						                 src="/images/IMG_6580.jpg"
-						                  lazy-src="/images/IMG_6580jpg"
+						                	@click="imageInModal('IMG_6587.jpg')"
+						                 src="/images/IMG_6587.jpg"
+						                  lazy-src="/images/IMG_6587.jpg"
 						                  aspect-ratio="1"
 						                  class="grey lighten-2 shop-image"
 						                >
@@ -243,32 +107,6 @@
 						                  </v-layout>
 						                </v-img>
 						                <div class="gallery-title">Kalt Shop</div>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile>
-						                <v-img
-						                style="cursor: pointer;"
-						                	@click="imageInModal('IMG_6581.jpg')"
-						                 src="/images/IMG_6581.jpg"
-						                  lazy-src="/images/IMG_6581.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						                <div class="gallery-title">Admin office</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
@@ -304,6 +142,59 @@
 						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6580.jpg')"
+						                 src="/images/IMG_6580.jpg"
+						                  lazy-src="/images/IMG_6580jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						                <div class="gallery-title">Shop - Air Cond, Spare Part and Accessories</div>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile>
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6581.jpg')"
+						                 src="/images/IMG_6581.jpg"
+						                  lazy-src="/images/IMG_6581.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						                <div class="gallery-title">Admin office</div>
+						              </v-card>
+						            </v-flex>
+						            
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile>
+						                <v-img
+						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6583.jpg')"
 						                 src="/images/IMG_6583.jpg"
 						                  lazy-src="/images/IMG_6583.jpg"
@@ -321,6 +212,32 @@
 						                  </v-layout>
 						                </v-img>
 						                <div class="gallery-title">Repair and Service area</div>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile>
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6590.jpg')"
+						                 src="/images/IMG_6590.jpg"
+						                  lazy-src="/images/IMG_6590.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						                <div class="gallery-title">Warehouse 1</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
@@ -373,58 +290,6 @@
 						                  </v-layout>
 						                </v-img>
 						                <div class="gallery-title">Warehouse 3</div>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile>
-						                <v-img
-						                style="cursor: pointer;"
-						                	@click="imageInModal('IMG_6587.jpg')"
-						                 src="/images/IMG_6587.jpg"
-						                  lazy-src="/images/IMG_6587.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						                <div class="gallery-title">Kalt Shop - Air Cond, Spare Part and Accessories</div>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile>
-						                <v-img
-						                style="cursor: pointer;"
-						                	@click="imageInModal('IMG_6590.jpg')"
-						                 src="/images/IMG_6590.jpg"
-						                  lazy-src="/images/IMG_6590.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						                <div class="gallery-title">Warehouse 1</div>
 						              </v-card>
 						            </v-flex>
 						          </v-layout>

@@ -11,8 +11,7 @@
 	<b>Address</b><br>
 	{{ $order->billing_address }}, {{$order->billing_city}}, <br>
 	{{ $order->billing_postcode }}, {{ $order->billing_state}} <br>
-	<b>Phone: </b>{{$order->billing_phone}}
-
+	<b>Phone: </b>{{$order->billing_phone}}<br>
 @endsection
 
 @section('extra')

@@ -140,7 +140,7 @@
             	<div class="row" v-if="isEmptyCart()">
 	                <div class="col-md-6 col-xs-b50 col-md-b0" >
 	                    <h4 class="h4 ">Pick up option</h4>
-	                    <div style="color: #888; font-weight: bold; font-size: 17px;">Our Policy<div class="tooltip-extend" style="cursor: pointer; display: inline-block; margin-left: 10px;">?</div></div>
+	                    <div style="color: #888; font-weight: bold; font-size: 17px;">Our Policy<div class="tooltip-extend" style="cursor: pointer; display: inline-block; margin-left: 10px;" @click="deliveryModal">?</div></div>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
 								<v-radio value="pickup" :disabled="hasInstallation">
 									<div class="d-flex" slot="label">

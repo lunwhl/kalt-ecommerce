@@ -38627,7 +38627,8 @@ var render = function() {
                             cursor: "pointer",
                             display: "inline-block",
                             "margin-left": "10px"
-                          }
+                          },
+                          on: { click: _vm.deliveryModal }
                         },
                         [_vm._v("?")]
                       )
@@ -41274,141 +41275,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -41667,46 +41533,11 @@ var render = function() {
                     _c("div", { staticClass: "container-fluid" }, [
                       _c("b", [_vm._v("Opening Hour:")]),
                       _vm._v(" Monday to Saturday 9.00am to 6.00pm")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "desktop-padding-top-65" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("A. Kalt Customer Service Counter")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("B. Shop - Air Cond, Spare Part and Accesories")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("C. Service & Repair Area")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("D. Warehouse")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("E. Dispatch Area")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("F. Admin Office")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "container-fluid" }, [
-                      _vm._v("G. Staff Pantry")
                     ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
-                    _c("img", {
-                      staticStyle: { "margin-bottom": "10px" },
-                      attrs: { src: "/images/kalt-shop-01.jpg" }
-                    }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/IMG_6590.jpg" } })
+                    _c("img", { attrs: { src: "/images/kalt-shop-01.jpg" } })
                   ])
                 ])
               ]
@@ -41760,13 +41591,13 @@ var render = function() {
                                           "grey lighten-2 shop-image",
                                         staticStyle: { cursor: "pointer" },
                                         attrs: {
-                                          src: "/images/IMG_6580.jpg",
-                                          "lazy-src": "/images/IMG_6580jpg",
+                                          src: "/images/IMG_6587.jpg",
+                                          "lazy-src": "/images/IMG_6587.jpg",
                                           "aspect-ratio": "1"
                                         },
                                         on: {
                                           click: function($event) {
-                                            _vm.imageInModal("IMG_6580.jpg")
+                                            _vm.imageInModal("IMG_6587.jpg")
                                           }
                                         }
                                       },
@@ -41801,70 +41632,6 @@ var render = function() {
                                       "div",
                                       { staticClass: "gallery-title" },
                                       [_vm._v("Kalt Shop")]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  { attrs: { flat: "", tile: "" } },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/IMG_6581.jpg",
-                                          "lazy-src": "/images/IMG_6581.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal("IMG_6581.jpg")
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "gallery-title" },
-                                      [_vm._v("Admin office")]
                                     )
                                   ],
                                   1
@@ -41952,6 +41719,138 @@ var render = function() {
                                           "grey lighten-2 shop-image",
                                         staticStyle: { cursor: "pointer" },
                                         attrs: {
+                                          src: "/images/IMG_6580.jpg",
+                                          "lazy-src": "/images/IMG_6580jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6580.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [
+                                        _vm._v(
+                                          "Shop - Air Cond, Spare Part and Accessories"
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  { attrs: { flat: "", tile: "" } },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6581.jpg",
+                                          "lazy-src": "/images/IMG_6581.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6581.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Admin office")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  { attrs: { flat: "", tile: "" } },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
                                           src: "/images/IMG_6583.jpg",
                                           "lazy-src": "/images/IMG_6583.jpg",
                                           "aspect-ratio": "1"
@@ -41993,6 +41892,70 @@ var render = function() {
                                       "div",
                                       { staticClass: "gallery-title" },
                                       [_vm._v("Repair and Service area")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  { attrs: { flat: "", tile: "" } },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6590.jpg",
+                                          "lazy-src": "/images/IMG_6590.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6590.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Warehouse 1")]
                                     )
                                   ],
                                   1
@@ -42121,138 +42084,6 @@ var render = function() {
                                       "div",
                                       { staticClass: "gallery-title" },
                                       [_vm._v("Warehouse 3")]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  { attrs: { flat: "", tile: "" } },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/IMG_6587.jpg",
-                                          "lazy-src": "/images/IMG_6587.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal("IMG_6587.jpg")
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "gallery-title" },
-                                      [
-                                        _vm._v(
-                                          "Kalt Shop - Air Cond, Spare Part and Accessories"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  { attrs: { flat: "", tile: "" } },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/IMG_6590.jpg",
-                                          "lazy-src": "/images/IMG_6590.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal("IMG_6590.jpg")
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "gallery-title" },
-                                      [_vm._v("Warehouse 1")]
                                     )
                                   ],
                                   1

@@ -172,7 +172,7 @@
 		                    <h4 class="h4 col-xs-b25">payment method</h4>
 		                    <div class="simple-article size-2">BillPlz</div>
 		                    <div class="empty-space col-xs-b30"></div>
-		                    <div @click="submitOrder" class="button block size-2 style-3">
+		                    <div @click="submitOrder" style="margin-bottom:15px;" class="button block size-2 style-3">
 		                        <span class="button-wrapper">
 		                            <span class="icon"><img src="/css/exzo/img/icon-4.png" alt=""></span>
 		                            <span class="text">place order</span>

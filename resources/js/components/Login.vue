@@ -39,14 +39,14 @@
                 </v-card-text>
             </v-card>
             <v-card v-else>
-                <v-container style="color:#fff; background: #40c7f2;">
-                    <v-layout row>
+                <v-container fluid style="color:#fff; background: #40c7f2;">
+                    <v-layout>
                       <v-flex style="padding-left: 10px;" xs6 text-xs-left>
                           <h3 class="px-0">Register</h3>
                       </v-flex>
                       <v-flex xs6 text-xs-right>
                             <v-btn @click="toLogin" fab dark small color="indigo">
-                                <v-icon style="padding-top:10px;" dark>arrow_back</v-icon>
+                                <v-icon dark>arrow_back</v-icon>
                             </v-btn>
                       </v-flex>
                     </v-layout>

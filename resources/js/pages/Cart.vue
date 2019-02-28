@@ -109,10 +109,12 @@
             	<div class="empty-space col-xs-b35"></div>
 	            <div class="row" v-if="isEmptyCart()">
 	                <div class="col-sm-8 col-md-8 col-xs-b10 col-sm-b0 simple-article size-3">
-	                	<div @click="tosModal"><span class="tos">Terms of service</span></div>
 	                	<label class="checkbox-entry">
-	                        <input type="checkbox" v-model="policyCheck"><span>I hereby agree to the terms and condition</span>
+	                        <input type="checkbox" v-model="policyCheck"><span style="font-size:14px;">I hereby agree to the </span>
 	                    </label>
+	                    <label class="checkbox-entry">
+		                    <a v-on:click.stop @click="tosModal">TERMS AND CONDITION</a>
+		                </label>
 	                    <!-- <label class="checkbox-entry">
 	                        <input type="checkbox" v-model="accessibleCheck"><span>I declare that the location of outdoor unit is easily accessible for installation</span>
 	                    </label> -->
@@ -138,7 +140,7 @@
             	<div class="row" v-if="isEmptyCart()">
 	                <div class="col-md-6 col-xs-b50 col-md-b0" >
 	                    <h4 class="h4 ">Pick up option</h4>
-	                    <div @click="deliveryModal" style="color: #888;"><span class="tos">Delivery Policy</span></div>
+	                    <div style="color: #888; font-weight: bold; font-size: 17px;">Our Policy<div class="tooltip-extend" style="cursor: pointer; display: inline-block; margin-left: 10px;">?</div></div>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
 								<v-radio value="pickup" :disabled="hasInstallation">
 									<div class="d-flex" slot="label">

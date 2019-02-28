@@ -33727,11 +33727,13 @@ var render = function() {
                 [
                   _c(
                     "v-container",
-                    { staticStyle: { color: "#fff", background: "#40c7f2" } },
+                    {
+                      staticStyle: { color: "#fff", background: "#40c7f2" },
+                      attrs: { fluid: "" }
+                    },
                     [
                       _c(
                         "v-layout",
-                        { attrs: { row: "" } },
                         [
                           _c(
                             "v-flex",
@@ -33762,14 +33764,9 @@ var render = function() {
                                   on: { click: _vm.toLogin }
                                 },
                                 [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      staticStyle: { "padding-top": "10px" },
-                                      attrs: { dark: "" }
-                                    },
-                                    [_vm._v("arrow_back")]
-                                  )
+                                  _c("v-icon", { attrs: { dark: "" } }, [
+                                    _vm._v("arrow_back")
+                                  ])
                                 ],
                                 1
                               )
@@ -36748,6 +36745,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -38484,12 +38483,6 @@ var render = function() {
                     "col-sm-8 col-md-8 col-xs-b10 col-sm-b0 simple-article size-3"
                 },
                 [
-                  _c("div", { on: { click: _vm.tosModal } }, [
-                    _c("span", { staticClass: "tos" }, [
-                      _vm._v("Terms of service")
-                    ])
-                  ]),
-                  _vm._v(" "),
                   _c("label", { staticClass: "checkbox-entry" }, [
                     _c("input", {
                       directives: [
@@ -38528,9 +38521,26 @@ var render = function() {
                         }
                       }
                     }),
-                    _c("span", [
-                      _vm._v("I hereby agree to the terms and condition")
+                    _c("span", { staticStyle: { "font-size": "14px" } }, [
+                      _vm._v("I hereby agree to the ")
                     ])
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "checkbox-entry" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: [
+                            function($event) {
+                              $event.stopPropagation()
+                            },
+                            _vm.tosModal
+                          ]
+                        }
+                      },
+                      [_vm._v("TERMS AND CONDITION")]
+                    )
                   ])
                 ]
               ),
@@ -38601,13 +38611,26 @@ var render = function() {
                   _c(
                     "div",
                     {
-                      staticStyle: { color: "#888" },
-                      on: { click: _vm.deliveryModal }
+                      staticStyle: {
+                        color: "#888",
+                        "font-weight": "bold",
+                        "font-size": "17px"
+                      }
                     },
                     [
-                      _c("span", { staticClass: "tos" }, [
-                        _vm._v("Delivery Policy")
-                      ])
+                      _vm._v("Our Policy"),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "tooltip-extend",
+                          staticStyle: {
+                            cursor: "pointer",
+                            display: "inline-block",
+                            "margin-left": "10px"
+                          }
+                        },
+                        [_vm._v("?")]
+                      )
                     ]
                   ),
                   _vm._v(" "),
@@ -44198,6 +44221,7 @@ var render = function() {
               "div",
               {
                 staticClass: "button block size-2 style-3",
+                staticStyle: { "margin-bottom": "30px" },
                 on: { click: _vm.backToHome }
               },
               [
@@ -46145,6 +46169,7 @@ var render = function() {
                   "div",
                   {
                     staticClass: "button block size-2 style-3",
+                    staticStyle: { "margin-bottom": "15px" },
                     on: { click: _vm.submitOrder }
                   },
                   [

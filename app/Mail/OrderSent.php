@@ -36,6 +36,10 @@ class OrderSent extends Mailable
     {
         return $this->from("info@kalt.com.my")
                     ->subject('Kalt')
-                    ->view('email.orderSent');
+                    ->view('email.orderSent')
+                    ->attach('storage/deliveryOrders/' . $this->order->id . '.pdf', [
+                        'as'=> 'delivery-order-'.$this->order->id.'.pdf',
+                        'mime' => 'application/pdf',
+                    ]);;
     }
 }

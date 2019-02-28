@@ -74,7 +74,7 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <div @click="backToHome" class="button block size-2 style-3">
+	                    <div @click="backToHome" style="margin-bottom: 30px;" class="button block size-2 style-3">
 	                        <span class="button-wrapper">
 	                            <span class="icon"><img src="/css/exzo/img/icon-4.png" alt=""></span>
 	                            <span class="text">Back to home</span>

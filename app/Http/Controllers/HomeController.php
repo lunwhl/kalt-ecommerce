@@ -153,7 +153,7 @@ class HomeController extends Controller
         $items = Item::where('order_id', $order->id)->get();
         $user = User::find(1);
 
-        return view('pdf.receipt', ['order' => $order, 'items' => $items, 'user' => $user]);
+        return view('pdf.invoice', ['order' => $order, 'items' => $items, 'user' => $user]);
     }
 
     public function aboutus()

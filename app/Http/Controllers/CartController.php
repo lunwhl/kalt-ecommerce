@@ -213,16 +213,8 @@ class CartController extends Controller
             else
                 return $this->updateCartAfterInstallation($carts, $request, 'none', request()->type, true, 0, $product->price);
 
-            // $item = Cart::get($request['rowId']);
-            // dd($item);
-            // $option = $item->options;
-            // dd($option);
-            
             if($installation) {
-
-
                 return $this->updateCartAfterInstallation($carts, $request, request()->type, request()->type, false, $installation->price, $product->price);
-                
             }
             else 
             {

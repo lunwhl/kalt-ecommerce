@@ -36,7 +36,7 @@ class Product extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'name', 'model',
     ];
 
     /**

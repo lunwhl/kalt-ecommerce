@@ -14,38 +14,53 @@
                 <span>Order {{order['id']}}</span>
                 </v-card-title>
 
-                    <v-container grid-list-md>
-                        <v-layout row wrap>
-                            <v-flex xs6 text-xs-left>
-                                <h5>Name: {{order['shipping_first_name']}} {{order['shipping_last_name']}}</h5>
-                                <h5>Shipping Address</h5>
+                    <v-container fluid>
+                        <v-layout style="padding: 0px 10px;">
+                            <v-flex xs4 text-xs-left>
+                                <h4>Biller Information</h4>
+                                <h5>Name: {{order['billing_name']}}</h5>
+                                <h5>Address</h5>
+                                <span>
+                                    <div>{{order['billing_address']}}, {{order['billing_city']}},</div>
+                                    <div>{{order['billing_state']}}, {{order['billing_postcode']}}.</div>
+                                </span>
+                                <h5>Phone: {{order['billing_phone']}}</h5>
+                            </v-flex>
+                            <v-flex xs4 text-xs-left>
+                                <h4>Shipment Information</h4>
+                                <h5>Name: {{order['shipping_name']}}</h5>
+                                <h5>Address</h5>
                                 <span>
                                     <div>{{order['shipping_address']}}, {{order['shipping_city']}},</div>
-                                    <div>{{order['shipping_state']}}, {{order['postcode']}}.</div>
+                                    <div>{{order['shipping_state']}}, {{order['shipping_postcode']}}.</div>
                                 </span>
+                                <h5>Phone: {{order['shipping_phone']}}</h5>
                             </v-flex>
-                            <v-flex xs6 text-xs-right>
+                            <v-flex xs4 text-xs-left>
+                                <h4>Billing Information</h4>
                                 <h5>Subtotal: {{order['subtotal']}}</h5>
                                 <h5 v-if="order['shipping_price']">Shipping Price: {{order['shipping_price']}}</h5>
                                 <h5>Total: {{order['total']}}</h5>
                                 <h5>Status: {{order['status']}}</h5>
                                 <h5 v-if="order['note']">Note: {{order['note']}}</h5>
+                                <h5>Pickup Option: {{pickupOption}}</h5>
                             </v-flex>
                         </v-layout>
                         <v-divider></v-divider>
-                        <v-layout row wrap>
+                        <v-layout>
                             <v-flex xs12 text-xs-center>
                                 <h4>Items</h4>
                             </v-flex>
                         </v-layout>
                     </v-container>
-                    <v-container style="padding: 0px 24px 24px 24px !important;" grid-list-md v-for="(item, key) in order['items']" :key="key">
-                        <v-layout row wrap text-xs-left>
+                    <v-container fluid style="padding: 0px 24px 24px 24px !important;" v-for="(item, key) in order['items']" :key="key">
+                        <v-layout text-xs-left>
                             <v-flex xs6>
                                 <img style="width:150px;" :src="$options.filters.set_image(item.image_path)" />
                             </v-flex>
                             <v-flex xs6>                                
                                 <div><b>Name: {{item.name}}</b></div>
+                                <div><b>Model: {{item.model}}</b></div>
                                 <div><b>Price: </b><span>RM {{item.price}}</span></div>
                                 <div><b>Installation Type: </b><span>{{item.installation_type}}</span></div>
                                 <div><b>Installation Price: </b><span>RM {{item.installation_price}}</span></div>
@@ -76,6 +91,19 @@
         },
 
         methods: {
+        },
+
+        computed: {
+            pickupOption() {
+                if(this.order.pickup == 'mainland')
+                    return 'Delivery within Penang Mainland';
+
+                if(this.order.pickup == 'pickup')
+                    return 'Store Pick Up';
+
+                if(this.order.pickup == 'delivery')
+                    return 'Delivery within Penang Island';
+            }
         },
     }
 </script>

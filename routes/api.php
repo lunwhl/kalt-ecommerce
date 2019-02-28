@@ -24,6 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'cart'], function() {
 	Route::post('/bulk/update', 'CartController@updateBulkToCart');
 	Route::post('/installation', 'CartController@updateInstallation');
+	Route::post('/quantity', 'CartController@updateQuantity');
 	Route::post('/delete/{id}', 'CartController@destroy');
 });
 

@@ -19,10 +19,12 @@
 	                                    <tr>
 	                                        <td>
 	                                            <div class="h6"><a>{{item.name}}</a></div>
+	                                            <div class="h6" style="color: #164681;">{{item.model}}</div>
 	                                            <div class="simple-article size-3">Installation: {{item.installation_type}}</div>
 	                                            <div class="simple-article size-1">QUANTITY: {{item.qty}}</div>
 	                                        </td>
 	                                        <td>
+	                                            <div class="simple-article size-1"></div>
 	                                            <div class="simple-article size-1">RM {{item.price}}</div>
 	                                            <div class="simple-article size-1">RM {{item.installation_price}}</div>
 	                                            <div class="simple-article size-1">TOTAL: RM {{itemTotal(item)}}</div>
@@ -30,6 +32,16 @@
 	                                    </tr>
 	                                </tbody>
 	                            </table>
+	                        </div>
+	                    </div>
+	                    <div class="order-details-entry simple-article size-3 uppercase">
+	                        <div class="row">
+	                            <div class="col-xs-6">
+	                                Pickup Option
+	                            </div>
+	                            <div class="col-xs-6 col-xs-text-right">
+	                                <div class="color">{{pickupOption}}</div>
+	                            </div>
 	                        </div>
 	                    </div>
 	                    <div class="order-details-entry simple-article size-3 uppercase">
@@ -82,6 +94,7 @@
     		return {
     			carts: [],
     			items: [],
+    			qty: 0,
     		};
     	},
 
@@ -106,7 +119,16 @@
         	},
 
         	itemTotal(product) {
-        		return product.qty * product.price;
+        		let qty = 0;
+
+        		if(this.items.length > 0)
+	        		_.forEach(this.items, function(item, key) {
+	        			qty += item.qty;
+					});
+
+	        	this.qty = qty;
+
+        		return (product.qty * product.price) + (product.qty * product.installation_price);
         	},
         },
 
@@ -116,7 +138,7 @@
 
         		if(this.items.length > 0)
 	        		_.forEach(this.items, function(item, key) {
-	        			subTotal += item.price * item.qty;
+	        			subTotal += (item.qty * item.price) + (item.qty * item.installation_price);
 					});
 
 				return subTotal;
@@ -124,14 +146,23 @@
 
         	total() {
         		let total = 0;
-        		return this.subTotal + (this.order['pickup'] != 'delivery' ? 0 : 20);
+        		return this.subTotal + (this.order['pickup'] != 'delivery' ? 0 : this.qty * 20);
         	},
 
         	deliveryTotal() {
-        		return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM 20';
+        		return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM ' + this.qty * 20;
         	},
 
-        	
+        	pickupOption() {
+        		if(this.order.pickup == 'mainland')
+        			return 'Delivery within Penang Mainland';
+
+        		if(this.order.pickup == 'pickup')
+        			return 'Store Pick Up';
+
+        		if(this.order.pickup == 'delivery')
+        			return 'Delivery within Penang Island';
+        	}
         },
     }
 </script>

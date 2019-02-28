@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Select;
 use Vyuldashev\NovaMoneyField\Money;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -34,7 +35,7 @@ class Order extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id'
     ];
 
     /**
@@ -52,12 +53,7 @@ class Order extends Resource
 
             BelongsTo::make('User Name', 'User', 'App\Nova\User'),
 
-            Text::make('Billing First Name')
-                ->sortable()
-                ->hideFromIndex()
-                ->rules('required'),
-
-            Text::make('Billing Last Name')
+            Text::make('Billing Name')
                 ->sortable()
                 ->hideFromIndex()
                 ->rules('required'),
@@ -102,9 +98,19 @@ class Order extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Status')
+            Select::make('Status')
+                ->options([
+                    'unpaid' => 'Unpaid', 
+                    'paid' => 'Paid', 
+                    'sent' => 'Sent',
+                ])
                 ->sortable()
-                ->rules('required'), 
+                ->rules('required'),
+
+                // Text::make('Status')
+                // ->sortable()
+                // ->hideFromIndex()
+                // ->rules('required'),
 
             Text::make('Note')
                 ->sortable(), 
@@ -116,12 +122,7 @@ class Order extends Resource
     protected function shippingFields()
     {
         return [
-            Text::make('Shipping First Name')
-                ->sortable()
-                ->hideFromIndex()
-                ->rules('required'),
-
-            Text::make('Shipping Last Name')
+            Text::make('Shipping Name')
                 ->sortable()
                 ->hideFromIndex()
                 ->rules('required'),

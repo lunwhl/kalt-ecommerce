@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class PurchaseToAdminEmail extends Mailable
+class OrderSent extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -34,12 +34,8 @@ class PurchaseToAdminEmail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->order->billing_email, $this->order->billing_name)
-                    ->subject($this->order->billing_name . ' have made purchase')
-                    ->view('email.purchasetoadmin')
-                    ->attach('storage/deliveryOrders/' . $this->order->id . '.pdf', [
-                        'as'=> 'delivery-order-'.$this->order->id.'.pdf',
-                        'mime' => 'application/pdf',
-                    ]);
+        return $this->from("info@kalt.com.my")
+                    ->subject('Kalt')
+                    ->view('email.orderSent');
     }
 }

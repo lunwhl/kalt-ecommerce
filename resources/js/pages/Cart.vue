@@ -27,9 +27,10 @@
 	                        </td>
 	                        <td data-title=" ">
 	                        	<h6 class="h6"><a href="#">{{cart.name}}</a></h6>
+	                        	<h6 class="h6" style="color: #164681;">{{cart.options.model}}</h6>
 	                        	<div class="d-flex">
 	                        		<label style="flex: 0 !important; margin-top: 3px; margin-right: 8px;">Installation: </label>
-		                        	<select v-model="cart.options['installation']" @change="changeInstallation(cart)" style="border:1px solid #ebebeb; padding:2px 10px;margin-right:8px;">
+		                        	<select v-model="cart.options['installationLabel']" @change="changeInstallation(cart)" style="border:1px solid #ebebeb; padding:2px 10px;margin-right:8px;">
 		                        		<option value="none">No</option>
 		                        		<option value="Basic">Basic</option>
 		                        		<option value="Economy">Economy</option>
@@ -352,7 +353,7 @@
         	},
 
         	checkInstallation(cart) {
-        		if(cart['options']['installationPrice'] == 0 && cart.options['installation'] != 'none') {
+        		if(cart['options']['installationPrice'] == 0 && cart.options['installationLabel'] != 'none') {
         			Vue.set(cart['options'], 'checkInstallation', true);
         			return true;
         		} else {
@@ -382,16 +383,18 @@
         	},
 
         	changeInstallation(cart) {
-        		axios.post('/api/cart/installation?type=' + cart.options['installation'], cart)
+        		axios.post('/api/cart/installation?type=' + cart.options['installationLabel'], {cart: cart, carts: this.carts})
         		.then(response => this.changeInstallationSuccesss(response.data, cart));
         	},
 
         	changeInstallationSuccesss(data, cart) {
-        		Vue.nextTick(()=>{
-        			Vue.set(cart['options'], 'productTotalPrice', data['installationPrice']);
-        			if(data['installationPrice'] > 0)
-        				Vue.set(cart['options'], 'installationPrice', data['installationPrice'] - cart.price);
-				});
+    //     		Vue.nextTick(()=>{
+    //     			Vue.set(cart['options'], 'productTotalPrice', data['installationPrice']);
+    //     			if(data['installationPrice'] > 0)
+    //     				Vue.set(cart['options'], 'installationPrice', data['installationPrice'] - cart.price);
+				// });
+				this.addToCartSuccess(data);
+				this.getCart();
         	},
 
         	deleteCart(cart){
@@ -414,6 +417,7 @@
         	},
 
         	addToCartSuccess(data) {
+        		console.log("success");
         		window.event.$emit("cart-add");
         	},
 
@@ -431,10 +435,14 @@
         	minusQty(cart) {
         		if(cart.qty > 1)
         			cart.qty = parseInt(cart.qty) - 1;
+        			axios.post('/api/cart/quantity?qty=' + cart.qty, {cart: cart, carts: this.carts})
+        			.then(response => this.addToCartSuccess(response.data));
         	},
 
         	addQty(cart) {
     			cart.qty = parseInt(cart.qty) + 1;
+    			axios.post('/api/cart/quantity?qty=' + cart.qty, {cart: cart, carts: this.carts})
+        			.then(response => this.addToCartSuccess(response.data));
         	},
 
         	scrollToTop() {

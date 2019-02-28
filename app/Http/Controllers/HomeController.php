@@ -149,11 +149,11 @@ class HomeController extends Controller
 
     public function invoice()
     {
-        $order = Order::find(226);
+        $order = Order::find(235);
         $items = Item::where('order_id', $order->id)->get();
         $user = User::find(1);
 
-        return view('pdf.invoice', ['order' => $order, 'items' => $items, 'user' => $user]);
+        return view('pdf.receipt', ['order' => $order, 'items' => $items, 'user' => $user]);
     }
 
     public function aboutus()

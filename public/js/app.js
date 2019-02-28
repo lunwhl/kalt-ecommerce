@@ -36488,6 +36488,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -36587,7 +36588,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         checkInstallation: function checkInstallation(cart) {
-            if (cart['options']['installationPrice'] == 0 && cart.options['installation'] != 'none') {
+            if (cart['options']['installationPrice'] == 0 && cart.options['installationLabel'] != 'none') {
                 Vue.set(cart['options'], 'checkInstallation', true);
                 return true;
             } else {
@@ -36619,15 +36620,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         changeInstallation: function changeInstallation(cart) {
             var _this5 = this;
 
-            axios.post('/api/cart/installation?type=' + cart.options['installation'], cart).then(function (response) {
+            axios.post('/api/cart/installation?type=' + cart.options['installationLabel'], { cart: cart, carts: this.carts }).then(function (response) {
                 return _this5.changeInstallationSuccesss(response.data, cart);
             });
         },
         changeInstallationSuccesss: function changeInstallationSuccesss(data, cart) {
-            Vue.nextTick(function () {
-                Vue.set(cart['options'], 'productTotalPrice', data['installationPrice']);
-                if (data['installationPrice'] > 0) Vue.set(cart['options'], 'installationPrice', data['installationPrice'] - cart.price);
-            });
+            //     		Vue.nextTick(()=>{
+            //     			Vue.set(cart['options'], 'productTotalPrice', data['installationPrice']);
+            //     			if(data['installationPrice'] > 0)
+            //     				Vue.set(cart['options'], 'installationPrice', data['installationPrice'] - cart.price);
+            // });
+            this.addToCartSuccess(data);
+            this.getCart();
         },
         deleteCart: function deleteCart(cart) {
             var _this6 = this;
@@ -36654,6 +36658,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         addToCartSuccess: function addToCartSuccess(data) {
+            console.log("success");
             window.event.$emit("cart-add");
         },
         getCart: function getCart() {
@@ -36668,10 +36673,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (data['cart'].length > 0) Vue.set(this.carts, 0, data);
         },
         minusQty: function minusQty(cart) {
+            var _this10 = this;
+
             if (cart.qty > 1) cart.qty = parseInt(cart.qty) - 1;
+            axios.post('/api/cart/quantity?qty=' + cart.qty, { cart: cart, carts: this.carts }).then(function (response) {
+                return _this10.addToCartSuccess(response.data);
+            });
         },
         addQty: function addQty(cart) {
+            var _this11 = this;
+
             cart.qty = parseInt(cart.qty) + 1;
+            axios.post('/api/cart/quantity?qty=' + cart.qty, { cart: cart, carts: this.carts }).then(function (response) {
+                return _this11.addToCartSuccess(response.data);
+            });
         },
         scrollToTop: function scrollToTop() {
             window.scrollTo(0, 0);
@@ -37767,6 +37782,15 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c(
+                        "h6",
+                        {
+                          staticClass: "h6",
+                          staticStyle: { color: "#164681" }
+                        },
+                        [_vm._v(_vm._s(cart.options.model))]
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "div",
                         { staticClass: "d-flex" },
                         [
@@ -37789,8 +37813,9 @@ var render = function() {
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: cart.options["installation"],
-                                  expression: "cart.options['installation']"
+                                  value: cart.options["installationLabel"],
+                                  expression:
+                                    "cart.options['installationLabel']"
                                 }
                               ],
                               staticStyle: {
@@ -37812,7 +37837,7 @@ var render = function() {
                                       })
                                     _vm.$set(
                                       cart.options,
-                                      "installation",
+                                      "installationLabel",
                                       $event.target.multiple
                                         ? $$selectedVal
                                         : $$selectedVal[0]
@@ -40908,6 +40933,206 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -41458,6 +41683,494 @@ var render = function() {
                                             _vm.imageInModal(
                                               "aircond-brand.jpg"
                                             )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6580.jpg",
+                                          "lazy-src": "/images/IMG_6580jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6580.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6581.jpg",
+                                          "lazy-src": "/images/IMG_6581.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6581.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6582.jpg",
+                                          "lazy-src": "/images/IMG_6582.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6582.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6583.jpg",
+                                          "lazy-src": "/images/IMG_6583.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6583.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6584.jpg",
+                                          "lazy-src": "/images/IMG_6584.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6584.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6585.jpg",
+                                          "lazy-src": "/images/IMG_6585.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6585.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6587.jpg",
+                                          "lazy-src": "/images/IMG_6587.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6587.jpg")
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-layout",
+                                          {
+                                            attrs: {
+                                              slot: "placeholder",
+                                              "fill-height": "",
+                                              "align-center": "",
+                                              "justify-center": "",
+                                              "ma-0": ""
+                                            },
+                                            slot: "placeholder"
+                                          },
+                                          [
+                                            _c("v-progress-circular", {
+                                              attrs: {
+                                                indeterminate: "",
+                                                color: "grey lighten-5"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { attrs: { xs3: "", "d-flex": "" } },
+                              [
+                                _c(
+                                  "v-card",
+                                  {
+                                    staticClass: "d-flex",
+                                    attrs: { flat: "", tile: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-img",
+                                      {
+                                        staticClass:
+                                          "grey lighten-2 shop-image",
+                                        staticStyle: { cursor: "pointer" },
+                                        attrs: {
+                                          src: "/images/IMG_6590.jpg",
+                                          "lazy-src": "/images/IMG_6590.jpg",
+                                          "aspect-ratio": "1"
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.imageInModal("IMG_6590.jpg")
                                           }
                                         }
                                       },
@@ -43179,13 +43892,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['order'],
     data: function data() {
         return {
             carts: [],
-            items: []
+            items: [],
+            qty: 0
         };
     },
     mounted: function mounted() {
@@ -43210,7 +43936,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             window.location.href = '/';
         },
         itemTotal: function itemTotal(product) {
-            return product.qty * product.price;
+            var qty = 0;
+
+            if (this.items.length > 0) _.forEach(this.items, function (item, key) {
+                qty += item.qty;
+            });
+
+            this.qty = qty;
+
+            return product.qty * product.price + product.qty * product.installation_price;
         }
     },
 
@@ -43219,17 +43953,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var subTotal = 0;
 
             if (this.items.length > 0) _.forEach(this.items, function (item, key) {
-                subTotal += item.price * item.qty;
+                subTotal += item.qty * item.price + item.qty * item.installation_price;
             });
 
             return subTotal;
         },
         total: function total() {
             var total = 0;
-            return this.subTotal + (this.order['pickup'] != 'delivery' ? 0 : 20);
+            return this.subTotal + (this.order['pickup'] != 'delivery' ? 0 : this.qty * 20);
         },
         deliveryTotal: function deliveryTotal() {
-            return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM 20';
+            return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM ' + this.qty * 20;
+        },
+        pickupOption: function pickupOption() {
+            if (this.order.pickup == 'mainland') return 'Delivery within Penang Mainland';
+
+            if (this.order.pickup == 'pickup') return 'Store Pick Up';
+
+            if (this.order.pickup == 'delivery') return 'Delivery within Penang Island';
         }
     }
 });
@@ -43288,6 +44029,15 @@ var render = function() {
                             _c("a", [_vm._v(_vm._s(item.name))])
                           ]),
                           _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "h6",
+                              staticStyle: { color: "#164681" }
+                            },
+                            [_vm._v(_vm._s(item.model))]
+                          ),
+                          _vm._v(" "),
                           _c("div", { staticClass: "simple-article size-3" }, [
                             _vm._v(
                               "Installation: " + _vm._s(item.installation_type)
@@ -43300,6 +44050,8 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("td", [
+                          _c("div", { staticClass: "simple-article size-1" }),
+                          _vm._v(" "),
                           _c("div", { staticClass: "simple-article size-1" }, [
                             _vm._v("RM " + _vm._s(item.price))
                           ]),
@@ -43318,6 +44070,29 @@ var render = function() {
                 ])
               ])
             }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "order-details-entry simple-article size-3 uppercase"
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-xs-6" }, [
+                    _vm._v(
+                      "\n\t                                Pickup Option\n\t                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xs-6 col-xs-text-right" }, [
+                    _c("div", { staticClass: "color" }, [
+                      _vm._v(_vm._s(_vm.pickupOption))
+                    ])
+                  ])
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -44251,6 +45026,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -44305,10 +45091,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             window.event.$emit("loading", { 'openDialog': true });
+            var units = _.sumBy(this.carts.cart, function (item) {
+                return parseInt(item.qty);
+            });
             this.form.subtotal = this.subTotal;
             this.form.total = this.total;
             this.form.pickup = this.shipping;
-            this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 20;
+            this.form.shipping_price = this.deliveryCharge == 'delivery' ? units * 20 : 0;
             var url = '/api/order';
             this.form.post(url, this.form).then(function (response) {
                 return _this.submitOrderSuccess(response);
@@ -44372,10 +45161,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         total: function total() {
             var total = 0;
-            return this.subTotal + (this.deliveryCharge != 'delivery' ? 0 : 20);
+            var units = _.sumBy(this.carts.cart, function (item) {
+                return parseInt(item.qty);
+            });
+            return this.subTotal + (this.deliveryCharge != 'delivery' ? 0 : units * 20);
         },
         deliveryTotal: function deliveryTotal() {
-            return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM 20';
+            var units = _.sumBy(this.carts.cart, function (item) {
+                return parseInt(item.qty);
+            });
+            return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM ' + units * 20;
+        },
+        pickupOption: function pickupOption() {
+            if (this.shipping == 'mainland') return 'Delivery within Penang Mainland';
+
+            if (this.shipping == 'pickup') return 'Store Pick Up';
+
+            if (this.shipping == 'delivery') return 'Delivery within Penang Island';
         }
     }
 });
@@ -45152,6 +45954,12 @@ var render = function() {
                                 "div",
                                 { staticClass: "simple-article size-1" },
                                 [_vm._v("QUANTITY: " + _vm._s(cart.qty))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "simple-article size-1" },
+                                [_vm._v(_vm._s(cart["options"]["model"]))]
                               )
                             ]),
                             _vm._v(" "),
@@ -45195,6 +46003,29 @@ var render = function() {
                     ])
                   ])
                 }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "order-details-entry simple-article size-3 uppercase"
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-xs-6" }, [
+                        _vm._v(
+                          "\n\t\t                                pickup option\n\t\t                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-xs-6 col-xs-text-right" }, [
+                        _c("div", { staticClass: "color" }, [
+                          _vm._v(_vm._s(_vm.pickupOption))
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -46609,6 +47440,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -46627,7 +47473,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
 
-    methods: {}
+    methods: {},
+
+    computed: {
+        pickupOption: function pickupOption() {
+            if (this.order.pickup == 'mainland') return 'Delivery within Penang Mainland';
+
+            if (this.order.pickup == 'pickup') return 'Store Pick Up';
+
+            if (this.order.pickup == 'delivery') return 'Delivery within Penang Island';
+        }
+    }
 });
 
 /***/ }),
@@ -46685,23 +47541,54 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-container",
-                { attrs: { "grid-list-md": "" } },
+                { attrs: { fluid: "" } },
                 [
                   _c(
                     "v-layout",
-                    { attrs: { row: "", wrap: "" } },
+                    { staticStyle: { padding: "0px 10px" } },
                     [
-                      _c("v-flex", { attrs: { xs6: "", "text-xs-left": "" } }, [
+                      _c("v-flex", { attrs: { xs4: "", "text-xs-left": "" } }, [
+                        _c("h4", [_vm._v("Biller Information")]),
+                        _vm._v(" "),
                         _c("h5", [
-                          _vm._v(
-                            "Name: " +
-                              _vm._s(_vm.order["shipping_first_name"]) +
-                              " " +
-                              _vm._s(_vm.order["shipping_last_name"])
-                          )
+                          _vm._v("Name: " + _vm._s(_vm.order["billing_name"]))
                         ]),
                         _vm._v(" "),
-                        _c("h5", [_vm._v("Shipping Address")]),
+                        _c("h5", [_vm._v("Address")]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _c("div", [
+                            _vm._v(
+                              _vm._s(_vm.order["billing_address"]) +
+                                ", " +
+                                _vm._s(_vm.order["billing_city"]) +
+                                ","
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v(
+                              _vm._s(_vm.order["billing_state"]) +
+                                ", " +
+                                _vm._s(_vm.order["billing_postcode"]) +
+                                "."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v("Phone: " + _vm._s(_vm.order["billing_phone"]))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("v-flex", { attrs: { xs4: "", "text-xs-left": "" } }, [
+                        _c("h4", [_vm._v("Shipment Information")]),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v("Name: " + _vm._s(_vm.order["shipping_name"]))
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("Address")]),
                         _vm._v(" "),
                         _c("span", [
                           _c("div", [
@@ -46717,45 +47604,53 @@ var render = function() {
                             _vm._v(
                               _vm._s(_vm.order["shipping_state"]) +
                                 ", " +
-                                _vm._s(_vm.order["postcode"]) +
+                                _vm._s(_vm.order["shipping_postcode"]) +
                                 "."
                             )
                           ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v(
+                            "Phone: " + _vm._s(_vm.order["shipping_phone"])
+                          )
                         ])
                       ]),
                       _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs6: "", "text-xs-right": "" } },
-                        [
-                          _c("h5", [
-                            _vm._v("Subtotal: " + _vm._s(_vm.order["subtotal"]))
-                          ]),
-                          _vm._v(" "),
-                          _vm.order["shipping_price"]
-                            ? _c("h5", [
-                                _vm._v(
-                                  "Shipping Price: " +
-                                    _vm._s(_vm.order["shipping_price"])
-                                )
-                              ])
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c("h5", [
-                            _vm._v("Total: " + _vm._s(_vm.order["total"]))
-                          ]),
-                          _vm._v(" "),
-                          _c("h5", [
-                            _vm._v("Status: " + _vm._s(_vm.order["status"]))
-                          ]),
-                          _vm._v(" "),
-                          _vm.order["note"]
-                            ? _c("h5", [
-                                _vm._v("Note: " + _vm._s(_vm.order["note"]))
-                              ])
-                            : _vm._e()
-                        ]
-                      )
+                      _c("v-flex", { attrs: { xs4: "", "text-xs-left": "" } }, [
+                        _c("h4", [_vm._v("Billing Information")]),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v("Subtotal: " + _vm._s(_vm.order["subtotal"]))
+                        ]),
+                        _vm._v(" "),
+                        _vm.order["shipping_price"]
+                          ? _c("h5", [
+                              _vm._v(
+                                "Shipping Price: " +
+                                  _vm._s(_vm.order["shipping_price"])
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v("Total: " + _vm._s(_vm.order["total"]))
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v("Status: " + _vm._s(_vm.order["status"]))
+                        ]),
+                        _vm._v(" "),
+                        _vm.order["note"]
+                          ? _c("h5", [
+                              _vm._v("Note: " + _vm._s(_vm.order["note"]))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v("Pickup Option: " + _vm._s(_vm.pickupOption))
+                        ])
+                      ])
                     ],
                     1
                   ),
@@ -46764,7 +47659,6 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "v-layout",
-                    { attrs: { row: "", wrap: "" } },
                     [
                       _c(
                         "v-flex",
@@ -46784,12 +47678,12 @@ var render = function() {
                   {
                     key: key,
                     staticStyle: { padding: "0px 24px 24px 24px !important" },
-                    attrs: { "grid-list-md": "" }
+                    attrs: { fluid: "" }
                   },
                   [
                     _c(
                       "v-layout",
-                      { attrs: { row: "", wrap: "", "text-xs-left": "" } },
+                      { attrs: { "text-xs-left": "" } },
                       [
                         _c("v-flex", { attrs: { xs6: "" } }, [
                           _c("img", {
@@ -46805,6 +47699,10 @@ var render = function() {
                         _c("v-flex", { attrs: { xs6: "" } }, [
                           _c("div", [
                             _c("b", [_vm._v("Name: " + _vm._s(item.name))])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("b", [_vm._v("Model: " + _vm._s(item.model))])
                           ]),
                           _vm._v(" "),
                           _c("div", [

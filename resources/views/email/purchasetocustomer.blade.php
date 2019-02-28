@@ -1,5 +1,5 @@
 <div>
-	Hi {{$order->shipping_name}},
+	Hi {{$order->billing_name}},
 </div>
 
 <div>Your purchases from Kalt are made successfully.</div>

@@ -35,14 +35,20 @@ class OrderController extends Controller
         'billing_state' => 'required|string|max:255',
         'billing_postcode' => 'required|string|max:255',
         'billing_email' => 'required|string|email|max:255',
-        'billing_phone' => 'required|string|max:255',
+        'billing_phone' => array(
+                                'required',
+                                'regex:/^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/'
+                            ),
         'shipping_name' => 'required_if:different_shipping,true',
         'shipping_address'=> 'required_if:different_shipping,true',
         'shipping_city'=> 'required_if:different_shipping,true',
         'shipping_state'=> 'required_if:different_shipping,true',
         'shipping_postcode'=> 'required_if:different_shipping,true',
         'shipping_email'=> 'required_if:different_shipping,true',
-        'shipping_phone'=> 'required_if:different_shipping,true'
+        'shipping_phone'=> array(
+                                'required_if:different_shipping,true',
+                                'regex:/^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/'
+                            ),
     );
 
     public $messages = array(
@@ -107,56 +113,16 @@ class OrderController extends Controller
                 $collectionBill = $this->createBill($request, $billplz, $collectionResponse['id']);
                 $redirectUrl = $collectionBill['url'];
                 $order = $this->createOrder($request, $collectionResponse['id'], $collectionBill['id']);
-                // $order = $this->createOrder($request, 1, 1);
                 $this->createItem($order);
-
-                // $items = Item::where('order_id', $order->id)->get();
-                // dd($items);
 
                 Common::deleteCart();
                 Cart::destroy();
 
-                // $pdfJob = new GeneratePDF($order, $items);
-                // $this->dispatch($pdfJob->delay(60 * 5));
-                // return redirect($collectionBill['url']);
-                // $pdfInvoice = new Dompdf();
-                // $test = \View::make('pdf.invoice', ['order' => $order, 'items' => $items])->render();
-                // $pdfInvoice->loadHtml($test);
-                // $pdfInvoice->render();
-                // $outputInvoice = $pdfInvoice->output();
-                // file_put_contents('storage/invoices/'. $order->id . '.pdf', $outputInvoice);
-
-                // $pdfReceipt = new Dompdf();
-                // $pdfReceipt->loadHtml('pdf.receipt', ['order' => $order, 'items' => $items]);
-                // $pdfReceipt->render();
-                // $outputReceipt = $pdfReceipt->output();
-                // file_put_contents('storage/receipts/'. $order->id . '.pdf', $outputReceipt);
-
-                // $pdfDeliverOrder = new Dompdf();
-                // $pdfDeliverOrder->loadHtml('pdf.deliveryOrder', ['order' => $order, 'items' => $items]);
-                // $pdfDeliverOrder->render();
-                // $outputDeliverOrder = $pdfDeliverOrder->output();
-                // file_put_contents('storage/deliveryOrders/'. $order->id . '.pdf', $outputDeliverOrder);
-                
-                // dd($redirectUrl . '<br>');
                 return response(['url' => $redirectUrl]);
-                // return response(200);
         }
         catch (\Exception $e) {
             return response(500);
         }
-        
-
-        // $collectionClient = new Client(['auth' => ['aa1451d2-6df3-4f7c-9d0b-14a098e0bf56', '']]);
-
-        // $response = $collectionClient->post('https://billplz-staging.herokuapp.com/api/v3/collections', [
-        //     'form_params' => [
-        //         'title' => 'test1',
-        //     ],
-        // ]);
-
-        // $response = json_decode($response->getBody(), true);
-
     
     }
 
@@ -170,9 +136,11 @@ class OrderController extends Controller
             null,
             $request->billing_name,
             $request->total * 100,
-            'https://test.kalt.com.my/api/order/completed',
+            'http://kalt.local//api/order/completed',
+            // 'https://test.kalt.com.my/api/order/completed',
             $request->billing_name . ' bill',
-            ['redirect_url' => 'https://test.kalt.com.my/api/order/completed']
+            ['redirect_url' => 'http://kalt.local//api/order/completed']
+            // ['redirect_url' => 'https://test.kalt.com.my/api/order/completed']
         );
 
         return $response->toArray();
@@ -254,6 +222,7 @@ class OrderController extends Controller
                        'name' => $cart->name,
                        'description' => Product::find($cart->id)->description,
                        'price' => $cart->price,
+                       'model' => $cart->options['model'],
                        'image_path' => Product::find($cart->id)->image_path,
                        'qty' => $cart->qty,
                        'installation_type' => $cart->options['installation'],
@@ -331,7 +300,7 @@ class OrderController extends Controller
             $pdfDeliverOrder->save('storage/deliveryOrders/'. $order->id . '.pdf');
 
             Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($order));
-            Mail::to($order->shipping_email)->send(new PurchaseToCustomerEmail($order));
+            Mail::to($order->billing_email)->send(new PurchaseToCustomerEmail($order));
         }
             
         return view('checkout.thankyou', ['status' => $status]);

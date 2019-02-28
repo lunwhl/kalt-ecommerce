@@ -6,13 +6,26 @@
 
 @section('to')
 	<br>
-	<b>TO:</b><br>
-	{{ $order->billing_name }}<br>
-	{{ $order->billing_address }}
 @endsection
 
 @section('extra')
 	Date: {{ $order->updated_at->format("jS M Y") }}
+	<br>
+	<br>
+	<b>Shipment Information</b><br>
+	<b>Name:</b> {{ $order->shipping_name }}<br>
+	<b>Address</b><br>
+	{{ $order->shipping_address }}, {{$order->shipping_city}}, <br>
+	{{ $order->shipping_postcode }}, {{ $order->shipping_state}} <br>
+	<b>Phone: </b>{{$order->shipping_phone}} <br>
+	<b>Pickup Option: </b>
+	@if($order->pickup == 'mainland') 
+		Delivery within Penang Mainland
+	@elseif($order->pickup == 'delivery')
+		Delivery within Penang Island
+	@else
+		Store Pick Up
+	@endif
 @endsection
 
 @section('content')
@@ -20,10 +33,11 @@
 		<thead>
 			<tr>
 				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Name</th>
+				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Model</th>
 				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Qty</th>
 				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Installation Type</th>
-				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Installation Price (Per Unit)</th>
-				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Price (Per Unit)</th>
+				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Installation Price (Unit)</th>
+				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Price (Unit)</th>
 				<th style="padding: 10px 0; border-top: 2px solid black; border-bottom: 2px solid black">Amount ({{ $order->is_std ? "USD" : "RM" }})</th>
 			</tr>
 		</thead>
@@ -31,6 +45,7 @@
 			@foreach($order->items as $item)
 				<tr>
 					<td style="padding-top:10px;">{{ $item->name }}</td>
+					<td style="padding-top:10px;">{{ $item->model }}</td>
 					<td class="text-center" style="padding-top:10px;">{{ $item->qty }}</td>
 					<td class="text-center" style="padding-top:10px;">{{ $item->installation_type }}</td>
 					<td class="text-center" style="padding-top:10px;">{{ $item->installation_price }}</td>
@@ -45,6 +60,7 @@
 					<td></td>
 					<td></td>
 					<td></td>
+					<td></td>
 					<td class="text-center" style="padding-top:10px;">
 						<b>{{ number_format($order->shipping_price, 2, ".", ",") }}</b>
 					</td>
@@ -53,6 +69,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
+				<td style="border-top:1px solid black"></td>
 				<td style="border-top:1px solid black"></td>
 				<td style="border-top:1px solid black"></td>
 				<td style="border-top:1px solid black"></td>

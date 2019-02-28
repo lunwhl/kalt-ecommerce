@@ -116,6 +116,7 @@
 		                                            <div class="h6"><a :href="/product/+cart.id">{{cart.name}}</a></div>
 		                                            <div class="simple-article size-3">Installation: {{cart['options']['installation']}}</div>
 		                                            <div class="simple-article size-1">QUANTITY: {{cart.qty}}</div>
+		                                        	<div class="simple-article size-1">{{cart['options']['model']}}</div>
 		                                        </td>
 		                                        <td>
 		                                            <div class="simple-article size-1">RM {{cart.price}}</div>
@@ -125,6 +126,16 @@
 		                                    </tr>
 		                                </tbody>
 		                            </table>
+		                        </div>
+		                    </div>
+		                    <div class="order-details-entry simple-article size-3 uppercase">
+		                        <div class="row">
+		                            <div class="col-xs-6">
+		                                pickup option
+		                            </div>
+		                            <div class="col-xs-6 col-xs-text-right">
+		                                <div class="color">{{pickupOption}}</div>
+		                            </div>
 		                        </div>
 		                    </div>
 		                    <div class="order-details-entry simple-article size-3 uppercase">
@@ -228,10 +239,11 @@
         methods: {
         	submitOrder() {
     			window.event.$emit("loading", {'openDialog': true});
+    			let units = _.sumBy(this.carts.cart, function(item){ return parseInt(item.qty); });
         		this.form.subtotal = this.subTotal;
         		this.form.total = this.total;
         		this.form.pickup = this.shipping;
-        		this.form.shipping_price = this.deliveryCharge == 'pickup' ? 0 : 20;
+        		this.form.shipping_price = this.deliveryCharge == 'delivery' ? units * 20 : 0;
         		let url = '/api/order';
         		this.form.post(url, this.form)
     				.then(response => this.submitOrderSuccess(response));
@@ -293,12 +305,25 @@
 
         	total() {
         		let total = 0;
-        		return this.subTotal + (this.deliveryCharge != 'delivery' ? 0 : 20);
+        		let units = _.sumBy(this.carts.cart, function(item){ return parseInt(item.qty); });
+        		return this.subTotal + (this.deliveryCharge != 'delivery' ? 0 : units * 20);
         	},
 
         	deliveryTotal() {
-        		return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM 20' ;
+        		let units = _.sumBy(this.carts.cart, function(item){ return parseInt(item.qty); });
+        		return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM ' + units * 20 ;
         	},
+
+        	pickupOption() {
+        		if(this.shipping == 'mainland')
+        			return 'Delivery within Penang Mainland';
+
+        		if(this.shipping == 'pickup')
+        			return 'Store Pick Up';
+
+        		if(this.shipping == 'delivery')
+        			return 'Delivery within Penang Island';
+        	}
         },
     }
 </script>

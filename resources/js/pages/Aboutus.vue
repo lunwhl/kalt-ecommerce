@@ -323,6 +323,206 @@
 						                </v-img>
 						              </v-card>
 						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6580.jpg')"
+						                 src="/images/IMG_6580.jpg"
+						                  lazy-src="/images/IMG_6580jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6581.jpg')"
+						                 src="/images/IMG_6581.jpg"
+						                  lazy-src="/images/IMG_6581.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6582.jpg')"
+						                 src="/images/IMG_6582.jpg"
+						                  lazy-src="/images/IMG_6582.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6583.jpg')"
+						                 src="/images/IMG_6583.jpg"
+						                  lazy-src="/images/IMG_6583.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6584.jpg')"
+						                 src="/images/IMG_6584.jpg"
+						                  lazy-src="/images/IMG_6584.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6585.jpg')"
+						                 src="/images/IMG_6585.jpg"
+						                  lazy-src="/images/IMG_6585.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6587.jpg')"
+						                 src="/images/IMG_6587.jpg"
+						                  lazy-src="/images/IMG_6587.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
+						            <v-flex
+						              xs3
+						              d-flex
+						            >
+						              <v-card flat tile class="d-flex">
+						                <v-img
+						                style="cursor: pointer;"
+						                	@click="imageInModal('IMG_6590.jpg')"
+						                 src="/images/IMG_6590.jpg"
+						                  lazy-src="/images/IMG_6590.jpg"
+						                  aspect-ratio="1"
+						                  class="grey lighten-2 shop-image"
+						                >
+						                  <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                  >
+						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						                  </v-layout>
+						                </v-img>
+						              </v-card>
+						            </v-flex>
 						          </v-layout>
 						        </v-container>
 						    </v-flex>

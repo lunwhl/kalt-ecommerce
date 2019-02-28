@@ -139,7 +139,7 @@ class CartController extends Controller
         $processed_product[$index]['name'] = $product->name;
         $processed_product[$index]['qty'] = request()->qty ? request()->qty : 1;
         $processed_product[$index]['price'] = $product->price;
-        $processed_product[$index]['options'] = ['installation' => 'none', 'productTotalPrice' => $product->price, 'installationPrice' => 0];
+        $processed_product[$index]['options'] = ['model' => $product->model, 'installation' => 'none', 'installationLabel' => 'none', 'productTotalPrice' => $product->price, 'installationPrice' => 0];
 
         Cart::add($processed_product);
         $cart = Cart::content();
@@ -172,12 +172,14 @@ class CartController extends Controller
     public function updateInstallation()
     {
         $request = json_decode(request()->getContent(), true);
+        $carts = $request['carts'][0]['cart'];
+        // dd($request);
 
         if(request()->has('type')){
-            $product = Product::with('categories')->find($request['id']);
+            $product = Product::with('categories')->find($request['cart']['id']);
 
             if(request()->type == 'none')
-                return response(['installationPrice' => $product->price]);
+                return $this->updateCartAfterInstallation($carts, $request, 'none', 'none', true, 0, $product->price);
 
             $type = $product->categories->where('type', 'type')->first();
             $hp = $product->categories->where('type', 'horsepower')->first();
@@ -209,12 +211,68 @@ class CartController extends Controller
                                             ->sortBy('any_count')
                                             ->first();
             else
-                return response(['installationPrice' => $product->price]);
+                return $this->updateCartAfterInstallation($carts, $request, 'none', request()->type, true, 0, $product->price);
+
+            // $item = Cart::get($request['rowId']);
+            // dd($item);
+            // $option = $item->options;
+            // dd($option);
             
-            if($installation)
-                return response(['installationPrice' => $product->price + $installation->price]);
-            else
-                return response(['installationPrice' => $product->price]);
+            if($installation) {
+
+
+                return $this->updateCartAfterInstallation($carts, $request, request()->type, request()->type, false, $installation->price, $product->price);
+                
+            }
+            else 
+            {
+                return $this->updateCartAfterInstallation($carts, $request, 'none', request()->type, true, 0, $product->price);
+            }
         }
+    }
+
+    public function updateCartAfterInstallation($carts, $request, $type, $typeLabel, $checkInstallation, $installationPrice, $productPrice) 
+    {
+        foreach($carts as $key => $cart)
+            {
+                if($cart['rowId'] == $request['cart']['rowId'])
+                {
+                     $carts[$key]['options']['installation'] = $type;
+                     $carts[$key]['options']['installationLabel'] = $typeLabel;
+                     $carts[$key]['options']['installationPrice'] = $installationPrice;
+                     $carts[$key]['options']['productTotalPrice'] = $productPrice + $installationPrice;
+                     $carts[$key]['options']['checkInstallation'] = $checkInstallation;
+                }
+            }
+        Cart::destroy();
+        Cart::add($carts);
+
+        Common::addCartDependAuth();
+
+        $carts = $this->getCartByAuth();
+
+        return response(['cart' => $carts]);
+    }
+
+    public function updateQuantity() 
+    {
+        $request = json_decode(request()->getContent(), true);
+        $carts = $request['carts'][0]['cart'];
+
+        foreach($carts as $key => $cart)
+            {
+                if($cart['rowId'] == $request['cart']['rowId'])
+                {
+                     $carts[$key]['qty'] = request()->qty;
+                }
+            }
+        Cart::destroy();
+        Cart::add($carts);
+
+        Common::addCartDependAuth();
+
+        $carts = $this->getCartByAuth();
+
+        return response(['cart' => $carts]);
     }
 }

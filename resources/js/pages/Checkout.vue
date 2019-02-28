@@ -323,6 +323,9 @@
 
         		if(this.shipping == 'delivery')
         			return 'Delivery within Penang Island';
+
+        		if(this.shipping == 'installation')
+        			return 'Delivery with installation';
         	}
         },
     }

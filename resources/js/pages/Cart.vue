@@ -140,7 +140,7 @@
 	                    <h4 class="h4 ">Pick up option</h4>
 	                    <div @click="deliveryModal" style="color: #888;"><span class="tos">Delivery Policy</span></div>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
-								<v-radio value="pickup">
+								<v-radio value="pickup" :disabled="hasInstallation">
 									<div class="d-flex" slot="label">
 										<div style="margin-right: 10px;">Store Pick Up (Free)</div>
 										<v-tooltip right tag="div">
@@ -151,7 +151,7 @@
 										</v-tooltip>
 									</div>
 								</v-radio>
-								<v-radio value="mainland">
+								<v-radio value="mainland" :disabled="hasInstallation">
 									<div class="d-flex" slot="label">
 										<div style="margin-right: 10px;">Delivery within Penang Mainland</div>
 										<v-tooltip right tag="div">
@@ -162,7 +162,7 @@
 										</v-tooltip>
 									</div>
 								</v-radio>
-								<v-radio value="delivery">
+								<v-radio value="delivery" :disabled="hasInstallation">
 									<div class="d-flex" slot="label">
 										<div style="margin-right: 10px;">Delivery within Penang Island</div>
 										<v-tooltip right tag="div">
@@ -170,6 +170,17 @@
 												<div class="tooltip-extend" style="cursor: pointer;">?</div>
 											</template>
 											Multiple floor shipment will have additional charge
+										</v-tooltip>
+									</div>
+								</v-radio>
+								<v-radio value="installation" :disabled="!hasInstallation">
+									<div class="d-flex" slot="label">
+										<div style="margin-right: 10px;">Delivery with installation</div>
+										<v-tooltip right tag="div">
+											<template slot="activator">
+												<div class="tooltip-extend" style="cursor: pointer;">?</div>
+											</template>
+											Delivery fee waived with installation
 										</v-tooltip>
 									</div>
 								</v-radio>
@@ -275,7 +286,6 @@
     			products: [],
     			radios: 'pickup',
     			deliveryNotice: false,
-    			deliveryCharge: 0,
     			policyCheck: false,
     			title: '',
     			message: '',
@@ -336,14 +346,7 @@
         	},
 
         	changeRadio() {
-        		if(this.radios == 'delivery'){
-        			this.deliveryNotice = true;
-        			let units = _.sumBy(this.carts[0]['cart'], function(item){ return parseInt(item.qty); });
-        			this.deliveryCharge = 20 * units;
-        		} else {
-        			this.deliveryNotice = false;
-        			this.deliveryCharge = 0;
-        		}
+        		this.deliveryNotice = this.radios == 'delivery';
         	},
 
         	checkboxCategory() {
@@ -457,6 +460,13 @@
         },
 
         computed: {
+        	deliveryCharge() {
+        		if(this.radios == 'delivery')
+        			return _.sumBy(this.carts[0].cart, function(item){ return item.qty * 20; });
+
+        		return 0;
+        	},
+
         	subTotal() {
         		let subTotal = 0;
 
@@ -476,6 +486,23 @@
         	deliveryTotal() {
         		return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'Free';
         	},
+
+        	hasInstallation() {
+        		if(this.carts[0] && this.carts[0].cart)
+        			return _.findIndex(this.carts[0].cart, function(item){ return item.options.installation != 'none'; }) != -1;
+
+        		return false;
+        	}
         },
+
+        watch: {
+        	hasInstallation(newVal) {
+        		if(newVal && this.radios != 'installation') {
+        			this.radios = 'installation';
+        		} else if(!newVal && this.radios == 'installation') {
+        			this.radios = 'pickup';
+        		}
+        	}
+        }
     }
 </script>

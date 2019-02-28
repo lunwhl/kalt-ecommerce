@@ -23,6 +23,8 @@
 		Delivery within Penang Mainland
 	@elseif($order->pickup == 'delivery')
 		Delivery within Penang Island
+	@elseif($order->pickup == 'installation')
+		Delivery with installation
 	@else
 		Store Pick Up
 	@endif

@@ -53,13 +53,9 @@
 					<div class="container">
 						<h3 class="container-fluid gotham-bold" style="font-size: 20px;">WHERE WE ARE</h3>
 						<div class="row" style="font-size: 18px;">
-							<div class="container-fluid row">
-								<div class="col-md-6">
-									<div class="container-fluid">Our warehouse is located in Bukit Mertajam, Pulau Pinang.</div>
-								</div>
-							</div>
 							<div class="row container-fluid">
 								<div class="col-md-6">
+									<div class="container-fluid">Our warehouse is located in Bukit Mertajam, Pulau Pinang.</div>
 									<div class="container-fluid">You can find us here.</div>
 									</br>
 									<div class="container-fluid"><b>Kalt Air Conditioning Sdn. Bhd.</b></div>
@@ -78,8 +74,8 @@
 									<div class="container-fluid">G. Staff Pantry</div>
 								</div>
 								<div class="col-md-6">
-									<img style="margin-bottom:10px;" src="/images/kalt-company.png" />
-									<img src="/images/warehouse.png" />
+									<img style="margin-bottom:10px;" src="/images/kalt-shop-01.jpg" />
+									<img src="/images/IMG_6590.jpg" />
 								</div>
 							</div>
 						</div>
@@ -215,7 +211,7 @@
 				</div> -->
 
 
-				<div class="subscribe-section container-fluid no-padding" id="shop">
+				<div class="subscribe-section container-fluid no-padding" id="shop" style="margin-top: 25px">
 					<div class="container">
 						<div class="section-header" style="margin-bottom: 20px;">
 							<h3 class="dark-blue">Our Shop</h3>
@@ -227,107 +223,7 @@
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
-						                <v-img
-						                style="cursor: pointer;"
-						                	@click="imageInModal('61_big.jpg')"
-						                 src="/images/61_big.jpg"
-						                  lazy-src="/images/61_big.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile class="d-flex">
-						                <v-img
-							                style="cursor: pointer;"
-							                	@click="imageInModal('display.jpg')"
-							                 src="/images/display.jpg"
-						                  lazy-src="/images/display.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile class="d-flex">
-						                <v-img
-						                style="cursor: pointer;"
-						                	@click="imageInModal('service.jpg')"
-						                 src="/images/service.jpg"
-						                  lazy-src="/images/service.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile class="d-flex">
-						                <v-img
-						                style="cursor: pointer;"
-						                	@click="imageInModal('aircond-brand.jpg')"
-						                 src="/images/aircond-brand.jpg"
-						                  lazy-src="/images/aircond-brand.jpg"
-						                  aspect-ratio="1"
-						                  class="grey lighten-2 shop-image"
-						                >
-						                  <v-layout
-						                    slot="placeholder"
-						                    fill-height
-						                    align-center
-						                    justify-center
-						                    ma-0
-						                  >
-						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-						                  </v-layout>
-						                </v-img>
-						              </v-card>
-						            </v-flex>
-						            <v-flex
-						              xs3
-						              d-flex
-						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6580.jpg')"
@@ -346,13 +242,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Kalt Shop</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6581.jpg')"
@@ -371,13 +268,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Admin office</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6582.jpg')"
@@ -396,13 +294,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Customer service counter</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6583.jpg')"
@@ -421,13 +320,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Repair and Service area</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6584.jpg')"
@@ -446,13 +346,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Warehouse 2</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6585.jpg')"
@@ -471,13 +372,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Warehouse 3</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6587.jpg')"
@@ -496,13 +398,14 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Kalt Shop - Air Cond, Spare Part and Accessories</div>
 						              </v-card>
 						            </v-flex>
 						            <v-flex
 						              xs3
 						              d-flex
 						            >
-						              <v-card flat tile class="d-flex">
+						              <v-card flat tile>
 						                <v-img
 						                style="cursor: pointer;"
 						                	@click="imageInModal('IMG_6590.jpg')"
@@ -521,6 +424,7 @@
 						                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
 						                  </v-layout>
 						                </v-img>
+						                <div class="gallery-title">Warehouse 1</div>
 						              </v-card>
 						            </v-flex>
 						          </v-layout>
@@ -534,7 +438,7 @@
 			      <v-card>
 			        <v-card-text style="text-align:center;">
 			          <img style="width: 750px;" :src="enlargeImage" />
-			        </v-card-text>
+			      	</v-card-text>
 			      </v-card>
 			    </v-dialog>
 				<login></login>

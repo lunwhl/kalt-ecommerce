@@ -3074,3 +3074,11 @@ hr.hori {
   background: #40c7f2;
   color: white;
 }
+
+.gallery-title {
+  background: rgba(255,255,255,0.7);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.2rem;
+}

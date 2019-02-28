@@ -32102,6 +32102,78 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -35439,26 +35511,202 @@ var render = function() {
                   staticStyle: { "margin-bottom": "10px" }
                 },
                 [
-                  _c("img", {
-                    staticClass: "our-shop-pictures",
-                    attrs: { src: "/images/61_big.jpg" }
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass: "our-shop-pictures",
-                    attrs: { src: "/images/display.jpg" }
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass: "our-shop-pictures",
-                    attrs: { src: "/images/service.jpg" }
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass: "our-shop-pictures",
-                    attrs: { src: "/images/aircond-brand.jpg" }
-                  })
-                ]
+                  _c(
+                    "v-flex",
+                    { attrs: { "d-flex": "" } },
+                    [
+                      _c(
+                        "v-card",
+                        {
+                          staticClass: "d-flex",
+                          attrs: { flat: "", tile: "" }
+                        },
+                        [
+                          _c(
+                            "v-img",
+                            {
+                              staticClass: "grey lighten-2 shop-image",
+                              attrs: {
+                                src: "/images/IMG_6587.jpg",
+                                "lazy-src": "/images/IMG_6587.jpg",
+                                "aspect-ratio": "1"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-layout",
+                                {
+                                  attrs: {
+                                    slot: "placeholder",
+                                    "fill-height": "",
+                                    "align-center": "",
+                                    "justify-center": "",
+                                    "ma-0": ""
+                                  },
+                                  slot: "placeholder"
+                                },
+                                [
+                                  _c("v-progress-circular", {
+                                    attrs: {
+                                      indeterminate: "",
+                                      color: "grey lighten-5"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        {
+                          staticClass: "d-flex",
+                          attrs: { flat: "", tile: "" }
+                        },
+                        [
+                          _c(
+                            "v-img",
+                            {
+                              staticClass: "grey lighten-2 shop-image",
+                              attrs: {
+                                src: "/images/IMG_6580.jpg",
+                                "lazy-src": "/images/IMG_6580.jpg",
+                                "aspect-ratio": "1"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-layout",
+                                {
+                                  attrs: {
+                                    slot: "placeholder",
+                                    "fill-height": "",
+                                    "align-center": "",
+                                    "justify-center": "",
+                                    "ma-0": ""
+                                  },
+                                  slot: "placeholder"
+                                },
+                                [
+                                  _c("v-progress-circular", {
+                                    attrs: {
+                                      indeterminate: "",
+                                      color: "grey lighten-5"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        {
+                          staticClass: "d-flex",
+                          attrs: { flat: "", tile: "" }
+                        },
+                        [
+                          _c(
+                            "v-img",
+                            {
+                              staticClass: "grey lighten-2 shop-image",
+                              attrs: {
+                                src: "/images/IMG_6582.jpg",
+                                "lazy-src": "/images/IMG_6582.jpg",
+                                "aspect-ratio": "1"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-layout",
+                                {
+                                  attrs: {
+                                    slot: "placeholder",
+                                    "fill-height": "",
+                                    "align-center": "",
+                                    "justify-center": "",
+                                    "ma-0": ""
+                                  },
+                                  slot: "placeholder"
+                                },
+                                [
+                                  _c("v-progress-circular", {
+                                    attrs: {
+                                      indeterminate: "",
+                                      color: "grey lighten-5"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        {
+                          staticClass: "d-flex",
+                          attrs: { flat: "", tile: "" }
+                        },
+                        [
+                          _c(
+                            "v-img",
+                            {
+                              staticClass: "grey lighten-2 shop-image",
+                              attrs: {
+                                src: "/images/IMG_6590.jpg",
+                                "lazy-src": "/images/IMG_6590.jpg",
+                                "aspect-ratio": "1"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-layout",
+                                {
+                                  attrs: {
+                                    slot: "placeholder",
+                                    "fill-height": "",
+                                    "align-center": "",
+                                    "justify-center": "",
+                                    "ma-0": ""
+                                  },
+                                  slot: "placeholder"
+                                },
+                                [
+                                  _c("v-progress-circular", {
+                                    attrs: {
+                                      indeterminate: "",
+                                      color: "grey lighten-5"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
               ),
               _vm._v(" "),
               _c("div", { staticClass: "light-to-dark-blue" }, [
@@ -36489,6 +36737,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -36516,7 +36775,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             products: [],
             radios: 'pickup',
             deliveryNotice: false,
-            deliveryCharge: 0,
             policyCheck: false,
             title: '',
             message: '',
@@ -36569,16 +36827,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         changeRadio: function changeRadio() {
-            if (this.radios == 'delivery') {
-                this.deliveryNotice = true;
-                var units = _.sumBy(this.carts[0]['cart'], function (item) {
-                    return parseInt(item.qty);
-                });
-                this.deliveryCharge = 20 * units;
-            } else {
-                this.deliveryNotice = false;
-                this.deliveryCharge = 0;
-            }
+            this.deliveryNotice = this.radios == 'delivery';
         },
         checkboxCategory: function checkboxCategory() {
             var _this2 = this;
@@ -36698,6 +36947,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     computed: {
+        deliveryCharge: function deliveryCharge() {
+            if (this.radios == 'delivery') return _.sumBy(this.carts[0].cart, function (item) {
+                return item.qty * 20;
+            });
+
+            return 0;
+        },
         subTotal: function subTotal() {
             var subTotal = 0;
 
@@ -36713,6 +36969,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         deliveryTotal: function deliveryTotal() {
             return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'Free';
+        },
+        hasInstallation: function hasInstallation() {
+            if (this.carts[0] && this.carts[0].cart) return _.findIndex(this.carts[0].cart, function (item) {
+                return item.options.installation != 'none';
+            }) != -1;
+
+            return false;
+        }
+    },
+
+    watch: {
+        hasInstallation: function hasInstallation(newVal) {
+            if (newVal && this.radios != 'installation') {
+                this.radios = 'installation';
+            } else if (!newVal && this.radios == 'installation') {
+                this.radios = 'pickup';
+            }
         }
     }
 });
@@ -38352,125 +38625,201 @@ var render = function() {
                       }
                     },
                     [
-                      _c("v-radio", { attrs: { value: "pickup" } }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "d-flex",
-                            attrs: { slot: "label" },
-                            slot: "label"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticStyle: { "margin-right": "10px" } },
-                              [_vm._v("Store Pick Up (Free)")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-tooltip",
-                              { attrs: { right: "", tag: "div" } },
-                              [
-                                _c("template", { slot: "activator" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "tooltip-extend",
-                                      staticStyle: { cursor: "pointer" }
-                                    },
-                                    [_vm._v("?")]
+                      _c(
+                        "v-radio",
+                        {
+                          attrs: {
+                            value: "pickup",
+                            disabled: _vm.hasInstallation
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex",
+                              attrs: { slot: "label" },
+                              slot: "label"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticStyle: { "margin-right": "10px" } },
+                                [_vm._v("Store Pick Up (Free)")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tooltip",
+                                { attrs: { right: "", tag: "div" } },
+                                [
+                                  _c("template", { slot: "activator" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "tooltip-extend",
+                                        staticStyle: { cursor: "pointer" }
+                                      },
+                                      [_vm._v("?")]
+                                    )
+                                  ]),
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\t\t\t\tPlease bring along the invoice for pick up\n\t\t\t\t\t\t\t\t\t\t"
                                   )
-                                ]),
-                                _vm._v(
-                                  "\n\t\t\t\t\t\t\t\t\t\t\tPlease bring along the invoice for pick up\n\t\t\t\t\t\t\t\t\t\t"
-                                )
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        )
-                      ]),
+                                ],
+                                2
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("v-radio", { attrs: { value: "mainland" } }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "d-flex",
-                            attrs: { slot: "label" },
-                            slot: "label"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticStyle: { "margin-right": "10px" } },
-                              [_vm._v("Delivery within Penang Mainland")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-tooltip",
-                              { attrs: { right: "", tag: "div" } },
-                              [
-                                _c("template", { slot: "activator" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "tooltip-extend",
-                                      staticStyle: { cursor: "pointer" }
-                                    },
-                                    [_vm._v("?")]
+                      _c(
+                        "v-radio",
+                        {
+                          attrs: {
+                            value: "mainland",
+                            disabled: _vm.hasInstallation
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex",
+                              attrs: { slot: "label" },
+                              slot: "label"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticStyle: { "margin-right": "10px" } },
+                                [_vm._v("Delivery within Penang Mainland")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tooltip",
+                                { attrs: { right: "", tag: "div" } },
+                                [
+                                  _c("template", { slot: "activator" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "tooltip-extend",
+                                        staticStyle: { cursor: "pointer" }
+                                      },
+                                      [_vm._v("?")]
+                                    )
+                                  ]),
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\t\t\t\tMultiple floor shipment will have additional charge\n\t\t\t\t\t\t\t\t\t\t"
                                   )
-                                ]),
-                                _vm._v(
-                                  "\n\t\t\t\t\t\t\t\t\t\t\tMultiple floor shipment will have additional charge\n\t\t\t\t\t\t\t\t\t\t"
-                                )
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        )
-                      ]),
+                                ],
+                                2
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("v-radio", { attrs: { value: "delivery" } }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "d-flex",
-                            attrs: { slot: "label" },
-                            slot: "label"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticStyle: { "margin-right": "10px" } },
-                              [_vm._v("Delivery within Penang Island")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-tooltip",
-                              { attrs: { right: "", tag: "div" } },
-                              [
-                                _c("template", { slot: "activator" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "tooltip-extend",
-                                      staticStyle: { cursor: "pointer" }
-                                    },
-                                    [_vm._v("?")]
+                      _c(
+                        "v-radio",
+                        {
+                          attrs: {
+                            value: "delivery",
+                            disabled: _vm.hasInstallation
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex",
+                              attrs: { slot: "label" },
+                              slot: "label"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticStyle: { "margin-right": "10px" } },
+                                [_vm._v("Delivery within Penang Island")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tooltip",
+                                { attrs: { right: "", tag: "div" } },
+                                [
+                                  _c("template", { slot: "activator" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "tooltip-extend",
+                                        staticStyle: { cursor: "pointer" }
+                                      },
+                                      [_vm._v("?")]
+                                    )
+                                  ]),
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\t\t\t\tMultiple floor shipment will have additional charge\n\t\t\t\t\t\t\t\t\t\t"
                                   )
-                                ]),
-                                _vm._v(
-                                  "\n\t\t\t\t\t\t\t\t\t\t\tMultiple floor shipment will have additional charge\n\t\t\t\t\t\t\t\t\t\t"
-                                )
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        )
-                      ])
+                                ],
+                                2
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-radio",
+                        {
+                          attrs: {
+                            value: "installation",
+                            disabled: !_vm.hasInstallation
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex",
+                              attrs: { slot: "label" },
+                              slot: "label"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticStyle: { "margin-right": "10px" } },
+                                [_vm._v("Delivery with installation")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tooltip",
+                                { attrs: { right: "", tag: "div" } },
+                                [
+                                  _c("template", { slot: "activator" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "tooltip-extend",
+                                        staticStyle: { cursor: "pointer" }
+                                      },
+                                      [_vm._v("?")]
+                                    )
+                                  ]),
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\t\t\t\tDelivery fee waived with installation\n\t\t\t\t\t\t\t\t\t\t"
+                                  )
+                                ],
+                                2
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
                     ],
                     1
                   )
@@ -41037,102 +41386,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -41353,18 +41606,14 @@ var render = function() {
               "div",
               { staticClass: "row", staticStyle: { "font-size": "18px" } },
               [
-                _c("div", { staticClass: "container-fluid row" }, [
+                _c("div", { staticClass: "row container-fluid" }, [
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("div", { staticClass: "container-fluid" }, [
                       _vm._v(
                         "Our warehouse is located in Bukit Mertajam, Pulau Pinang."
                       )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row container-fluid" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
+                    ]),
+                    _vm._v(" "),
                     _c("div", { staticClass: "container-fluid" }, [
                       _vm._v("You can find us here.")
                     ]),
@@ -41431,10 +41680,10 @@ var render = function() {
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("img", {
                       staticStyle: { "margin-bottom": "10px" },
-                      attrs: { src: "/images/kalt-company.png" }
+                      attrs: { src: "/images/kalt-shop-01.jpg" }
                     }),
                     _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/warehouse.png" } })
+                    _c("img", { attrs: { src: "/images/IMG_6590.jpg" } })
                   ])
                 ])
               ]
@@ -41446,6 +41695,7 @@ var render = function() {
           "div",
           {
             staticClass: "subscribe-section container-fluid no-padding",
+            staticStyle: { "margin-top": "25px" },
             attrs: { id: "shop" }
           },
           [
@@ -41478,257 +41728,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/61_big.jpg",
-                                          "lazy-src": "/images/61_big.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal("61_big.jpg")
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/display.jpg",
-                                          "lazy-src": "/images/display.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal("display.jpg")
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/service.jpg",
-                                          "lazy-src": "/images/service.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal("service.jpg")
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
-                                  [
-                                    _c(
-                                      "v-img",
-                                      {
-                                        staticClass:
-                                          "grey lighten-2 shop-image",
-                                        staticStyle: { cursor: "pointer" },
-                                        attrs: {
-                                          src: "/images/aircond-brand.jpg",
-                                          "lazy-src":
-                                            "/images/aircond-brand.jpg",
-                                          "aspect-ratio": "1"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.imageInModal(
-                                              "aircond-brand.jpg"
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-layout",
-                                          {
-                                            attrs: {
-                                              slot: "placeholder",
-                                              "fill-height": "",
-                                              "align-center": "",
-                                              "justify-center": "",
-                                              "ma-0": ""
-                                            },
-                                            slot: "placeholder"
-                                          },
-                                          [
-                                            _c("v-progress-circular", {
-                                              attrs: {
-                                                indeterminate: "",
-                                                color: "grey lighten-5"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -41772,6 +41772,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Kalt Shop")]
                                     )
                                   ],
                                   1
@@ -41786,10 +41792,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -41833,6 +41836,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Admin office")]
                                     )
                                   ],
                                   1
@@ -41847,10 +41856,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -41894,6 +41900,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Customer service counter")]
                                     )
                                   ],
                                   1
@@ -41908,10 +41920,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -41955,6 +41964,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Repair and Service area")]
                                     )
                                   ],
                                   1
@@ -41969,10 +41984,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -42016,6 +42028,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Warehouse 2")]
                                     )
                                   ],
                                   1
@@ -42030,10 +42048,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -42077,6 +42092,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Warehouse 3")]
                                     )
                                   ],
                                   1
@@ -42091,10 +42112,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -42138,6 +42156,16 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [
+                                        _vm._v(
+                                          "Kalt Shop - Air Cond, Spare Part and Accessories"
+                                        )
+                                      ]
                                     )
                                   ],
                                   1
@@ -42152,10 +42180,7 @@ var render = function() {
                               [
                                 _c(
                                   "v-card",
-                                  {
-                                    staticClass: "d-flex",
-                                    attrs: { flat: "", tile: "" }
-                                  },
+                                  { attrs: { flat: "", tile: "" } },
                                   [
                                     _c(
                                       "v-img",
@@ -42199,6 +42224,12 @@ var render = function() {
                                         )
                                       ],
                                       1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "gallery-title" },
+                                      [_vm._v("Warehouse 1")]
                                     )
                                   ],
                                   1
@@ -45178,6 +45209,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.shipping == 'pickup') return 'Store Pick Up';
 
             if (this.shipping == 'delivery') return 'Delivery within Penang Island';
+
+            if (this.shipping == 'installation') return 'Delivery with installation';
         }
     }
 });
@@ -47482,6 +47515,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.order.pickup == 'pickup') return 'Store Pick Up';
 
             if (this.order.pickup == 'delivery') return 'Delivery within Penang Island';
+
+            if (this.order.pickup == 'installation') return 'Delivery with installation';
         }
     }
 });

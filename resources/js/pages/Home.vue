@@ -500,10 +500,82 @@
 							<h3 class="dark-blue">Our Shop</h3>
 						</div>
 						<div class="col-md-12" style="margin-bottom: 10px;">
-							<img src="/images/61_big.jpg" class="our-shop-pictures" />
-							<img src="/images/display.jpg" class="our-shop-pictures" />
-							<img src="/images/service.jpg" class="our-shop-pictures" />
-							<img src="/images/aircond-brand.jpg" class="our-shop-pictures" />
+							<v-flex
+				              d-flex
+				            >
+								<v-card flat tile class="d-flex">
+				                	<v-img
+				                 		src="/images/IMG_6587.jpg"
+				                  		lazy-src="/images/IMG_6587.jpg"
+				                  		aspect-ratio="1"
+				                  		class="grey lighten-2 shop-image"
+				                	>
+						                <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                 >
+				                    		<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+				                  		</v-layout>
+				                	</v-img>
+				              	</v-card>
+				              	<v-card flat tile class="d-flex">
+				                	<v-img
+				                 		src="/images/IMG_6580.jpg"
+				                  		lazy-src="/images/IMG_6580.jpg"
+				                  		aspect-ratio="1"
+				                  		class="grey lighten-2 shop-image"
+				                	>
+						                <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                 >
+				                    		<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+				                  		</v-layout>
+				                	</v-img>
+				              	</v-card>
+				              	<v-card flat tile class="d-flex">
+				                	<v-img
+				                 		src="/images/IMG_6582.jpg"
+				                  		lazy-src="/images/IMG_6582.jpg"
+				                  		aspect-ratio="1"
+				                  		class="grey lighten-2 shop-image"
+				                	>
+						                <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                 >
+				                    		<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+				                  		</v-layout>
+				                	</v-img>
+				              	</v-card>
+				              	<v-card flat tile class="d-flex">
+				                	<v-img
+				                 		src="/images/IMG_6590.jpg"
+				                  		lazy-src="/images/IMG_6590.jpg"
+				                  		aspect-ratio="1"
+				                  		class="grey lighten-2 shop-image"
+				                	>
+						                <v-layout
+						                    slot="placeholder"
+						                    fill-height
+						                    align-center
+						                    justify-center
+						                    ma-0
+						                 >
+				                    		<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+				                  		</v-layout>
+				                	</v-img>
+				              	</v-card>
+				            </v-flex>
 						</div>
 						<div class="light-to-dark-blue">
 							<a href="/about#shop"><span>VIEW MORE >></span></a>

@@ -12,11 +12,32 @@
 	{{ $order->billing_address }}, {{$order->billing_city}}, <br>
 	{{ $order->billing_postcode }}, {{ $order->billing_state}} <br>
 	<b>Phone: </b>{{$order->billing_phone}}<br>
-	<b>Billplz No. </b> {{ $order->billplz_bill_id }}
 @endsection
 
 @section('extra')
 	Date: {{ $order->updated_at->format("jS M Y") }}
+	<br>
+	<b>Order Information</b><br>
+	<b>Billplz No. </b> {{ $order->billplz_bill_id }}<br>
+	<b>Pickup Option: </b>
+	@if($order->pickup == 'mainland')
+		Delivery within Penang Mainland
+	@elseif($order->pickup == 'delivery')
+		Delivery within Penang Island
+	@elseif($order->pickup == 'installation')
+		Delivery with installation
+	@else
+		Store Pick Up
+	@endif
+	<br>
+	<br>
+	<br>
+	<b>Shipment Information</b><br>
+	<b>Name:</b> {{ $order->shipping_name }}<br>
+	<b>Address</b><br>
+	{{ $order->shipping_address }}, {{$order->shipping_city}}, <br>
+	{{ $order->shipping_postcode }}, {{ $order->shipping_state}} <br>
+	<b>Phone: </b>{{$order->shipping_phone}}
 @endsection
 
 @section('content')

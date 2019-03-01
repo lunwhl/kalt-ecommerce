@@ -11,6 +11,7 @@ use App\Common;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PurchaseToAdminEmail;
 use App\Mail\PurchaseToCustomerEmail;
+use App\Mail\DeliveryOrderToShipper;
 use Illuminate\Http\Request;
 use Billplz\Client;
 use Http\Client\Common\HttpMethodsClient;
@@ -300,6 +301,9 @@ class OrderController extends Controller
 
             $pdfDeliverOrder = PDF::loadView('pdf.deliveryOrder', ['order' => $order, 'items' => $items]);
             $pdfDeliverOrder->save('storage/deliveryOrders/'. $order->id . '.pdf');
+
+            if($order->shipping_email != $order->billing_email)
+                Mail::to($order->billing_email)->send(new DeliveryOrderToShipper($order));
 
             Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($order));
             Mail::to($order->billing_email)->send(new PurchaseToCustomerEmail($order));

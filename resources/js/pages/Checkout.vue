@@ -311,7 +311,7 @@
 
         	deliveryTotal() {
         		let units = _.sumBy(this.carts.cart, function(item){ return parseInt(item.qty); });
-        		return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM ' + units * 20 ;
+        		return this.deliveryCharge != 'delivery' ? 'RM 0' : 'RM ' + units * 20 ;
         	},
 
         	pickupOption() {

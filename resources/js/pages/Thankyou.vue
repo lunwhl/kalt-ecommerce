@@ -154,14 +154,17 @@
         	},
 
         	pickupOption() {
-        		if(this.order.pickup == 'mainland')
+        		if(this.shipping == 'mainland')
         			return 'Delivery within Penang Mainland';
 
-        		if(this.order.pickup == 'pickup')
+        		if(this.shipping == 'pickup')
         			return 'Store Pick Up';
 
-        		if(this.order.pickup == 'delivery')
+        		if(this.shipping == 'delivery')
         			return 'Delivery within Penang Island';
+
+        		if(this.shipping == 'installation')
+        			return 'Delivery with installation';
         	}
         },
     }

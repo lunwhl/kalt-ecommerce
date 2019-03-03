@@ -139,8 +139,8 @@
             	<div class="empty-space col-xs-b35 col-md-b70"></div>
             	<div class="row" v-if="isEmptyCart()">
 	                <div class="col-md-6 col-xs-b50 col-md-b0" >
-	                    <h4 class="h4 ">Pick up option</h4>
-	                    <div style="color: #888; font-weight: bold; font-size: 17px;">Our Policy<div class="tooltip-extend" style="cursor: pointer; display: inline-block; margin-left: 10px;" @click="deliveryModal">?</div></div>
+	                    <h4 class="h4 ">Delivery option</h4>
+	                    <div style="color: #888; font-weight: bold; font-size: 17px;">Our Delivery Policy<div class="tooltip-extend" style="cursor: pointer; display: inline-block; margin-left: 10px;" @click="deliveryModal">?</div></div>
 							<v-radio-group @change="changeRadio" v-model="radios" :mandatory="false">
 								<v-radio value="pickup" :disabled="hasInstallation">
 									<div class="d-flex" slot="label">
@@ -486,7 +486,7 @@
         	},
 
         	deliveryTotal() {
-        		return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'Free';
+        		return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'RM 0';
         	},
 
         	hasInstallation() {

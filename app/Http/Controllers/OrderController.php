@@ -303,7 +303,7 @@ class OrderController extends Controller
             $pdfDeliverOrder->save('storage/deliveryOrders/'. $order->id . '.pdf');
 
             if($order->shipping_email != $order->billing_email)
-                Mail::to($order->billing_email)->send(new DeliveryOrderToShipper($order));
+                Mail::to($order->shipping_email)->send(new DeliveryOrderToShipper($order));
 
             Mail::to("info@kalt.com.my")->send(new PurchaseToAdminEmail($order));
             Mail::to($order->billing_email)->send(new PurchaseToCustomerEmail($order));

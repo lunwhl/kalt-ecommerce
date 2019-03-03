@@ -76,6 +76,10 @@ class Item extends Resource
             Money::make("Price", "MYR")
                 ->sortable()
                 ->rules('required'),
+
+            Text::make('Model')
+                ->sortable()
+                ->rules('required'),
         ];
     }
 
@@ -122,4 +126,5 @@ class Item extends Resource
     {
         return [];
     }
+
 }

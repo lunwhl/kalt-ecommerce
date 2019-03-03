@@ -36967,7 +36967,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.subTotal + this.deliveryCharge;
         },
         deliveryTotal: function deliveryTotal() {
-            return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'Free';
+            return this.deliveryCharge ? 'RM ' + this.deliveryCharge : 'RM 0';
         },
         hasInstallation: function hasInstallation() {
             if (this.carts[0] && this.carts[0].cart) return _.findIndex(this.carts[0].cart, function (item) {
@@ -38606,7 +38606,7 @@ var render = function() {
                 "div",
                 { staticClass: "col-md-6 col-xs-b50 col-md-b0" },
                 [
-                  _c("h4", { staticClass: "h4 " }, [_vm._v("Pick up option")]),
+                  _c("h4", { staticClass: "h4 " }, [_vm._v("Delivery option")]),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -38618,7 +38618,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("Our Policy"),
+                      _vm._v("Our Delivery Policy"),
                       _c(
                         "div",
                         {
@@ -43851,11 +43851,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM ' + this.qty * 20;
         },
         pickupOption: function pickupOption() {
-            if (this.order.pickup == 'mainland') return 'Delivery within Penang Mainland';
+            if (this.shipping == 'mainland') return 'Delivery within Penang Mainland';
 
-            if (this.order.pickup == 'pickup') return 'Store Pick Up';
+            if (this.shipping == 'pickup') return 'Store Pick Up';
 
-            if (this.order.pickup == 'delivery') return 'Delivery within Penang Island';
+            if (this.shipping == 'delivery') return 'Delivery within Penang Island';
+
+            if (this.shipping == 'installation') return 'Delivery with installation';
         }
     }
 });
@@ -45056,7 +45058,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var units = _.sumBy(this.carts.cart, function (item) {
                 return parseInt(item.qty);
             });
-            return this.deliveryCharge != 'delivery' ? 'No Shipping' : 'RM ' + units * 20;
+            return this.deliveryCharge != 'delivery' ? 'RM 0' : 'RM ' + units * 20;
         },
         pickupOption: function pickupOption() {
             if (this.shipping == 'mainland') return 'Delivery within Penang Mainland';

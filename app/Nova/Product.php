@@ -74,7 +74,8 @@ class Product extends Resource
             Number::make('sequence')
                 ->help(
                     'Sequence help to show which product to show first in shop page'
-                ),
+                )
+                ->rules('required'),
 
             NovaTinyMCE::make('Description')->options([
                             'plugins' => [

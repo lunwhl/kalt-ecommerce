@@ -28,4 +28,19 @@ class Order extends Model
             Mail::to($this->shipping_email)->send(new OrderSent($this));
         }
     }
+
+    public function getPickupAttribute($value)
+    {
+        if($value == 'pickup')
+            return 'Store Pick Up';
+
+        if($value == 'mainland')
+            return 'Delivery within Penang Mainland';
+
+        if($value == 'delivery')
+            return 'Delivery within Penang Island';
+
+        if($value == 'installation')
+            return 'Delivery with installation';
+    }
 }

@@ -53,6 +53,10 @@ class Order extends Resource
 
             BelongsTo::make('User Name', 'User', 'App\Nova\User'),
 
+            Text::make('Billplz no', 'billplz_bill_id')
+                ->sortable()
+                ->hideFromIndex(),
+
             Text::make('Billing Name')
                 ->sortable()
                 ->hideFromIndex()
@@ -127,6 +131,11 @@ class Order extends Resource
                 ->hideFromIndex()
                 ->rules('required'),
 
+            Text::make('Shipping Phone')
+                ->sortable()
+                ->hideFromIndex()
+                ->rules('required'),
+
             Text::make('Shipping Company Name')
                 ->sortable()
                 ->hideFromIndex(),
@@ -147,6 +156,11 @@ class Order extends Resource
                 ->rules('required'),
 
             Text::make('Shipping Postcode')
+                ->sortable()
+                ->hideFromIndex()
+                ->rules('required'), 
+
+            Text::make('Pickup Option', 'pickup')
                 ->sortable()
                 ->hideFromIndex()
                 ->rules('required'), 

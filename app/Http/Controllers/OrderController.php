@@ -38,7 +38,7 @@ class OrderController extends Controller
         'billing_email' => 'required|string|email|max:255',
         'billing_phone' => array(
                                 'required',
-                                'regex:/^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/'
+                                'regex:/^(\+?6?01?)[0-46-9]-*[0-9]{7,8}$/'
                             ),
         'shipping_name' => 'required_if:different_shipping,true',
         'shipping_address'=> 'required_if:different_shipping,true',
@@ -48,7 +48,7 @@ class OrderController extends Controller
         'shipping_email'=> 'required_if:different_shipping,true',
         'shipping_phone'=> array(
                                 'required_if:different_shipping,true',
-                                'regex:/^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/'
+                                'regex:/^(\+?6?01?)[0-46-9]-*[0-9]{7,8}$/'
                             ),
     );
 

@@ -20,16 +20,7 @@
 	<br>
 	<b>Order Information</b><br>
 	<b>Billplz No. </b> {{ $order->billplz_bill_id }}<br>
-	<b>Pickup Option: </b>
-	@if($order->pickup == 'mainland')
-		Delivery within Penang Mainland
-	@elseif($order->pickup == 'delivery')
-		Delivery within Penang Island
-	@elseif($order->pickup == 'installation')
-		Delivery with installation
-	@else
-		Store Pick Up
-	@endif
+	<b>Pickup Option: </b> {{ $order->pickup }}
 	<br>
 	<br>
 	<br>

@@ -176,6 +176,12 @@ class ProductController extends Controller
                                 ->take(request()->take)
                                 ->get();
 
+        if(request()->isbtu == 'true') {
+            $data['products'] = $data['products']->sortBy(function($product){ return $product->btu_value; })->values()->all();
+        }
+        
+
+
         return response(['data' => $data]);
     }
 

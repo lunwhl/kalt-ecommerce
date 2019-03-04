@@ -242,7 +242,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
 	<script src="{{ URL::asset('js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=2.7') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=2.8') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>

@@ -11,6 +11,11 @@ class Product extends Model
     	return $this->belongstoMany('App\Category')->withTimestamps();
     }
 
+    public function getBtuValueAttribute()
+    {
+        return $this->categories()->where('type', 'btu')->first()->name;
+    }
+
     public static function getProductWithBrand()
     {
     	$productWithBrand = collect();

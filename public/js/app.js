@@ -36020,7 +36020,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getProductForShop: function getProductForShop() {
             var _this5 = this;
 
-            var url = 'api/shop/products?category=' + this.item['category'].toString() + '&btu=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take;
+            var isbtu = this.btuParam != null;
+
+            var url = 'api/shop/products?category=' + this.item['category'].toString() + '&btu=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take + '&isbtu=' + isbtu;
             axios.get(url).then(function (response) {
                 return _this5.setProductForShop(response.data);
             });

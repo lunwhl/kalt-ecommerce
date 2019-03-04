@@ -202,7 +202,9 @@
         	},
 
         	getProductForShop() {
-        		let url = 'api/shop/products?category=' + this.item['category'].toString() + '&btu=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take;
+                let isbtu = this.btuParam != null;
+
+        		let url = 'api/shop/products?category=' + this.item['category'].toString() + '&btu=' + this.hpMin + ',' + this.hpMax + '&sort=' + this.sortSelected + '&skip=' + this.skip + '&take=' + this.take + '&isbtu=' + isbtu;
         		axios.get(url)
         		.then(response => this.setProductForShop(response.data));
         	},

@@ -150,7 +150,7 @@
         	},
 
         	deliveryTotal() {
-        		return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM ' + this.qty * 20;
+        		return this.order['pickup'] != 'delivery' ? 'RM 0' : 'RM ' + this.qty * 20;
         	},
 
         	pickupOption() {

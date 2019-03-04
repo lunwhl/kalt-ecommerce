@@ -43850,7 +43850,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.subTotal + (this.order['pickup'] != 'delivery' ? 0 : this.qty * 20);
         },
         deliveryTotal: function deliveryTotal() {
-            return this.order['pickup'] != 'delivery' ? 'No Shipping' : 'RM ' + this.qty * 20;
+            return this.order['pickup'] != 'delivery' ? 'RM 0' : 'RM ' + this.qty * 20;
         },
         pickupOption: function pickupOption() {
             if (this.shipping == 'mainland') return 'Delivery within Penang Mainland';

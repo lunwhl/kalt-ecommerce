@@ -40,7 +40,7 @@
 	                                Pickup Option
 	                            </div>
 	                            <div class="col-xs-6 col-xs-text-right">
-	                                <div class="color">{{pickupOption}}</div>
+	                                <div class="color">{{ order.pickup }}</div>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -154,16 +154,16 @@
         	},
 
         	pickupOption() {
-        		if(this.shipping == 'mainland')
+        		if(this.order['pickup'] == 'mainland')
         			return 'Delivery within Penang Mainland';
 
-        		if(this.shipping == 'pickup')
+        		if(this.order['pickup'] == 'pickup')
         			return 'Store Pick Up';
 
-        		if(this.shipping == 'delivery')
+        		if(this.order['pickup'] == 'delivery')
         			return 'Delivery within Penang Island';
 
-        		if(this.shipping == 'installation')
+        		if(this.order['pickup'] == 'installation')
         			return 'Delivery with installation';
         	}
         },

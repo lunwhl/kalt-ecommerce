@@ -19,6 +19,7 @@
                             <v-flex xs4 text-xs-left>
                                 <h4>Biller Information</h4>
                                 <h5>Name: {{order['billing_name']}}</h5>
+                                <h5>Company name: {{order['billing_company_name']}}</h5>
                                 <h5>Address</h5>
                                 <span>
                                     <div>{{order['billing_address']}}, {{order['billing_city']}},</div>
@@ -29,6 +30,7 @@
                             <v-flex xs4 text-xs-left>
                                 <h4>Shipment Information</h4>
                                 <h5>Name: {{order['shipping_name']}}</h5>
+                                <h5>Company name: {{order['shipping_company_name']}}</h5>
                                 <h5>Address</h5>
                                 <span>
                                     <div>{{order['shipping_address']}}, {{order['shipping_city']}},</div>
@@ -43,7 +45,7 @@
                                 <h5>Total: {{order['total']}}</h5>
                                 <h5>Status: {{order['status']}}</h5>
                                 <h5 v-if="order['note']">Note: {{order['note']}}</h5>
-                                <h5>Pickup Option: {{pickupOption}}</h5>
+                                <h5>Pickup Option: {{this.order.pickup}}</h5>
                             </v-flex>
                         </v-layout>
                         <v-divider></v-divider>

@@ -8,6 +8,7 @@
 	<br>
 	<b>Biller Information</b><br>
 	<b>Name:</b> {{ $order->billing_name }}<br>
+	@if($order->billing_company_name) <b>Company name:</b> {{$order->billing_company_name}} @endif
 	<b>Address</b><br>
 	{{ $order->billing_address }}, {{$order->billing_city}}, <br>
 	{{ $order->billing_postcode }}, {{ $order->billing_state}} <br>

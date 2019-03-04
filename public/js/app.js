@@ -43853,13 +43853,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.order['pickup'] != 'delivery' ? 'RM 0' : 'RM ' + this.qty * 20;
         },
         pickupOption: function pickupOption() {
-            if (this.shipping == 'mainland') return 'Delivery within Penang Mainland';
+            if (this.order['pickup'] == 'mainland') return 'Delivery within Penang Mainland';
 
-            if (this.shipping == 'pickup') return 'Store Pick Up';
+            if (this.order['pickup'] == 'pickup') return 'Store Pick Up';
 
-            if (this.shipping == 'delivery') return 'Delivery within Penang Island';
+            if (this.order['pickup'] == 'delivery') return 'Delivery within Penang Island';
 
-            if (this.shipping == 'installation') return 'Delivery with installation';
+            if (this.order['pickup'] == 'installation') return 'Delivery with installation';
         }
     }
 });
@@ -43976,7 +43976,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-xs-6 col-xs-text-right" }, [
                     _c("div", { staticClass: "color" }, [
-                      _vm._v(_vm._s(_vm.pickupOption))
+                      _vm._v(_vm._s(_vm.order.pickup))
                     ])
                   ])
                 ])
@@ -47348,6 +47348,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47449,6 +47451,13 @@ var render = function() {
                           _vm._v("Name: " + _vm._s(_vm.order["billing_name"]))
                         ]),
                         _vm._v(" "),
+                        _c("h5", [
+                          _vm._v(
+                            "Company name: " +
+                              _vm._s(_vm.order["billing_company_name"])
+                          )
+                        ]),
+                        _vm._v(" "),
                         _c("h5", [_vm._v("Address")]),
                         _vm._v(" "),
                         _c("span", [
@@ -47481,6 +47490,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("h5", [
                           _vm._v("Name: " + _vm._s(_vm.order["shipping_name"]))
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [
+                          _vm._v(
+                            "Company name: " +
+                              _vm._s(_vm.order["shipping_company_name"])
+                          )
                         ]),
                         _vm._v(" "),
                         _c("h5", [_vm._v("Address")]),
@@ -47543,7 +47559,7 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         _c("h5", [
-                          _vm._v("Pickup Option: " + _vm._s(_vm.pickupOption))
+                          _vm._v("Pickup Option: " + _vm._s(this.order.pickup))
                         ])
                       ])
                     ],

@@ -75,6 +75,13 @@
 				</div>
 			</div>
 		</div>
+		<v-snackbar v-model="snackbar"
+            right="right"
+            timeout="5000"
+            top="top"
+        >
+            {{message}}
+        </v-snackbar>
 	</v-app>
 </template>
 
@@ -92,6 +99,9 @@
 				    contact_subject: '',
 				    contact_no: '',
 				}), 
+
+				snackbar: false,
+				message: "Thanks for your enquiry, our team will get back to you as soon as possible."
 			};
 		},
 
@@ -109,7 +119,7 @@
         	},
 
         	submitInquirySuccess(data) {
-        		console.log(data);
+        		this.snackbar = true;
         	},
 
         	submitInquiryError(data){

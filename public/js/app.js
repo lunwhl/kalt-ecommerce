@@ -34083,6 +34083,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -34096,7 +34103,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				contact_message: '',
 				contact_subject: '',
 				contact_no: ''
-			})
+			}),
+
+			snackbar: false,
+			message: "Thanks for your enquiry, our team will get back to you as soon as possible."
 		};
 	},
 	mounted: function mounted() {
@@ -34119,7 +34129,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 		},
 		submitInquirySuccess: function submitInquirySuccess(data) {
-			console.log(data);
+			this.snackbar = true;
 		},
 		submitInquiryError: function submitInquiryError(data) {
 			console.log(data);
@@ -34135,490 +34145,529 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("v-app", { staticStyle: { background: "#fff" } }, [
-    _c("div", { attrs: { "data-app": "true" } }, [
-      _c(
-        "div",
-        {
-          staticClass: "contact",
-          staticStyle: {
-            "background-image": "url('/images/bottom-background.png')",
-            "background-size": "cover"
-          },
-          attrs: { id: "contact-us" }
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass:
-                "latest-product our-products container-fluid no-padding woocommerce"
+  return _c(
+    "v-app",
+    { staticStyle: { background: "#fff" } },
+    [
+      _c("div", { attrs: { "data-app": "true" } }, [
+        _c(
+          "div",
+          {
+            staticClass: "contact",
+            staticStyle: {
+              "background-image": "url('/images/bottom-background.png')",
+              "background-size": "cover"
             },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 col-md-12 col-sm-12 animate fadeInUp",
-                  attrs: { "data-wow-delay": "0.2s" }
-                },
-                [
-                  _c("div", { staticClass: "container" }, [
-                    _c("div", { staticClass: "section-header" }, [
+            attrs: { id: "contact-us" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "latest-product our-products container-fluid no-padding woocommerce"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-lg-12 col-md-12 col-sm-12 animate fadeInUp",
+                    attrs: { "data-wow-delay": "0.2s" }
+                  },
+                  [
+                    _c("div", { staticClass: "container" }, [
+                      _c("div", { staticClass: "section-header" }, [
+                        _c(
+                          "h3",
+                          {
+                            staticStyle: { color: "#fff", padding: "15px 0px" }
+                          },
+                          [_vm._v("Contact")]
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "h3",
-                        { staticStyle: { color: "#fff", padding: "15px 0px" } },
-                        [_vm._v("Contact")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "contact-us-content",
-                        staticStyle: { "text-align": "left" }
-                      },
-                      [
-                        _c("div", { staticClass: "row" }, [
-                          _c(
-                            "div",
-                            { staticClass: "col-lg-6 col-md-12 col-sm-12" },
-                            [
-                              _c(
-                                "p",
-                                { staticStyle: { "font-weight": "310" } },
-                                [
-                                  _vm._v(
-                                    "You are always welcome to visit me or contact us while you have some comments or suggestions for us."
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "gotham-bold",
-                                  staticStyle: { "font-size": "20px" }
-                                },
-                                [_vm._v("Kalt Air Conditioning Sdn. Bhd.")]
-                              ),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "p",
-                                { staticStyle: { "font-weight": "310" } },
-                                [
-                                  _vm._v(
-                                    "7 & 9, Lebuh Nangka 2, Taman Desa Damai,"
-                                  ),
-                                  _c("br"),
-                                  _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\t14000 Bukit Mertajam,\n\t\t\t\t\t\t\t\t\tPulau Pinang."
-                                  ),
-                                  _c("br")
-                                ]
-                              ),
-                              _c("div", { staticClass: "row" }, [
+                        "div",
+                        {
+                          staticClass: "contact-us-content",
+                          staticStyle: { "text-align": "left" }
+                        },
+                        [
+                          _c("div", { staticClass: "row" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col-lg-6 col-md-12 col-sm-12" },
+                              [
                                 _c(
-                                  "div",
-                                  { staticClass: "col-lg-6 col-md-6" },
+                                  "p",
+                                  { staticStyle: { "font-weight": "310" } },
                                   [
-                                    _c(
-                                      "b",
-                                      {
-                                        staticClass: "gotham-bold",
-                                        staticStyle: { "font-weight": "bold" }
-                                      },
-                                      [_vm._v("Tel:")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticStyle: { "font-weight": "310" } },
-                                      [_vm._v("012-4920969")]
-                                    ),
-                                    _c("br")
+                                    _vm._v(
+                                      "You are always welcome to visit me or contact us while you have some comments or suggestions for us."
+                                    )
                                   ]
                                 ),
                                 _vm._v(" "),
                                 _c(
-                                  "div",
-                                  { staticClass: "col-lg-6 col-md-6" },
+                                  "h3",
+                                  {
+                                    staticClass: "gotham-bold",
+                                    staticStyle: { "font-size": "20px" }
+                                  },
+                                  [_vm._v("Kalt Air Conditioning Sdn. Bhd.")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  { staticStyle: { "font-weight": "310" } },
                                   [
-                                    _c(
-                                      "b",
-                                      {
-                                        staticClass: "gotham-bold",
-                                        staticStyle: { "font-weight": "bold" }
-                                      },
-                                      [_vm._v("Fax:")]
+                                    _vm._v(
+                                      "7 & 9, Lebuh Nangka 2, Taman Desa Damai,"
                                     ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticStyle: { "font-weight": "310" } },
-                                      [_vm._v("04-5399577")]
+                                    _c("br"),
+                                    _vm._v(
+                                      "\n\t\t\t\t\t\t\t\t\t\t14000 Bukit Mertajam,\n\t\t\t\t\t\t\t\t\t\tPulau Pinang."
                                     ),
-                                    _vm._v(" "),
                                     _c("br")
                                   ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "b",
-                                {
-                                  staticClass: "gotham-bold",
-                                  staticStyle: { "font-weight": "bold" }
-                                },
-                                [_vm._v("Opening hour:")]
-                              ),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticStyle: { "font-weight": "310" } },
-                                [_vm._v("Monday to Saturday 9.00am to 6.00pm")]
-                              ),
-                              _vm._v(" "),
-                              _c("p")
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "col-lg-6 col-md-12 col-sm-12 col-xs-12 contact-form"
-                            },
-                            [
-                              _c(
-                                "h3",
-                                {
-                                  staticStyle: {
-                                    "margin-top": "0px",
-                                    "font-size": "17px",
-                                    "font-weight": "bold"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Leave a Message in the feedback form below."
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "form",
-                                {
-                                  staticClass: "row",
-                                  attrs: { id: "contact-form" }
-                                },
-                                [
+                                ),
+                                _c("div", { staticClass: "row" }, [
                                   _c(
                                     "div",
-                                    {
-                                      staticClass:
-                                        "form-group col-md-6 col-sm-12 col-xs-12"
-                                    },
+                                    { staticClass: "col-lg-6 col-md-6" },
                                     [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.contact_name,
-                                            expression: "form.contact_name"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          placeholder: "NAME*",
-                                          id: "input_name",
-                                          required: ""
+                                      _c(
+                                        "b",
+                                        {
+                                          staticClass: "gotham-bold",
+                                          staticStyle: { "font-weight": "bold" }
                                         },
-                                        domProps: {
-                                          value: _vm.form.contact_name
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "contact_name",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _vm.form.errors.has("contact_name")
-                                        ? _c(
-                                            "span",
-                                            { staticClass: "text-danger" },
-                                            [
-                                              _vm._v(
-                                                _vm._s(
-                                                  _vm.form.errors.get(
-                                                    "contact_name"
-                                                  )
-                                                )
-                                              )
-                                            ]
-                                          )
-                                        : _vm._e()
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "form-group col-md-6 col-sm-12 col-xs-12"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.contact_email,
-                                            expression: "form.contact_email"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "email",
-                                          placeholder: "EMAIL*",
-                                          id: "input_email",
-                                          required: ""
-                                        },
-                                        domProps: {
-                                          value: _vm.form.contact_email
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "contact_email",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _vm.form.errors.has("contact_email")
-                                        ? _c(
-                                            "span",
-                                            { staticClass: "text-danger" },
-                                            [
-                                              _vm._v(
-                                                _vm._s(
-                                                  _vm.form.errors.get(
-                                                    "contact_email"
-                                                  )
-                                                )
-                                              )
-                                            ]
-                                          )
-                                        : _vm._e()
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "form-group col-md-6 col-sm-12 col-xs-12"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.contact_no,
-                                            expression: "form.contact_no"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          placeholder: "CONTACT NO.",
-                                          id: "input_subject",
-                                          required: ""
-                                        },
-                                        domProps: {
-                                          value: _vm.form.contact_no
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "contact_no",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "form-group col-md-6 col-sm-12 col-xs-12"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.contact_subject,
-                                            expression: "form.contact_subject"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          placeholder: "SUBJECT",
-                                          id: "input_subject",
-                                          required: ""
-                                        },
-                                        domProps: {
-                                          value: _vm.form.contact_subject
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "contact_subject",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "form-group col-md-12 col-sm-12 col-xs-12"
-                                    },
-                                    [
-                                      _c("textarea", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.contact_message,
-                                            expression: "form.contact_message"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          rows: "8",
-                                          placeholder: "MESSAGE*",
-                                          id: "textarea_message"
-                                        },
-                                        domProps: {
-                                          value: _vm.form.contact_message
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "contact_message",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      }),
+                                        [_vm._v("Tel:")]
+                                      ),
                                       _vm._v(" "),
                                       _c(
-                                        "div",
+                                        "span",
                                         {
-                                          staticClass: "form-group",
-                                          staticStyle: {
-                                            "text-align": "right",
-                                            "margin-top": "-39px",
-                                            "margin-right": "-8px"
-                                          }
+                                          staticStyle: { "font-weight": "310" }
                                         },
-                                        [
-                                          _c(
-                                            "a",
-                                            {
-                                              staticClass: "contact-btn",
-                                              on: { click: _vm.submitInquiry }
-                                            },
-                                            [_vm._v("Send")]
-                                          )
-                                        ]
-                                      )
+                                        [_vm._v("012-4920969")]
+                                      ),
+                                      _c("br")
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  _c("div", {
-                                    staticClass: "alert-msg",
-                                    attrs: { id: "alert-msg" }
-                                  })
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-lg-6 col-md-6" },
+                                    [
+                                      _c(
+                                        "b",
+                                        {
+                                          staticClass: "gotham-bold",
+                                          staticStyle: { "font-weight": "bold" }
+                                        },
+                                        [_vm._v("Fax:")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticStyle: { "font-weight": "310" }
+                                        },
+                                        [_vm._v("04-5399577")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("br")
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "b",
+                                  {
+                                    staticClass: "gotham-bold",
+                                    staticStyle: { "font-weight": "bold" }
+                                  },
+                                  [_vm._v("Opening hour:")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  { staticStyle: { "font-weight": "310" } },
+                                  [
+                                    _vm._v(
+                                      "Monday to Saturday 9.00am to 6.00pm"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("p")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "col-lg-6 col-md-12 col-sm-12 col-xs-12 contact-form"
+                              },
+                              [
+                                _c(
+                                  "h3",
+                                  {
+                                    staticStyle: {
+                                      "margin-top": "0px",
+                                      "font-size": "17px",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Leave a Message in the feedback form below."
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "form",
+                                  {
+                                    staticClass: "row",
+                                    attrs: { id: "contact-form" }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "form-group col-md-6 col-sm-12 col-xs-12"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.contact_name,
+                                              expression: "form.contact_name"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "NAME*",
+                                            id: "input_name",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.form.contact_name
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "contact_name",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _vm.form.errors.has("contact_name")
+                                          ? _c(
+                                              "span",
+                                              { staticClass: "text-danger" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.form.errors.get(
+                                                      "contact_name"
+                                                    )
+                                                  )
+                                                )
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "form-group col-md-6 col-sm-12 col-xs-12"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.contact_email,
+                                              expression: "form.contact_email"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "email",
+                                            placeholder: "EMAIL*",
+                                            id: "input_email",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.form.contact_email
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "contact_email",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _vm.form.errors.has("contact_email")
+                                          ? _c(
+                                              "span",
+                                              { staticClass: "text-danger" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.form.errors.get(
+                                                      "contact_email"
+                                                    )
+                                                  )
+                                                )
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "form-group col-md-6 col-sm-12 col-xs-12"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.contact_no,
+                                              expression: "form.contact_no"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "CONTACT NO.",
+                                            id: "input_subject",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.form.contact_no
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "contact_no",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "form-group col-md-6 col-sm-12 col-xs-12"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.contact_subject,
+                                              expression: "form.contact_subject"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "SUBJECT",
+                                            id: "input_subject",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.form.contact_subject
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "contact_subject",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "form-group col-md-12 col-sm-12 col-xs-12"
+                                      },
+                                      [
+                                        _c("textarea", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.contact_message,
+                                              expression: "form.contact_message"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            rows: "8",
+                                            placeholder: "MESSAGE*",
+                                            id: "textarea_message"
+                                          },
+                                          domProps: {
+                                            value: _vm.form.contact_message
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "contact_message",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group",
+                                            staticStyle: {
+                                              "text-align": "right",
+                                              "margin-top": "-39px",
+                                              "margin-right": "-8px"
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "a",
+                                              {
+                                                staticClass: "contact-btn",
+                                                on: { click: _vm.submitInquiry }
+                                              },
+                                              [_vm._v("Send")]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", {
+                                      staticClass: "alert-msg",
+                                      attrs: { id: "alert-msg" }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _vm.needMap
+                            ? _c(
+                                "div",
+                                { staticClass: "col-md-12 col-xs-12" },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "row map-responsive" },
+                                    [
+                                      _c("iframe", {
+                                        staticStyle: { border: "0" },
+                                        attrs: {
+                                          src:
+                                            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.347527822591!2d100.44167631533769!3d5.363841996109295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac89ee787de17%3A0xf5655b54f32d2a26!2s9%2C+Lebuh+Nangka+2%2C+Taman+Desa+Damai%2C+14000+Bukit+Mertajam%2C+Pulau+Pinang!5e0!3m2!1sen!2smy!4v1550659025867",
+                                          width: "800",
+                                          height: "600",
+                                          frameborder: "0",
+                                          allowfullscreen: ""
+                                        }
+                                      })
+                                    ]
+                                  )
                                 ]
                               )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _vm.needMap
-                          ? _c("div", { staticClass: "col-md-12 col-xs-12" }, [
-                              _c("div", { staticClass: "row map-responsive" }, [
-                                _c("iframe", {
-                                  staticStyle: { border: "0" },
-                                  attrs: {
-                                    src:
-                                      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.347527822591!2d100.44167631533769!3d5.363841996109295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac89ee787de17%3A0xf5655b54f32d2a26!2s9%2C+Lebuh+Nangka+2%2C+Taman+Desa+Damai%2C+14000+Bukit+Mertajam%2C+Pulau+Pinang!5e0!3m2!1sen!2smy!4v1550659025867",
-                                    width: "800",
-                                    height: "600",
-                                    frameborder: "0",
-                                    allowfullscreen: ""
-                                  }
-                                })
-                              ])
-                            ])
-                          : _vm._e()
-                      ]
-                    )
-                  ])
-                ]
-              )
-            ]
-          )
-        ]
+                            : _vm._e()
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          attrs: { right: "right", timeout: "5000", top: "top" },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [_vm._v("\n            " + _vm._s(_vm.message) + "\n        ")]
       )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

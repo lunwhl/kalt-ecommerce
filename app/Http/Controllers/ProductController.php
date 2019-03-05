@@ -27,39 +27,37 @@ class ProductController extends Controller
     public function getRelatedProduct()
     {
         $product = Product::where('id', request()->id)->first();
-        $filteredCategory = $product->categories()->get()->filter(function ($value, $key) {
-                        return $value->type != 'brand';
-                    });
+        $filteredCategory = $product->categories()->where('type', '!=', 'brand')->get();
+
         $pluckCategoryId = $filteredCategory->pluck('id')->toArray();
 
         if(count($pluckCategoryId) == 0)
             return response(['relatedProducts' => []]);
 
-        $productIds = collect();
-        foreach(Product::all() as $product)
-        {  
-            $filteredProductCategory = $product->categories->filter(function ($value, $key) {
-                        return $value->type != 'brand';
-                    });
-            $pluckProductCategoryId = $filteredProductCategory->pluck('id')->toArray();
-            $arrayDiffResult = array_diff($pluckCategoryId,$pluckProductCategoryId);
-        
-            if($pluckProductCategoryId == $pluckCategoryId)
-            {
-                $productIds->push($product->id);
-            }
+        $products = Product::all();
+
+        foreach($pluckCategoryId as $cat_id)
+        {
+            $category = Category::find($cat_id);
+
+            $products = $products->intersect($category->products);
         }
-        $productIds = $productIds->filter(function ($value, $key) {
-                        return $value != request()->id;
-                    });
+        
+        $products = $products->sortBy('sequence')
+                    ->filter(function ($value, $key) {
+                        return $value->id != request()->id && $value->is_active;
+                    })
+                    ->take(4)
+                    ->values();
 
-        $productWithBrand = Product::getProductWithBrand();
+        // $productWithBrand = Product::getProductWithBrand();
 
-        $intersectIds = $productIds->intersect($productWithBrand->flatten()->pluck('id'));
+        // $intersectIds = $productIds->intersect($productWithBrand->flatten()->pluck('id'));
 
-        $relatedProducts = Product::with('categories')->whereIn('id', $intersectIds)->where('is_active', true)->take(4)->get();
+        // $relatedProducts = Product::with('categories')->whereIn('id', $intersectIds)->where('is_active', true)->take(4)->get();
 
-        return response(['relatedProducts' => $relatedProducts]);
+        // dd($products);
+        return response(['relatedProducts' => $products]);
     }
 
     public function create()

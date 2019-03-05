@@ -26,6 +26,7 @@
 	<br>
 	<b>Shipment Information</b><br>
 	<b>Name:</b> {{ $order->shipping_name }}<br>
+	@if($order->shipping_company_name) <b>Company name:</b> {{$order->shipping_company_name}} @endif
 	<b>Address</b><br>
 	{{ $order->shipping_address }}, {{$order->shipping_city}}, <br>
 	{{ $order->shipping_postcode }}, {{ $order->shipping_state}} <br>

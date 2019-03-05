@@ -150,7 +150,7 @@
         	},
 
         	deliveryTotal() {
-        		return this.order['pickup'] != 'delivery' ? 'RM 0' : 'RM ' + this.qty * 20;
+        		return this.order['pickup'] != 'Delivery within Penang Island' ? 'RM 0' : 'RM ' + this.qty * 20;
         	},
 
         	pickupOption() {

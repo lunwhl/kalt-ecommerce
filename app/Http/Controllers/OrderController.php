@@ -111,7 +111,9 @@ class OrderController extends Controller
         $request->validate($this->rules, $this->messages);
 
         try {
-                $billplz = Client::make('aa1451d2-6df3-4f7c-9d0b-14a098e0bf56');
+            
+                // $billplz = Client::make('aa1451d2-6df3-4f7c-9d0b-14a098e0bf56');
+                $billplz = Client::make(env('BILLPLZ_API_KEY'));
                 $collectionResponse = $this->createCollection($request, $billplz);
                 $collectionBill = $this->createBill($request, $billplz, $collectionResponse['id']);
                 $redirectUrl = $collectionBill['url'];
@@ -140,10 +142,11 @@ class OrderController extends Controller
             $request->billing_name,
             $request->total * 100,
             // 'http://kalt.local//api/order/completed',
-            'https://test.kalt.com.my/api/order/completed',
+            // 'https://test.kalt.com.my/api/order/completed',
+            url('/api/order/completed'),
             $request->billing_name . ' bill',
             // ['redirect_url' => 'http://kalt.local//api/order/completed']
-            ['redirect_url' => 'https://test.kalt.com.my/api/order/completed']
+            ['redirect_url' => url('/api/order/completed'),]
         );
 
         return $response->toArray();
@@ -151,7 +154,7 @@ class OrderController extends Controller
 
     public function createCollection($request, $billplz)
     {
-        $billplz->useSandbox();
+        // $billplz->useSandbox();
         $collection = $billplz->collection();
         $response = $collection->create($request->billing_name . ' collection');
 

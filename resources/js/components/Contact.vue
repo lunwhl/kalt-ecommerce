@@ -77,7 +77,7 @@
 		</div>
 		<v-snackbar v-model="snackbar"
             right="right"
-            timeout="5000"
+            :timeout="5000"
             top="top"
         >
             {{message}}

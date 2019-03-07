@@ -34654,7 +34654,7 @@ var render = function() {
       _c(
         "v-snackbar",
         {
-          attrs: { right: "right", timeout: "5000", top: "top" },
+          attrs: { right: "right", timeout: 5000, top: "top" },
           model: {
             value: _vm.snackbar,
             callback: function($$v) {

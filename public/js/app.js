@@ -41587,7 +41587,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "col-md-6 mt-2" }, [
                     _c("img", { attrs: { src: "/images/kalt-shop-01.jpg" } })
                   ])
                 ])
@@ -41629,7 +41629,7 @@ var render = function() {
                           [
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -41693,7 +41693,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -41757,7 +41757,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -41825,7 +41825,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -41889,7 +41889,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -41953,7 +41953,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -42017,7 +42017,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",
@@ -42081,7 +42081,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-flex",
-                              { attrs: { xs3: "", "d-flex": "" } },
+                              { attrs: { xs6: "", md3: "" } },
                               [
                                 _c(
                                   "v-card",

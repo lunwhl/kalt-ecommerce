@@ -2289,6 +2289,7 @@ hr.hori {
 	padding: 8px 43px;
 }
 
+
 .btu-calculator {
 	font-size: 18px;
 	color: white; background-image:
@@ -2537,6 +2538,7 @@ hr.hori {
 	
 	.cheapest-in-town {
 		font-size: 13px;
+    padding: 8px 20px;
 	}
 	
 	/* - Header Main */

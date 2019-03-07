@@ -65,7 +65,7 @@
 									<div class="container-fluid"><b>Tel:</b> 012-4020969     |     <b>Fax:</b> 04-5399577</div>
 									<div class="container-fluid"><b>Opening Hour:</b> Monday to Saturday 9.00am to 6.00pm</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-6 mt-2">
 									<img src="/images/kalt-shop-01.jpg" />
 									
 								</div>
@@ -84,8 +84,8 @@
 						        <v-container>
 						          <v-layout row wrap>
 						          	<v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -110,8 +110,8 @@
 						              </v-card>
 						            </v-flex>
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -136,8 +136,8 @@
 						              </v-card>
 						            </v-flex>
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -162,8 +162,8 @@
 						              </v-card>
 						            </v-flex>
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -189,8 +189,8 @@
 						            </v-flex>
 						            
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -215,8 +215,8 @@
 						              </v-card>
 						            </v-flex>
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -241,8 +241,8 @@
 						              </v-card>
 						            </v-flex>
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img
@@ -267,8 +267,8 @@
 						              </v-card>
 						            </v-flex>
 						            <v-flex
-						              xs3
-						              d-flex
+						              xs6
+						              md3
 						            >
 						              <v-card flat tile>
 						                <v-img

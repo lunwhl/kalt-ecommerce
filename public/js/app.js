@@ -46472,13 +46472,13 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_3_vue_clipboard2___default.a);
             });
         },
 
-        facebookSharerUrl: function facebookSharerUrl(product) {
+        facebookShareUrl: function facebookShareUrl(product) {
             return "https://www.facebook.com/sharer.php?u=" + window.location.origin + '/product/' + product.id + "&t=" + product.name;
         },
         whatsappShareUrl: function whatsappShareUrl(product) {
             if (product.name) {
                 var productName = product.name.replace(" ", "%");
-                return "whatsapp://send?text=" + window.location.origin + '/product/' + product.id + "&t=" + productName;
+                return "https://wa.me/?text=" + window.location.origin + '/product/' + product.id;
             }
         },
         getRelatedProduct: function getRelatedProduct(id) {
@@ -46775,7 +46775,8 @@ var render = function() {
                             {
                               staticClass: "entry",
                               attrs: {
-                                href: _vm.facebookSharerUrl(_vm.selectedProduct)
+                                target: "_blank",
+                                href: _vm.facebookShareUrl(_vm.selectedProduct)
                               }
                             },
                             [_c("i", { staticClass: "fa fa-facebook" })]
@@ -46783,7 +46784,13 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "a",
-                            { staticClass: "entry", attrs: { href: "#" } },
+                            {
+                              staticClass: "entry",
+                              attrs: {
+                                target: "_blank",
+                                href: _vm.whatsappShareUrl(_vm.selectedProduct)
+                              }
+                            },
                             [_c("i", { staticClass: "fa fa-whatsapp" })]
                           ),
                           _vm._v(" "),

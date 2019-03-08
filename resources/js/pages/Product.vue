@@ -132,8 +132,8 @@
 	                                </div>
 	                                <div class="col-sm-9">
 	                                    <div class="follow light">
-	                                        <a class="entry" :href="facebookSharerUrl(selectedProduct)"><i class="fa fa-facebook"></i></a>
-	                                        <a class="entry" href="#"><i class="fa fa-whatsapp"></i></a>
+	                                        <a class="entry" target="_blank" :href="facebookShareUrl(selectedProduct)"><i class="fa fa-facebook"></i></a>
+	                                        <a class="entry" target="_blank" :href="whatsappShareUrl(selectedProduct)"><i class="fa fa-whatsapp"></i></a>
 	                                        <!-- <a class="entry" :href="'/api/home/download/'+product.id"><i class="fa fa-download"></i></a> -->
 	                                        <a class="entry" @click="doCopy(selectedProduct)"><i class="fa fa-clone"></i></a>
 	                                    </div>
@@ -305,14 +305,14 @@
                 })
             },
 
-            facebookSharerUrl(product){
+            facebookShareUrl(product){
                 return "https://www.facebook.com/sharer.php?u=" + window.location.origin + '/product/' + product.id + "&t=" + product.name;
             },
 
             whatsappShareUrl(product){
             	if(product.name){
                 	let productName = product.name.replace(" ", "%");
-                	return "whatsapp://send?text=" +window.location.origin + '/product/' + product.id + "&t=" + productName;
+                	return "https://wa.me/?text=" +window.location.origin + '/product/' + product.id;
             	}
             },
 

@@ -32,4 +32,9 @@ class Product extends Model
     {
         return 'Buy ' . $this->name . ' from us for the best deal across Penang!';
     }
+
+    public function getMetaBrandAttribute()
+    {
+        return $this->categories()->where('type', 'brand')->first()->name;
+    }
 }

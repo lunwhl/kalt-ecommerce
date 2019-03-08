@@ -25,6 +25,9 @@
     <meta property="og:site_name" content="KALT Penang" />
     <meta property="og:price:amount" content="{{ $product->price }}" />
     <meta property="og:price:currency" content="MYR" /> 
+    <meta property="product:price:amount" content="{{ $product->price }}" />
+    <meta property="product:price:currency" content="MYR" /> 
+    <meta property="product:brand" content="{{ $product->meta_brand }}" />
     <meta property="og:title" content="{{ $product->name }}">
     <meta property="og:description" content="{{ $product->meta_description }}">
     <meta property="og:image" content="{{ url('/storage/' . $product->image_path) }}">

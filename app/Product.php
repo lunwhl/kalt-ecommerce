@@ -30,6 +30,6 @@ class Product extends Model
 
     public function getMetaDescriptionAttribute()
     {
-        return 'Buy ' . $this->name . 'from us for the best deal across Penang!';
+        return 'Buy ' . $this->name . ' from us for the best deal across Penang!';
     }
 }

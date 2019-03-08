@@ -21,7 +21,7 @@
 
     <!-- Open Graph data -->
     <meta property="og:title" content="{{ $product->name }}" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="product" />
     <meta property="og:site_name" content="KALT Penang" />
     <meta property="og:price:amount" content="{{ $product->price }}" />
     <meta property="og:price:currency" content="MYR" /> 

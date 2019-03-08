@@ -30,7 +30,7 @@ class Product extends Model
 
     public function getMetaDescriptionAttribute()
     {
-        return 'Buy ' . $this->name . ' from us for the best deal across Penang!';
+        return $this->meta_brand . ' | ' . $this->model . ' | RM' . number_format($this->price, 2, '.', ',');
     }
 
     public function getMetaBrandAttribute()

@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('layout')
+@section('meta')
     <title>KALT | About Us</title>
     <meta name="description" content="We are a modernized online business to Ban Leng, who has 30 years experience in air conditioning. We, an one stop air conditioner online shop, committed to provide you with unique shopping experience." />
 

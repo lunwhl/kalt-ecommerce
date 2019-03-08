@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('layout')
+@section('meta')
     <title>KALT | Home</title>
     <meta name="description" content="Buy air conditioners online, aircond installation, inspection & repair. Brands from Daikin, Panasonic, York Malaysia & more. Over 30 years’ experience, with the cheapest price in town." />
 

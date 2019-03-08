@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('layout')
+@section('meta')
     <title>KALT | Services</title>
     <meta name="description" content="We provide all kinds of services you need including installation, overhaul, concealing, inspection and reparing services. Contact us to find out more." />
 

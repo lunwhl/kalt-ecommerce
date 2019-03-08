@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('layout')
+@section('meta')
     <title>KALT | {{ $product->name }}</title>
     <meta name="description" content="{{ $product->meta_description }}" />
 

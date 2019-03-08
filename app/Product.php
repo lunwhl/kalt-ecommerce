@@ -27,4 +27,9 @@ class Product extends Model
 
         return $productWithBrand;
     }
+
+    public function getMetaDescriptionAttribute()
+    {
+        return 'Buy ' . $this->name . 'from us for the best deal across Penang!';
+    }
 }

@@ -1,4 +1,36 @@
 @extends('layouts.layout')
+
+@section('layout')
+    <title>KALT | {{ $product->name }}</title>
+    <meta name="description" content="{{ $product->meta_description }}" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ $product->name }}">
+    <meta itemprop="description" content="{{ $product->meta_description }}">
+    <meta itemprop="image" content="{{ url('/storage/' . $product->image_path) }}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="product">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="{{ $product->name }}">
+    <meta name="twitter:description" content="{{ $product->meta_description }}">
+    <meta name="twitter:creator" content="@author_handle">
+    <meta name="twitter:image" content="{{ url('/storage/' . $product->image_path) }}">
+    <meta name="twitter:data1" content="RM{{ $product->price }}">
+    <meta name="twitter:label1" content="Price">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ $product->name }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="KALT Penang" />
+    <meta property="og:price:amount" content="{{ $product->price }}" />
+    <meta property="og:price:currency" content="MYR" /> 
+    <meta property="og:title" content="{{ $product->name }}">
+    <meta property="og:description" content="{{ $product->meta_description }}">
+    <meta property="og:image" content="{{ url('/storage/' . $product->image_path) }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+@endsection
+
 @section('css')
 	<link href="https://fonts.googleapis.com/css?family=Questrial|Raleway:700,900" rel="stylesheet">
     <link href="{{ URL::asset('/css/exzo/css/bootstrap.extension.css') }}" rel="stylesheet" type="text/css" />

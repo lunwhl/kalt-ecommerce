@@ -13,10 +13,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-	<title>Kalt</title>
+    @yield('meta')
 
 	<!-- Standard Favicon -->
 	<link rel="icon" type="image/x-icon" href="{{ URL::asset('/images/favicon.ico') }}" />

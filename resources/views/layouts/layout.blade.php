@@ -29,7 +29,7 @@
 	
 	<!-- Custom - Theme CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="/node_modules/vuetify/dist/vuetify.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=3.0') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/style.css?v=3.2') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/fonts/GothamHTF-Book.otf') }}">
 
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/app.css?v=1.9') }}">

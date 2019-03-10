@@ -19,7 +19,6 @@ require('./filters');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('home-page', require('./pages/Home.vue'));
 Vue.component('shop-page', require('./pages/Shop.vue'));
 Vue.component('cart-page', require('./pages/Cart.vue'));
@@ -32,6 +31,7 @@ Vue.component('checkout-page', require('./pages/Checkout.vue'));
 Vue.component('product-page', require('./pages/Product.vue'));
 Vue.component('order-page', require('./pages/Order.vue'));
 Vue.component('cart', require('./components/Cart.vue'));
+Vue.component('side-note', require('./components/SideNote.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 

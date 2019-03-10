@@ -42,6 +42,7 @@
 </head>
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 	<div id="app">
+		<side-note :default="true"></side-note>
 		<!-- Loader -->
 		<div id="site-loader" class="load-complete">
 			<div class="loader">
@@ -239,7 +240,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	
 	<script src="{{ URL::asset('js/form.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=3.2') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/app.js?v=3.25') }}"></script>
 
 	<!-- Library - Theme JS -->
 	<script src="{{ URL::asset('/js/functions.js') }}"></script>

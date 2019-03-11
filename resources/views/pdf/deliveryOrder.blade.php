@@ -1,7 +1,7 @@
 @extends('layouts.pdf')
 
 @section('title')
-	Delivery Order G{{ sprintf("%05d", $order->id) }}
+	Sales Order G{{ sprintf("%05d", $order->id) }}
 @endsection
 
 @section('to')

@@ -58,7 +58,7 @@
 									<div class="container-fluid">Our warehouse is located in Bukit Mertajam, Pulau Pinang.</div>
 									<div class="container-fluid">You can find us here.</div>
 									</br>
-									<div class="container-fluid"><b>Kalt Air Conditioning Sdn. Bhd.</b></div>
+									<div class="container-fluid"><b>Kalt Air Conditioning Enterprise</b></div>
 									<div class="container-fluid">7 & 9, Lebuh Nangka 2, Taman Desa Damai,</div>
 									<div class="container-fluid">14000 Bukit Mertajam, Pulau Pinang.</div>
 									</br>

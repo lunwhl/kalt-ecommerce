@@ -44,7 +44,7 @@ Vue.component('side-note', require('./components/SideNote.vue'));
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('loader', require('./base/Loader.vue'));
+// Vue.component('loader', require('./base/Loader.vue'));
 
 import vueScrollto from 'vue-scrollto';
 import Vuetify from 'vuetify';

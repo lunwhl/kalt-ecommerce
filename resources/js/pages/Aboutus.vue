@@ -62,7 +62,7 @@
 									<div class="container-fluid">7 & 9, Lebuh Nangka 2, Taman Desa Damai,</div>
 									<div class="container-fluid">14000 Bukit Mertajam, Pulau Pinang.</div>
 									</br>
-									<div class="container-fluid"><b>Tel:</b> 012-4020969     |     <b>Fax:</b> 04-5399577</div>
+									<div class="container-fluid"><b>Tel:</b> 012-4920969     |     <b>Fax:</b> 04-5399577</div>
 									<div class="container-fluid"><b>Opening Hour:</b> Monday to Saturday 9.00am to 6.00pm</div>
 								</div>
 								<div class="col-md-6 mt-2">

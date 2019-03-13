@@ -40,6 +40,14 @@ class PurchaseToAdminEmail extends Mailable
                     ->attach('storage/deliveryOrders/' . $this->order->id . '.pdf', [
                         'as'=> 'delivery-order-'.$this->order->id.'.pdf',
                         'mime' => 'application/pdf',
+                    ])
+                    ->attach('storage/invoices/' . $this->order->id . '.pdf', [
+                        'as'=> 'invoice.pdf',
+                        'mime' => 'application/pdf',
+                    ])
+                    ->attach('storage/receipts/' . $this->order->id . '.pdf', [
+                        'as'=> 'receipt.pdf',
+                        'mime' => 'application/pdf',
                     ]);
     }
 }

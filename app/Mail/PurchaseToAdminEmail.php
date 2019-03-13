@@ -38,7 +38,7 @@ class PurchaseToAdminEmail extends Mailable
                     ->subject($this->order->billing_name . ' have made purchase')
                     ->view('email.purchasetoadmin')
                     ->attach('storage/deliveryOrders/' . $this->order->id . '.pdf', [
-                        'as'=> 'delivery-order-'.$this->order->id.'.pdf',
+                        'as'=> 'sales-order-'.$this->order->id.'.pdf',
                         'mime' => 'application/pdf',
                     ])
                     ->attach('storage/invoices/' . $this->order->id . '.pdf', [

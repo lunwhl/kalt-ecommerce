@@ -38,7 +38,7 @@ class DeliveryOrderToShipper extends Mailable
                     ->subject('Kalt')
                     ->view('email.purchasetocustomer')
                     ->attach('storage/deliveryOrders/' . $this->order->id . '.pdf', [
-                        'as'=> 'delivery-order-'.$this->order->id.'.pdf',
+                        'as'=> 'sales-order-'.$this->order->id.'.pdf',
                         'mime' => 'application/pdf',
                     ]);;
     }

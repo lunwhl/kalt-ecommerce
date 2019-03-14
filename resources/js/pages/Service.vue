@@ -83,7 +83,6 @@
 										<p>Check refrigerant gas pressure</p>
 										<p>Top up in refrigerant gas</p>
 										<p>Testing and commisioning the unit</p>
-										<p>(<i>Note: Provided that the outdoor unit is accessible</i>)</p>
 									</div>
 								</div>
 							</div>
@@ -102,7 +101,7 @@
 										<p>Labour charge and tools</p>
 										<p>Vacuum to the system</p>
 										<p>Check refrigerant gas pressure</p>
-										<p>Refill in refrigerant gas</p>
+										<p>Top up in refrigerant gas</p>
 										<p>Testing and commisioning the unit</p>
 									</div>
 								</div>
@@ -234,8 +233,9 @@
 								<li>Vacuum the system</li>
 								<li>Intall the unit back</li>
 								<li>Check refrigerant gas pressure</li>
-								<li>Refill refrigerant gas</li>
+								<li>Top up refrigerant gas</li>
 								<li>Test run the unit to make sure it is in good condition</li>
+								<li>(<i>Note: Provided that the outdoor unit is accessible</i>)</li>
 							</ul>
 						</div>
 						<div class="container-fluid" style="font-size: 18px;">

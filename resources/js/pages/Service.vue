@@ -81,7 +81,7 @@
 										<p>Labour charge and tools</p>
 										<p>Vacuum to the system</p>
 										<p>Check refrigerant gas pressure</p>
-										<p>Top up in refrigerant gas</p>
+										<p>Top up refrigerant gas</p>
 										<p>Testing and commisioning the unit</p>
 									</div>
 								</div>
@@ -101,7 +101,7 @@
 										<p>Labour charge and tools</p>
 										<p>Vacuum to the system</p>
 										<p>Check refrigerant gas pressure</p>
-										<p>Top up in refrigerant gas</p>
+										<p>Top up refrigerant gas</p>
 										<p>Testing and commisioning the unit</p>
 									</div>
 								</div>

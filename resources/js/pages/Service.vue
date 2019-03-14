@@ -81,8 +81,9 @@
 										<p>Labour charge and tools</p>
 										<p>Vacuum to the system</p>
 										<p>Check refrigerant gas pressure</p>
-										<p>Refill in refrigerant gas</p>
+										<p>Top up in refrigerant gas</p>
 										<p>Testing and commisioning the unit</p>
+										<p>(<i>Note: Provided that the outdoor unit is accessible</i>)</p>
 									</div>
 								</div>
 							</div>

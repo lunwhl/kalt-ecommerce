@@ -71,8 +71,6 @@
 					</td>
 				</tr>
 			@endif
-		</tbody>
-		<tfoot>
 			<tr>
 				<td style="border-top:1px solid black"></td>
 				<td style="border-top:1px solid black"></td>
@@ -84,5 +82,6 @@
 					<b>{{ number_format($order->total, 2, ".", ",") }}</b>
 				</td>
 			</tr>
-		</tfoot>
+		</tbody>
+	</table>
 @endsection
